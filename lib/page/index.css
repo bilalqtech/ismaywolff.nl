@@ -1,0 +1,10 @@
+.Page {
+  padding: 1rem 1rem 0;
+}
+
+@media (--lg-viewport) {
+  .Page {
+    margin: 0 auto;
+    max-width: 60rem;
+  }
+}

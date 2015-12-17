@@ -1,0 +1,11 @@
+:root {
+  --Grid-gutter-size: 1rem;
+}
+
+/**
+ * Modifier: grid with gutter
+ */
+
+.Grid--withGutter > .Grid-cell {
+  margin-bottom: var(--Grid-gutter-size);
+}

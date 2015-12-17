@@ -1,0 +1,8 @@
+# Directories
+/.tmp/
+/build/
+/components/
+/node_modules/
+
+# Files
+/config.js

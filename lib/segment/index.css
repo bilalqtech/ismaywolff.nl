@@ -1,0 +1,17 @@
+.Segment {
+  margin-bottom: 4rem;
+}
+
+/**
+ * Modifier: segment with image gallery
+ *
+ * 1. Compensate for the 1rem margin-bottom on the image grid
+ */
+
+.Segment--gallery {
+  margin-bottom: 3rem; /* 1 */
+}
+
+.Segment--text {
+  font-size: 1.25rem;
+}

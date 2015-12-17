@@ -1,0 +1,36 @@
+/**
+ * Box-sizing reset
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/**
+ * Responsive images
+ */
+
+img {
+  max-width: 100%;
+}
+
+/**
+ * Correct image alignment
+ */
+
+img {
+  vertical-align: bottom;
+}
+
+/**
+ * Space paragraphs
+ */
+
+p {
+  margin-bottom: 1rem;
+}

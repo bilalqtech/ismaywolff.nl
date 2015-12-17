@@ -1,0 +1,15 @@
+[submodule "src/img/thumbnails"]
+	path = src/img/thumbnails
+	url = git@github.com:ismay/thumbnails.git
+[submodule "src/img/eye-of-the-beholder"]
+	path = src/img/eye-of-the-beholder
+	url = git@github.com:ismay/eye-of-the-beholder.git
+[submodule "src/img/mould"]
+	path = src/img/mould
+	url = git@github.com:ismay/mould.git
+[submodule "src/img/subject"]
+	path = src/img/subject
+	url = git@github.com:ismay/subject.git
+[submodule "src/img/induction"]
+	path = src/img/induction
+	url = git@github.com:ismay/induction.git
