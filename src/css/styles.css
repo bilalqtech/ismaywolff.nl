@@ -6,10 +6,10 @@
 @import 'suitcss/base';
 
 /* Components */
-@import 'suitcss/components-grid@2.0.2';
+@import 'suitcss/components-grid';
 
 /* Utils */
-@import 'suitcss/utils@0.10.2';
+@import 'suitcss/utils';
 
 /**
  * Local dependencies
