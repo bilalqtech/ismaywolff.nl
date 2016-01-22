@@ -7,6 +7,7 @@ var assets = require('metalsmith-assets');
 var collections = require('metalsmith-collections');
 var define = require('metalsmith-define');
 var filenames = require('metalsmith-filenames');
+var fingerprint = require('metalsmith-fingerprint-ignore');
 var inPlace = require('metalsmith-in-place');
 var metalsmith = require('metalsmith');
 var postcss = require('metalsmith-postcss');
@@ -41,7 +42,7 @@ var supported = {
 
 // Set postcss plugins
 var plugins = [
-  postcssImport,
+  postcssImport(),
   postcssAutoprefixer(supported),
   postcssMedia,
   postcssProperties,
