@@ -24,13 +24,13 @@ canonical: https://ismaywolff.nl/work/eye-of-the-beholder
     <div class="Segment Segment--gallery">
       <div class="Grid Grid--withGutter">
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('img/eye-of-the-beholder/1.jpg', title) }}
+          {{ fluidbox.item('eye-of-the-beholder/1.jpg', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('img/eye-of-the-beholder/2.jpg', title) }}
+          {{ fluidbox.item('eye-of-the-beholder/2.jpg', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('img/eye-of-the-beholder/3.jpg', title) }}
+          {{ fluidbox.item('eye-of-the-beholder/3.jpg', title) }}
         </div>
       </div>
     </div>

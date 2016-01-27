@@ -31,13 +31,13 @@ canonical: https://ismaywolff.nl/work/induction
           {{ fitvids.item('139068126') }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('img/induction/1.jpg', title) }}
+          {{ fluidbox.item('induction/1.jpg', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('img/induction/2.jpg', title) }}
+          {{ fluidbox.item('induction/2.jpg', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('img/induction/3.jpg', title) }}
+          {{ fluidbox.item('induction/3.jpg', title) }}
         </div>
       </div>
     </div>

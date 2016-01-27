@@ -24,16 +24,16 @@ canonical: https://ismaywolff.nl/work/mould
     <div class="Segment Segment--gallery">
       <div class="Grid Grid--withGutter">
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('img/mould/1.jpg', 'Artisticity') }}
+          {{ fluidbox.item('mould/1.jpg', 'Artisticity') }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('img/mould/2.jpg', 'Beauty') }}
+          {{ fluidbox.item('mould/2.jpg', 'Beauty') }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('img/mould/3.jpg', 'Power') }}
+          {{ fluidbox.item('mould/3.jpg', 'Power') }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('img/mould/4.jpg', 'Objectivity') }}
+          {{ fluidbox.item('mould/4.jpg', 'Objectivity') }}
         </div>
       </div>
     </div>

@@ -1,27 +1,15 @@
-{% import "../link/link.swig" as link %}
-
 {# fluidbox.item
  #
  # Generates html for a fluidbox gallery item. Uses thumbnails for production
- # builds. Image and title parameters are required, type is optional.
+ # builds. Image and title parameters are required.
  #}
+{% macro item(image, title) %}
+  {% set base = "https://res.cloudinary.com/ismay/image/upload/" %}
+  {% set thumbnail = base + "w_300/" + image %}
+  {% set fullsize = base + "w_1000/" + image %}
 
-{% macro item(image, title, type) %}
-  {# Use thumbnails for production builds #}
-  {% if production %}
-    {# Set .jpg as default if no image type was passed #}
-    {% if !type %}{% set type = ".jpg" %}{% endif %}
-    {% set thumbnail = image | replace(type, "-thumb" + type) %}
-  {% endif %}
-
-  {# Just use full-size images when developing #}
-  {% if development %}
-    {% set thumbnail = image %}
-  {% endif %}
-
-  {# Generate html #}
-  <a class="js-fluidbox" href="{{ link.bust(image) }}" title="{{ title }}">
-    <img src="{{ link.bust(thumbnail) }}" alt="{{ title }}">
+  <a class="js-fluidbox" href="{{ fullsize }}" title="{{ title }}">
+    <img src="{{ thumbnail }}" alt="{{ title }}">
   </a>
 {% endmacro %}
 
