@@ -16,8 +16,10 @@
       {% include "../header/header.swig" %}
       {% block content %}{% endblock %}
     </div>
-    {% include "../jquery/jquery.swig" %}
-    <script src="{{ link.bust('js/scripts.js') }}"></script>
+    <script src="{{ link.bust('js/jquery.js') }}"></script>
+    <script src="{{ link.bust('js/fitvids.js') }}"></script>
+    <script src="{{ link.bust('js/fluidbox.js') }}"></script>
+    <script src="{{ link.bust('js/analytics.js') }}"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>
