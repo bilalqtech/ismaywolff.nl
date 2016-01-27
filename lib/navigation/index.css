@@ -3,17 +3,13 @@
   border-radius: 0.25rem;
   color: var(--black);
   display: inline-block;
-  font-family: var(--fallback-sans-serif);
+  font-family: var(--sans-serif);
   font-size: 1.2rem;
   margin-right: 0.5rem;
   padding: 0 1rem;
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
-}
-
-.js-fontsLoaded .Navigation-link {
-  font-family: var(--sans-serif);
 }
 
 .Navigation-link:last-of-type {

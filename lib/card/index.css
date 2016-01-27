@@ -30,10 +30,6 @@
 }
 
 .Card-date {
-  font-family: var(--fallback-sans-serif);
-  color: var(--gray);
-}
-
-.js-fontsLoaded .Card-date {
   font-family: var(--sans-serif);
+  color: var(--gray);
 }
