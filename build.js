@@ -16,7 +16,6 @@ var postcssCalc = require('postcss-calc');
 var postcssImport = require('postcss-import');
 var postcssMedia = require('postcss-custom-media');
 var postcssProperties = require('postcss-custom-properties');
-var rename = require('metalsmith-rename');
 var sitemap = require('metalsmith-mapsite');
 var watch = require('metalsmith-watch');
 var when = require('metalsmith-if');
@@ -86,9 +85,9 @@ metalsmith(__dirname)
   .use(inPlace({
     cache: false,
     engine: 'swig',
-    pattern: '**/*.swig'
+    pattern: '**/*.swig',
+    rename: true
   }))
-  .use(rename([[/\.swig$/, '.html']]))
 
   // Generate sitemap
   .use(when(production, sitemap({
