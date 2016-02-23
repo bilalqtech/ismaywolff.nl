@@ -5,6 +5,7 @@
 var argv = require('yargs').argv;
 var assets = require('metalsmith-assets');
 var collections = require('metalsmith-collections');
+var cloudinary = require('metalsmith-cloudinary');
 var define = require('metalsmith-define');
 var filenames = require('metalsmith-filenames');
 var fingerprint = require('metalsmith-fingerprint-ignore');
@@ -31,7 +32,8 @@ var production = !development;
 // Set build directory
 var destination = development ? '.tmp' : 'build';
 
-// Import metadata
+// Import metadata and keys
+var keys = require('./keys');
 var metadata = require('./metadata');
 
 // Set autoprefixer settings
@@ -82,6 +84,7 @@ metalsmith(__dirname)
       reverse: true
     }
   }))
+  .use(cloudinary(keys))
   .use(inPlace({
     cache: false,
     engine: 'swig',
