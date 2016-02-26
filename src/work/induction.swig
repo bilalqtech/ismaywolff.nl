@@ -2,7 +2,7 @@
 # Collection
 collection: works
 date: 2011-09-01
-thumbnail: img/thumbnails/induction.jpg
+thumbnail: induction/1
 title: Induction
 type: Installation
 # Navigation

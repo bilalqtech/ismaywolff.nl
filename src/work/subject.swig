@@ -2,7 +2,7 @@
 # Collection
 collection: works
 date: 2011-04-01
-thumbnail: img/thumbnails/subject.jpg
+thumbnail: subject/1
 title: Subject
 type: Photography
 # Navigation

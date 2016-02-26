@@ -2,7 +2,7 @@
 # Collection
 collection: works
 date: 2009-06-01
-thumbnail: img/thumbnails/eye-of-the-beholder.jpg
+thumbnail: eye-of-the-beholder/1
 title: Eye of the beholder
 type: Installation
 # Navigation

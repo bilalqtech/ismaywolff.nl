@@ -2,7 +2,7 @@
 # Collection
 collection: works
 date: 2012-07-01
-thumbnail: img/thumbnails/mould.jpg
+thumbnail: mould/1
 title: Mould
 type: Digital
 # Navigation
