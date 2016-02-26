@@ -24,25 +24,25 @@ canonical: https://ismaywolff.nl/work/subject
     <div class="Segment Segment--gallery">
       <div class="Grid Grid--withGutter">
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('subject/1.jpg', title) }}
+          {{ fluidbox.item('subject/1', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('subject/2.jpg', title) }}
+          {{ fluidbox.item('subject/2', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('subject/3.jpg', title) }}
+          {{ fluidbox.item('subject/3', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of4 u-lg-size1of4">
-          {{ fluidbox.item('subject/4.jpg', title) }}
+          {{ fluidbox.item('subject/4', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('subject/5.jpg', title) }}
+          {{ fluidbox.item('subject/5', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('subject/6.jpg', title) }}
+          {{ fluidbox.item('subject/6', title) }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
-          {{ fluidbox.item('subject/7.jpg', title) }}
+          {{ fluidbox.item('subject/7', title) }}
         </div>
       </div>
     </div>
