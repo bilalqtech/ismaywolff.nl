@@ -8,7 +8,7 @@
   {% import "../../lib/cloudinate/cloudinate.swig" as cloudinate %}
 
   <a class="js-fluidbox" href="{{ cloudinate.url(image, 'w_600,c_fill') }}" title="{{ title }}">
-    <img src="{{ cloudinate.url(image, 'w_300,c_fill') }}" alt="{{ title }}">
+    <img src="{{ cloudinate.url(image, 'w_550,c_fill') }}" alt="{{ title }}">
   </a>
 {% endmacro %}
 
