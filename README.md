@@ -1,6 +1,6 @@
 # ismay.github.io
 
-> Source for [www.ismaywolff.nl](https://www.ismaywolff.nl)
+> Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
 ## Requirements
 
