@@ -14,7 +14,7 @@ var pageres = new Pageres({delay: 2})
     glob("*.png", {cwd: './test'}, function (err, files) {
       // Delete old readme
       files.forEach((file) => {
-        fs.appendFileSync('./test/README.md', `[${file}](${file})\n`);
+        fs.appendFileSync('./test/README.md', `![${file}](${file})\n`);
       })
     })
   });
