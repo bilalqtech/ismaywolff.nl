@@ -4,13 +4,13 @@
   "name": "ismaywolff.nl",
   "version": "0.1.0",
   "scripts": {
+    "build": "node build.js",
     "deploy": "npm-run-all test:* deploy:*",
-    "deploy:build": "node build.js",
     "deploy:push": "./deploy.sh",
     "develop": "npm-run-all --parallel develop:*",
     "develop:serve": "browser-sync start --server '.tmp' --files '.tmp/**'",
     "develop:watch": "node build.js --development",
-    "test": "npm-run-all test:*",
+    "test": "npm-run-all build test:*",
     "test:eslint": "eslint '{src,lib}/**/*.js'",
     "test:screenshot": "cd test && pageres '../build/index.html' '1280x800' '768x1024' '360x640' -c",
     "test:stylelint": "stylelint '{src,lib}/**/*.css'"
