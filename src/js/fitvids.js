@@ -1,4 +1,5 @@
-/*jshint browser:true */
+/* eslint-disable */
+
 /*!
 * FitVids 1.1
 *

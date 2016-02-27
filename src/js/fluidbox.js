@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // Fluidbox
 // Description: Replicating the seamless lightbox transition effect seen on Medium.com, with some improvements
 // Version: 1.4.4
