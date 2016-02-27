@@ -3,8 +3,8 @@
  */
 
 :root {
-  --serif: 'Droid Serif';
-  --sans-serif: 'Oswald';
+  --serif: "Droid Serif";
+  --sans-serif: "Oswald";
 }
 
 /**
@@ -12,24 +12,24 @@
  */
 
 @font-face {
-  font-family: 'Droid Serif';
-  src: local('Droid Serif'),
-       local('DroidSerif'),
-       url('../fonts/droid_serif.woff2') format('woff2'),
-       url('../fonts/droid_serif.woff') format('woff'),
-       url('../fonts/droid_serif.ttf') format('truetype');
+  font-family: "Droid Serif";
+  src: local("Droid Serif"),
+       local("DroidSerif"),
+       url("../fonts/droid_serif.woff2") format("woff2"),
+       url("../fonts/droid_serif.woff") format("woff"),
+       url("../fonts/droid_serif.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: local('Oswald'),
-       local('Oswald Regular'),
-       local('Oswald-Regular'),
-       url('../fonts/oswald.woff2') format('woff2'),
-       url('../fonts/oswald.woff') format('woff'),
-       url('../fonts/oswald.ttf') format('truetype');
+  font-family: "Oswald";
+  src: local("Oswald"),
+       local("Oswald Regular"),
+       local("Oswald-Regular"),
+       url("../fonts/oswald.woff2") format("woff2"),
+       url("../fonts/oswald.woff") format("woff"),
+       url("../fonts/oswald.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }

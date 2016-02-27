@@ -3,30 +3,35 @@
  */
 
 /* Base */
-@import 'suitcss-base';
+
+@import "suitcss-base";
 
 /* Components */
-@import 'suitcss-components-grid';
+
+@import "suitcss-components-grid";
 
 /* Utils */
-@import 'suitcss-utils';
+
+@import "suitcss-utils";
 
 /**
  * Local dependencies
  */
 
 /* Base */
-@import '../lib/base';
-@import '../lib/breakpoints';
-@import '../lib/color';
-@import '../lib/fonts';
+
+@import "../lib/base";
+@import "../lib/breakpoints";
+@import "../lib/color";
+@import "../lib/fonts";
 
 /* Components */
-@import '../lib/card';
-@import '../lib/fluidbox';
-@import '../lib/grid';
-@import '../lib/header';
-@import '../lib/navigation';
-@import '../lib/page';
-@import '../lib/segment';
-@import '../lib/title';
+
+@import "../lib/card";
+@import "../lib/fluidbox";
+@import "../lib/grid";
+@import "../lib/header";
+@import "../lib/navigation";
+@import "../lib/page";
+@import "../lib/segment";
+@import "../lib/title";

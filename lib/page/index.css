@@ -3,6 +3,7 @@
 }
 
 @media (--lg-viewport) {
+
   .Page {
     margin: 0 auto;
     max-width: 60rem;

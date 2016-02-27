@@ -18,6 +18,7 @@
 }
 
 @media (--md-viewport), (--lg-viewport) {
+
   .Header {
     text-align: left;
   }
