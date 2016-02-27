@@ -1,5 +1,7 @@
 # ismay.github.io
 
+[![build status][build-badge]][build-url]
+
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
 ## Requirements
@@ -27,3 +29,6 @@ The above tasks alias these subtasks, which can be run separately when necessary
 ## License
 
 [MIT](http://ismay.mit-license.org/)
+
+[build-badge]: https://travis-ci.org/ismay/ismay.github.io.svg
+[build-url]: https://travis-ci.org/ismay/ismay.github.io
