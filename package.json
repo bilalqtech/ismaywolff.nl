@@ -12,7 +12,7 @@
     "develop:watch": "node build.js --development",
     "test": "npm-run-all build test:*",
     "test:eslint": "eslint '{src,lib}/**/*.js'",
-    "test:screenshot": "cd test && pageres '../build/index.html' '1280x800' '768x1024' '360x640' -c",
+    "test:screenshot": "cd test && pageres '../build/index.html' 'https://ismaywolff.nl' '1280x800' '768x1024' '360x640' -c",
     "test:stylelint": "stylelint '{src,lib}/**/*.css'"
   },
   "devDependencies": {
