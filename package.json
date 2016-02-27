@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "node build.js",
-    "deploy": "npm-run-all test:* deploy:*",
+    "deploy": "npm-run-all test deploy:push",
     "deploy:push": "./deploy.sh",
     "develop": "npm-run-all --parallel develop:*",
     "develop:serve": "browser-sync start --server '.tmp' --files '.tmp/**'",
