@@ -12,7 +12,7 @@
     "develop:watch": "node build.js --development",
     "test": "npm-run-all test:*",
     "test:eslint": "eslint '{src,lib}/**/*.js'",
-    "test:screenshot": "node screenshot.js",
+    "test:screenshot": "cd test && pageres '../build/index.html' '1280x800' '768x1024' '360x640' -c",
     "test:stylelint": "stylelint '{src,lib}/**/*.css'"
   },
   "devDependencies": {
@@ -38,6 +38,7 @@
     "metalsmith-watch": "^1.0.1",
     "npm-run-all": "^1.5.1",
     "pageres": "^4.1.0",
+    "pageres-cli": "^3.1.0",
     "postcss-calc": "^5.0.0",
     "postcss-custom-media": "^5.0.0",
     "postcss-custom-properties": "^5.0.0",

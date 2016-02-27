@@ -1,10 +1,11 @@
-![build!index.html-1024x768-cropped.png](build!index.html-1024x768-cropped.png)
-![build!index.html-1280x1024-cropped.png](build!index.html-1280x1024-cropped.png)
+### 1280x800
+
 ![build!index.html-1280x800-cropped.png](build!index.html-1280x800-cropped.png)
-![build!index.html-1366x768-cropped.png](build!index.html-1366x768-cropped.png)
-![build!index.html-1440x900-cropped.png](build!index.html-1440x900-cropped.png)
-![build!index.html-1920x1080-cropped.png](build!index.html-1920x1080-cropped.png)
-![build!index.html-320x568-cropped.png](build!index.html-320x568-cropped.png)
-![build!index.html-360x640-cropped.png](build!index.html-360x640-cropped.png)
-![build!index.html-375x667-cropped.png](build!index.html-375x667-cropped.png)
+
+### 768x1024
+
 ![build!index.html-768x1024-cropped.png](build!index.html-768x1024-cropped.png)
+
+### 360x640
+
+![build!index.html-360x640-cropped.png](build!index.html-360x640-cropped.png)
