@@ -32,9 +32,20 @@ var production = !development;
 // Set build directory
 var destination = development ? '.tmp' : 'build';
 
-// Import metadata and keys
-var keys = require('./keys');
+// Import metadata
 var metadata = require('./metadata');
+
+// Import keys (depends on build environment)
+var keys;
+try {
+  keys = require('./keys');
+} catch (err) {
+  keys = {
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+  };
+}
 
 // Set autoprefixer settings
 var supported = {
