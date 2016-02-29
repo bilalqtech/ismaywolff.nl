@@ -5,12 +5,11 @@
   "version": "0.1.0",
   "scripts": {
     "build": "node build.js",
-    "deploy": "npm-run-all test deploy:push",
-    "deploy:push": "./deploy.sh",
+    "deploy": "./deploy.sh",
     "develop": "npm-run-all --parallel develop:*",
     "develop:serve": "browser-sync start --server '.tmp' --files '.tmp/**'",
     "develop:watch": "node build.js --development",
-    "test": "npm-run-all build test:*",
+    "test": "npm-run-all test:*",
     "test:eslint": "eslint '{src,lib}/**/*.js'",
     "test:screenshot": "cd test && pageres '../build/index.html' 'https://ismaywolff.nl' '1280x800' '768x1024' '360x640' -c",
     "test:stylelint": "stylelint '{src,lib}/**/*.css'"
