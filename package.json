@@ -11,8 +11,8 @@
     "develop:watch": "node build.js --development",
     "test": "npm-run-all test:*",
     "test:eslint": "eslint '{src,lib}/**/*.js'",
-    "test:screenshot": "cd test && pageres '../build/index.html' 'https://ismaywolff.nl' '1280x800' '768x1024' '360x640' -c",
-    "test:stylelint": "stylelint '{src,lib}/**/*.css'"
+    "test:stylelint": "stylelint '{src,lib}/**/*.css'",
+    "post": "npm-run-all post:*"
   },
   "devDependencies": {
     "autoprefixer": "^6.2.1",

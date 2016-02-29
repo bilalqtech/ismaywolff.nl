@@ -8,7 +8,7 @@ script:
   - npm run build
   - npm run test
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "development" && npm run deploy
+  - npm run deploy
 env:
   global:
     - secure: dTl3KikhMZfRe6UdPmht9AlJrX49KEF5OabzIqlKgC2dw/6cGGMjDKi787Vn91+qBYaXyIoz45ayxYjiDTd3yWxHgbrq7TOn5XGNGx48k1wQa7VXusTIJs6gjAgrwaKdJdBacv3nb/iy/jSQWcya9IY98W38NKzUsEw340YFGaiFa2SB4X8o7jEqTcHEvDio7D7jMAcdQnxkgiZZVEzUH82SRj3I3zMnC3jYX0kq5Lm3RXm0SmBGv6pQktq+zXgGCoI4FYl7qZEaio18gLahb9vqHPKbT1aKNk5u3T85yXxt88iVKn0ix/oyo2BGPJTl4FXianjoOgu8KhdzICAuB/24qNoCftv3I9KA0tJoQkR0mPGOCnvKNreODHup7/JSACMx4F4HsG0F+bqdWPMZ3CoC+RhVB/kg+qeg1WQNWxQLuHuHtf2qSwchameGipwWnoCU0ZYvqR8ueTK3fSQu8cMV9tb3cNPakX4emh83cOg9kaqpFqTdy/BYMdLbRPPu/XuHhIZ0nAWI0pgGYS864TSVPyXOkFdMTFSixYqb6nRUl2q0g1I/Re6tHsQXWWohz6nk4KfzqaH5kB9WxYBUAOH2vH91iI5iAhm/wMe4JZ5APMCnUcC5EL+zrOOaMMWktC8ubLptCEpqlqxLNCOD3z/0IqJPWlZlBRlStyVKYMw=
