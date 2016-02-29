@@ -4,6 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    {% block preconnect %}{% endblock %}
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{% block title %}{{ siteTitle }}{% endblock %}</title>
     <meta name="description" content="{{ description }}">

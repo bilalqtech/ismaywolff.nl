@@ -14,6 +14,10 @@ canonical: https://ismaywolff.nl/work/induction
 {% import "../lib/fitvids/fitvids.swig" as fitvids %}
 {% extends "../lib/base/base.swig" %}
 
+{% block preconnect %}
+  <link rel="preconnect" href="https://res.cloudinary.com">
+{% endblock %}
+
 {% block title %}{{ title }} · {{ siteTitle }}{% endblock %}
 
 {% block content %}

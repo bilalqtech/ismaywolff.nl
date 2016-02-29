@@ -13,6 +13,10 @@ canonical: https://ismaywolff.nl/work/subject
 {% import "../lib/fluidbox/fluidbox.swig" as fluidbox %}
 {% extends "../lib/base/base.swig" %}
 
+{% block preconnect %}
+  <link rel="preconnect" href="https://res.cloudinary.com">
+{% endblock %}
+
 {% block title %}{{ title }} · {{ siteTitle }}{% endblock %}
 
 {% block content %}

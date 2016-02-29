@@ -7,6 +7,10 @@ canonical: https://ismaywolff.nl
 {% import "lib/cloudinate/cloudinate.swig" as cloudinate %}
 {% extends "lib/base/base.swig" %}
 
+{% block preconnect %}
+  <link rel="preconnect" href="https://res.cloudinary.com">
+{% endblock %}
+
 {% block content %}
   <div class="Grid Grid--withGutter">
     {% for work in works %}
