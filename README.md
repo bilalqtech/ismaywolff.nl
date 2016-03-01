@@ -1,7 +1,6 @@
 # ismay.github.io
 
 [![build status][build-badge]][build-url]
-some extra badges here for screenshots, webpagetest and styleguide
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
@@ -18,6 +17,14 @@ some extra badges here for screenshots, webpagetest and styleguide
 * `npm run develop`: serves development version of site and rebuilds on changes.
 * `npm run test`: lints css and js.
 * `npm run post`: runs post-build tasks.
+
+## Screenshots of last build
+
+![1280x800](https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-1280x800-cropped.png)
+
+![768x1024](https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-768x1024-cropped.png)
+
+![360x640](https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-360x640-cropped.png)
 
 ## License
 
