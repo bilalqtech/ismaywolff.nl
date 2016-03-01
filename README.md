@@ -28,9 +28,9 @@
 
 [build-badge]: https://travis-ci.org/ismay/ismay.github.io.svg
 [build-url]: https://travis-ci.org/ismay/ismay.github.io
-[large]: https://res.cloudinary.com/ismay/image/fetch/w_200,h_200,c_fill/https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-1280x800-cropped.png
-[medium]: https://res.cloudinary.com/ismay/image/fetch/w_200,h_200,c_fill/https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-768x1024-cropped.png
-[small]: https://res.cloudinary.com/ismay/image/fetch/w_200,h_200,c_fill/https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-360x640-cropped.png
+[large]: https://res.cloudinary.com/ismay/image/fetch/w_290,h_200,c_fill,g_north/https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-1280x800-cropped.png
+[medium]: https://res.cloudinary.com/ismay/image/fetch/w_290,h_200,c_fill,g_north/https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-768x1024-cropped.png
+[small]: https://res.cloudinary.com/ismay/image/fetch/w_290,h_200,c_fill,g_north/https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-360x640-cropped.png
 [large-url]: https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-1280x800-cropped.png
 [medium-url]: https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-768x1024-cropped.png
 [small-url]: https://raw.githubusercontent.com/ismay/ismay.github.io/master/test/ismaywolff.nl-360x640-cropped.png
