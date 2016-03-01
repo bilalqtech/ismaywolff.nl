@@ -12,7 +12,8 @@
     "test": "npm-run-all test:*",
     "test:eslint": "eslint '{src,lib}/**/*.js'",
     "test:stylelint": "stylelint '{src,lib}/**/*.css'",
-    "post": "npm-run-all post:*"
+    "post": "npm-run-all post:*",
+    "post:screenshots": "mkdir build/test && cd build/test && pageres 'https://ismaywolff.nl' '1280x800' '768x1024' '360x640' -c && cd ../.."
   },
   "devDependencies": {
     "autoprefixer": "^6.2.1",
