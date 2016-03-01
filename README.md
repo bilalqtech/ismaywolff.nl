@@ -1,6 +1,7 @@
 # ismay.github.io
 
 [![build status][build-badge]][build-url]
+some extra badges here for screenshots, webpagetest and styleguide
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
@@ -16,7 +17,7 @@
 * `npm run deploy`: deploys production version.
 * `npm run develop`: serves development version of site and rebuilds on changes.
 * `npm run test`: lints css and js.
-* `npm run post`: runs post-build evaluation.
+* `npm run post`: runs post-build tasks.
 
 ## License
 
