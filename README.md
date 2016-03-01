@@ -23,4 +23,4 @@
 [build-badge]: https://travis-ci.org/ismay/ismay.github.io.svg
 [build-url]: https://travis-ci.org/ismay/ismay.github.io
 [screenshots-badge]: https://img.shields.io/badge/build-screenshots-blue.svg
-[screenshots-url]: https://github.com/ismay/ismay.github.io/tree/master/test
+[screenshots-url]: https://github.com/ismay/ismay.github.io/tree/master/screenshots

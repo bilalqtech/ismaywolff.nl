@@ -13,7 +13,7 @@
     "test:eslint": "eslint '{src,lib}/**/*.js'",
     "test:stylelint": "stylelint '{src,lib}/**/*.css'",
     "post": "npm-run-all post:*",
-    "post:screenshots": "mkdir build/test && cd build/test && pageres ismaywolff.nl w3counter && cd ../.."
+    "post:screenshots": "mkdir build/screenshots && cd build/screenshots && pageres ismaywolff.nl w3counter && cd ../.."
   },
   "devDependencies": {
     "autoprefixer": "^6.2.1",
