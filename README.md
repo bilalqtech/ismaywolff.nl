@@ -1,6 +1,4 @@
-# ismay.github.io
-
-[![build status][build-badge]][build-url]
+# ismay.github.io [![build status][build-badge]][build-url]
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
