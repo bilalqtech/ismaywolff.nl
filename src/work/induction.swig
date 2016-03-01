@@ -16,9 +16,10 @@ canonical: https://ismaywolff.nl/work/induction
 
 {% block preconnect %}
   <link rel="preconnect" href="https://player.vimeo.com">
-  <link rel="preconnect" href="https://f.vimeocdn.com">
-  <link rel="preconnect" href="https://i.vimeocdn.com">
   <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+  <link rel="preconnect" href="https://vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
 {% endblock %}
 
 {% block title %}{{ title }} · {{ siteTitle }}{% endblock %}
