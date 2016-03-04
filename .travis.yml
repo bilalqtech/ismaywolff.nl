@@ -5,11 +5,15 @@ node_js:
 install:
   - npm install
 before_script:
-  - npm run build
+  - 'npm run build:site'
 script:
-  - npm run test
+  - 'npm run test:stylelint'
+  - 'npm run test:eslint'
 after_success:
-  - npm run post
+  - npm run deploy
+  - 'npm run test:screenshots'
+  - 'npm run test:webpagetest'
+  - 'npm run build:test'
   - npm run deploy
 env:
   global:

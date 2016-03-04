@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * Dependencies
  */
@@ -17,6 +19,7 @@ var postcssCalc = require('postcss-calc');
 var postcssImport = require('postcss-import');
 var postcssMedia = require('postcss-custom-media');
 var postcssProperties = require('postcss-custom-properties');
+var robots = require('metalsmith-robots');
 var sitemap = require('metalsmith-mapsite');
 var watch = require('metalsmith-watch');
 var when = require('metalsmith-if');
@@ -38,7 +41,7 @@ var metadata = require('./metadata');
 // Import keys (depends on build environment)
 var keys;
 try {
-  keys = require('./keys');
+  keys = require('./scripts/keys');
 } catch (err) {
   keys = {
     cloud_name: process.env.CLOUD_NAME,
@@ -103,10 +106,13 @@ metalsmith(__dirname)
     rename: true
   }))
 
-  // Generate sitemap
+  // Generate search engine specific files
   .use(when(production, sitemap({
     hostname: metadata.host.remote,
     lastmod: new Date()
+  })))
+  .use(when(production, robots({
+    sitemap: metadata.host.remote + 'sitemap.xml',
   })))
 
   // Watch for changes (when in development mode)

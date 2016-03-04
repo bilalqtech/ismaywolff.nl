@@ -1,6 +1,0 @@
-# www.robotstxt.org/
-
-User-agent: *
-Disallow: /404
-
-Sitemap: https://ismaywolff.nl/sitemap.xml

@@ -1,4 +1,4 @@
 /.tmp/
 /build/
 /node_modules/
-keys.js
+/scripts/keys.js
