@@ -23,7 +23,6 @@ This is the source for my personal website. I also use it as a testing ground fo
 ## Usage
 
 * clone and run `npm install`
-* make sure all [requirements](#requirements) are met
 * run `npm run develop`
 * push the changes to github
 
