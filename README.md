@@ -1,4 +1,7 @@
-# ismay.github.io [![build status][build-badge]][build-url]
+# ismay.github.io
+[![build status][build-badge]][build-url]
+[![dependency status][dependency-badge]][dependency-url]
+[![devdependency status][devdependency-badge]][devdependency-url]
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
@@ -51,3 +54,7 @@ You'll need a working [Travis](https://travis-ci.org/) account and turn on Travi
 
 [build-badge]: https://travis-ci.org/ismay/ismay.github.io.svg
 [build-url]: https://travis-ci.org/ismay/ismay.github.io
+[dependency-badge]: https://david-dm.org/ismay/ismay.github.io.svg
+[dependency-url]: https://david-dm.org/ismay/ismay.github.io
+[devdependency-badge]: https://david-dm.org/ismay/ismay.github.io/dev-status.svg
+[devdependency-url]: https://david-dm.org/ismay/ismay.github.io#info=devDependencies
