@@ -14,7 +14,7 @@ cd build
 
 git init
 git config user.name "ismay"
-git config user.email "ismay@ismaywolff.nl"
+git config user.email "$GH_EMAIL"
 
 git remote add upstream "https://$GH_TOKEN@github.com/ismay/ismay.github.io.git"
 git fetch upstream

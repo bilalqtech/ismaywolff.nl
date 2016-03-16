@@ -6,7 +6,7 @@
   "scripts": {
     "build:site": "node metalsmith.js",
     "build:test": "mv test build",
-    "deploy": "./scripts/deploy.sh",
+    "deploy:build": "./scripts/deploy-build.sh",
     "develop": "npm-run-all --parallel develop:*",
     "develop:serve": "browser-sync start --server '.tmp' --files '.tmp/**'",
     "develop:watch": "node metalsmith.js --development",

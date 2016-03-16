@@ -41,7 +41,7 @@ var metadata = require('./metadata');
 // Import keys (depends on build environment)
 var keys;
 try {
-  keys = require('./scripts/keys');
+  keys = require('./private/keys');
 } catch (err) {
   keys = {
     cloud_name: process.env.CLOUD_NAME,
