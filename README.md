@@ -29,7 +29,7 @@ This is the source for my personal website. I also use it as a testing ground fo
 
 ## Local credentials
 
-You'll need a `keys.js` file that exports keys for [Cloudinary](http://cloudinary.com/), so that [metalsmith-cloudinary](https://github.com/superwolff/metalsmith-cloudinary) can build the urls for your images:
+You'll need a `./private/keys.js` file that exports keys for [Cloudinary](http://cloudinary.com/), so that [metalsmith-cloudinary](https://github.com/superwolff/metalsmith-cloudinary) can build the urls for your images:
 
 ```javascript
 module.exports = {
@@ -44,9 +44,12 @@ module.exports = {
 You'll need a working [Travis](https://travis-ci.org/) account and turn on Travis for your repo to allow it to build your site. Replace the secure environment variables in `.travis.yml` with your own using [travis-encrypt](https://www.npmjs.com/package/travis-encrypt). You'll need:
 
 * `GH_TOKEN`: a github token for your repo so Travis can publish the build
+* `GH_EMAIL`: the email matching the username for your repo
 * `CLOUND_NAME`: your Cloudinary `cloud_name`
 * `API_KEY`: your Cloudinary `api_key`
 * `API_SECRET`: your Cloudinary `api_secret`
+
+Make sure to modify the credentials in the deploy scripts in `/scripts` as well.
 
 ## License
 
