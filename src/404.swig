@@ -2,7 +2,7 @@
 # Sitemap
 private: true
 ---
-{% import "lib/fitvids/fitvids.swig" as fitvids %}
+{% import "lib/vimeo/vimeo.swig" as vimeo %}
 {% extends "lib/base/base.swig" %}
 
 {% block title %}404 · {{ siteTitle }}{% endblock %}
@@ -17,11 +17,7 @@ private: true
       <p>Hmm.. unfortunately that page doesn't exist. Try the navigation up top, that should work. Also, here's a short animation by Adam Patch to make you feel better.</p>
     </div>
     <div class="Segment">
-      {{ fitvids.item('65102146') }}
+      {{ vimeo.item('65102146') }}
     </div>
   </section>
-{% endblock %}
-
-{% block scripts %}
-  {{ fitvids.init() }}
 {% endblock %}

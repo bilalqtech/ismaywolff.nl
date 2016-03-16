@@ -20,7 +20,6 @@
       {% block content %}{% endblock %}
     </div>
     <script src="{{ link.bust('js/jquery.js') }}"></script>
-    <script src="{{ link.bust('js/fitvids.js') }}"></script>
     <script src="{{ link.bust('js/fluidbox.js') }}"></script>
     <script src="{{ link.bust('js/analytics.js') }}"></script>
     {% block scripts %}{% endblock %}

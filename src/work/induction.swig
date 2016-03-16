@@ -11,7 +11,7 @@ active: work
 canonical: https://ismaywolff.nl/work/induction
 ---
 {% import "../lib/fluidbox/fluidbox.swig" as fluidbox %}
-{% import "../lib/fitvids/fitvids.swig" as fitvids %}
+{% import "../lib/vimeo/vimeo.swig" as vimeo %}
 {% extends "../lib/base/base.swig" %}
 
 {% block preconnect %}
@@ -33,10 +33,10 @@ canonical: https://ismaywolff.nl/work/induction
     <div class="Segment Segment--gallery">
       <div class="Grid Grid--withGutter">
         <div class="Grid-cell u-sm-sizeFull u-md-sizeFull u-lg-size1of2">
-          {{ fitvids.item('139068075') }}
+          {{ vimeo.item('139068075') }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-sizeFull u-lg-size1of2">
-          {{ fitvids.item('139068126') }}
+          {{ vimeo.item('139068126') }}
         </div>
         <div class="Grid-cell u-sm-sizeFull u-md-size1of3 u-lg-size1of3">
           {{ fluidbox.item('induction/1', title) }}
@@ -57,6 +57,5 @@ canonical: https://ismaywolff.nl/work/induction
 {% endblock %}
 
 {% block scripts %}
-  {{ fitvids.init() }}
   {{ fluidbox.init() }}
 {% endblock %}
