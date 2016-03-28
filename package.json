@@ -41,8 +41,9 @@
     "postcss-custom-media": "^5.0.0",
     "postcss-custom-properties": "^5.0.0",
     "postcss-import": "^8.0.2",
-    "stylelint": "^4.4.0",
-    "stylelint-config-suitcss": "^4.0.0",
+    "stylelint": "^5.0.1",
+    "stylelint-config-suitcss": "^5.0.0",
+    "stylelint-selector-bem-pattern": "^0.2.3",
     "swig": "^1.4.2",
     "yargs": "^4.3.1"
   },
