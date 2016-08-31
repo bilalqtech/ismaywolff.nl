@@ -5,9 +5,9 @@
 {%- macro url(asset, transformation) -%}
 
   {%- if transformation -%}
-    {%- set transform = transformation + ',f_auto/' -%}
+    {%- set transform = transformation + '/' -%}
   {%- else -%}
-    {%- set transform = 'f_auto/' -%}
+    {%- set transform = '' -%}
   {%- endif -%}
 
   https://res.cloudinary.com/ismay/

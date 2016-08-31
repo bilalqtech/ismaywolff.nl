@@ -5,7 +5,6 @@
  #
  # 1. Replaces any .swig extensions with .html
  # 2. Removes the .html extension for production builds
- # 3. Generates absolute urls
  #}
 
 {%- macro to(href) -%}
@@ -27,19 +26,5 @@
   {%- endif -%}
   {%- if development -%}
     {{- host.local -}}
-  {%- endif -%}
-{%- endmacro -%}
-
-{# link.bust
- #
- # Returns the appropriate path to a fingerprinted asset. Expects a path
- # relative to root, without a leading slash and with a file extension.
- #}
-{%- macro bust(path) -%}
-  {%- if production -%}
-    {{- host.remote -}}{{- fingerprint[path] -}}
-  {%- endif -%}
-  {%- if development -%}
-    {{- host.local -}}{{- path -}}
   {%- endif -%}
 {%- endmacro -%}
