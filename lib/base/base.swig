@@ -9,6 +9,7 @@
     <title>{% block title %}{{ siteTitle }}{% endblock %}</title>
     <meta name="description" content="{{ description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include "../favicon/favicon.swig" %}
     <link rel="canonical" href="{{ canonical }}">
   </head>
   <body style="max-width:30rem;">
