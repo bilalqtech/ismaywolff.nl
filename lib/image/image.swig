@@ -10,5 +10,7 @@
 {%- macro link(asset) -%}
   {% import "../cloudinate/cloudinate.swig" as cloudinate %}
 
-  <a href="{{ cloudinate.url(asset, 'f_auto,q_auto,w_1000') }}"><img style="max-width:49%" src="{{ cloudinate.url(asset, 'w_550,h_350,c_fill,f_auto,g_auto,q_auto') }}"></a>
+  <span itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a itemprop="contentUrl" href="{{ cloudinate.url(asset, 'f_auto,q_auto,w_1000') }}"><img itemprop="thumbnail" style="max-width:49%" src="{{ cloudinate.url(asset, 'w_550,h_350,c_fill,f_auto,g_auto,q_auto') }}"></a>
+  </span>
 {%- endmacro -%}

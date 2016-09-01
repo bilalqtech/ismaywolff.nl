@@ -9,13 +9,13 @@ canonical: https://ismaywolff.nl
 {% block content %}
   <h2>Work</h2>
   {% for work in works %}
-    <div>
+    <div itemscope itemtype="http://schema.org/VisualArtwork">
       <h2>
         <a href="{{ link.to(work.filename) }}">
-          {{ work.title }}
+          <span itemprop="name">{{ work.title }}</span>
         </a>
       </h2>
-      <p>{{ work.excerpt }}</p>
+      <p itemprop="description">{{ work.excerpt }}</p>
     </div>
   {% endfor %}
 {% endblock %}
