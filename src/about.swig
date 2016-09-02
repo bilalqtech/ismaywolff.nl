@@ -1,4 +1,6 @@
 ---
+# Meta
+description: About me and contact information
 # Navigation
 active: about
 # Sitemap

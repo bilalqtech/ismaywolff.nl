@@ -1,4 +1,6 @@
 ---
+# Meta
+description: The work of artist Ismay Wolff
 # Navigation
 active: work
 # Sitemap

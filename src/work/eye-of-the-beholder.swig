@@ -1,4 +1,6 @@
 ---
+# Meta
+description: Images and description of eye of the beholder, a site-specific installation in a church in Groningen.
 # Collection
 collection: works
 date: 2009-06-01

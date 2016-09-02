@@ -1,4 +1,6 @@
 ---
+# Meta
+description: Images and description of mould, a project inspired by the use of statistics in psychology.
 # Collection
 collection: works
 date: 2012-07-01

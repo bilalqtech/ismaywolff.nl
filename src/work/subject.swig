@@ -1,4 +1,6 @@
 ---
+# Meta
+description: Images and description of subject, a project focused on finding and documenting the smallest village in the Netherlands.
 # Collection
 collection: works
 date: 2011-04-01

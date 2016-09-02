@@ -1,4 +1,6 @@
 ---
+# Meta
+description: Images and description of induction, an installation made during an exchange in Germany.
 # Collection
 collection: works
 date: 2011-09-01
