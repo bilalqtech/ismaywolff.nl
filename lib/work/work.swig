@@ -7,8 +7,6 @@
       <h2 itemprop="name">{{ title }}</h2>
       <h3><span itemprop="artform">{{ type }}</span> · <span itemprop="dateCreated" datetime="{{ date | date('Y') }}" >{{ date | date('F Y') }}</span></h3>
       {% block description %}{% endblock %}
-      <div itemscope itemtype="http://schema.org/ImageGallery">
-        {% block imagegallery %}{% endblock %}        
-      </div>
+      {% block imagegallery %}{% endblock %}
     </div>
 {% endblock %}

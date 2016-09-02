@@ -11,7 +11,7 @@ canonical: https://ismaywolff.nl
   {% for work in works %}
     <div itemscope itemtype="http://schema.org/VisualArtwork">
       <h2>
-        <a href="{{ link.to(work.filename) }}">
+        <a itemprop="url" href="{{ link.to(work.filename) }}">
           <span itemprop="name">{{ work.title }}</span>
         </a>
       </h2>
