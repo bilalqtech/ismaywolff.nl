@@ -12,7 +12,7 @@ canonical: https://ismaywolff.nl/about
 
 {% block content %}
   <h2>About</h2>
-  <p>I'm an artist, a social scientist and a programmer. I don't fully identify with any of these areas in practice, but I do believe in the ideals that these fields represent. I use the parts that suit me and work around the parts that don't.</p>
+  <p>I'm an artist, a social scientist and a programmer. My work is a combination of these fields and an exploration of the most inspiring parts of each discipline.</p>
   <p><i>Born 1983 in Heerde, lives and works in Groningen (Netherlands).</i></p>
   <h3>Education</h3>
   <ul>
