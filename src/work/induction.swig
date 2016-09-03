@@ -21,3 +21,11 @@ canonical: https://ismaywolff.nl/work/induction
   {{ image.link('induction/2') }}
   {{ image.link('induction/3') }}
 {% endblock %}
+
+{% block footer %}
+  <p>
+    <a itemprop="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    <span> - </span>
+    <a href="https://github.com/ismay/images/tree/master/lib/induction">Download images</a>
+  </p>
+{% endblock %}

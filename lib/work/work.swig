@@ -8,5 +8,6 @@
       <h3><span itemprop="artform">{{ type }}</span> · <span itemprop="dateCreated" datetime="{{ date | date('Y') }}" >{{ date | date('F Y') }}</span></h3>
       {% block description %}{% endblock %}
       {% block imagegallery %}{% endblock %}
+      {% block footer %}{% endblock %}
     </div>
 {% endblock %}
