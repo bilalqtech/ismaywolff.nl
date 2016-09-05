@@ -1,5 +1,6 @@
 {% import "../link/link.swig" as link %}
 {% import "../image/image.swig" as image %}
+{% import "../video/video.swig" as video %}
 <!doctype html>
 <html lang="en">
   <head>

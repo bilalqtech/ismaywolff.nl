@@ -1,8 +1,8 @@
-{# cloudinate.url
+{# cloudinate.image
  #
- # Returns the path to an asset on Cloudinary.
+ # Returns the path to an image on Cloudinary.
  #}
-{%- macro url(asset, transformation) -%}
+{%- macro image(asset, transformation) -%}
 
   {%- if transformation -%}
     {%- set transform = transformation + '/' -%}
@@ -17,4 +17,16 @@
  v{{- cloudinary[asset].version -}}/
   {{- asset -}}.
   {{- cloudinary[asset].format -}}
+{%- endmacro -%}
+
+{# cloudinate.video
+ #
+ # Returns the path to a video on Cloudinary.
+ #}
+{%- macro video(asset, version, extension) -%}
+
+  https://res.cloudinary.com/ismay/video/upload/v
+  {{- version -}}/
+  {{- asset -}}.
+  {{- extension -}}
 {%- endmacro -%}
