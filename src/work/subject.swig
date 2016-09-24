@@ -30,6 +30,6 @@ canonical: https://ismaywolff.nl/work/subject
   <p>
     <a itemprop="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
     <span> - </span>
-    <a href="https://github.com/ismay/images/tree/master/lib/subject">Download images</a>
+    <a href="https://gitlab.com/ismay/images/tree/master/lib/subject">Download images</a>
   </p>
 {% endblock %}

@@ -24,7 +24,7 @@ canonical: https://ismaywolff.nl/about
   <ul>
     <li><a href="tel:+316-46226207">+316 - 462 26 207</a></li>
     <li><a href="mailto:ismay@ismaywolff.nl">ismay@ismaywolff.nl</a></li>
-    <li><a href="https://github.com/ismay">github.com/ismay</a></li>
+    <li><a href="https://gitlab.com/u/ismay">gitlab.com/u/ismay</a></li>
     <li><a href="https://keybase.io/ismay">keybase.io/ismay</a></li>
   </ul>
 {% endblock %}
