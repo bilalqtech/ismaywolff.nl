@@ -1,19 +1,18 @@
 {
   "author": "ismay",
   "description": "Source for ismaywolff.nl",
-  "name": "ismay.github.io",
+  "name": "ismaywolff.nl",
   "version": "1.0.0",
   "scripts": {
     "deploy": "npm-run-all deploy:build deploy:upload",
     "deploy:build": "node build.js",
-    "deploy:upload": "node deploy.js",
+    "deploy:upload": "surge --project ./dist --domain ismay.surge.sh",
     "start": "npm-run-all --parallel develop:*",
     "develop:serve": "browser-sync start --server '.tmp' --files '.tmp/**'",
     "develop:watch": "node build.js --development"
   },
   "devDependencies": {
     "browser-sync": "^2.14.0",
-    "gh-pages": "^0.11.0",
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-better-excerpts": "github:superwolff/metalsmith-better-excerpts#add-pattern-option",
@@ -27,6 +26,7 @@
     "metalsmith-robots": "^1.0.1",
     "metalsmith-watch": "^1.0.3",
     "npm-run-all": "^3.0.0",
+    "surge": "^0.18.0",
     "swig": "^1.4.2",
     "yargs": "^5.0.0"
   }

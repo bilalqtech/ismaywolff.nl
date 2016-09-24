@@ -1,4 +1,4 @@
-# ismay.github.io
+# ismaywolff.nl
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
@@ -23,7 +23,7 @@
 ## npm tasks
 
 * start: start development server and watch for changes
-* deploy: deploy site to github pages
+* deploy: deploy site
 
 ## license
 
