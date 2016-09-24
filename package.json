@@ -6,7 +6,7 @@
   "scripts": {
     "deploy": "npm-run-all deploy:build deploy:upload",
     "deploy:build": "node build.js",
-    "deploy:upload": "surge --project ./dist --domain ismay.surge.sh",
+    "deploy:upload": "surge --project ./dist",
     "start": "npm-run-all --parallel develop:*",
     "develop:serve": "browser-sync start --server '.tmp' --files '.tmp/**'",
     "develop:watch": "node build.js --development"
