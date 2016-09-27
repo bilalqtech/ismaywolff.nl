@@ -6,7 +6,7 @@ active: about
 # Sitemap
 canonical: https://ismaywolff.nl/about
 ---
-{% extends "lib/base/base.swig" %}
+{% extends "../lib/base/base.swig" %}
 
 {% block title %}About · {{ siteTitle }}{% endblock %}
 

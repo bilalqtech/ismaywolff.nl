@@ -6,7 +6,7 @@ active: work
 # Sitemap
 canonical: https://ismaywolff.nl
 ---
-{% extends "lib/base/base.swig" %}
+{% extends "../lib/base/base.swig" %}
 
 {% block content %}
   <h2>Work</h2>

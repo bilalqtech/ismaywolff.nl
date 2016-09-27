@@ -10,7 +10,7 @@ type: Installation
 # Sitemap
 canonical: https://ismaywolff.nl/work/induction
 ---
-{% extends "../lib/work/work.swig" %}
+{% extends "../../lib/work/work.swig" %}
 
 {% block description %}
   <p itemprop="description">An installation made during an exchange in Germany, in the abandoned military hospital complex of Beelitz-Heilstätten. Created with bits of machinery that were lying around and unhindered by any knowledge of electrical engineering. The machine consumes old VHS tapes found in the storage area of the complex.</p>

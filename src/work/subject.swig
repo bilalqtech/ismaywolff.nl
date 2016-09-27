@@ -10,7 +10,7 @@ type: Photography
 # Sitemap
 canonical: https://ismaywolff.nl/work/subject
 ---
-{% extends "../lib/work/work.swig" %}
+{% extends "../../lib/work/work.swig" %}
 
 {% block description %}
   <p itemprop="description">A project focused on finding and documenting the smallest village in the Netherlands. The search led to a village called Breezanddijk, which is located in the middle of the largest dike of the Netherlands. It's inhabited by a single family who operate a shipyard there and is accompanied by a small campsite.</p>

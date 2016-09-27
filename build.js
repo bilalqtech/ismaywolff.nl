@@ -61,12 +61,7 @@ metalsmith(__dirname)
     pattern: '**/*.swig'
   }))
   .use(cloudinary(keys))
-  .use(inPlace({
-    cache: false,
-    engine: 'swig',
-    pattern: '**/*.swig',
-    rename: true
-  }))
+  .use(inPlace())
 
   // Generate search engine specific files
   .use(when(production, sitemap({
