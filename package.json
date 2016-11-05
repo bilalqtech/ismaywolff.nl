@@ -4,31 +4,72 @@
   "name": "ismaywolff.nl",
   "version": "1.0.0",
   "scripts": {
-    "deploy": "npm-run-all deploy:build deploy:upload",
-    "deploy:build": "node build.js",
-    "deploy:upload": "surge --project ./dist --domain ismaywolff.nl",
-    "start": "npm-run-all --parallel develop:*",
-    "develop:serve": "browser-sync start --server '.tmp' --files '.tmp/**'",
-    "develop:watch": "node build.js --development"
+    "build": "NODE_ENV=production webpack --bail",
+    "deploy": "surge --project ./dist --domain ismaywolff.nl",
+    "start": "BABEL_ENV=development webpack-dev-server --content-base dist/",
+    "test": "jest --watch",
+    "test:eslint": "eslint 'src/**/*.{js,jsx}'",
+    "test:flow": "flow check",
+    "test:jest": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com:ismay/ismaywolff.nl.git"
   },
   "devDependencies": {
-    "browser-sync": "^2.14.0",
-    "jstransformer-swig": "^0.1.2",
-    "metalsmith": "^2.2.0",
-    "metalsmith-assets": "^0.1.0",
-    "metalsmith-better-excerpts": "github:superwolff/metalsmith-better-excerpts#add-pattern-option",
-    "metalsmith-cloudinary": "^0.1.0",
-    "metalsmith-collections": "^0.7.0",
-    "metalsmith-define": "^2.0.1",
-    "metalsmith-filenames": "^1.0.0",
-    "metalsmith-if": "^0.1.1",
-    "metalsmith-in-place": "^2.0.0-beta.1",
-    "metalsmith-mapsite": "^1.0.4",
-    "metalsmith-robots": "^1.0.1",
-    "metalsmith-watch": "^1.0.3",
-    "npm-run-all": "^3.0.0",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-jest": "^16.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.13.0",
+    "clean-webpack-plugin": "^0.1.13",
+    "css-loader": "^0.25.0",
+    "cssnano": "^3.7.4",
+    "dotenv": "^2.0.0",
+    "enzyme": "^2.5.1",
+    "enzyme-to-json": "^1.3.0",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-import-resolver-webpack": "^0.6.0",
+    "eslint-plugin-flowtype": "^2.20.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^6.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "flow-bin": "^0.34.0",
+    "html-webpack-plugin": "^2.22.0",
+    "jest": "^16.0.2",
+    "react-addons-test-utils": "^15.3.2",
+    "react-hot-loader": "^3.0.0-beta.3",
+    "style-loader": "^0.13.1",
     "surge": "^0.18.0",
-    "swig": "^1.4.2",
-    "yargs": "^5.0.0"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1",
+    "webpack-merge": "^0.14.1",
+    "webpack-validator": "^2.2.7"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.13.0",
+    "glamor": "^2.17.12",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.1",
+    "react-router": "^2.8.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coverageReporters": [
+      "text-summary"
+    ],
+    "moduleFileExtensions": [
+      "json",
+      "js",
+      "jsx"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$"
   }
 }

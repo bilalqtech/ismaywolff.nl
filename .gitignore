@@ -1,6 +1,15 @@
-/.tmp/
-/dist/
-/node_modules/
+# Node
 npm-debug.log
-keys.json
+/node_modules
+
+# OSX
 .DS_Store
+
+# Coverage reports
+/coverage
+
+# Build results
+/dist
+
+# Environment specific settings
+.env

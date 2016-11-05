@@ -1,0 +1,6 @@
+exports[`<Root /> renders correctly 1`] = `
+<Router
+  history={Object {}}
+  render={[Function]}
+  routes={[Function]} />
+`;

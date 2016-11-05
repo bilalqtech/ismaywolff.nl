@@ -4,26 +4,34 @@
 
 ## requirements
 
-* node.js
-* cloudinary credentials
+* node
+* an editor with editorconfig, eslint and flow
+* a valid .env file in the root of your project (see below)
 
 ## install
 
-* clone and run `npm install`
-* create `./keys.json` with your cloudinary credentials
+* clone and run `npm i`
+* create `./.env` with your preferred settings
 
-```json
-{
-  "cloud_name": "your cloud name",
-  "api_key": "your api key",
-  "api_secret": "your api secret"
-}
+```bash
+# Url parts for production and development
+DEV_BASE=http://localhost
+DEV_PORT=8888
+PROD_BASE=https://ismaywolff.nl
 ```
 
-## npm tasks
+## usage
 
-* start: start development server and watch for changes
-* deploy: deploy site
+* `npm start` to serve and rebuild on changes
+* `npm test` to run jest tests continuously while developing
+
+## other tasks
+
+* `npm run build` to build a production version (to `./dist`)
+* `npm run deploy` to deploy the contents of `./dist` to surge
+* `npm run test:jest` to run all jest tests with a coverage report
+* `npm run test:flow` to run type checking with flow
+* `npm run test:eslint` to run eslint on all `.js` and `.jsx`
 
 ## license
 

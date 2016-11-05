@@ -1,0 +1,6 @@
+exports[`<App /> renders correctly 1`] = `
+<div
+  data-css-zrm7yy="">
+  child
+</div>
+`;
