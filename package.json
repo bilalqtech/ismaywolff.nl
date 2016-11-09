@@ -9,7 +9,6 @@
     "start": "BABEL_ENV=development webpack-dev-server --content-base dist/",
     "test": "jest --watch",
     "test:eslint": "eslint 'src/**/*.{js,jsx}'",
-    "test:flow": "flow check",
     "test:jest": "jest --coverage"
   },
   "repository": {
@@ -34,12 +33,10 @@
     "eslint": "^3.5.0",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-import-resolver-webpack": "^0.6.0",
-    "eslint-plugin-flowtype": "^2.20.0",
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-react": "^6.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "flow-bin": "^0.34.0",
     "html-webpack-plugin": "^2.22.0",
     "jest": "^16.0.2",
     "react-addons-test-utils": "^15.3.2",

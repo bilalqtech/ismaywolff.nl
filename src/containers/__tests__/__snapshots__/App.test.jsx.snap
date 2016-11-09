@@ -1,6 +1,30 @@
 exports[`<App /> renders correctly 1`] = `
 <div
   data-css-zrm7yy="">
-  child
+  <Header />
+  <Match
+    component={[Function]}
+    exactly={true}
+    pattern="/" />
+  <Match
+    component={[Function]}
+    exactly={false}
+    pattern="/about" />
+  <Match
+    component={[Function]}
+    exactly={false}
+    pattern="/work/mould" />
+  <Match
+    component={[Function]}
+    exactly={false}
+    pattern="/work/induction" />
+  <Match
+    component={[Function]}
+    exactly={false}
+    pattern="/work/subject" />
+  <Match
+    component={[Function]}
+    exactly={false}
+    pattern="/work/eye-of-the-beholder" />
 </div>
 `;

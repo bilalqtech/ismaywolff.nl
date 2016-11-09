@@ -6,12 +6,9 @@ import { shallowToJson } from 'enzyme-to-json';
 import React from 'react';
 import Root from '../Root';
 
-jest.mock('react-router');
-jest.mock('../../routes', () => jest.fn(() => {}));
-
 describe('<Root />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<Root history={{}} />);
+    const wrapper = shallow(<Root />);
 
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });

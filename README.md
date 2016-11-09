@@ -5,7 +5,7 @@
 ## requirements
 
 * node
-* an editor with editorconfig, eslint and flow
+* an editor with editorconfig and eslint
 * a valid .env file in the root of your project (see below)
 
 ## install
@@ -30,7 +30,6 @@ PROD_BASE=https://ismaywolff.nl
 * `npm run build` to build a production version (to `./dist`)
 * `npm run deploy` to deploy the contents of `./dist` to surge
 * `npm run test:jest` to run all jest tests with a coverage report
-* `npm run test:flow` to run type checking with flow
 * `npm run test:eslint` to run eslint on all `.js` and `.jsx`
 
 ## license

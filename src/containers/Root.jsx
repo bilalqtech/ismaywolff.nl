@@ -1,5 +1,3 @@
-/* @flow */
-
 /**
  * Dependencies
 **/
@@ -12,7 +10,10 @@ import App from './App';
  * Component: Root
 **/
 
-const Root = () => <Router><App /></Router>;
+const Root = () =>
+  (<Router>
+    <App />
+  </Router>);
 
 /**
  * Export
