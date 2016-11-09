@@ -6,7 +6,6 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import Header from './Header';
 
 /**
  * Component: WorkPage
@@ -14,7 +13,6 @@ import Header from './Header';
 
 const WorkPage = () =>
   (<div>
-    <Header />
     <main>
       <h2>Work</h2>
       <div>

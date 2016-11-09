@@ -21,6 +21,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'src/index.ejs' })
+    new HtmlWebpackPlugin({ template: 'src/index.ejs' }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      filename: '200.html'
+    })
   ]
 };

@@ -6,7 +6,6 @@
 
 import React from 'react';
 import { style } from 'glamor';
-import Header from './Header';
 
 /**
  * Styles
@@ -26,7 +25,6 @@ const video = style({
 
 const InductionPage = () =>
   (<div>
-    <Header />
     <main>
       <div>
         <h2>Induction</h2>

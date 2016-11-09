@@ -5,7 +5,6 @@
 **/
 
 import React from 'react';
-import Header from './Header';
 
 /**
  * Component: AboutPage
@@ -13,7 +12,6 @@ import Header from './Header';
 
 const AboutPage = () =>
   (<div>
-    <Header />
     <main>
       <h2>About</h2>
       <p>I'm an artist, a social scientist and a programmer. My work is a combination of these fields and an exploration of the most inspiring parts of each discipline.</p>
