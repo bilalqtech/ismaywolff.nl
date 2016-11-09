@@ -1,12 +1,9 @@
-/* @flow */
-
 /**
  * Dependencies
 **/
 
 import React from 'react';
 import { style } from 'glamor';
-import Header from './Header';
 
 /**
  * Styles
@@ -22,7 +19,6 @@ const image = style({
 
 const MouldPage = () =>
   (<div>
-    <Header />
     <main>
       <div>
         <h2>Mould</h2>

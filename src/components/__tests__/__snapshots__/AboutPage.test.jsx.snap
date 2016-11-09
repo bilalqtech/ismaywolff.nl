@@ -1,6 +1,5 @@
 exports[`<AboutPage /> renders correctly 1`] = `
 <div>
-  <Header />
   <main>
     <h2>
       About

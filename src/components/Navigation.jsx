@@ -1,11 +1,9 @@
-/* @flow */
-
 /**
  * Dependencies
 **/
 
 import React from 'react';
-import { Link } from 'react-router';
+import Link from 'react-router/Link';
 
 /**
  * Component: Navigation

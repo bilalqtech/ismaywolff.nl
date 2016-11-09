@@ -1,6 +1,5 @@
 exports[`<WorkPage /> renders correctly 1`] = `
 <div>
-  <Header />
   <main>
     <h2>
       Work
@@ -8,7 +7,12 @@ exports[`<WorkPage /> renders correctly 1`] = `
     <div>
       <h2>
         <Link
-          onlyActiveOnIndex={false}
+          activeClassName=""
+          activeOnlyWhenExact={false}
+          activeStyle={Object {}}
+          className=""
+          isActive={[Function]}
+          replace={false}
           style={Object {}}
           to="/work/mould">
           Mould
@@ -21,7 +25,12 @@ exports[`<WorkPage /> renders correctly 1`] = `
     <div>
       <h2>
         <Link
-          onlyActiveOnIndex={false}
+          activeClassName=""
+          activeOnlyWhenExact={false}
+          activeStyle={Object {}}
+          className=""
+          isActive={[Function]}
+          replace={false}
           style={Object {}}
           to="/work/induction">
           Induction
@@ -34,7 +43,12 @@ exports[`<WorkPage /> renders correctly 1`] = `
     <div>
       <h2>
         <Link
-          onlyActiveOnIndex={false}
+          activeClassName=""
+          activeOnlyWhenExact={false}
+          activeStyle={Object {}}
+          className=""
+          isActive={[Function]}
+          replace={false}
           style={Object {}}
           to="/work/subject">
           Subject
@@ -47,7 +61,12 @@ exports[`<WorkPage /> renders correctly 1`] = `
     <div>
       <h2>
         <Link
-          onlyActiveOnIndex={false}
+          activeClassName=""
+          activeOnlyWhenExact={false}
+          activeStyle={Object {}}
+          className=""
+          isActive={[Function]}
+          replace={false}
           style={Object {}}
           to="/work/eye-of-the-beholder">
           Eye of the beholder
