@@ -1,5 +1,7 @@
 exports[`<WorkPage /> renders correctly 1`] = `
 <div>
+  <SideEffect(DocumentTitle)
+    title="Ismay Wolff" />
   <main>
     <h2>
       Work
