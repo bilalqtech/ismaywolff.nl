@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { style } from 'glamor';
+import DocumentTitle from 'react-document-title';
 
 /**
  * Styles
@@ -19,6 +20,7 @@ const image = style({
 
 const SubjectPage = () =>
   (<div>
+    <DocumentTitle title="Subject • Ismay Wolff" />
     <main>
       <div>
         <h2>Subject</h2>

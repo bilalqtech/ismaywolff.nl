@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { style } from 'glamor';
+import DocumentTitle from 'react-document-title';
 
 /**
  * Styles
@@ -19,6 +20,7 @@ const image = style({
 
 const EyeOfTheBeholderPage = () =>
   (<div>
+    <DocumentTitle title="Eye of the beholder • Ismay Wolff" />
     <main>
       <div>
         <h2>Eye of the beholder</h2>
