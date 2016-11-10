@@ -9,7 +9,7 @@
     "start": "BABEL_ENV=development webpack-dev-server --content-base dist/",
     "test": "jest --watch",
     "test:eslint": "eslint 'src/**/*.{js,jsx}'",
-    "test:jest": "jest --coverage"
+    "test:jest": "jest"
   },
   "repository": {
     "type": "git",
