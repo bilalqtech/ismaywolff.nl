@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { style } from 'glamor';
+import DocumentTitle from 'react-document-title';
 
 /**
  * Styles
@@ -23,6 +24,7 @@ const video = style({
 
 const InductionPage = () =>
   (<div>
+    <DocumentTitle title="Induction • Ismay Wolff" />
     <main>
       <div>
         <h2>Induction</h2>

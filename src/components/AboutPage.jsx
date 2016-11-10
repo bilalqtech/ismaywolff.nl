@@ -3,6 +3,7 @@
 **/
 
 import React from 'react';
+import DocumentTitle from 'react-document-title';
 
 /**
  * Component: AboutPage
@@ -10,6 +11,7 @@ import React from 'react';
 
 const AboutPage = () =>
   (<div>
+    <DocumentTitle title="About • Ismay Wolff" />
     <main>
       <h2>About</h2>
       <p>I'm an artist, a social scientist and a programmer. My work is a combination of these fields and an exploration of the most inspiring parts of each discipline.</p>

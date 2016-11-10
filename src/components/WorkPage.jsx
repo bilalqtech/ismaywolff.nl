@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { Link } from 'react-router';
+import DocumentTitle from 'react-document-title';
 
 /**
  * Component: WorkPage
@@ -11,6 +12,7 @@ import { Link } from 'react-router';
 
 const WorkPage = () =>
   (<div>
+    <DocumentTitle title="Ismay Wolff" />
     <main>
       <h2>Work</h2>
       <div>
