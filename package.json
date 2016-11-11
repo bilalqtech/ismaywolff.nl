@@ -4,10 +4,10 @@
   "name": "ismaywolff.nl",
   "version": "1.0.0",
   "scripts": {
-    "build": "NODE_ENV=production webpack -p --bail",
-    "deploy": "surge --project ./dist --domain ismaywolff.nl",
     "start": "BABEL_ENV=development webpack-dev-server --content-base dist/",
     "test": "jest --watch",
+    "build": "NODE_ENV=production webpack -p --bail",
+    "deploy": "surge --project ./dist --domain ismaywolff.nl",
     "test:eslint": "eslint 'src/**/*.{js,jsx}'",
     "test:jest": "jest"
   },
