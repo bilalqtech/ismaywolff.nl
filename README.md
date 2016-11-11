@@ -1,4 +1,4 @@
-# ismaywolff.nl
+# ismaywolff.nl [![build status](https://gitlab.com/ismay/ismaywolff.nl/badges/master/build.svg)](https://gitlab.com/ismay/ismaywolff.nl/commits/master) [![coverage report](https://gitlab.com/ismay/ismaywolff.nl/badges/master/coverage.svg)](https://gitlab.com/ismay/ismaywolff.nl/commits/master)
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
