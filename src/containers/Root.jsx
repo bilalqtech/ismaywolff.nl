@@ -1,22 +1,13 @@
-/**
- * Dependencies
-**/
+// dependencies
+import Router from 'react-router/BrowserRouter'
+import React from 'react'
+import App from './App'
 
-import Router from 'react-router/BrowserRouter';
-import React from 'react';
-import App from './App';
-
-/**
- * Component: Root
-**/
-
+// component
 const Root = () =>
   (<Router>
     <App />
-  </Router>);
+  </Router>)
 
-/**
- * Export
-**/
-
-export default Root;
+// export
+export default Root

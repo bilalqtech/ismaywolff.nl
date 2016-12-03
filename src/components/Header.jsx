@@ -1,22 +1,11 @@
-/**
- * Dependencies
-**/
+// dependencies
+import React from 'react'
 
-import React from 'react';
-import Navigation from './Navigation';
-
-/**
- * Component: Header
-**/
-
+// component
 const Header = () =>
   (<header>
     <h1>Ismay Wolff</h1>
-    <Navigation />
-  </header>);
+  </header>)
 
-/**
- * Export
-**/
-
-export default Header;
+// export
+export default Header

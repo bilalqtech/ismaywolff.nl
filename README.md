@@ -1,11 +1,11 @@
-# ismaywolff.nl [![build status](https://gitlab.com/ismay/ismaywolff.nl/badges/master/build.svg)](https://gitlab.com/ismay/ismaywolff.nl/commits/master) [![coverage report](https://gitlab.com/ismay/ismaywolff.nl/badges/master/coverage.svg)](https://gitlab.com/ismay/ismaywolff.nl/commits/master)
+# ismaywolff.nl
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
 ## requirements
 
 * node
-* an editor with editorconfig and eslint
+* an editor with editorconfig
 * a valid .env file in the root of your project (see below)
 
 ## install
@@ -23,14 +23,14 @@ PROD_BASE=https://ismaywolff.nl
 ## usage
 
 * `npm start` to serve and rebuild on changes
-* `npm test` to run jest tests continuously while developing
+* `npm test` to run unit tests continuously while developing
 
 ## other tasks
 
 * `npm run build` to build a production version (to `./dist`)
 * `npm run deploy` to deploy the contents of `./dist` to surge
-* `npm run test:jest` to run all jest tests with a coverage report
-* `npm run test:eslint` to run eslint on all `.js` and `.jsx`
+* `npm run test:unit` to run all unit tests with a coverage report
+* `npm run test:lint` to lint all `.js` and `.jsx`
 
 ## license
 

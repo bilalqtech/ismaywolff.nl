@@ -2,12 +2,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import App from '../App'
+import Header from '../Header'
 
 // tests
-describe('<App />', () => {
+describe('<Header />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<App>child</App>)
+    const wrapper = shallow(<Header />)
 
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
