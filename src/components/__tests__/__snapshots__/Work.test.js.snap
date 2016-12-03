@@ -1,6 +1,1 @@
-exports[`<Work /> renders correctly 1`] = `
-<div>
-  <SideEffect(DocumentTitle)
-    title="Ismay Wolff" />
-</div>
-`;
+exports[`<Work /> renders correctly 1`] = `<div />`;

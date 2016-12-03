@@ -1,13 +1,9 @@
 exports[`<App /> renders correctly 1`] = `
 <div>
-  <Header />
-  <Match
-    component={[Function]}
-    exactly={true}
-    pattern="/" />
-  <Match
-    component={[Function]}
-    exactly={false}
-    pattern="/about" />
+  <header>
+    <h1>
+      Ismay Wolff
+    </h1>
+  </header>
 </div>
 `;

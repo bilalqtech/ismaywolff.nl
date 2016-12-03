@@ -1,7 +1,5 @@
 exports[`<About /> renders correctly 1`] = `
 <div>
-  <SideEffect(DocumentTitle)
-    title="About • Ismay Wolff" />
   <main>
     <h2>
       About

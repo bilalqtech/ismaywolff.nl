@@ -1,5 +1,8 @@
 # ismaywolff.nl
 
+[![Build Status](https://travis-ci.org/ismay/ismaywolff.nl.svg?branch=master)](https://travis-ci.org/ismay/ismaywolff.nl)
+[![Coverage Status](https://coveralls.io/repos/github/ismay/ismaywolff.nl/badge.svg?branch=master)](https://coveralls.io/github/ismay/ismaywolff.nl?branch=master)
+
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
 ## requirements
@@ -19,18 +22,6 @@ DEV_BASE=http://localhost
 DEV_PORT=8888
 PROD_BASE=https://ismaywolff.nl
 ```
-
-## usage
-
-* `npm start` to serve and rebuild on changes
-* `npm test` to run unit tests continuously while developing
-
-## other tasks
-
-* `npm run build` to build a production version (to `./dist`)
-* `npm run deploy` to deploy the contents of `./dist` to surge
-* `npm run test:unit` to run all unit tests with a coverage report
-* `npm run test:lint` to lint all `.js` and `.jsx`
 
 ## license
 

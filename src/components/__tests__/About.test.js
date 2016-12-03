@@ -1,14 +1,13 @@
 // dependencies
 import React from 'react'
-import { shallow } from 'enzyme'
-import { shallowToJson } from 'enzyme-to-json'
+import renderer from 'react-test-renderer'
 import About from '../About'
 
 // tests
 describe('<About />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<About />)
+    const tree = renderer.create(<About />).toJSON()
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    expect(tree).toMatchSnapshot()
   })
 })
