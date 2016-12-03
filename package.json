@@ -46,7 +46,7 @@
     "css-loader": "^0.26.0",
     "cssnano": "^3.8.1",
     "dotenv": "^2.0.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta",
     "html-webpack-plugin": "^2.24.1",
     "jest": "^17.0.3",
     "pre-commit": "^1.1.3",

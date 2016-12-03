@@ -55,7 +55,6 @@ module.exports = {
     extractVendor,
     extractBundle,
     new CleanWebpackPlugin(['dist'], { root: process.cwd(), verbose: true }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.LoaderOptionsPlugin({ minimize: true }),
     new webpack.DefinePlugin({
       'process.env': {
