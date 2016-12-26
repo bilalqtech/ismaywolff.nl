@@ -22,10 +22,10 @@ describe('works actioncreators', () => {
   })
 
   it('should create a FETCH_WORKS_FAIL action', () => {
-    const actual = actions.fetchWorksFail('error')
+    const actual = actions.fetchWorksFail('payload')
     const expected = {
       type: types.FETCH_WORKS_FAIL,
-      payload: 'error'
+      payload: 'payload'
     }
 
     expect(actual).toEqual(expected)

@@ -9,9 +9,8 @@ describe('departments reducer', () => {
   }
 
   const fetchingState = {
-    isFetching: true,
-    items: {},
-    result: []
+    ...initialState,
+    isFetching: true
   }
 
   const payload = {
@@ -28,11 +27,7 @@ describe('departments reducer', () => {
 
   it('should handle FETCH_WORKS', () => {
     const actual = reducer(undefined, { type: types.FETCH_WORKS })
-    const expected = {
-      isFetching: true,
-      items: {},
-      result: []
-    }
+    const expected = fetchingState
 
     expect(actual).toEqual(expected)
   })
@@ -56,11 +51,7 @@ describe('departments reducer', () => {
       type: types.FETCH_WORKS_FAIL,
       payload: 'error'
     })
-    const expected = {
-      isFetching: false,
-      items: {},
-      result: []
-    }
+    const expected = initialState
 
     expect(actual).toEqual(expected)
   })
