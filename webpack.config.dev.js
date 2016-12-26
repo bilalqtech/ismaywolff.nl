@@ -52,6 +52,9 @@ module.exports = {
     historyApiFallback: true,
     port: process.env.DEV_PORT
   },
+  performance: {
+    hints: false
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
@@ -59,7 +62,9 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         DEV_BASE: JSON.stringify(process.env.DEV_BASE),
         DEV_PORT: JSON.stringify(process.env.DEV_PORT),
-        PROD_BASE: JSON.stringify(process.env.PROD_BASE)
+        PROD_BASE: JSON.stringify(process.env.PROD_BASE),
+        SPACE_ID: JSON.stringify(process.env.SPACE_ID),
+        ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN)
       }
     }),
     new HtmlWebpackPlugin({ template: 'src/index.ejs' }),

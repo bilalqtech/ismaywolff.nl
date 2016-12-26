@@ -1,0 +1,12 @@
+exports[`<Routes /> renders correctly 1`] = `
+<div>
+  <Header />
+  <Match
+    exactly={true}
+    pattern="/" />
+  <Match
+    component={[Function]}
+    exactly={false}
+    pattern="/about" />
+</div>
+`;

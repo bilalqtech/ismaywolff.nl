@@ -21,6 +21,10 @@
 DEV_BASE=http://localhost
 DEV_PORT=8888
 PROD_BASE=https://ismaywolff.nl
+
+# Contentful settings
+SPACE_ID=1234
+ACCESS_TOKEN=1234
 ```
 
 ## license

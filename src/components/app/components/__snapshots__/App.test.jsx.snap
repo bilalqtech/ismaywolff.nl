@@ -1,0 +1,8 @@
+exports[`<App /> renders correctly 1`] = `
+<Provider
+  store={Object {}}>
+  <BrowserRouter>
+    <mockConstructor />
+  </BrowserRouter>
+</Provider>
+`;
