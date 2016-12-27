@@ -1,12 +1,12 @@
 import React from 'react'
-import { mount } from 'enzyme'
-import { mountToJson } from 'enzyme-to-json'
+import { shallow, mount } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import { WorkList } from './WorkList'
 
 describe('<WorkList />', () => {
   it('renders correctly', () => {
-    const wrapper = mount(<WorkList fetchWorks={() => {}} works={{}} />)
-    expect(mountToJson(wrapper)).toMatchSnapshot()
+    const wrapper = shallow(<WorkList fetchWorks={() => {}} works={{}} />)
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('fetches works on mount', () => {

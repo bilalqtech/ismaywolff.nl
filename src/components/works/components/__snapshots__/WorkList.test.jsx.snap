@@ -1,18 +1,11 @@
 exports[`<WorkList /> renders correctly 1`] = `
-<WorkList
-  fetchWorks={[Function]}
-  works={Object {}}>
+<div>
+  <SideEffect(DocumentTitle)
+    title="Ismay Wolff" />
   <div>
-    <SideEffect(DocumentTitle)
-      title="Ismay Wolff">
-      <DocumentTitle
-        title="Ismay Wolff" />
-    </SideEffect(DocumentTitle)>
-    <div>
-      <pre>
-        {}
-      </pre>
-    </div>
+    <pre>
+      {}
+    </pre>
   </div>
-</WorkList>
+</div>
 `;
