@@ -1,9 +1,9 @@
 # ismaywolff.nl
 
-[![Travis](https://img.shields.io/travis/ismay/ismaywolff.nl.svg)](https://travis-ci.org/ismay/ismaywolff.nl)
-[![Coveralls](https://img.shields.io/coveralls/ismay/ismaywolff.nl.svg)](https://coveralls.io/github/ismay/ismaywolff.nl?branch=master)
-[![David](https://img.shields.io/david/ismay/ismaywolff.nl.svg)](https://david-dm.org/ismay/ismaywolff.nl)
-[![David](https://img.shields.io/david/dev/ismay/ismaywolff.nl.svg)](https://david-dm.org/ismay/ismaywolff.nl?type=dev)
+[![build status][build-badge]][build-url]
+[![coverage status][coverage-badge]][coverage-url]
+[![dependency status][dependency-badge]][dependency-url]
+[![devDependency status][devDependency-badge]][devDependency-url]
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
@@ -32,3 +32,12 @@ ACCESS_TOKEN=1234
 ## license
 
 [MIT](http://ismay.mit-license.org/)
+
+[build-badge]: https://img.shields.io/travis/ismay/ismaywolff.nl.svg
+[build-url]: https://travis-ci.org/ismay/ismaywolff.nl
+[coverage-badge]: https://img.shields.io/coveralls/ismay/ismaywolff.nl.svg
+[coverage-url]: https://coveralls.io/github/ismay/ismaywolff.nl?branch=master
+[dependency-badge]: https://img.shields.io/david/ismay/ismaywolff.nl.svg
+[dependency-url]: https://david-dm.org/ismay/ismaywolff.nl
+[devDependency-badge]: https://img.shields.io/david/dev/ismay/ismaywolff.nl.svg
+[devDependency-url]: https://david-dm.org/ismay/ismaywolff.nl?type=dev
