@@ -1,7 +1,7 @@
 # ismaywolff.nl
 
-[![Build Status](https://travis-ci.org/ismay/ismaywolff.nl.svg?branch=master)](https://travis-ci.org/ismay/ismaywolff.nl)
-[![Coverage Status](https://coveralls.io/repos/github/ismay/ismaywolff.nl/badge.svg?branch=master)](https://coveralls.io/github/ismay/ismaywolff.nl?branch=master)
+[![Travis](https://img.shields.io/travis/ismay/ismaywolff.nl.svg)](https://travis-ci.org/ismay/ismaywolff.nl)
+[![Coveralls](https://img.shields.io/coveralls/ismay/ismaywolff.nl.svg)](https://coveralls.io/github/ismay/ismaywolff.nl?branch=master)
 [![David](https://img.shields.io/david/ismay/ismaywolff.nl.svg)](https://david-dm.org/ismay/ismaywolff.nl)
 [![David](https://img.shields.io/david/dev/ismay/ismaywolff.nl.svg)](https://david-dm.org/ismay/ismaywolff.nl?type=dev)
 
