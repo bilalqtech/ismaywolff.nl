@@ -33,7 +33,7 @@ ACCESS_TOKEN=1234
 
 [MIT](http://ismay.mit-license.org/)
 
-[build-badge]: https://img.shields.io/travis/ismay/ismaywolff.nl.svg
+[build-badge]: https://img.shields.io/travis/ismay/ismaywolff.nl/master.svg
 [build-url]: https://travis-ci.org/ismay/ismaywolff.nl
 [coverage-badge]: https://img.shields.io/coveralls/ismay/ismaywolff.nl.svg
 [coverage-url]: https://coveralls.io/github/ismay/ismaywolff.nl?branch=master
