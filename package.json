@@ -9,20 +9,12 @@
     "deploy": "surge --project ./dist --domain ismaywolff.nl",
     "test": "npm run test:coverage && npm run test:lint",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "test:fix": "eslint src/**/*.{js,jsx} --fix",
     "test:lint": "eslint src/**/*.{js,jsx}",
-    "test:unit": "jest",
     "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:ismay/ismaywolff.nl.git"
-  },
-  "standard": {
-    "env": {
-      "jest": true,
-      "browser": true
-    }
   },
   "jest": {
     "collectCoverageFrom": [
