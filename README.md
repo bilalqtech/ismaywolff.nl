@@ -21,12 +21,13 @@
 ```bash
 # Url parts for production and development
 DEV_BASE=http://localhost
-DEV_PORT=8888
+DEV_PORT=8080
 PROD_BASE=https://ismaywolff.nl
 
 # Contentful settings
 SPACE_ID=1234
-ACCESS_TOKEN=1234
+CONTENT_DELIVERY_TOKEN=1234
+CONTENT_PREVIEW_TOKEN=1234
 ```
 
 ## license

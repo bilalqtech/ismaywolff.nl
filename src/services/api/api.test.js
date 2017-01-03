@@ -1,8 +1,8 @@
 import 'isomorphic-fetch'
-import { getJson } from './api'
+import Api from './api'
 
 describe('api service', () => {
-  describe('getJson', () => {
+  describe('get', () => {
     beforeEach(() => {
       window.fetch = jest.fn()
     })
@@ -14,7 +14,7 @@ describe('api service', () => {
       const expected = { response }
 
       window.fetch.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
-      return getJson('endpoint').then(actual => expect(actual).toEqual(expected))
+      return Api.get('endpoint').then(actual => expect(actual).toEqual(expected))
     })
 
     it('should return an error if the response is not ok', () => {
@@ -24,7 +24,7 @@ describe('api service', () => {
       const expected = { error }
 
       window.fetch.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
-      return getJson('endpoint').then(actual => expect(actual).toEqual(expected))
+      return Api.get('endpoint').then(actual => expect(actual).toEqual(expected))
     })
 
     it('should return an error on network errors', () => {
@@ -33,7 +33,7 @@ describe('api service', () => {
       const expected = { error }
 
       window.fetch.mockImplementationOnce(() => Promise.reject(new Error(message)))
-      return getJson('endpoint').then(actual => expect(actual).toEqual(expected))
+      return Api.get('endpoint').then(actual => expect(actual).toEqual(expected))
     })
   })
 })

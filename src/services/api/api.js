@@ -1,20 +1,16 @@
 import checkStatus from './check-status'
+import { TOKEN } from './constants'
 
-export const getJson = endpoint => {
-  const headers = new Headers({
-    Authorization: `Bearer ${process.env.ACCESS_TOKEN}`
-  })
+export default class Api {
+  static get(endpoint) {
+    const headers = new Headers({ Authorization: `Bearer ${TOKEN}` })
+    const init = { method: 'GET', headers }
+    const request = new Request(endpoint, init)
 
-  const init = {
-    method: 'GET',
-    headers
+    return fetch(request)
+      .then(checkStatus)
+      .then(response => response.json())
+      .then(json => ({ response: json }))
+      .catch(error => ({ error }))
   }
-
-  const request = new Request(endpoint, init)
-
-  return fetch(request)
-    .then(checkStatus)
-    .then(response => response.json())
-    .then(response => ({ response }))
-    .catch(error => ({ error }))
 }

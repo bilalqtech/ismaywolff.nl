@@ -1,4 +1,4 @@
-import * as api from './api'
 import * as constants from './constants'
 
-export { api, constants }
+export { constants }
+export { default } from './api'

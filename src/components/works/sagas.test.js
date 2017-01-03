@@ -1,11 +1,11 @@
 import { takeLatest } from 'redux-saga'
 import { call, put } from 'redux-saga/effects'
-
-import * as sagas from './sagas'
+import { normalize, arrayOf } from 'normalizr'
 import * as actions from './actions'
+import * as sagas from './sagas'
+import * as schemas from './schemas'
 import * as types from './actionTypes'
-
-import { api, constants as apiConstants } from '../../services/api'
+import Api, { constants } from '../../services/api'
 
 describe('works sagas', () => {
   describe('watchFetchWorks', () => {
@@ -22,26 +22,30 @@ describe('works sagas', () => {
     it('should fetch data', () => {
       const generator = sagas.fetchWorks()
       const actual = generator.next().value
-      const expected = call(api.getJson, apiConstants.WORKS_ENDPOINT)
+      const expected = call(Api.get, constants.WORKS_ENDPOINT)
+
+      expect(actual).toEqual(expected)
+    })
+
+    it('should call normalizr on a response', () => {
+      const response = { items: 'items' }
+      const generator = sagas.fetchWorks()
+      const expected = call(normalize, response.items, arrayOf(schemas.works))
+
+      generator.next()
+      const actual = generator.next({ response }).value
 
       expect(actual).toEqual(expected)
     })
 
     it('should put fetchWorksSuccess on a response', () => {
-      const response = {
-        items: [{ sys: { id: 1 } }]
-      }
-      const normalized = {
-        entities: {
-          works: { 1: response.items[0] }
-        },
-        result: [1]
-      }
+      const normalized = 'normalized'
       const generator = sagas.fetchWorks()
       const expected = put(actions.fetchWorksSuccess(normalized))
 
       generator.next()
-      const actual = generator.next({ response }).value
+      generator.next({ response: 'response' })
+      const actual = generator.next(normalized).value
 
       expect(actual).toEqual(expected)
     })

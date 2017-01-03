@@ -1,3 +1,12 @@
-const base = `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}`
+// current build env
+const isProd = process.env.NODE_ENV === 'production'
 
-export const WORKS_ENDPOINT = `${base}/entries?content_type=works`
+// endpoints
+const DOMAIN = isProd ? 'cdn' : 'preview'
+const BASE = `https://${DOMAIN}.contentful.com/spaces/${process.env.SPACE_ID}`
+export const WORKS_ENDPOINT = `${BASE}/entries?content_type=works`
+
+// token
+const PROD_TOKEN = process.env.CONTENT_DELIVERY_TOKEN
+const DEV_TOKEN = process.env.CONTENT_PREVIEW_TOKEN
+export const TOKEN = isProd ? PROD_TOKEN : DEV_TOKEN

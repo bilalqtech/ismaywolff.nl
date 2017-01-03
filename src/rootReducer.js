@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { constants as WORKS, reducer as works } from './components/works'
+import works, { constants as WORKS } from './components/works'
 
 export default combineReducers({
   [WORKS.NAME]: works

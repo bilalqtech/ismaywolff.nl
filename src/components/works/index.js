@@ -6,4 +6,4 @@ import * as schemas from './schemas'
 
 export { actionTypes, actions, constants, sagas, schemas }
 export { default as WorkList } from './components/WorkList'
-export { default as reducer } from './reducer'
+export { default } from './reducer'
