@@ -16,22 +16,27 @@ import './index.css'
 // create empty store
 const store = configureStore({})
 
-// render the app in #app
-render(
-  <AppContainer>
-    <App store={store} />
-  </AppContainer>,
-  document.getElementById('app')
-)
+// abstract render for hot reloading
+const renderWithHotReload = AppComponent => {
+  render(
+    <AppContainer>
+      <AppComponent store={store} />
+    </AppContainer>,
+    document.getElementById('app')
+  )
+}
+
+// initial render
+renderWithHotReload(App)
 
 // enable hot reloading, will be stripped in production
-if (module.hot) {
+if (process.env.NODE_ENV !== 'production' && module.hot) {
   module.hot.accept('./components/app', () => {
-    render(
-      <AppContainer>
-        <App store={store} />
-      </AppContainer>,
-      document.getElementById('app')
-    )
+    const NextApp = require('./components/app').App
+    renderWithHotReload(NextApp)
+  })
+  module.hot.accept('./rootReducer', () => {
+    const nextRootReducer = require('./rootReducer').default
+    store.replaceReducer(nextRootReducer)
   })
 }

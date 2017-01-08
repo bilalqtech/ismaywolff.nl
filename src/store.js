@@ -14,14 +14,6 @@ const configureStore = preloadedState => {
   // start saga watchers
   sagaMiddleware.run(rootSaga)
 
-  // enable hot module reloading, will be stripped during production
-  if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('./components/app', () => {
-      const nextRootReducer = require('./components/app').App
-      store.replaceReducer(nextRootReducer)
-    })
-  }
-
   return store
 }
 

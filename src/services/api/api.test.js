@@ -8,10 +8,10 @@ describe('api service', () => {
     })
 
     it('should return the destringified response if it is ok', () => {
-      const response = { data: ['data'] }
-      const body = JSON.stringify(response)
+      const data = { key: 'value' }
+      const body = JSON.stringify(data)
       const init = { status: 200, statusText: 'OK' }
-      const expected = { response }
+      const expected = { data }
 
       window.fetch.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
       return Api.get('endpoint').then(actual => expect(actual).toEqual(expected))
