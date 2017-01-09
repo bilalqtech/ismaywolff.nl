@@ -27,24 +27,24 @@ describe('works sagas', () => {
       expect(actual).toEqual(expected)
     })
 
-    it('should call normalizr on a response', () => {
-      const response = { items: 'items' }
+    it('should call normalizr on data', () => {
+      const data = { items: 'items' }
       const generator = sagas.fetchWorks()
-      const expected = call(normalize, response.items, arrayOf(schemas.works))
+      const expected = call(normalize, data.items, arrayOf(schemas.works))
 
       generator.next()
-      const actual = generator.next({ response }).value
+      const actual = generator.next({ data }).value
 
       expect(actual).toEqual(expected)
     })
 
-    it('should put fetchWorksSuccess on a response', () => {
+    it('should put fetchWorksSuccess on data', () => {
       const normalized = 'normalized'
       const generator = sagas.fetchWorks()
       const expected = put(actions.fetchWorksSuccess(normalized))
 
       generator.next()
-      generator.next({ response: 'response' })
+      generator.next({ data: 'data' })
       const actual = generator.next(normalized).value
 
       expect(actual).toEqual(expected)

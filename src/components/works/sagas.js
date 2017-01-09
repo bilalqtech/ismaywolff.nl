@@ -7,9 +7,9 @@ import * as types from './actionTypes'
 import Api, { constants } from '../../services/api'
 
 export function* fetchWorks() {
-  const { response, error } = yield call(Api.get, constants.WORKS_ENDPOINT)
-  if (response) {
-    const normalized = yield call(normalize, response.items, arrayOf(schemas.works))
+  const { data, error } = yield call(Api.get, constants.WORKS_ENDPOINT)
+  if (data) {
+    const normalized = yield call(normalize, data.items, arrayOf(schemas.works))
     yield put(actions.fetchWorksSuccess(normalized))
   } else {
     yield put(actions.fetchWorksFail(error))
