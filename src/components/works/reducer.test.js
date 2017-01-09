@@ -3,6 +3,8 @@ import * as types from './actionTypes'
 
 describe('departments reducer', () => {
   const initialState = {
+    errorMessage: '',
+    hasError: false,
     isFetching: false,
     items: {},
     result: []
@@ -38,6 +40,8 @@ describe('departments reducer', () => {
       payload
     })
     const expected = {
+      errorMessage: '',
+      hasError: false,
       isFetching: false,
       items: payload.entities.works,
       result: payload.result
@@ -49,9 +53,15 @@ describe('departments reducer', () => {
   it('should handle FETCH_WORKS_FAIL', () => {
     const actual = reducer(fetchingState, {
       type: types.FETCH_WORKS_FAIL,
-      payload: 'error'
+      payload: new Error('error')
     })
-    const expected = initialState
+    const expected = {
+      errorMessage: 'error',
+      hasError: true,
+      isFetching: false,
+      items: {},
+      result: []
+    }
 
     expect(actual).toEqual(expected)
   })
