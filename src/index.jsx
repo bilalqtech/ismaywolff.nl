@@ -3,15 +3,15 @@ import 'babel-polyfill'
 import 'isomorphic-fetch'
 import 'normalize.css'
 
+// globally scoped css
+import './index.css'
+
 // import dependencies
 import React from 'react'
 import { AppContainer } from 'react-hot-loader'
 import { render } from 'react-dom'
 import { App } from './components/app'
 import configureStore from './store'
-
-// globally scoped css
-import './index.css'
 
 // create empty store
 const store = configureStore({})
