@@ -5,5 +5,6 @@ import * as sagas from './sagas'
 import * as schemas from './schemas'
 
 export { actionTypes, actions, constants, sagas, schemas }
-export { default as WorkList } from './components/WorkList'
+export { default as WorkListContainer } from './components/WorkListContainer'
+export { default as WorkListItemContainer } from './components/WorkListItemContainer'
 export { default } from './reducer'

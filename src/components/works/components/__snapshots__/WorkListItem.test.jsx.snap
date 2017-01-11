@@ -1,0 +1,5 @@
+exports[`<WorkListItem /> renders correctly 1`] = `
+<div>
+  title
+</div>
+`;

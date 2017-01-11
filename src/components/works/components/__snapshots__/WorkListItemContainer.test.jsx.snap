@@ -1,0 +1,4 @@
+exports[`<WorkListItemContainer /> renders correctly 1`] = `
+<WorkListItem
+  work={Object {}} />
+`;

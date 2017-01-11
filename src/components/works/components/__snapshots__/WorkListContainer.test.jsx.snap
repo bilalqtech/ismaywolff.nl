@@ -1,0 +1,8 @@
+exports[`<WorkListContainer /> renders correctly 1`] = `
+<WorkList
+  ids={
+    Array [
+      "1",
+    ]
+  } />
+`;

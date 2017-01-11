@@ -1,11 +1,6 @@
 exports[`<WorkList /> renders correctly 1`] = `
 <div>
-  <SideEffect(DocumentTitle)
-    title="Ismay Wolff" />
-  <div>
-    <pre>
-      {}
-    </pre>
-  </div>
+  <Connect(WorkListItemContainer)
+    id="1" />
 </div>
 `;
