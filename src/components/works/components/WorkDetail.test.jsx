@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import WorkListItem from './WorkListItem'
+import WorkDetail from './WorkDetail'
 
-describe('<WorkListItem />', () => {
+describe('<WorkDetail />', () => {
   it('renders correctly', () => {
     const mockWork = {
       description: 'description',
@@ -12,7 +12,7 @@ describe('<WorkListItem />', () => {
       title: 'title',
       type: 'type'
     }
-    const wrapper = shallow(<WorkListItem work={mockWork} />)
+    const wrapper = shallow(<WorkDetail work={mockWork} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

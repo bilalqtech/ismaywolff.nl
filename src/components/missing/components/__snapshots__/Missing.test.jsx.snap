@@ -1,0 +1,5 @@
+exports[`<Missing /> renders correctly 1`] = `
+<div>
+  That page does not exist
+</div>
+`;

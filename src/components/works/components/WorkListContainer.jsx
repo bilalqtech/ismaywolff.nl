@@ -10,7 +10,8 @@ export class WorkListContainer extends Component {
   }
 
   render() {
-    return <WorkList ids={this.props.works.result} />
+    const { isFetching, result } = this.props.works
+    return <WorkList ids={result} isFetching={isFetching} />
   }
 }
 

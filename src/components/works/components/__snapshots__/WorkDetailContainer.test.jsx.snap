@@ -1,10 +1,10 @@
-exports[`<WorkListItemContainer /> renders correctly 1`] = `
-<WorkListItem
+exports[`<WorkDetailContainer /> renders correctly 1`] = `
+<WorkDetail
   work={
     Object {
       "description": "description",
       "published": "published",
-      "slug": "title",
+      "slug": "slug",
       "title": "title",
       "type": "type",
     }

@@ -1,0 +1,15 @@
+exports[`<WorkDetail /> renders correctly 1`] = `
+<div>
+  <h1>
+    title
+  </h1>
+  <p>
+    type
+     - 
+    published
+  </p>
+  <p>
+    description
+  </p>
+</div>
+`;

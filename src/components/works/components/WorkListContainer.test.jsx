@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import { WorkListContainer } from './WorkListContainer'
 
-jest.mock('./WorkListItemContainer')
+jest.mock('./WorkList', () => () => <div>WorkListMock</div>)
 
 describe('<WorkListContainer />', () => {
   const mockWorks = {

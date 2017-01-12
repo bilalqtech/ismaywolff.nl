@@ -5,8 +5,18 @@ import { WorkListItemContainer } from './WorkListItemContainer'
 
 describe('<WorkListItemContainer />', () => {
   it('renders correctly', () => {
-    const works = { items: { 1: { fields: {} } } }
-    const wrapper = shallow(<WorkListItemContainer id={'1'} works={works} />)
+    const mockWorks = {
+      items: {
+        1: {
+          description: 'description',
+          published: 'published',
+          slug: 'title',
+          title: 'title',
+          type: 'type'
+        }
+      }
+    }
+    const wrapper = shallow(<WorkListItemContainer id={'1'} works={mockWorks} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

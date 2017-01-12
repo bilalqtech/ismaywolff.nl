@@ -1,5 +1,6 @@
-import { Schema } from 'normalizr'
+import { schema } from 'normalizr'
 
-export const works = new Schema('works', {
-  idAttribute: entity => entity.sys.id
+export const work = new schema.Entity('works', {}, {
+  processStrategy: value => value.fields,
+  idAttribute: value => value.fields.slug
 })

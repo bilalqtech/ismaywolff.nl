@@ -1,17 +1,16 @@
 import React, { PropTypes } from 'react'
-import Link from 'react-router/Link'
 
-function WorkListItem({ work }) {
+function WorkDetail({ work }) {
   return (
     <div>
-      <h1><Link to={`/work/${work.slug}`}>{work && work.title}</Link></h1>
+      <h1>{work && work.title}</h1>
       <p>{work && work.type} - {work && work.published}</p>
       <p>{work && work.description}</p>
     </div>
   )
 }
 
-WorkListItem.propTypes = {
+WorkDetail.propTypes = {
   work: PropTypes.shape({
     description: PropTypes.string.isRequired,
     published: PropTypes.string.isRequired,
@@ -21,4 +20,4 @@ WorkListItem.propTypes = {
   })
 }
 
-export default WorkListItem
+export default WorkDetail

@@ -1,6 +1,6 @@
 import { takeLatest } from 'redux-saga'
 import { call, put } from 'redux-saga/effects'
-import { normalize, arrayOf } from 'normalizr'
+import { normalize } from 'normalizr'
 import * as actions from './actions'
 import * as sagas from './sagas'
 import * as schemas from './schemas'
@@ -30,7 +30,7 @@ describe('works sagas', () => {
     it('should call normalizr on data', () => {
       const data = { items: 'items' }
       const generator = sagas.fetchWorks()
-      const expected = call(normalize, data.items, arrayOf(schemas.works))
+      const expected = call(normalize, data.items, [schemas.work])
 
       generator.next()
       const actual = generator.next({ data }).value

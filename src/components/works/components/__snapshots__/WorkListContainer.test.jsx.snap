@@ -1,5 +1,5 @@
 exports[`<WorkListContainer /> renders correctly 1`] = `
-<WorkList
+<Component
   ids={
     Array [
       "1",

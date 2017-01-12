@@ -3,5 +3,6 @@ exports[`<Header /> renders correctly 1`] = `
   <h1>
     Ismay Wolff
   </h1>
+  <Navigation />
 </header>
 `;

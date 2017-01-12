@@ -1,18 +1,18 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import WorkListItem from './WorkListItem'
+import { WorkDetailContainer } from './WorkDetailContainer'
 
-describe('<WorkListItem />', () => {
+describe('<WorkDetailContainer />', () => {
   it('renders correctly', () => {
-    const mockWork = {
+    const mockWorks = { items: { id: {
       description: 'description',
       published: 'published',
-      slug: 'title',
+      slug: 'slug',
       title: 'title',
       type: 'type'
-    }
-    const wrapper = shallow(<WorkListItem work={mockWork} />)
+    } } }
+    const wrapper = shallow(<WorkDetailContainer params={{ id: 'id' }} works={mockWorks} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

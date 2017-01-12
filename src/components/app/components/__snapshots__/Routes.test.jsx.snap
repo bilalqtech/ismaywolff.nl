@@ -5,8 +5,13 @@ exports[`<Routes /> renders correctly 1`] = `
     exactly={true}
     pattern="/" />
   <Match
+    exactly={false}
+    pattern="/work/:id" />
+  <Match
     component={[Function]}
     exactly={false}
     pattern="/about" />
+  <Miss
+    component={[Function]} />
 </div>
 `;
