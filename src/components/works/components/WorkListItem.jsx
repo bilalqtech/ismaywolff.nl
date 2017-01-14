@@ -18,7 +18,7 @@ WorkListItem.propTypes = {
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
-  })
+  }).isRequired
 }
 
 export default WorkListItem

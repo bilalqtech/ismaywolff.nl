@@ -11,7 +11,7 @@ WorkListItemContainer.propTypes = {
   id: PropTypes.string.isRequired,
   works: PropTypes.shape({
     items: PropTypes.object.isRequired
-  })
+  }).isRequired
 }
 
 const mapStateToProps = state => ({

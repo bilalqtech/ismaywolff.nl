@@ -10,10 +10,10 @@ export function WorkDetailContainer({ params, works }) {
 WorkDetailContainer.propTypes = {
   params: PropTypes.shape({
     id: PropTypes.string.isRequired
-  }),
+  }).isRequired,
   works: PropTypes.shape({
     items: PropTypes.object.isRequired
-  })
+  }).isRequired
 }
 
 const mapStateToProps = state => ({
