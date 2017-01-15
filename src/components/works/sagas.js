@@ -9,7 +9,7 @@ import Api, { constants } from '../../services/api'
 export function* fetchWorks() {
   const { data, error } = yield call(Api.get, constants.WORKS_ENDPOINT)
   if (data) {
-    const normalized = yield call(normalize, data.items, [schemas.work])
+    const normalized = yield call(normalize, data.items, [schemas.works])
     yield put(actions.fetchWorksSuccess(normalized))
   } else {
     yield put(actions.fetchWorksFail(error))

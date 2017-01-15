@@ -1,7 +1,7 @@
 import * as types from './actionTypes'
 import * as actions from './actions'
 
-describe('works actioncreators', () => {
+describe('actioncreators', () => {
   it('should create a FETCH_WORKS action', () => {
     const actual = actions.fetchWorks()
     const expected = {

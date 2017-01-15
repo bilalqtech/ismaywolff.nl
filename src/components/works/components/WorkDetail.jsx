@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Loading } from '../../loading'
 
-function WorkDetail({ isFetching, work }) {
-  if (isFetching) {
+function WorkDetail({ isLoading, work }) {
+  if (isLoading) {
     return <Loading />
   }
 
@@ -20,7 +20,7 @@ WorkDetail.defaultProps = {
 }
 
 WorkDetail.propTypes = {
-  isFetching: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
   work: PropTypes.shape({
     description: PropTypes.string,
     published: PropTypes.string,

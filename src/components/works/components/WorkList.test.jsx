@@ -5,12 +5,12 @@ import WorkList from './WorkList'
 
 describe('<WorkList />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<WorkList ids={['1']} isFetching={false} />)
+    const wrapper = shallow(<WorkList ids={['1']} isLoading={false} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('shows a loading indicator when there are no works', () => {
-    const wrapper = shallow(<WorkList ids={[]} isFetching />)
+    const wrapper = shallow(<WorkList ids={[]} isLoading />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

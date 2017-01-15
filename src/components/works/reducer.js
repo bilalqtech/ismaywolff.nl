@@ -7,7 +7,7 @@ const initialState = {
   result: []
 }
 
-export default function works(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case types.FETCH_WORKS:
       return {

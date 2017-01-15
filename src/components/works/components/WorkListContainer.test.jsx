@@ -3,21 +3,21 @@ import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import { WorkListContainer } from './WorkListContainer'
 
-jest.mock('./WorkList', () => () => <div>WorkListMock</div>)
+jest.mock('./WorkList', () => () => <div>WorkList</div>)
 
 describe('<WorkListContainer />', () => {
-  const mockWorks = {
+  const works = {
     result: ['1']
   }
 
   it('renders correctly', () => {
-    const wrapper = shallow(<WorkListContainer fetchWorks={() => {}} works={mockWorks} />)
+    const wrapper = shallow(<WorkListContainer fetchWorks={() => {}} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('fetches works on mount', () => {
-    const mockFetch = jest.fn()
-    mount(<WorkListContainer fetchWorks={mockFetch} works={mockWorks} />)
-    expect(mockFetch).toBeCalled()
+    const spy = jest.fn()
+    mount(<WorkListContainer fetchWorks={spy} works={works} />)
+    expect(spy).toBeCalled()
   })
 })

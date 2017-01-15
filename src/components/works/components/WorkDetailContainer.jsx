@@ -10,9 +10,9 @@ export class WorkDetailContainer extends Component {
 
   render() {
     const { works, params } = this.props
-    const isFetching = works[params.id] === undefined
+    const isLoading = works[params.id] === undefined
 
-    return <WorkDetail work={works[params.id]} isFetching={isFetching} />
+    return <WorkDetail work={works[params.id]} isLoading={isLoading} />
   }
 }
 

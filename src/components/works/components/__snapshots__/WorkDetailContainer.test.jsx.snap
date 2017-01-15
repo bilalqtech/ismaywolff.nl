@@ -1,6 +1,6 @@
 exports[`<WorkDetailContainer /> renders correctly 1`] = `
 <WorkDetail
-  isFetching={false}
+  isLoading={false}
   work={
     Object {
       "description": "description",

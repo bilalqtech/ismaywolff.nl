@@ -7,7 +7,7 @@ import * as schemas from './schemas'
 import * as types from './actionTypes'
 import Api, { constants } from '../../services/api'
 
-describe('works sagas', () => {
+describe('sagas', () => {
   describe('watchFetchWorks', () => {
     it('should respond to FETCH_WORKS', () => {
       const generator = sagas.watchFetchWorks()
@@ -30,7 +30,7 @@ describe('works sagas', () => {
     it('should call normalizr on data', () => {
       const data = { items: 'items' }
       const generator = sagas.fetchWorks()
-      const expected = call(normalize, data.items, [schemas.work])
+      const expected = call(normalize, data.items, [schemas.works])
 
       generator.next()
       const actual = generator.next({ data }).value

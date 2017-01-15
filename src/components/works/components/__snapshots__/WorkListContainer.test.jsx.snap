@@ -4,5 +4,6 @@ exports[`<WorkListContainer /> renders correctly 1`] = `
     Array [
       "1",
     ]
-  } />
+  }
+  isLoading={false} />
 `;
