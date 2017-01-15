@@ -8,7 +8,6 @@ describe('<WorkDetail />', () => {
     const mockWork = {
       description: 'description',
       published: 'published',
-      slug: 'title',
       title: 'title',
       type: 'type'
     }

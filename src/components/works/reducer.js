@@ -4,7 +4,7 @@ const initialState = {
   errorMessage: '',
   hasError: false,
   isFetching: false,
-  items: {},
+  entities: {},
   result: []
 }
 
@@ -20,7 +20,7 @@ export default function departments(state = initialState, action) {
         errorMessage: '',
         hasError: false,
         isFetching: false,
-        items: action.payload.entities.works,
+        entities: action.payload.entities.works,
         result: action.payload.result
       }
     case types.FETCH_WORKS_FAIL:

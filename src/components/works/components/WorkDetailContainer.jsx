@@ -4,7 +4,7 @@ import { NAME } from '../constants'
 import WorkDetail from './WorkDetail'
 
 export function WorkDetailContainer({ params, works }) {
-  return <WorkDetail work={works.items[params.id]} />
+  return <WorkDetail work={works.entities[params.id]} />
 }
 
 WorkDetailContainer.propTypes = {
@@ -12,7 +12,7 @@ WorkDetailContainer.propTypes = {
     id: PropTypes.string.isRequired
   }).isRequired,
   works: PropTypes.shape({
-    items: PropTypes.object.isRequired
+    entities: PropTypes.object.isRequired
   }).isRequired
 }
 

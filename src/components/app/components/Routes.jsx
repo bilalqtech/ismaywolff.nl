@@ -3,8 +3,8 @@ import Match from 'react-router/Match'
 import Miss from 'react-router/Miss'
 import { About } from '../../about'
 import { Header } from '../../header'
-import { WorkDetailContainer, WorkListContainer } from '../../works'
 import { Missing } from '../../missing'
+import { WorkDetailContainer, WorkListContainer } from '../../works'
 
 function Routes() {
   return (

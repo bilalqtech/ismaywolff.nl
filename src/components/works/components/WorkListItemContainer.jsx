@@ -4,13 +4,13 @@ import { NAME } from '../constants'
 import WorkListItem from './WorkListItem'
 
 export function WorkListItemContainer({ id, works }) {
-  return <WorkListItem work={works.items[id]} />
+  return <WorkListItem work={works.entities[id]} />
 }
 
 WorkListItemContainer.propTypes = {
   id: PropTypes.string.isRequired,
   works: PropTypes.shape({
-    items: PropTypes.object.isRequired
+    entities: PropTypes.object.isRequired
   }).isRequired
 }
 

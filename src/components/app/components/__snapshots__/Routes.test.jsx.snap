@@ -2,9 +2,11 @@ exports[`<Routes /> renders correctly 1`] = `
 <div>
   <Header />
   <Match
+    component={[Function]}
     exactly={true}
     pattern="/" />
   <Match
+    component={[Function]}
     exactly={false}
     pattern="/work/:id" />
   <Match

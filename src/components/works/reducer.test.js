@@ -6,7 +6,7 @@ describe('departments reducer', () => {
     errorMessage: '',
     hasError: false,
     isFetching: false,
-    items: {},
+    entities: {},
     result: []
   }
 
@@ -43,7 +43,7 @@ describe('departments reducer', () => {
       errorMessage: '',
       hasError: false,
       isFetching: false,
-      items: payload.entities.works,
+      entities: payload.entities.works,
       result: payload.result
     }
 
@@ -59,7 +59,7 @@ describe('departments reducer', () => {
       errorMessage: 'error',
       hasError: true,
       isFetching: false,
-      items: {},
+      entities: {},
       result: []
     }
 

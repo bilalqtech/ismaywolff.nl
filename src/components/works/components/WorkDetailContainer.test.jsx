@@ -5,7 +5,7 @@ import { WorkDetailContainer } from './WorkDetailContainer'
 
 describe('<WorkDetailContainer />', () => {
   it('renders correctly', () => {
-    const mockWorks = { items: { id: {
+    const mockWorks = { entities: { id: {
       description: 'description',
       published: 'published',
       slug: 'slug',

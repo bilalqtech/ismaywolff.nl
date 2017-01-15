@@ -6,7 +6,7 @@ import { WorkListItemContainer } from './WorkListItemContainer'
 describe('<WorkListItemContainer />', () => {
   it('renders correctly', () => {
     const mockWorks = {
-      items: {
+      entities: {
         1: {
           description: 'description',
           published: 'published',

@@ -4,13 +4,12 @@
   "name": "ismaywolff.nl",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --content-base dist/ --watch-poll",
     "build": "NODE_ENV=production webpack -p --bail",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "deploy": "surge --project ./dist --domain ismaywolff.nl",
-    "test": "npm run test:coverage && npm run test:lint",
-    "test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "test:lint": "eslint src/**/*.{js,jsx}",
-    "test:watch": "jest --watch"
+    "lint": "eslint src/**/*.{js,jsx}",
+    "start": "webpack-dev-server --content-base dist/ --watch-poll",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
