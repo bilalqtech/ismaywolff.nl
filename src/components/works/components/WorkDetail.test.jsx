@@ -11,7 +11,12 @@ describe('<WorkDetail />', () => {
       title: 'title',
       type: 'type'
     }
-    const wrapper = shallow(<WorkDetail work={mockWork} />)
+    const wrapper = shallow(<WorkDetail work={mockWork} isFetching={false} />)
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
+
+  it('renders a loading state', () => {
+    const wrapper = shallow(<WorkDetail isFetching />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

@@ -1,22 +1,32 @@
 import React, { PropTypes } from 'react'
+import { Loading } from '../../loading'
 
-function WorkDetail({ work }) {
+function WorkDetail({ isFetching, work }) {
+  if (isFetching) {
+    return <Loading />
+  }
+
   return (
     <div>
-      <h1>{work && work.title}</h1>
-      <p>{work && work.type} - {work && work.published}</p>
-      <p>{work && work.description}</p>
+      <h1>{work.title}</h1>
+      <p>{work.type} - {work.published}</p>
+      <p>{work.description}</p>
     </div>
   )
 }
 
+WorkDetail.defaultProps = {
+  work: {}
+}
+
 WorkDetail.propTypes = {
+  isFetching: PropTypes.bool.isRequired,
   work: PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    published: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
-  }).isRequired
+    description: PropTypes.string,
+    published: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string
+  })
 }
 
 export default WorkDetail

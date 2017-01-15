@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import { WorkDetailContainer } from './WorkDetailContainer'
 
@@ -12,7 +12,21 @@ describe('<WorkDetailContainer />', () => {
       title: 'title',
       type: 'type'
     } } }
-    const wrapper = shallow(<WorkDetailContainer params={{ id: 'id' }} works={mockWorks} />)
+    const wrapper = shallow(<WorkDetailContainer
+      fetchWorks={() => {}}
+      params={{ id: 'id' }}
+      works={mockWorks}
+    />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
+
+  it('fetches works on mount', () => {
+    const mockFetch = jest.fn()
+    mount(<WorkDetailContainer
+      fetchWorks={mockFetch}
+      params={{ id: 'id' }}
+      works={{ entities: {} }}
+    />)
+    expect(mockFetch).toBeCalled()
   })
 })
