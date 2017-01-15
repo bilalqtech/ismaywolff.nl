@@ -5,17 +5,17 @@ import { WorkDetailContainer } from './WorkDetailContainer'
 
 describe('<WorkDetailContainer />', () => {
   it('renders correctly', () => {
-    const mockWorks = { entities: { id: {
+    const works = { id: {
       description: 'description',
       published: 'published',
       slug: 'slug',
       title: 'title',
       type: 'type'
-    } } }
+    } }
     const wrapper = shallow(<WorkDetailContainer
       fetchWorks={() => {}}
       params={{ id: 'id' }}
-      works={mockWorks}
+      works={works}
     />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
@@ -25,7 +25,7 @@ describe('<WorkDetailContainer />', () => {
     mount(<WorkDetailContainer
       fetchWorks={mockFetch}
       params={{ id: 'id' }}
-      works={{ entities: {} }}
+      works={{ works: {} }}
     />)
     expect(mockFetch).toBeCalled()
   })

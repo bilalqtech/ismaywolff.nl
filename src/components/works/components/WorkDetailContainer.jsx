@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchWorks } from '../actions'
-import { NAME } from '../constants'
 import WorkDetail from './WorkDetail'
 
 export class WorkDetailContainer extends Component {
@@ -10,10 +9,10 @@ export class WorkDetailContainer extends Component {
   }
 
   render() {
-    const { params, works } = this.props
-    const isFetching = works.entities[params.id] === undefined
+    const { works, params } = this.props
+    const isFetching = works[params.id] === undefined
 
-    return <WorkDetail work={works.entities[params.id]} isFetching={isFetching} />
+    return <WorkDetail work={works[params.id]} isFetching={isFetching} />
   }
 }
 
@@ -22,13 +21,11 @@ WorkDetailContainer.propTypes = {
   params: PropTypes.shape({
     id: PropTypes.string.isRequired
   }).isRequired,
-  works: PropTypes.shape({
-    entities: PropTypes.object.isRequired
-  }).isRequired
+  works: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-  works: state[NAME]
+  works: state.entities.works
 })
 
 export default connect(mapStateToProps, { fetchWorks })(WorkDetailContainer)

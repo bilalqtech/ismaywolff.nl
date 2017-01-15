@@ -1,21 +1,18 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { NAME } from '../constants'
 import WorkListItem from './WorkListItem'
 
 export function WorkListItemContainer({ id, works }) {
-  return <WorkListItem work={works.entities[id]} />
+  return <WorkListItem work={works[id]} />
 }
 
 WorkListItemContainer.propTypes = {
   id: PropTypes.string.isRequired,
-  works: PropTypes.shape({
-    entities: PropTypes.object.isRequired
-  }).isRequired
+  works: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-  works: state[NAME]
+  works: state.entities.works
 })
 
 export default connect(mapStateToProps)(WorkListItemContainer)

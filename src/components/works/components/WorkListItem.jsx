@@ -14,8 +14,8 @@ function WorkListItem({ work }) {
 WorkListItem.propTypes = {
   work: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    published: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
+    published: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired
   }).isRequired

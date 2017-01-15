@@ -1,12 +1,11 @@
 import reducer from './reducer'
 import * as types from './actionTypes'
 
-describe('departments reducer', () => {
+describe('reducer', () => {
   const initialState = {
     errorMessage: '',
     hasError: false,
     isFetching: false,
-    entities: {},
     result: []
   }
 
@@ -16,7 +15,6 @@ describe('departments reducer', () => {
   }
 
   const payload = {
-    entities: { works: 'entity' },
     result: 'result'
   }
 
@@ -43,7 +41,6 @@ describe('departments reducer', () => {
       errorMessage: '',
       hasError: false,
       isFetching: false,
-      entities: payload.entities.works,
       result: payload.result
     }
 
@@ -59,7 +56,6 @@ describe('departments reducer', () => {
       errorMessage: 'error',
       hasError: true,
       isFetching: false,
-      entities: {},
       result: []
     }
 

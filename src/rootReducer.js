@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import works, { constants as WORKS } from './components/works'
+import works from './components/works'
+import entities from './data/entities'
 
 export default combineReducers({
-  [WORKS.NAME]: works
+  entities,
+  works
 })
