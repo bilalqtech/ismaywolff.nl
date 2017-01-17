@@ -5,20 +5,20 @@ var webpack = require('webpack')
 module.exports = {
   entry: {
     main: [
+      'react-hot-loader/patch',
       'webpack-dev-server/client?' + process.env.DEV_BASE + ':' + process.env.DEV_PORT,
       'webpack/hot/only-dev-server',
-      'react-hot-loader/patch',
-      './src/index'
+      './src/index.jsx'
     ]
   },
   output: {
-    path: path.join(process.cwd(), '/dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    path: './dist'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
-      path.join(process.cwd(), '/src'),
+      './src',
       'node_modules'
     ]
   },
@@ -62,16 +62,10 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         DEV_BASE: JSON.stringify(process.env.DEV_BASE),
         DEV_PORT: JSON.stringify(process.env.DEV_PORT),
-        PROD_BASE: JSON.stringify(process.env.PROD_BASE),
         SPACE_ID: JSON.stringify(process.env.SPACE_ID),
-        CONTENT_PREVIEW_TOKEN: JSON.stringify(process.env.CONTENT_PREVIEW_TOKEN),
-        CONTENT_DELIVERY_TOKEN: JSON.stringify(process.env.CONTENT_DELIVERY_TOKEN)
+        CONTENT_PREVIEW_TOKEN: JSON.stringify(process.env.CONTENT_PREVIEW_TOKEN)
       }
     }),
-    new HtmlWebpackPlugin({ template: 'src/index.ejs' }),
-    new HtmlWebpackPlugin({
-      template: 'src/index.ejs',
-      filename: '200.html'
-    })
+    new HtmlWebpackPlugin({ template: 'src/index.ejs' })
   ]
 }

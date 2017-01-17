@@ -46,6 +46,8 @@
     "html-webpack-plugin": "^2.24.1",
     "jest": "^18.0.0",
     "react-addons-test-utils": "^15.4.1",
+    "react-hot-loader": "3.0.0-beta.6",
+    "redux-devtools-extension": "1.0.0",
     "style-loader": "^0.13.1",
     "surge": "^0.18.0",
     "webpack": "2.2.0-rc.4",
@@ -59,11 +61,9 @@
     "react": "^15.4.1",
     "react-document-title": "^2.0.2",
     "react-dom": "^15.4.1",
-    "react-hot-loader": "3.0.0-beta.6",
     "react-redux": "^5.0.2",
     "react-router": "4.0.0-alpha.6",
     "redux": "^3.6.0",
-    "redux-devtools-extension": "^1.0.0",
     "redux-saga": "^0.14.2",
     "styled-components": "^1.2.1"
   }

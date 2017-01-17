@@ -10,18 +10,22 @@ var extractVendor = new ExtractTextPlugin('vendor-[hash].css')
 
 module.exports = {
   entry: {
-    main: [
-      path.join(process.cwd(), '/src/index')
+    main: './src/index.jsx',
+    vendor: [
+      'react',
+      'react-dom',
+      'redux',
+      'redux-saga'
     ]
   },
   output: {
-    path: path.join(process.cwd(), '/dist'),
-    filename: '[name]-[hash].min.js'
+    filename: '[chunkhash].[name].js',
+    path: './dist'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
-      path.join(process.cwd(), '/src'),
+      './src',
       'node_modules'
     ]
   },
@@ -54,23 +58,36 @@ module.exports = {
   plugins: [
     extractVendor,
     extractBundle,
-    new CleanWebpackPlugin(['dist'], { root: process.cwd(), verbose: true }),
-    new webpack.LoaderOptionsPlugin({ minimize: true }),
+    new CleanWebpackPlugin('./dist'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        DEV_BASE: JSON.stringify(process.env.DEV_BASE),
-        DEV_PORT: JSON.stringify(process.env.DEV_PORT),
         PROD_BASE: JSON.stringify(process.env.PROD_BASE),
         SPACE_ID: JSON.stringify(process.env.SPACE_ID),
-        CONTENT_PREVIEW_TOKEN: JSON.stringify(process.env.CONTENT_PREVIEW_TOKEN),
         CONTENT_DELIVERY_TOKEN: JSON.stringify(process.env.CONTENT_DELIVERY_TOKEN)
       }
     }),
-    new HtmlWebpackPlugin({ template: 'src/index.ejs' }),
     new HtmlWebpackPlugin({
       template: 'src/index.ejs',
-      filename: '200.html'
+      filename: 'index.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      filename: '200.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: [
+        'vendor',
+        'manifest'
+      ]
     })
   ]
 }
