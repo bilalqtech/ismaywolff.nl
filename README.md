@@ -19,10 +19,9 @@
 * create `./.env` with your preferred settings
 
 ```bash
-# Url parts for production and development
+# Url parts for development
 DEV_BASE=http://localhost
 DEV_PORT=8080
-PROD_BASE=https://ismaywolff.nl
 
 # Contentful settings
 SPACE_ID=1234
