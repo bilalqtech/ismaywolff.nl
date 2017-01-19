@@ -13,6 +13,10 @@
 * an editor with editorconfig
 * a valid .env file in the root of your project (see below)
 
+## containers
+
+Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/)
+
 ## install
 
 * clone and run `npm i`

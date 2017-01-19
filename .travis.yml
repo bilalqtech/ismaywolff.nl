@@ -12,11 +12,15 @@ script:
   - yarn run lint
   - yarn run build
 after_success:
+  # login to docker hub and set repo location
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - export REPO=ismay/ismaywolff.nl
+  # set branch and tags
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
   - export TAG=`if [ "$BRANCH" == "master" ]; then echo "latest"; else echo $BRANCH; fi`
+  # build container
   - docker build -f Dockerfile -t $REPO:$TRAVIS_COMMIT .
+  # tag and push to dockerhub
   - docker tag $REPO:$TRAVIS_COMMIT $REPO:$TAG
   - docker tag $REPO:$TRAVIS_COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
   - docker push $REPO
