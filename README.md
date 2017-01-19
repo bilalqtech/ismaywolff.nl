@@ -27,10 +27,12 @@ Docker containers of this project are built automatically and can be found on [D
 DEV_BASE=http://localhost
 DEV_PORT=8080
 
-# Contentful settings
+# Contentful api tokens
 SPACE_ID=1234
-CONTENT_DELIVERY_TOKEN=1234
 CONTENT_PREVIEW_TOKEN=1234
+
+# Only used when building a production version locally, for travis generated containers this variable is set in .travis.yml
+CONTENT_DELIVERY_TOKEN=1234
 ```
 
 ## license
