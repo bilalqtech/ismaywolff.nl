@@ -39,10 +39,10 @@ CONTENT_DELIVERY_TOKEN=1234
 
 [MIT](http://ismay.mit-license.org/)
 
-[build-badge]: https://img.shields.io/travis/ismay/ismaywolff.nl/master.svg
+[build-badge]: https://img.shields.io/travis/ismay/ismaywolff.nl/develop.svg
 [build-url]: https://travis-ci.org/ismay/ismaywolff.nl
 [coverage-badge]: https://img.shields.io/coveralls/ismay/ismaywolff.nl.svg
-[coverage-url]: https://coveralls.io/github/ismay/ismaywolff.nl?branch=master
+[coverage-url]: https://coveralls.io/github/ismay/ismaywolff.nl?branch=develop
 [dependency-badge]: https://img.shields.io/david/ismay/ismaywolff.nl.svg
 [dependency-url]: https://david-dm.org/ismay/ismaywolff.nl
 [devDependency-badge]: https://img.shields.io/david/dev/ismay/ismaywolff.nl.svg
