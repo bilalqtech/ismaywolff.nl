@@ -12,25 +12,24 @@ script:
   - yarn run lint
   - yarn run build
 after_success:
-  # login to docker hub and set repo location
+  # login to docker hub
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  # set repo location
   - export REPO=ismay/ismaywolff.nl
-  # set branch and tags
+  # set branch that's currently being built
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  - export TAG=`if [ "$BRANCH" == "master" ]; then echo "latest"; else echo $BRANCH; fi`
-  # build container
-  - docker build -f Dockerfile -t $REPO:$TRAVIS_COMMIT .
-  # tag and push to dockerhub
-  - docker tag $REPO:$TRAVIS_COMMIT $REPO:$TAG
-  - docker tag $REPO:$TRAVIS_COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
-  - docker push $REPO
+  # build container with branch name as tag if on master, staging or develop
+  - if [ "$BRANCH" == "master" ] || [ "$BRANCH" == "staging" ] || [ "$BRANCH" == "develop" ]; then docker build -f Dockerfile -t $REPO:$BRANCH .; fi
+  # tag with commit message as well if on master
+  - if [ "$BRANCH" == "master" ]; then docker tag $REPO:$BRANCH $REPO:$(git log -n 1 --pretty=format:%f $TRAVIS_COMMIT); fi
+  # push to dockerhub
+  - if [ "$BRANCH" == "master" ] || [ "$BRANCH" == "staging" ] || [ "$BRANCH" == "develop" ]; then docker push $REPO; fi
 env:
   global:
+    - DOCKER_USER=ismay
     # CONTENT_DELIVERY_TOKEN
     - secure: "G3DoQ0Ulm9OeblOlndzSanRu3tea3oE+nODMWz7eGQhNicgK8J+1YtMuOw+0gXpwniKbyweshJu8mGF5Yk1B6j7sKX0DaNojshrktyNQ2joZQEh3eq+1hoHgO2/VGBPdn20jDi9RmkJEPGAqVaJxTRdPopki2JGEyjZTPOANzf3SwdSuXD5VQvTs9rt9muIdhk6XGKJHXC32SjUzeSQAbgyLcEr025uML5J1HhQXKopYexQmz9+Nx5o/VdpMlFLdjnpMy8qSQK8SP2vQ5OW/9jXo5K/dy+tz/bs3bVncaYiF8nbbrXJZftNfmv0DFXSeywzCPiLRHs3Dqv1D4Zuc1es6LRGXED2rMoclQthBPFR2U0/ndMEokFDZZASqEY3jxOpZC9BcCzfppIkfQOoI7DqU7+xtOPlE96GVQ+I/YRfvHavnHsz8z/ZdAa7quETqYlBW/lM7QoHM8FIy/L71Zq80d1EmawYy4IUUdpTOTm5PaC+FWSzWgMitzqfK1LzN9iAsielHwEyNFT5rhkjngOoepuPqDvQQb7gj2+AnWpEaGP3A1wNBif5avLnTiJ6KaqjETCnb+eDcB9LxjbEUNKV476wK9dykOITl7KAle39Dm7T+kjIRM25QZT9WSrW0AA5bsYRG96XMFpfOACACt2BDSRmqNLlQFDKlWBXE8eE="
     # SPACE_ID
     - secure: "Ad6Y6ehhPZdYncrX3sG768Ex0Crm1GGhKzji5lHbvnIqn5abeZdTJ7EgV/CXlLzT4LYoJw9Oo9gBoL67tGlWlY3XyVY6CTEOtPq6gBh5MkGdI1Rg21SBHownUQWSEgmvtZALgnQ7o2Q0KQOEHHfgSsDDbRdaZhkEOGceyTfecTTMBzExOeasKIoyxCpbwoI45CvQFK4u9fbjid7xfqKYaTE4eZQAFx3UIKjrNBZ6ifVlWKKmX7QgfXmAKcIzgjI42q9KQsmsg0opGdSf9EIpF9sAkDPGpzBVROfxTnxBWCUinlusnLp/M6Vpbemx9bzvWrVgztllrMHvSSnzJIbDtlHGu3orckuD6ImJSlSb/H7SXNgpEqj2uXBo/oe+2ed9PjGE2OfblH01MzG8izcFuECmduz9cZ811/8gBpmoU9o7we4jOGT+twRJdYC0nNerCBjgMM9gK1wi9yc0X9V71CHhF3QtbcDYYcv5V5DuEcMBqTKP/3OAnh7GIUtCoJsFTP2/qVAuCMejEHDNbl/LPsjE2vmry8egOcFLG0Tx5SCcGv0BOQtkpnrCwC8f3yjHk+zFcdcYG9U1q5Ooa0eNMd9HOJ4LN2VzKiIffzONBCQZqDC8QOV+t6W4aY9SHxzvnyMH0ipAausvLmkiNRc0tnk1mrNWnYrS6ZEi3WBE4W0="
-    # DOCKER_USER
-    - secure: "Z/816Hpg2Ir9WI9i2tXimKbDXBPB2DfjS8K2WLJIv1PN9WhUEp1y+CRvcoaBnoi5WBU50/kUMiRgq1Yho9oYKjNHjJTNtQaOnDy3iRtfblRDLVtvXQUrYNhjFBsd+7SmadgFR1jtKu0C7rs2sqcdF86G7TMYP8R7ZZ50tW3OHasaxEi+czVOHtmaoRSKLkgcJ7beUjjcU0fHbcJQGgNiLe4MZvj1GujGnylkEo9U5mhquOMxHZFVYyfzoxE4w3onJ61E2ug3ViAhlNwKlCRz3MbqJxmW5SN2AxfprLj7Te/FlF2jXpngoutp0SzgHyL4mlBcTPR5tJ6M5HTcv9D3ZFmQUSh65Xrsy7j9B0KGnW8j8moL2wYUoBwgVwnu/2o7/hn2Eh7AjVvggYxFVWQ/jhtEwnjOrKzmvfD0lLju/6vIADQMf04OX0fEsh94hLdUUar8kE9fdDIF1j21r6A41L5tZl/OSID02EpH81UhJg3Hb1TBgzgO9jfyUpHtdEvxKL8PixgrBbFuuteEwclzvtxX42Gg9YmMEWqZCOReoz4wzhDbrC6PzOq7mGtTLS2yDi2kWkv8fEzEluSxJGbeyAU+Ug9H4a4JXJDXh+WDxPu5l9BdX8xbywpCC6BE/KPV7KOX6iW0gOqdDr00W1g0fI74Hy993XO3xvpjONcULpE="
     # DOCKER_PASS
     - secure: "JSmpWcF31UlvHNElQRjK6hIi9oaQXYldXeW+/rt5bcNstJLkz6OuRqqaJhzu5GHwyytadmbHPn89zYP++T05b/J5ySI9YvMe3GY5UNj7vDLe8vwcP+aM2egLrmWBPF5/5Bw7ET564Qc8N5a041e9V7TE/lUuhriGKx5XE5Yob0UWWvd48ZRPg5FhI8Iu8ZgsFxJ6Efq+1z8RXLQKd0dnFjZ1ndDi7yFjegEXb0PbqKnrlB2zxrhU97kdiUA8aCoGnjVj52mcZMwKiAaTWV6sZGYbPx2abMZVaUnXL+VUp5dI7Rvsn6D3TKYjWmantkoJHw2+0Jz+Q6YleQnABbwCrimH86BkjpyWmvkJfUurGK8the1XqZX99vvA1VsGytSach7IvPBx3kifUdVDFKXM5v9PZPjznrVCtiSl8eu/N71B207I4wxsrgAf345PVDo2I8w3/uFPq0acNcjhuFncRfCBbckGZDm2JZMJOZx6BNcOSItwOM00RxcNrjF0ocdGYbN4LdmTpmq8rJhDWKuhTpKm1HTV6Pa3B9JVVGs1bkcnQffrgiJJa/wdFEJfYetKN3ltjwS5kp89o6cS2XuCY+XcHntMWBCMZdcg1Erf5ieEU8I0Uf+MEdqdiKH5PsNb7U7zyRMZSAAtYPvzhBRJtNGXdSctT9oIwQJZP/W8pzs="
