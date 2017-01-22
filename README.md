@@ -13,27 +13,46 @@
 * an editor with editorconfig
 * a valid .env file in the root of your project (see below)
 
-## containers
-
-Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/)
-
 ## install
 
-* clone and run `npm i`
-* create `./.env` with your preferred settings
+  * clone and run `npm i`
+  * create `./.env` with your preferred settings
 
-```bash
+  ```bash
 # Url parts for development
-DEV_BASE=http://localhost
-DEV_PORT=8080
+  DEV_BASE=http://localhost
+  DEV_PORT=8080
 
 # Contentful api tokens
-SPACE_ID=1234
-CONTENT_PREVIEW_TOKEN=1234
+  SPACE_ID=1234
+  CONTENT_PREVIEW_TOKEN=1234
 
 # Only used when building a production version locally, for travis generated containers this variable is set in .travis.yml
-CONTENT_DELIVERY_TOKEN=1234
+  CONTENT_DELIVERY_TOKEN=1234
+  ```
+
+## containers
+
+Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). To run them on a Digital Ocean CoreOS server (which is what I do) use the following cloud-config:
+
 ```
+#cloud-config
+
+coreos:
+  units:
+    - name: "dockerstart.service"
+      command: "start"
+      content: |
+        [Unit]
+        Description=app
+        Author=ismay
+
+        [Service]
+        Restart=always
+        ExecStart=/usr/bin/docker run --name app -p 80:80 ismay/ismaywolff.nl
+        ExecStop=/usr/bin/docker rm -f app
+```
+
 
 ## license
 
