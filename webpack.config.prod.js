@@ -10,7 +10,7 @@ var extractVendor = new ExtractTextPlugin('vendor-[hash].css')
 
 module.exports = {
   entry: {
-    main: './src/index.jsx',
+    main: './client/index.jsx',
     vendor: [
       'react',
       'react-dom',
@@ -25,7 +25,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
-      './src',
+      './client',
       'node_modules'
     ]
   },
@@ -67,7 +67,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.ejs',
+      template: 'client/index.ejs',
       filename: 'index.html',
       minify: {
         collapseWhitespace: true,
@@ -75,7 +75,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.ejs',
+      template: 'client/index.ejs',
       filename: '200.html',
       minify: {
         collapseWhitespace: true,

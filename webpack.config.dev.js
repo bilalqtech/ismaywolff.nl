@@ -8,7 +8,7 @@ module.exports = {
       'react-hot-loader/patch',
       'webpack-dev-server/client?' + process.env.DEV_BASE + ':' + process.env.DEV_PORT,
       'webpack/hot/only-dev-server',
-      './src/index.jsx'
+      './client/index.jsx'
     ]
   },
   output: {
@@ -18,7 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
-      './src',
+      './client',
       'node_modules'
     ]
   },
@@ -66,6 +66,6 @@ module.exports = {
         CONTENT_PREVIEW_TOKEN: JSON.stringify(process.env.CONTENT_PREVIEW_TOKEN)
       }
     }),
-    new HtmlWebpackPlugin({ template: 'src/index.ejs' })
+    new HtmlWebpackPlugin({ template: 'client/index.ejs' })
   ]
 }

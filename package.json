@@ -6,8 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack -p --bail",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "deploy": "surge --project ./dist --domain ismaywolff.nl",
-    "lint": "eslint src/**/*.{js,jsx}",
+    "lint": "eslint client/**/*.{js,jsx}",
     "start": "webpack-dev-server --content-base dist/ --watch-poll",
     "test": "jest --watch"
   },
@@ -17,10 +16,10 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/index.jsx",
-      "!src/{rootReducer,rootSaga,store}.js",
-      "!src/{components,data,services}/*/index.js"
+      "client/**/*.{js,jsx}",
+      "!client/index.jsx",
+      "!client/{rootReducer,rootSaga,store}.js",
+      "!client/{components,data,services}/*/index.js"
     ]
   },
   "devDependencies": {
@@ -49,7 +48,6 @@
     "react-hot-loader": "3.0.0-beta.6",
     "redux-devtools-extension": "1.0.0",
     "style-loader": "^0.13.1",
-    "surge": "^0.18.0",
     "webpack": "2.2.0-rc.4",
     "webpack-dev-server": "^1.16.2"
   },

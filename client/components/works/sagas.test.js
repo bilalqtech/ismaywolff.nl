@@ -5,32 +5,33 @@ import * as actions from './actions'
 import * as sagas from './sagas'
 import * as schemas from './schemas'
 import * as types from './actionTypes'
-import Api, { constants } from '../../services/api'
+import get from '../../services/get'
+import { endpoints } from '../../services/endpoints'
 
 describe('sagas', () => {
-  describe('watchFetchImages', () => {
-    it('should respond to FETCH_IMAGES', () => {
-      const generator = sagas.watchFetchImages()
+  describe('watchFetchWorks', () => {
+    it('should respond to FETCH_WORKS', () => {
+      const generator = sagas.watchFetchWorks()
       const actual = generator.next().value
-      const expected = call(takeLatest, types.FETCH_IMAGES, sagas.fetchImages)
+      const expected = call(takeLatest, types.FETCH_WORKS, sagas.fetchWorks)
 
       expect(actual).toEqual(expected)
     })
   })
 
-  describe('fetchImages', () => {
+  describe('fetchWorks', () => {
     it('should fetch data', () => {
-      const generator = sagas.fetchImages()
+      const generator = sagas.fetchWorks()
       const actual = generator.next().value
-      const expected = call(Api.get, constants.IMAGES_ENDPOINT)
+      const expected = call(get, endpoints.WORKS_ENDPOINT)
 
       expect(actual).toEqual(expected)
     })
 
     it('should call normalizr on data', () => {
       const data = { items: 'items' }
-      const generator = sagas.fetchImages()
-      const expected = call(normalize, data.items, [schemas.images])
+      const generator = sagas.fetchWorks()
+      const expected = call(normalize, data.items, [schemas.works])
 
       generator.next()
       const actual = generator.next({ data }).value
@@ -38,10 +39,10 @@ describe('sagas', () => {
       expect(actual).toEqual(expected)
     })
 
-    it('should put fetchImagesSuccess on data', () => {
+    it('should put fetchWorksSuccess on data', () => {
       const normalized = 'normalized'
-      const generator = sagas.fetchImages()
-      const expected = put(actions.fetchImagesSuccess(normalized))
+      const generator = sagas.fetchWorks()
+      const expected = put(actions.fetchWorksSuccess(normalized))
 
       generator.next()
       generator.next({ data: 'data' })
@@ -50,10 +51,10 @@ describe('sagas', () => {
       expect(actual).toEqual(expected)
     })
 
-    it('should put fetchImagesFail on errors', () => {
+    it('should put fetchWorksFail on errors', () => {
       const error = {}
-      const generator = sagas.fetchImages()
-      const expected = put(actions.fetchImagesFail(error))
+      const generator = sagas.fetchWorks()
+      const expected = put(actions.fetchWorksFail(error))
 
       generator.next()
       const actual = generator.next({ error }).value

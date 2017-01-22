@@ -4,10 +4,11 @@ import { normalize } from 'normalizr'
 import * as actions from './actions'
 import * as schemas from './schemas'
 import * as types from './actionTypes'
-import Api, { constants } from '../../services/api'
+import get from '../../services/get'
+import { endpoints } from '../../services/endpoints'
 
 export function* fetchWorks() {
-  const { data, error } = yield call(Api.get, constants.WORKS_ENDPOINT)
+  const { data, error } = yield call(get, endpoints.WORKS_ENDPOINT)
   if (data) {
     const normalized = yield call(normalize, data.items, [schemas.works])
     yield put(actions.fetchWorksSuccess(normalized))
