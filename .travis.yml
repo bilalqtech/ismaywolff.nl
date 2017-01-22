@@ -20,8 +20,10 @@ after_success:
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
   # build container with branch name as tag if on master or develop
   - if [ "$BRANCH" == "master" ] || [ "$BRANCH" == "develop" ]; then docker build -f Dockerfile -t $REPO:$BRANCH .; fi
-  # tag with commit message as well if on master
+  # tag with commit message if on master
   - if [ "$BRANCH" == "master" ]; then docker tag $REPO:$BRANCH $REPO:$(git log -n 1 --pretty=format:%f $TRAVIS_COMMIT); fi
+  # tag with latest if on master
+  - if [ "$BRANCH" == "master" ]; then docker tag $REPO:$BRANCH $REPO:latest; fi
   # push to dockerhub
   - if [ "$BRANCH" == "master" ] || [ "$BRANCH" == "develop" ]; then docker push $REPO; fi
 env:
