@@ -33,6 +33,9 @@
 
 ## containers
 
+[![docker status][docker-badge]][docker-url]
+[![image status][image-badge]][image-url]
+
 Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). To run them on a Digital Ocean CoreOS server (which is what I do) use the following cloud-config:
 
 ```
@@ -66,3 +69,7 @@ coreos:
 [dependency-url]: https://david-dm.org/ismay/ismaywolff.nl
 [devDependency-badge]: https://img.shields.io/david/dev/ismay/ismaywolff.nl.svg
 [devDependency-url]: https://david-dm.org/ismay/ismaywolff.nl?type=dev
+[docker-badge]: https://images.microbadger.com/badges/version/ismay/ismaywolff.nl.svg
+[docker-url]: https://hub.docker.com/r/ismay/ismaywolff.nl/
+[image-badge]: https://images.microbadger.com/badges/image/ismay/ismaywolff.nl.svg
+[image-url]: https://hub.docker.com/r/ismay/ismaywolff.nl/
