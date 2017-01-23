@@ -23,7 +23,7 @@ describe('sagas', () => {
     it('should fetch data', () => {
       const generator = sagas.fetchImages()
       const actual = generator.next().value
-      const expected = call(get, endpoints.IMAGES_ENDPOINT)
+      const expected = call(get, endpoints.IMAGES)
 
       expect(actual).toEqual(expected)
     })

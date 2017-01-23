@@ -8,7 +8,7 @@ import get from '../../services/get'
 import { endpoints } from '../../services/endpoints'
 
 export function* fetchWorks() {
-  const { data, error } = yield call(get, endpoints.WORKS_ENDPOINT)
+  const { data, error } = yield call(get, endpoints.WORKS)
   if (data) {
     const normalized = yield call(normalize, data.items, [schemas.works])
     yield put(actions.fetchWorksSuccess(normalized))

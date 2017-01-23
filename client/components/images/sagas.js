@@ -8,7 +8,7 @@ import get from '../../services/get'
 import { endpoints } from '../../services/endpoints'
 
 export function* fetchImages() {
-  const { data, error } = yield call(get, endpoints.IMAGES_ENDPOINT)
+  const { data, error } = yield call(get, endpoints.IMAGES)
   if (data) {
     const normalized = yield call(normalize, data.items, [schemas.images])
     yield put(actions.fetchImagesSuccess(normalized))
