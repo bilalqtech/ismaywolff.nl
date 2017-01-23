@@ -1,17 +1,20 @@
 exports[`<WorkDetail /> renders a loading state 1`] = `<Loading />`;
 
 exports[`<WorkDetail /> renders correctly 1`] = `
-<div>
-  <h1>
-    title
-  </h1>
-  <p>
-    type
-     - 
-    published
-  </p>
-  <p>
-    description
-  </p>
-</div>
+<SideEffect(DocumentTitle)
+  title="title • Ismay Wolff">
+  <div>
+    <h1>
+      title
+    </h1>
+    <p>
+      type
+       - 
+      published
+    </p>
+    <p>
+      description
+    </p>
+  </div>
+</SideEffect(DocumentTitle)>
 `;

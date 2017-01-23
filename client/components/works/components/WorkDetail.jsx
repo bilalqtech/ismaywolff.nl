@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import DocumentTitle from 'react-document-title'
 import { Loading } from '../../loading'
 
 function WorkDetail({ isLoading, work }) {
@@ -7,11 +8,13 @@ function WorkDetail({ isLoading, work }) {
   }
 
   return (
-    <div>
-      <h1>{work.title}</h1>
-      <p>{work.type} - {work.published}</p>
-      <p>{work.description}</p>
-    </div>
+    <DocumentTitle title={`${work.title} • Ismay Wolff`}>
+      <div>
+        <h1>{work.title}</h1>
+        <p>{work.type} - {work.published}</p>
+        <p>{work.description}</p>
+      </div>
+    </DocumentTitle>
   )
 }
 
