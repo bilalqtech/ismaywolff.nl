@@ -1,8 +1,8 @@
 exports[`<Header /> renders correctly 1`] = `
-<header>
+<styled.header>
   <h1>
     Ismay Wolff
   </h1>
   <Navigation />
-</header>
+</styled.header>
 `;

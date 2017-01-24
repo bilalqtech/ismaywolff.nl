@@ -1,11 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router'
+import styled from 'styled-components'
+
+const StyledLink = styled(Link)`
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+`
 
 function Navigation() {
   return (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <StyledLink to="/">Home</StyledLink>
+      <StyledLink to="/about">About</StyledLink>
     </nav>
   )
 }

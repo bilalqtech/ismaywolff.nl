@@ -1,7 +1,7 @@
 exports[`<Routes /> renders correctly 1`] = `
 <SideEffect(DocumentTitle)
   title="Ismay Wolff">
-  <div>
+  <styled.div>
     <Header />
     <Match
       component={[Function]}
@@ -17,6 +17,6 @@ exports[`<Routes /> renders correctly 1`] = `
       pattern="/about" />
     <Miss
       component={[Function]} />
-  </div>
+  </styled.div>
 </SideEffect(DocumentTitle)>
 `;

@@ -74,14 +74,6 @@ module.exports = {
         removeComments: true
       }
     }),
-    new HtmlWebpackPlugin({
-      template: 'client/index.ejs',
-      filename: '200.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true
-      }
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       names: [
         'vendor',

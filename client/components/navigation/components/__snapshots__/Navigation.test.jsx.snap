@@ -1,26 +1,12 @@
 exports[`<Navigation /> renders correctly 1`] = `
 <nav>
-  <Link
-    activeClassName=""
-    activeOnlyWhenExact={false}
-    activeStyle={Object {}}
-    className=""
-    isActive={[Function]}
-    replace={false}
-    style={Object {}}
+  <Styled(Link)
     to="/">
     Home
-  </Link>
-  <Link
-    activeClassName=""
-    activeOnlyWhenExact={false}
-    activeStyle={Object {}}
-    className=""
-    isActive={[Function]}
-    replace={false}
-    style={Object {}}
+  </Styled(Link)>
+  <Styled(Link)
     to="/about">
     About
-  </Link>
+  </Styled(Link)>
 </nav>
 `;

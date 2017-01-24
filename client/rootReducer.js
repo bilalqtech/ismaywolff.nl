@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import works from './components/works'
-import images from './components/images'
 import entities from './data/entities'
+import images from './components/images'
+import works from './components/works'
 
 export default combineReducers({
   entities,
