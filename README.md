@@ -42,6 +42,8 @@ Docker containers of this project are built automatically and can be found on [D
 #cloud-config
 
 coreos:
+  update:
+    reboot-strategy: reboot
   units:
     - name: "dockerstart.service"
       command: "start"
@@ -52,10 +54,12 @@ coreos:
 
         [Service]
         Restart=always
+        ExecStartPre=-/usr/bin/docker kill app
+        ExecStartPre=-/usr/bin/docker rm app
+        ExecStartPre=/usr/bin/docker pull ismay/ismaywolff.nl
         ExecStart=/usr/bin/docker run --name app -p 80:80 ismay/ismaywolff.nl
-        ExecStop=/usr/bin/docker rm -f app
+        ExecStop=/usr/bin/docker stop app
 ```
-
 
 ## license
 
