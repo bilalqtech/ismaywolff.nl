@@ -4,29 +4,49 @@ import { shallowToJson } from 'enzyme-to-json'
 import { WorkDetailContainer } from './WorkDetailContainer'
 
 describe('<WorkDetailContainer />', () => {
+  const entities = {
+    works: {
+      id: {
+        description: 'description',
+        published: 'published',
+        slug: 'title',
+        title: 'title',
+        type: 'type'
+      }
+    }
+  }
+  const hasWorks = { isFetching: false, result: ['id'] }
+  const hasNoWorks = { isFetching: false, result: [] }
+
   it('renders correctly', () => {
-    const works = { id: {
-      description: 'description',
-      published: 'published',
-      slug: 'slug',
-      title: 'title',
-      type: 'type'
-    } }
     const wrapper = shallow(<WorkDetailContainer
       fetchWorks={() => {}}
       params={{ id: 'id' }}
-      works={works}
+      entities={entities}
+      works={hasWorks}
     />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
-  it('fetches works on mount', () => {
-    const mockFetch = jest.fn()
+  it('fetches works when needed', () => {
+    const spy = jest.fn()
     mount(<WorkDetailContainer
-      fetchWorks={mockFetch}
+      fetchWorks={spy}
       params={{ id: 'id' }}
-      works={{ works: {} }}
+      entities={entities}
+      works={hasNoWorks}
     />)
-    expect(mockFetch).toBeCalled()
+    expect(spy).toBeCalled()
+  })
+
+  it('does not fetch work when it already has', () => {
+    const spy = jest.fn()
+    mount(<WorkDetailContainer
+      fetchWorks={spy}
+      params={{ id: 'id' }}
+      entities={entities}
+      works={hasWorks}
+    />)
+    expect(spy).not.toBeCalled()
   })
 })

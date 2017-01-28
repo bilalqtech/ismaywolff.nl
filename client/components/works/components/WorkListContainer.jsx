@@ -5,20 +5,24 @@ import WorkList from './WorkList'
 
 export class WorkListContainer extends Component {
   componentDidMount() {
-    this.props.fetchWorks()
+    if (this.props.works.result.length === 0) {
+      this.props.fetchWorks()
+    }
   }
 
   render() {
-    const { isFetching, result } = this.props.works
-    const isLoading = result.length === 0 && isFetching
+    const { works } = this.props
 
-    return <WorkList ids={result} isLoading={isLoading} />
+    return <WorkList ids={works.result} isFetching={works.isFetching} />
   }
 }
 
 WorkListContainer.propTypes = {
   fetchWorks: PropTypes.func.isRequired,
-  works: PropTypes.object.isRequired
+  works: PropTypes.shape({
+    isFetching: PropTypes.bool.isRequired,
+    result: PropTypes.array.isRequired
+  }).isRequired
 }
 
 const mapStateToProps = state => ({

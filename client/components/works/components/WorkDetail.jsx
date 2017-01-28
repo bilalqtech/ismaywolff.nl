@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react'
 import DocumentTitle from 'react-document-title'
 import { Loading } from '../../loading'
 
-function WorkDetail({ isLoading, work }) {
-  if (isLoading) {
+function WorkDetail({ isFetching, work }) {
+  if (isFetching) {
     return <Loading />
   }
 
@@ -23,7 +23,7 @@ WorkDetail.defaultProps = {
 }
 
 WorkDetail.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool.isRequired,
   work: PropTypes.shape({
     description: PropTypes.string,
     published: PropTypes.string,

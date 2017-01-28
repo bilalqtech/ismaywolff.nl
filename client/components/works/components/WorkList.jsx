@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react'
 import { Loading } from '../../loading'
 import WorkListItemContainer from './WorkListItemContainer'
 
-function WorkList({ ids, isLoading }) {
-  if (isLoading) {
+function WorkList({ ids, isFetching }) {
+  if (isFetching) {
     return <Loading />
   }
 
@@ -15,8 +15,8 @@ function WorkList({ ids, isLoading }) {
 }
 
 WorkList.propTypes = {
-  ids: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  ids: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isFetching: PropTypes.bool.isRequired
 }
 
 export default WorkList

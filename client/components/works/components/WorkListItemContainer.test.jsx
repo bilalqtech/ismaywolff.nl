@@ -5,16 +5,18 @@ import { WorkListItemContainer } from './WorkListItemContainer'
 
 describe('<WorkListItemContainer />', () => {
   it('renders correctly', () => {
-    const works = {
-      1: {
-        description: 'description',
-        published: 'published',
-        slug: 'title',
-        title: 'title',
-        type: 'type'
+    const entities = {
+      works: {
+        1: {
+          description: 'description',
+          published: 'published',
+          slug: 'title',
+          title: 'title',
+          type: 'type'
+        }
       }
     }
-    const wrapper = shallow(<WorkListItemContainer id={'1'} works={works} />)
+    const wrapper = shallow(<WorkListItemContainer id={'1'} entities={entities} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

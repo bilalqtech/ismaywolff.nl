@@ -5,5 +5,5 @@ exports[`<WorkListContainer /> renders correctly 1`] = `
       "1",
     ]
   }
-  isLoading={false} />
+  isFetching={false} />
 `;

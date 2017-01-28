@@ -6,18 +6,23 @@ import { WorkListContainer } from './WorkListContainer'
 jest.mock('./WorkList', () => () => <div>WorkList</div>)
 
 describe('<WorkListContainer />', () => {
-  const works = {
-    result: ['1']
-  }
+  const hasWorks = { isFetching: false, result: ['1'] }
+  const hasNoWorks = { isFetching: false, result: [] }
 
   it('renders correctly', () => {
-    const wrapper = shallow(<WorkListContainer fetchWorks={() => {}} works={works} />)
+    const wrapper = shallow(<WorkListContainer fetchWorks={() => {}} works={hasWorks} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
-  it('fetches works on mount', () => {
+  it('fetches works when needed', () => {
     const spy = jest.fn()
-    mount(<WorkListContainer fetchWorks={spy} works={works} />)
+    mount(<WorkListContainer fetchWorks={spy} works={hasNoWorks} />)
     expect(spy).toBeCalled()
+  })
+
+  it('does not fetch work when it already has', () => {
+    const spy = jest.fn()
+    mount(<WorkListContainer fetchWorks={spy} works={hasWorks} />)
+    expect(spy).not.toBeCalled()
   })
 })

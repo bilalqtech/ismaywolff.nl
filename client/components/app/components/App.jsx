@@ -14,6 +14,7 @@ function App({ store }) {
 }
 
 App.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   store: PropTypes.object.isRequired
 }
 
