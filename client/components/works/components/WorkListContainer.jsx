@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { getState } from '../selectors'
 import { fetchWorks } from '../actions'
 import WorkList from './WorkList'
 
@@ -26,7 +27,7 @@ WorkListContainer.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  works: state.works
+  works: getState(state)
 })
 
 export default connect(mapStateToProps, { fetchWorks })(WorkListContainer)
