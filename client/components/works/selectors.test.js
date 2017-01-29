@@ -1,23 +1,23 @@
-import { getEntities, getState } from './selectors'
+import { getWorkEntities, getWorkState } from './selectors'
 
 const state = {
   entities: { works: 'entities' },
   works: 'state'
 }
 
-describe('getEntities', () => {
+describe('getWorkEntities', () => {
   it('should return work entities', () => {
     const expected = 'entities'
-    const actual = getEntities(state)
+    const actual = getWorkEntities(state)
 
     expect(actual).toEqual(expected)
   })
 })
 
-describe('getState', () => {
+describe('getWorkState', () => {
   it('should return the work state', () => {
     const expected = 'state'
-    const actual = getState(state)
+    const actual = getWorkState(state)
 
     expect(actual).toEqual(expected)
   })

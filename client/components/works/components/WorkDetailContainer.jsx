@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { getEntities, getState } from '../selectors'
+import { getWorkEntities, getWorkState } from '../selectors'
 import { fetchWorks } from '../actions'
 import WorkDetail from './WorkDetail'
 
@@ -13,28 +13,29 @@ export class WorkDetailContainer extends Component {
 
   render() {
     const { entities, works, params } = this.props
-
     return <WorkDetail work={entities[params.id]} isFetching={works.isFetching} />
   }
 }
 
+WorkDetailContainer.defaultProps = {
+  entities: {}
+}
+
 WorkDetailContainer.propTypes = {
   fetchWorks: PropTypes.func.isRequired,
-  entities: PropTypes.shape({
-    works: PropTypes.object
+  entities: PropTypes.object,
+  works: PropTypes.shape({
+    result: PropTypes.array.isRequired,
+    isFetching: PropTypes.bool.isRequired
   }).isRequired,
   params: PropTypes.shape({
     id: PropTypes.string.isRequired
-  }).isRequired,
-  works: PropTypes.shape({
-    result: PropTypes.array,
-    isFetching: PropTypes.bool.isRequired
   }).isRequired
 }
 
 const mapStateToProps = state => ({
-  entities: getEntities(state),
-  works: getState(state)
+  entities: getWorkEntities(state),
+  works: getWorkState(state)
 })
 
 export default connect(mapStateToProps, { fetchWorks })(WorkDetailContainer)

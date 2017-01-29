@@ -14,6 +14,7 @@
     "semi": ["error", "never"],
     "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
     "global-require": 0,
+    "react/forbid-prop-types": 0,
     "import/first": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-named-as-default": 0,

@@ -1,2 +1,2 @@
-export const getEntities = state => state.entities.works
-export const getState = state => state.works
+export const getWorkEntities = state => state.entities.works
+export const getWorkState = state => state.works

@@ -6,14 +6,12 @@ import { WorkListItemContainer } from './WorkListItemContainer'
 describe('<WorkListItemContainer />', () => {
   it('renders correctly', () => {
     const entities = {
-      works: {
-        1: {
-          description: 'description',
-          published: 'published',
-          slug: 'title',
-          title: 'title',
-          type: 'type'
-        }
+      1: {
+        description: 'description',
+        published: 'published',
+        slug: 'title',
+        title: 'title',
+        type: 'type'
       }
     }
     const wrapper = shallow(<WorkListItemContainer id={'1'} entities={entities} />)
