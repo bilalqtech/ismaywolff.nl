@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: './dist'
+    path: path.resolve('./dist')
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -50,7 +50,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
-    port: process.env.DEV_PORT
+    port: parseInt(process.env.DEV_PORT)
   },
   performance: {
     hints: false
