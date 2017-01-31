@@ -4,6 +4,7 @@ exports[`<WorkDetail /> renders correctly 1`] = `
 <SideEffect(DocumentTitle)
   title="title • Ismay Wolff">
   <div>
+    <Connect(HeroContainer) />
     <h1>
       title
     </h1>

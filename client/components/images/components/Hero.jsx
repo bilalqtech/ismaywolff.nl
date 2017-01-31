@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react'
 import { Loading } from '../../loading'
 import styled from 'styled-components'
 
-const StyledHero = styled.img`
-  max-width: 100%;
+const Image = styled.img`
+  width: 100%;
 `
 
 function Hero({ image, isFetching }) {
@@ -12,7 +12,7 @@ function Hero({ image, isFetching }) {
   }
 
   return (
-    <StyledHero alt={image.title} src={image.url} />
+    <Image alt={image.title} src={`${image.url}?fit=fill&w=500&h=250`} />
   )
 }
 
