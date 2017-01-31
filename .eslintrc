@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "func-names": ["error", "as-needed"],
+    "semi": ["error", "never"],
+    "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
+    "no-confusing-arrow": 0,
+    "global-require": 0,
+    "react/forbid-prop-types": 0,
+    "import/first": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/prefer-default-export": 0
+  }
+}

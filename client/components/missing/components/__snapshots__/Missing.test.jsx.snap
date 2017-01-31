@@ -1,0 +1,8 @@
+exports[`<Missing /> renders correctly 1`] = `
+<SideEffect(DocumentTitle)
+  title="Page not found">
+  <div>
+    That page does not exist
+  </div>
+</SideEffect(DocumentTitle)>
+`;

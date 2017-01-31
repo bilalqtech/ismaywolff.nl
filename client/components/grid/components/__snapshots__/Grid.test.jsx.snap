@@ -1,0 +1,9 @@
+exports[`<Grid /> renders correctly 1`] = `
+<div
+  className="fJrBPl" />
+`;
+
+exports[`<Grid /> renders correctly with gutter 1`] = `
+<div
+  className="AKcFG" />
+`;

@@ -1,0 +1,7 @@
+exports[`<HeroContainer /> renders a loading indicator 1`] = `<Loading />`;
+
+exports[`<HeroContainer /> renders correctly 1`] = `
+<Hero
+  image={Object {}}
+  isFetching={false} />
+`;

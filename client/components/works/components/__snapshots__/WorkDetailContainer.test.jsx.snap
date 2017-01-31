@@ -1,0 +1,5 @@
+exports[`<WorkDetailContainer /> renders correctly 1`] = `
+<WorkDetail
+  isFetching={false}
+  work={Object {}} />
+`;

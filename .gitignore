@@ -1,0 +1,15 @@
+# Node
+npm-debug.log
+/node_modules
+
+# OSX
+.DS_Store
+
+# Coverage reports
+/coverage
+
+# Build results
+/dist
+
+# Environment specific settings
+.env
