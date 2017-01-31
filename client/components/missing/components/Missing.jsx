@@ -1,8 +1,11 @@
 import React from 'react'
+import DocumentTitle from 'react-document-title'
 
 function Missing() {
   return (
-    <div>That page does not exist</div>
+    <DocumentTitle title={'Page not found'}>
+      <div>That page does not exist</div>
+    </DocumentTitle>
   )
 }
 

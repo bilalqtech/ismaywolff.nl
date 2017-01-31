@@ -1,0 +1,5 @@
+exports[`<HeroContainer /> renders correctly 1`] = `
+<Hero
+  image={Object {}}
+  isFetching={false} />
+`;

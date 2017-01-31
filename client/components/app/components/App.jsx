@@ -1,21 +1,41 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Router from 'react-router/BrowserRouter'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
 import Routes from './Routes'
+import { actions as works } from '../../works'
+import { actions as images } from '../../images'
 
-function App({ store }) {
-  return (
-    <Provider store={store}>
-      <Router>
-        <Routes />
-      </Router>
-    </Provider>
-  )
+export class App extends Component {
+  componentDidMount() {
+    this.props.fetchWorks()
+    this.props.fetchImages()
+  }
+
+  render() {
+    return (
+      <Provider store={this.props.store}>
+        <Router>
+          <Routes />
+        </Router>
+      </Provider>
+    )
+  }
 }
 
 App.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  store: PropTypes.object.isRequired
+  fetchImages: PropTypes.func.isRequired,
+  fetchWorks: PropTypes.func.isRequired,
+  store: PropTypes.shape({
+    getState: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    subscribe: PropTypes.func.isRequired,
+    replaceReducer: PropTypes.func.isRequired
+  }).isRequired
 }
 
-export default App
+const actions = {
+  fetchWorks: works.fetchWorks,
+  fetchImages: images.fetchImages
+}
+
+export default connect(null, actions)(App)

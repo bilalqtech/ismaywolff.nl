@@ -1,0 +1,5 @@
+exports[`<ThumbContainer /> renders correctly 1`] = `
+<Thumb
+  image={Object {}}
+  isFetching={false} />
+`;

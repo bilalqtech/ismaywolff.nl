@@ -1,0 +1,7 @@
+exports[`<Hero /> renders images correctly 1`] = `
+<styled.img
+  alt="title"
+  src="url" />
+`;
+
+exports[`<Hero /> renders the loading placeholder correctly 1`] = `<Loading />`;

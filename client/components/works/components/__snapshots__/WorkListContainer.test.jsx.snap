@@ -1,8 +1,8 @@
 exports[`<WorkListContainer /> renders correctly 1`] = `
-<Component
+<WorkList
   ids={
     Array [
-      "1",
+      "id",
     ]
   }
   isFetching={false} />

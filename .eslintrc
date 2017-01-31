@@ -13,6 +13,7 @@
     "func-names": ["error", "as-needed"],
     "semi": ["error", "never"],
     "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
+    "no-confusing-arrow": 0,
     "global-require": 0,
     "react/forbid-prop-types": 0,
     "import/first": 0,

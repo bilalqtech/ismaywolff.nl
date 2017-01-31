@@ -1,0 +1,11 @@
+exports[`<ThumbList /> renders correctly 1`] = `
+<styled.div
+  gutter="10px">
+  <styled.div
+    gutter="10px"
+    width={0.3333333333333333}>
+    <Connect(ThumbContainer)
+      id="1" />
+  </styled.div>
+</styled.div>
+`;
