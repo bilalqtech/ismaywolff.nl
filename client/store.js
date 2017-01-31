@@ -1,5 +1,4 @@
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
+import { compose, createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './rootReducer'
 import rootSaga from './rootSaga'
@@ -7,8 +6,9 @@ import rootSaga from './rootSaga'
 // returns a store and accepts an initial state
 const configureStore = preloadedState => {
   const sagaMiddleware = createSagaMiddleware()
-  const store = createStore(rootReducer, preloadedState, composeWithDevTools(
-    applyMiddleware(sagaMiddleware)
+  const store = createStore(rootReducer, preloadedState, compose(
+    applyMiddleware(sagaMiddleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   ))
 
   // start saga watchers
