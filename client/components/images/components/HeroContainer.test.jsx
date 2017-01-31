@@ -13,4 +13,14 @@ describe('<HeroContainer />', () => {
     )
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
+
+  it('renders a loading indicator', () => {
+    const wrapper = shallow(
+      <HeroContainer
+        id={''}
+        images={{ result: ['id'], isFetching: false }}
+      />
+    )
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
 })
