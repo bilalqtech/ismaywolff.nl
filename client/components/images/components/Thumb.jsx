@@ -12,7 +12,7 @@ function Thumb({ image, isFetching }) {
   }
 
   return (
-    <Image alt={image.title} src={`${image.url}?fit=fill&w=200&h=200&fl=progressive&quality=80`} />
+    <Image alt={image.title} src={`${image.url}?fit=fill&w=200&h=200&fl=progressive`} />
   )
 }
 
