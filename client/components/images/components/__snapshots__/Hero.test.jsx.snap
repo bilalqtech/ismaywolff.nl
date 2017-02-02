@@ -1,7 +1,7 @@
 exports[`<Hero /> renders images correctly 1`] = `
 <styled.img
   alt="title"
-  src="url?fit=fill&w=500&h=250&fl=progressive&quality=80" />
+  src="url?fit=fill&w=500&h=250&fl=progressive" />
 `;
 
 exports[`<Hero /> renders the loading placeholder correctly 1`] = `<Loading />`;
