@@ -12,7 +12,7 @@ function Hero({ image, isFetching }) {
   }
 
   return (
-    <Image alt={image.title} src={`${image.url}?fit=fill&w=500&h=250`} />
+    <Image alt={image.title} src={`${image.url}?fit=fill&w=500&h=250&fl=progressive&quality=80`} />
   )
 }
 
