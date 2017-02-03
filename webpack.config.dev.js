@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var path = require('path')
 var webpack = require('webpack')
 
@@ -57,6 +58,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([{ from: 'static' }]),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
