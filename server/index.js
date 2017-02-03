@@ -5,6 +5,9 @@ const app = express()
 // serve all static files in the project folder
 app.use(express.static(__dirname))
 
+// don't identify as an express server
+app.disable('x-powered-by')
+
 // serve index.html for all routes
 app.get('*', (req, res) => {
   res.sendFile('/index.html')
