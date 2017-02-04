@@ -3,20 +3,20 @@ exports[`<Routes /> renders correctly 1`] = `
   title="Ismay Wolff">
   <styled.div>
     <Header />
-    <Match
-      component={[Function]}
-      exactly={true}
-      pattern="/" />
-    <Match
-      component={[Function]}
-      exactly={false}
-      pattern="/work/:id" />
-    <Match
-      component={[Function]}
-      exactly={false}
-      pattern="/about" />
-    <Miss
-      component={[Function]} />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/" />
+      <Route
+        component={[Function]}
+        path="/work/:id" />
+      <Route
+        component={[Function]}
+        path="/about" />
+      <Route
+        component={[Function]} />
+    </Switch>
   </styled.div>
 </SideEffect(DocumentTitle)>
 `;

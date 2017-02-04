@@ -11,7 +11,7 @@ describe('<WorkDetailContainer />', () => {
 
   it('renders correctly', () => {
     const wrapper = shallow(<WorkDetailContainer
-      params={{ id: 'id' }}
+      match={{ params: { id: 'id' } }}
       entities={{}}
       works={works}
     />)
