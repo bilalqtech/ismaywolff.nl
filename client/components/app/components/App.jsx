@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Router from 'react-router/BrowserRouter'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider, connect } from 'react-redux'
 import Routes from './Routes'
 import { actions as works } from '../../works'

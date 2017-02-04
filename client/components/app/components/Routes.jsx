@@ -1,6 +1,5 @@
 import React from 'react'
-import Match from 'react-router/Match'
-import Miss from 'react-router/Miss'
+import { Route, Switch } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import styled from 'styled-components'
 import { About } from '../../about'
@@ -18,10 +17,12 @@ function Routes() {
     <DocumentTitle title="Ismay Wolff">
       <Container>
         <Header />
-        <Match exactly pattern="/" component={WorkListContainer} />
-        <Match pattern="/work/:id" component={WorkDetailContainer} />
-        <Match pattern="/about" component={About} />
-        <Miss component={Missing} />
+        <Switch>
+          <Route path="/" exact component={WorkListContainer} />
+          <Route path="/work/:id" component={WorkDetailContainer} />
+          <Route path="/about" component={About} />
+          <Route component={Missing} />
+        </Switch>
       </Container>
     </DocumentTitle>
   )

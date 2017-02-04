@@ -2,13 +2,7 @@ exports[`<WorkListItem /> renders correctly 1`] = `
 <div>
   <h1>
     <Link
-      activeClassName=""
-      activeOnlyWhenExact={false}
-      activeStyle={Object {}}
-      className=""
-      isActive={[Function]}
       replace={false}
-      style={Object {}}
       to="/work/title">
       title
     </Link>

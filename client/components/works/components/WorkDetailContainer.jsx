@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { getWorkEntities, getWorkState } from '../selectors'
 import WorkDetail from './WorkDetail'
 
-export function WorkDetailContainer({ entities, works, params }) {
-  return <WorkDetail work={entities[params.id]} isFetching={works.isFetching} />
+export function WorkDetailContainer({ entities, works, match }) {
+  return <WorkDetail work={entities[match.params.id]} isFetching={works.isFetching} />
 }
 
 WorkDetailContainer.defaultProps = {
@@ -16,8 +16,10 @@ WorkDetailContainer.propTypes = {
   works: PropTypes.shape({
     isFetching: PropTypes.bool.isRequired
   }).isRequired,
-  params: PropTypes.shape({
-    id: PropTypes.string.isRequired
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
   }).isRequired
 }
 
