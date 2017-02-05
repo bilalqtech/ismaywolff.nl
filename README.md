@@ -36,7 +36,7 @@
 [![docker status][docker-badge]][docker-url]
 [![image status][image-badge]][image-url]
 
-Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). To run them on a Digital Ocean CoreOS server (which is what I do) use the following cloud-config:
+Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a CoreOS server on digital ocean, with an nginx reverse proxy and automatically renewing letsencrypt certificates with the following cloud-config:
 
 ```
 #cloud-config
@@ -45,19 +45,63 @@ coreos:
   update:
     reboot-strategy: reboot
   units:
-    - name: "dockerstart.service"
+    - name: "nginx-proxy.service"
       command: "start"
       content: |
         [Unit]
-        Description=app
-        Author=ismay
+        Description=Nginx reverse proxy
+
+        [Service]
+        Restart=always
+        ExecStartPre=-/usr/bin/docker kill proxy
+        ExecStartPre=-/usr/bin/docker rm proxy
+        ExecStartPre=/usr/bin/docker pull jwilder/nginx-proxy
+        ExecStart=/usr/bin/docker run \
+          --name proxy \
+          -p 80:80 \
+          -p 443:443 \
+          -v /etc/ssl/certs:/etc/nginx/certs:ro \
+          -v /etc/nginx/vhost.d \
+          -v /usr/share/nginx/html \
+          -v /var/run/docker.sock:/tmp/docker.sock:ro \
+          jwilder/nginx-proxy
+        ExecStop=/usr/bin/docker stop proxy
+    - name: "nginx-letsencrypt.service"
+      command: "start"
+      content: |
+        [Unit]
+        Description=Nginx letsencrypt proxy companion
+
+        [Service]
+        Restart=always
+        ExecStartPre=-/usr/bin/docker kill ssl
+        ExecStartPre=-/usr/bin/docker rm ssl
+        ExecStartPre=/usr/bin/docker pull jrcs/letsencrypt-nginx-proxy-companion
+        ExecStart=/usr/bin/docker run \
+          --name ssl \
+          -v /etc/ssl/certs:/etc/nginx/certs:rw \
+          --volumes-from proxy \
+          -v /var/run/docker.sock:/var/run/docker.sock:ro \
+          jrcs/letsencrypt-nginx-proxy-companion
+        ExecStop=/usr/bin/docker stop ssl
+    - name: "docker-express-app.service"
+      command: "start"
+      content: |
+        [Unit]
+        Description=Express server serving react app
 
         [Service]
         Restart=always
         ExecStartPre=-/usr/bin/docker kill app
         ExecStartPre=-/usr/bin/docker rm app
         ExecStartPre=/usr/bin/docker pull ismay/ismaywolff.nl
-        ExecStart=/usr/bin/docker run --name app -p 80:80 ismay/ismaywolff.nl
+        ExecStart=/usr/bin/docker run \
+          --name app \
+          -p 80 \
+          -e VIRTUAL_HOST=ismaywolff.nl \
+          -e "LETSENCRYPT_HOST=ismaywolff.nl" \
+          -e "LETSENCRYPT_EMAIL=email@youremailhere.com" \
+          ismay/ismaywolff.nl
         ExecStop=/usr/bin/docker stop app
 ```
 
