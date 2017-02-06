@@ -14,6 +14,13 @@
     "type": "git",
     "url": "git+ssh://git@github.com:ismay/ismaywolff.nl.git"
   },
+  "greenkeeper": {
+    "ignore": [
+      "eslint-plugin-import",
+      "eslint-plugin-react",
+      "eslint-plugin-jsx-a11y"
+    ]
+  },
   "jest": {
     "collectCoverageFrom": [
       "client/**/*.{js,jsx}",
@@ -33,23 +40,23 @@
     "copy-webpack-plugin": "^4.0.1",
     "coveralls": "^2.11.15",
     "css-loader": "^0.26.0",
-    "dotenv": "4.0.0",
+    "dotenv": "^4.0.0",
     "enzyme": "^2.6.0",
     "enzyme-to-json": "^1.4.4",
-    "eslint": "^3.13.1",
-    "eslint-config-airbnb": "^14.0.0",
-    "eslint-import-resolver-webpack": "0.8.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "extract-text-webpack-plugin": "^2.0.0-beta",
     "html-webpack-plugin": "^2.24.1",
     "jest": "^18.0.0",
     "react-addons-test-utils": "^15.4.1",
-    "react-hot-loader": "3.0.0-beta.6",
+    "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.13.1",
-    "webpack": "2.2.0",
-    "webpack-dev-server": "2.2.1"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0",
