@@ -12,15 +12,25 @@ var extractVendor = new ExtractTextPlugin('vendor-[hash].css')
 module.exports = {
   entry: {
     main: './client/index.jsx',
-    vendor: [
+    'vendor-base': [
+      'babel-polyfill',
+      'isomorphic-fetch',
+      'normalize.css',
       'react',
-      'react-dom',
+      'react-dom'
+    ],
+    'vendor-volatile': [
+      'normalizr',
+      'react-document-title',
+      'react-redux',
+      'react-router-dom',
       'redux',
-      'redux-saga'
+      'redux-saga',
+      'styled-components'
     ]
   },
   output: {
-    filename: '[chunkhash].[name].js',
+    filename: '[name].[chunkhash].js',
     path: './dist'
   },
   resolve: {
@@ -78,7 +88,8 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: [
-        'vendor',
+        'vendor-base',
+        'vendor-volatile',
         'manifest'
       ]
     })
