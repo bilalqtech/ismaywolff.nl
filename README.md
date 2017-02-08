@@ -109,9 +109,9 @@ coreos:
 
 [MIT](http://ismay.mit-license.org/)
 
-[build-badge]: https://img.shields.io/travis/ismay/ismaywolff.nl/develop.svg
+[build-badge]: https://travis-ci.org/ismay/ismaywolff.nl.svg?branch=develop
 [build-url]: https://travis-ci.org/ismay/ismaywolff.nl
-[coverage-badge]: https://img.shields.io/coveralls/ismay/ismaywolff.nl.svg
+[coverage-badge]: https://coveralls.io/repos/github/ismay/ismaywolff.nl/badge.svg?branch=develop
 [coverage-url]: https://coveralls.io/github/ismay/ismaywolff.nl?branch=develop
 [greenkeeper-badge]: https://badges.greenkeeper.io/ismay/ismaywolff.nl.svg
 [greenkeeper-url]: https://greenkeeper.io/
