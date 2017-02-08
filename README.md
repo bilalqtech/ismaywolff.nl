@@ -36,7 +36,7 @@
 [![docker status][docker-badge]][docker-url]
 [![image status][image-badge]][image-url]
 
-Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a CoreOS server on digital ocean, with an nginx reverse proxy and automatically renewing letsencrypt certificates with the following cloud-config:
+Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is the following cloud-config:
 
 ```
 #cloud-config
@@ -44,6 +44,9 @@ Docker containers of this project are built automatically and can be found on [D
 coreos:
   update:
     reboot-strategy: reboot
+  locksmith:
+    window-start: 04:00
+    window-length: 1h
   units:
     - name: "nginx-proxy.service"
       command: "start"
@@ -58,6 +61,7 @@ coreos:
         ExecStartPre=/usr/bin/docker pull jwilder/nginx-proxy
         ExecStart=/usr/bin/docker run \
           --name proxy \
+          --log-opt max-size=50m \
           -p 80:80 \
           -p 443:443 \
           -v /etc/ssl/certs:/etc/nginx/certs:ro \
@@ -79,6 +83,7 @@ coreos:
         ExecStartPre=/usr/bin/docker pull jrcs/letsencrypt-nginx-proxy-companion
         ExecStart=/usr/bin/docker run \
           --name ssl \
+          --log-opt max-size=50m \
           -v /etc/ssl/certs:/etc/nginx/certs:rw \
           --volumes-from proxy \
           -v /var/run/docker.sock:/var/run/docker.sock:ro \
@@ -97,12 +102,36 @@ coreos:
         ExecStartPre=/usr/bin/docker pull ismay/ismaywolff.nl
         ExecStart=/usr/bin/docker run \
           --name app \
+          --log-opt max-size=50m \
           -p 80 \
           -e VIRTUAL_HOST=ismaywolff.nl \
           -e "LETSENCRYPT_HOST=ismaywolff.nl" \
           -e "LETSENCRYPT_EMAIL=email@youremailhere.com" \
           ismay/ismaywolff.nl
         ExecStop=/usr/bin/docker stop app
+    - name: iptables-restore.service
+      enable: true
+      command: "start"
+write_files:
+  - path: /var/lib/iptables/rules-save
+    permissions: 0644
+    owner: "root:root"
+    content: |
+      *filter
+      :INPUT DROP [0:0]
+      :FORWARD DROP [0:0]
+      :OUTPUT ACCEPT [0:0]
+      -A INPUT -i lo -j ACCEPT
+      -A INPUT -i eth1 -j ACCEPT
+      -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 11 -j ACCEPT
+      COMMIT
+      # the last line of the file needs to be a blank line or a comment
 ```
 
 ## license
