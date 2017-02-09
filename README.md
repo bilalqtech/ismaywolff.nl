@@ -78,8 +78,8 @@ coreos:
       content: |
         [Unit]
         Description=Nginx reverse proxy
-        Requires=iptables-restore.service
-        After=iptables-restore.service
+        Requires=iptables-restore.service docker.service
+        After=iptables-restore.service docker.service
 
         [Service]
         Restart=always
@@ -102,8 +102,8 @@ coreos:
       content: |
         [Unit]
         Description=Nginx letsencrypt proxy companion
-        Requires=nginx-proxy.service
-        After=nginx-proxy.service
+        Requires=nginx-proxy.service docker.service
+        After=nginx-proxy.service docker.service
 
         [Service]
         Restart=always
@@ -123,8 +123,8 @@ coreos:
       content: |
         [Unit]
         Description=Express server serving react app
-        Requires=nginx-letsencrypt.service
-        After=nginx-letsencrypt.service
+        Requires=nginx-letsencrypt.service docker.service
+        After=nginx-letsencrypt.service docker.service
 
         [Service]
         Restart=always
