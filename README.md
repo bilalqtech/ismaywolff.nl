@@ -36,20 +36,50 @@
 [![docker status][docker-badge]][docker-url]
 [![image status][image-badge]][image-url]
 
-Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a CoreOS server on digital ocean, with an nginx reverse proxy and automatically renewing letsencrypt certificates with the following cloud-config:
+Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is the following cloud-config:
 
 ```
 #cloud-config
 
+# Write firewall rules
+write_files:
+  - path: /var/lib/iptables/rules-save
+    permissions: 0644
+    owner: "root:root"
+    content: |
+      *filter
+      :INPUT DROP [0:0]
+      :FORWARD DROP [0:0]
+      :OUTPUT ACCEPT [0:0]
+      -A INPUT -i lo -j ACCEPT
+      -A INPUT -i eth1 -j ACCEPT
+      -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 11 -j ACCEPT
+      COMMIT
+
+# Coreos update strategy and unit definitions
 coreos:
   update:
     reboot-strategy: reboot
+  locksmith:
+    window-start: 04:00
+    window-length: 1h
   units:
+    - name: "iptables-restore.service"
+      enable: true
+      command: "start"
     - name: "nginx-proxy.service"
       command: "start"
       content: |
         [Unit]
         Description=Nginx reverse proxy
+        Requires=iptables-restore.service docker.service
+        After=iptables-restore.service docker.service
 
         [Service]
         Restart=always
@@ -58,6 +88,7 @@ coreos:
         ExecStartPre=/usr/bin/docker pull jwilder/nginx-proxy
         ExecStart=/usr/bin/docker run \
           --name proxy \
+          --log-opt max-size=50m \
           -p 80:80 \
           -p 443:443 \
           -v /etc/ssl/certs:/etc/nginx/certs:ro \
@@ -71,6 +102,8 @@ coreos:
       content: |
         [Unit]
         Description=Nginx letsencrypt proxy companion
+        Requires=nginx-proxy.service docker.service
+        After=nginx-proxy.service docker.service
 
         [Service]
         Restart=always
@@ -79,16 +112,19 @@ coreos:
         ExecStartPre=/usr/bin/docker pull jrcs/letsencrypt-nginx-proxy-companion
         ExecStart=/usr/bin/docker run \
           --name ssl \
+          --log-opt max-size=50m \
           -v /etc/ssl/certs:/etc/nginx/certs:rw \
           --volumes-from proxy \
           -v /var/run/docker.sock:/var/run/docker.sock:ro \
           jrcs/letsencrypt-nginx-proxy-companion
         ExecStop=/usr/bin/docker stop ssl
-    - name: "docker-express-app.service"
+    - name: "express-app.service"
       command: "start"
       content: |
         [Unit]
         Description=Express server serving react app
+        Requires=nginx-letsencrypt.service docker.service
+        After=nginx-letsencrypt.service docker.service
 
         [Service]
         Restart=always
@@ -97,6 +133,7 @@ coreos:
         ExecStartPre=/usr/bin/docker pull ismay/ismaywolff.nl
         ExecStart=/usr/bin/docker run \
           --name app \
+          --log-opt max-size=50m \
           -p 80 \
           -e VIRTUAL_HOST=ismaywolff.nl \
           -e "LETSENCRYPT_HOST=ismaywolff.nl" \
@@ -109,9 +146,9 @@ coreos:
 
 [MIT](http://ismay.mit-license.org/)
 
-[build-badge]: https://img.shields.io/travis/ismay/ismaywolff.nl/develop.svg
+[build-badge]: https://travis-ci.org/ismay/ismaywolff.nl.svg?branch=develop
 [build-url]: https://travis-ci.org/ismay/ismaywolff.nl
-[coverage-badge]: https://img.shields.io/coveralls/ismay/ismaywolff.nl.svg
+[coverage-badge]: https://coveralls.io/repos/github/ismay/ismaywolff.nl/badge.svg?branch=develop
 [coverage-url]: https://coveralls.io/github/ismay/ismaywolff.nl?branch=develop
 [greenkeeper-badge]: https://badges.greenkeeper.io/ismay/ismaywolff.nl.svg
 [greenkeeper-url]: https://greenkeeper.io/
