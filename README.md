@@ -41,6 +41,28 @@ Docker containers of this project are built automatically and can be found on [D
 ```
 #cloud-config
 
+# Write firewall rules
+write_files:
+  - path: /var/lib/iptables/rules-save
+    permissions: 0644
+    owner: "root:root"
+    content: |
+      *filter
+      :INPUT DROP [0:0]
+      :FORWARD DROP [0:0]
+      :OUTPUT ACCEPT [0:0]
+      -A INPUT -i lo -j ACCEPT
+      -A INPUT -i eth1 -j ACCEPT
+      -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+      -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
+      -A INPUT -p icmp -m icmp --icmp-type 11 -j ACCEPT
+      COMMIT
+
+# Coreos update strategy and unit definitions
 coreos:
   update:
     reboot-strategy: reboot
@@ -48,11 +70,16 @@ coreos:
     window-start: 04:00
     window-length: 1h
   units:
+    - name: "iptables-restore.service"
+      enable: true
+      command: "start"
     - name: "nginx-proxy.service"
       command: "start"
       content: |
         [Unit]
         Description=Nginx reverse proxy
+        Requires=iptables-restore.service
+        After=iptables-restore.service
 
         [Service]
         Restart=always
@@ -75,6 +102,8 @@ coreos:
       content: |
         [Unit]
         Description=Nginx letsencrypt proxy companion
+        Requires=nginx-proxy.service
+        After=nginx-proxy.service
 
         [Service]
         Restart=always
@@ -89,11 +118,13 @@ coreos:
           -v /var/run/docker.sock:/var/run/docker.sock:ro \
           jrcs/letsencrypt-nginx-proxy-companion
         ExecStop=/usr/bin/docker stop ssl
-    - name: "docker-express-app.service"
+    - name: "express-app.service"
       command: "start"
       content: |
         [Unit]
         Description=Express server serving react app
+        Requires=nginx-letsencrypt.service
+        After=nginx-letsencrypt.service
 
         [Service]
         Restart=always
@@ -109,29 +140,6 @@ coreos:
           -e "LETSENCRYPT_EMAIL=email@youremailhere.com" \
           ismay/ismaywolff.nl
         ExecStop=/usr/bin/docker stop app
-    - name: iptables-restore.service
-      enable: true
-      command: "start"
-write_files:
-  - path: /var/lib/iptables/rules-save
-    permissions: 0644
-    owner: "root:root"
-    content: |
-      *filter
-      :INPUT DROP [0:0]
-      :FORWARD DROP [0:0]
-      :OUTPUT ACCEPT [0:0]
-      -A INPUT -i lo -j ACCEPT
-      -A INPUT -i eth1 -j ACCEPT
-      -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-      -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
-      -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-      -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
-      -A INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
-      -A INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
-      -A INPUT -p icmp -m icmp --icmp-type 11 -j ACCEPT
-      COMMIT
-      # the last line of the file needs to be a blank line or a comment
 ```
 
 ## license
