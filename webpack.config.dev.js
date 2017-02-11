@@ -34,8 +34,8 @@ module.exports = {
         test: /\.css$/,
         include: /node_modules/,
         loaders: [
-          'style-loader',
-          'css-loader'
+          'style-loader?sourceMap',
+          'css-loader?sourceMap'
         ]
       },
       {
@@ -48,7 +48,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     historyApiFallback: true,
     port: parseInt(process.env.DEV_PORT)
