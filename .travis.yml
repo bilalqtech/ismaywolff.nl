@@ -9,7 +9,8 @@ services:
   - docker
 script:
   - yarn run coverage
-  - yarn run lint
+  - yarn run lint:js
+  - yarn run lint:css
   - yarn run build
 after_success:
   # login to docker hub

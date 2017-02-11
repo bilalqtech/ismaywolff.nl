@@ -6,7 +6,8 @@
   "scripts": {
     "build": "NODE_ENV=production webpack -p --bail",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint client/**/*.{js,jsx}",
+    "lint:js": "eslint client/**/*.{js,jsx}",
+    "lint:css": "stylelint client/**/*.{js,jsx}",
     "start": "webpack-dev-server --content-base dist/",
     "test": "jest --watch"
   },
@@ -55,6 +56,9 @@
     "react-addons-test-utils": "^15.4.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.8.0",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-processor-styled-components": "^0.0.4",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.1"
   },
