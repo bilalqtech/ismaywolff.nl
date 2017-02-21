@@ -1,12 +1,20 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { ThumbContainer } from '../../images'
+
+const StyledLink = styled(Link)`
+  border: 1px dotted black;
+  display: block;
+  padding: 3px;
+`
 
 function WorkListItem({ work }) {
   return (
     <div>
-      <h1><Link to={`/work/${work.slug}`}>{work && work.title}</Link></h1>
-      <p>{work && work.type} - {work && work.published}</p>
-      <p>{work && work.description}</p>
+      <StyledLink to={`/work/${work.slug}`}>
+        <ThumbContainer id={work.thumbnail} />
+      </StyledLink>
     </div>
   )
 }

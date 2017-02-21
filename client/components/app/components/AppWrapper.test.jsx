@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import Navigation from './Navigation'
+import AppWrapper from './AppWrapper'
 
-describe('<Navigation />', () => {
+describe('<AppWrapper />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<Navigation />)
+    const wrapper = shallow(<AppWrapper />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

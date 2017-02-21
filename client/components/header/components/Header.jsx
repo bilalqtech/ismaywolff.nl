@@ -1,19 +1,40 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Navigation } from '../../navigation'
-
-const StyledHeader = styled.header`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-`
+import { NavLink } from 'react-router-dom'
+import HeaderTitle from './HeaderTitle'
+import HeaderLink from './HeaderLink'
+import HeaderWrapper from './HeaderWrapper'
 
 function Header() {
   return (
-    <StyledHeader>
-      <h1>Ismay Wolff</h1>
-      <Navigation />
-    </StyledHeader>
+    <HeaderWrapper>
+      <HeaderLink size={'0.75rem'}>
+        <NavLink
+          activeClassName={'active'}
+          to="/work"
+        >
+          work
+        </NavLink>
+      </HeaderLink>
+      <HeaderTitle>
+        <HeaderLink size={'1.5rem'}>
+          <NavLink
+            activeClassName={'active'}
+            to="/"
+            exact
+          >
+            Ismay Wolff
+          </NavLink>
+        </HeaderLink>
+      </HeaderTitle>
+      <HeaderLink size={'0.75rem'}>
+        <NavLink
+          activeClassName={'active'}
+          to="/writing"
+        >
+          writing
+        </NavLink>
+      </HeaderLink>
+    </HeaderWrapper>
   )
 }
 

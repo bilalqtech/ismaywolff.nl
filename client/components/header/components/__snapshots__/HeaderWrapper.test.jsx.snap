@@ -1,0 +1,4 @@
+exports[`<HeaderWrapper /> renders correctly 1`] = `
+<header
+  className="dNLMru" />
+`;

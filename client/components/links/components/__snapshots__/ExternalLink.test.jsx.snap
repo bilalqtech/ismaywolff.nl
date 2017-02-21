@@ -1,0 +1,5 @@
+exports[`<ExternalLink /> renders correctly 1`] = `
+<a
+  className="cRlpbE"
+  href="url" />
+`;

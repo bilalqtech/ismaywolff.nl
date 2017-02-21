@@ -1,0 +1,4 @@
+exports[`<HeaderTitle /> renders correctly 1`] = `
+<h1
+  className="jCZQXj" />
+`;

@@ -3,14 +3,12 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from './rootReducer'
 import rootSaga from './rootSaga'
 
-const isDevelopment = process.env.NODE_ENV !== 'production'
-
 // returns a store and accepts an initial state
 const configureStore = preloadedState => {
   const sagaMiddleware = createSagaMiddleware()
   const store = createStore(rootReducer, preloadedState, compose(
     applyMiddleware(sagaMiddleware),
-    window.devToolsExtension && isDevelopment ? window.devToolsExtension() : f => f
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   ))
 
   // start saga watchers

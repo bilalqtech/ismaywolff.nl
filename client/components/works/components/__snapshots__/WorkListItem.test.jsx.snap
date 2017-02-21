@@ -1,19 +1,8 @@
 exports[`<WorkListItem /> renders correctly 1`] = `
 <div>
-  <h1>
-    <Link
-      replace={false}
-      to="/work/title">
-      title
-    </Link>
-  </h1>
-  <p>
-    type
-     - 
-    published
-  </p>
-  <p>
-    description
-  </p>
+  <Styled(Link)
+    to="/work/title">
+    <Connect(ThumbContainer) />
+  </Styled(Link)>
 </div>
 `;

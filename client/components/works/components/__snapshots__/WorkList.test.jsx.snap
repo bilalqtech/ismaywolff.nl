@@ -1,8 +1,13 @@
 exports[`<WorkList /> renders correctly 1`] = `
-<div>
-  <Connect(WorkListItemContainer)
-    id="1" />
-</div>
+<styled.div
+  gutter="10px">
+  <styled.div
+    gutter="10px"
+    width={0.3333333333333333}>
+    <Connect(WorkListItemContainer)
+      id="1" />
+  </styled.div>
+</styled.div>
 `;
 
 exports[`<WorkList /> shows a loading indicator when there are no works 1`] = `<Loading />`;
