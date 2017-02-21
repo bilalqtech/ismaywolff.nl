@@ -51,7 +51,8 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   devServer: {
     historyApiFallback: true,
-    port: parseInt(process.env.DEV_PORT)
+    port: process.env.DEV_PORT,
+    host: process.env.DEV_HOST
   },
   performance: {
     hints: false

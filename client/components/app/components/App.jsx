@@ -25,12 +25,7 @@ export class App extends Component {
 App.propTypes = {
   fetchImages: PropTypes.func.isRequired,
   fetchWorks: PropTypes.func.isRequired,
-  store: PropTypes.shape({
-    getState: PropTypes.func.isRequired,
-    dispatch: PropTypes.func.isRequired,
-    subscribe: PropTypes.func.isRequired,
-    replaceReducer: PropTypes.func.isRequired
-  }).isRequired
+  store: PropTypes.object.isRequired
 }
 
 const actions = {

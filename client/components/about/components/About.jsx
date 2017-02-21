@@ -1,40 +1,20 @@
 import React from 'react'
-import DocumentTitle from 'react-document-title'
+import { ExternalLink } from '../../links'
 
 function About() {
   return (
     <div>
-      <DocumentTitle title="About • Ismay Wolff" />
-      <main>
-        <h2>About</h2>
-        <p>
-          I&#39;m an artist, a social scientist and a programmer. My work is a combination of
-          these fields and an exploration of the most inspiring parts of each discipline.
-        </p>
-        <p>
-          <i>Born 1983 in Heerde, lives and works in Groningen (Netherlands).</i>
-        </p>
-        <h3>Education</h3>
-        <ul>
-          <li>
-            Academie Minerva, Groningen (2007 - 2012)<br /><i>fine art, bachelor&#39;s degree</i>
-          </li>
-          <li>
-            European Exchange Academy, Beelitz DE (2011)
-          </li>
-          <li>
-            University of Groningen, Groningen (2001 - 2007)<br />
-            <i>social psychology, master&#39;s degree</i>
-          </li>
-        </ul>
-        <h3>Contact</h3>
-        <ul>
-          <li><a href="tel:+316-46226207">+316 - 462 26 207</a></li>
-          <li><a href="mailto:ismay@ismaywolff.nl">ismay@ismaywolff.nl</a></li>
-          <li><a href="https://github.com/ismay">github.com/ismay</a></li>
-          <li><a href="https://keybase.io/ismay">keybase.io/ismay</a></li>
-        </ul>
-      </main>
+      <p>
+        I&#39;m an artist, a social scientist and a programmer. My work is a combination of
+        these fields and an exploration of the most inspiring parts of each discipline.
+        I was born 1983 in Heerde and live and work in Groningen in the Netherlands.
+      </p>
+      <p>
+        I&#39;ve obtained a master in social psychology from the University of Groningen, and a
+        bachelor&#39;s degree in fine art from Academie Minerva of Groningen. A lot of my work can
+        be found on <ExternalLink href="https://github.com/ismay">github</ExternalLink> and my public keys are
+        on <ExternalLink href="https://keybase.io/ismay">keybase</ExternalLink>.
+      </p>
     </div>
   )
 }

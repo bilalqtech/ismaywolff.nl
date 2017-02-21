@@ -1,0 +1,11 @@
+exports[`<HeaderLink /> accepts size parameter 1`] = `
+<span
+  className="kWdzzg"
+  size="100%" />
+`;
+
+exports[`<HeaderLink /> renders correctly 1`] = `
+<span
+  className="jCYTXV"
+  size="1rem" />
+`;
