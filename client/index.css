@@ -2,7 +2,6 @@
 
 html {
   box-sizing: border-box;
-  font-size: 24px;
 }
 
 *,
@@ -29,6 +28,10 @@ img {
 }
 
 /* Fonts */
+
+html {
+  font-size: 24px;
+}
 
 body {
   font-family: 'Crimson Text', serif;

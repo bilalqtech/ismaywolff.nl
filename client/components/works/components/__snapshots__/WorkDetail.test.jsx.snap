@@ -4,14 +4,14 @@ exports[`<WorkDetail /> renders correctly 1`] = `
 <SideEffect(DocumentTitle)
   title="title • Ismay Wolff">
   <div>
-    <h1>
+    <styled.h2>
       title
-    </h1>
-    <p>
+    </styled.h2>
+    <styled.p>
       type
        - 
       published
-    </p>
+    </styled.p>
     <p>
       description
     </p>

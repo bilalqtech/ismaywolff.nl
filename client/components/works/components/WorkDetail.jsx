@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import DocumentTitle from 'react-document-title'
 import { Loading } from '../../loading'
 import { ThumbList } from '../../images'
+import WorkTitle from './WorkTitle'
+import WorkSubtitle from './WorkSubtitle'
 
 function WorkDetail({ isFetching, work }) {
   if (isFetching) {
@@ -11,8 +13,8 @@ function WorkDetail({ isFetching, work }) {
   return (
     <DocumentTitle title={`${work.title} • Ismay Wolff`}>
       <div>
-        <h1>{work.title}</h1>
-        <p>{work.type} - {work.published}</p>
+        <WorkTitle>{work.title}</WorkTitle>
+        <WorkSubtitle>{work.type} - {work.published}</WorkSubtitle>
         <p>{work.description}</p>
         <ThumbList ids={work.images} />
       </div>
