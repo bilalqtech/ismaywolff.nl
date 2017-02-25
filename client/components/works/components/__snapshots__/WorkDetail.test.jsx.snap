@@ -7,14 +7,16 @@ exports[`<WorkDetail /> renders correctly 1`] = `
   title="title • Ismay Wolff"
 >
   <div>
-    <styled.h2>
-      title
-    </styled.h2>
-    <styled.p>
-      type
-       - 
-      published
-    </styled.p>
+    <styled.div>
+      <styled.h2>
+        title
+      </styled.h2>
+      <styled.p>
+        type
+         - 
+        published
+      </styled.p>
+    </styled.div>
     <p>
       description
     </p>

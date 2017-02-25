@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import WorkTitle from './WorkTitle'
+import SubTitle from './SubTitle'
 
-describe('<WorkTitle />', () => {
+describe('<SubTitle />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<WorkTitle />)
+    const wrapper = shallow(<SubTitle />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

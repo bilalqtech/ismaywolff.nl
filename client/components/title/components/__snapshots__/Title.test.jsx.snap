@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WorkTitle /> renders correctly 1`] = `
+exports[`<Title /> renders correctly 1`] = `
 <h2
   className="fkPPFr"
 />
