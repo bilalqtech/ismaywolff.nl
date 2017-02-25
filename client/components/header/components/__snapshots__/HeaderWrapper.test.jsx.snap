@@ -1,4 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<HeaderWrapper /> renders correctly 1`] = `
 <header
-  className="dNLMru" />
+  className="dNLMru"
+/>
 `;

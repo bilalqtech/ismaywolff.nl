@@ -1,5 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<ExternalLink /> renders correctly 1`] = `
 <a
   className="cRlpbE"
-  href="url" />
+  href="url"
+/>
 `;

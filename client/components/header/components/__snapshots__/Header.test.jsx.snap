@@ -1,29 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Header /> renders correctly 1`] = `
 <styled.header>
   <styled.span
-    size="0.75rem">
+    size="0.75rem"
+  >
     <NavLink
       activeClassName="active"
-      to="/work">
+      to="/work"
+    >
       work
     </NavLink>
   </styled.span>
   <styled.h1>
     <styled.span
-      size="1.5rem">
+      size="1.5rem"
+    >
       <NavLink
         activeClassName="active"
         exact={true}
-        to="/">
+        to="/"
+      >
         Ismay Wolff
       </NavLink>
     </styled.span>
   </styled.h1>
   <styled.span
-    size="0.75rem">
+    size="0.75rem"
+  >
     <NavLink
       activeClassName="active"
-      to="/writing">
+      to="/writing"
+    >
       writing
     </NavLink>
   </styled.span>

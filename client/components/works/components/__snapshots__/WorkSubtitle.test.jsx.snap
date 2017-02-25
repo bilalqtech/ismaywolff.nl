@@ -1,4 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<WorkSubtitle /> renders correctly 1`] = `
 <p
-  className="jJclbE" />
+  className="jJclbE"
+/>
 `;

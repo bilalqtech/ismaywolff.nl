@@ -1,4 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<AppWrapper /> renders correctly 1`] = `
 <div
-  className="cesyxe" />
+  className="cesyxe"
+/>
 `;

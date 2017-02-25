@@ -1,7 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Thumb /> renders images correctly 1`] = `
 <styled.img
   alt="title"
-  src="url?fit=fill&w=200&h=200&fl=progressive" />
+  src="url?fit=fill&w=200&h=200&fl=progressive"
+/>
 `;
 
 exports[`<Thumb /> renders the loading placeholder correctly 1`] = `<Loading />`;

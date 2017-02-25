@@ -1,5 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<ThumbContainer /> renders correctly 1`] = `
 <Thumb
   image={Object {}}
-  isFetching={false} />
+  isFetching={false}
+/>
 `;

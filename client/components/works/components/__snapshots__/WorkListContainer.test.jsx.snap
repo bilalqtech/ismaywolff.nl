@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<WorkListContainer /> renders correctly 1`] = `
 <WorkList
   ids={
@@ -5,5 +7,6 @@ exports[`<WorkListContainer /> renders correctly 1`] = `
       "id",
     ]
   }
-  isFetching={false} />
+  isFetching={false}
+/>
 `;
