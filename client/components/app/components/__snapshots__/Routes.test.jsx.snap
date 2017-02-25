@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Routes /> renders correctly 1`] = `
 <styled.div>
   <Header />
@@ -5,16 +7,20 @@ exports[`<Routes /> renders correctly 1`] = `
     <Route
       component={[Function]}
       exact={true}
-      path="/" />
+      path="/"
+    />
     <Route
       component={[Function]}
       exact={true}
-      path="/work" />
+      path="/work"
+    />
     <Route
       component={[Function]}
-      path="/work/:id" />
+      path="/work/:id"
+    />
     <Route
-      component={[Function]} />
+      component={[Function]}
+    />
   </Switch>
 </styled.div>
 `;

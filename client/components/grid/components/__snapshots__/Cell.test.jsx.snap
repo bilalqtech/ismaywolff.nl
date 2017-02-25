@@ -1,15 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Cell /> renders correctly 1`] = `
 <div
-  className="WHVWL" />
+  className="WHVWL"
+/>
 `;
 
 exports[`<Cell /> renders correctly with gutter 1`] = `
 <div
-  className="gvmVWP" />
+  className="gvmVWP"
+/>
 `;
 
 exports[`<Cell /> renders correctly with width 1`] = `
 <div
   className="bEtZKN"
-  width={0.5} />
+  width={0.5}
+/>
 `;

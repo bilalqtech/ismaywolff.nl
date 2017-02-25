@@ -1,22 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<WorkDetail /> renders a loading state 1`] = `<Loading />`;
 
 exports[`<WorkDetail /> renders correctly 1`] = `
 <SideEffect(DocumentTitle)
-  title="title • Ismay Wolff">
+  title="title • Ismay Wolff"
+>
   <div>
-    <styled.h2>
-      title
-    </styled.h2>
-    <styled.p>
-      type
-       - 
-      published
-    </styled.p>
+    <styled.div>
+      <styled.h2>
+        title
+      </styled.h2>
+      <styled.p>
+        type
+         - 
+        published
+      </styled.p>
+    </styled.div>
     <p>
       description
     </p>
     <ThumbList
-      ids={Array []} />
+      ids={Array []}
+    />
   </div>
 </SideEffect(DocumentTitle)>
 `;
