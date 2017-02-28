@@ -86,7 +86,7 @@ coreos:
         Restart=always
         ExecStartPre=-/usr/bin/docker kill proxy
         ExecStartPre=-/usr/bin/docker rm proxy
-        ExecStartPre=/usr/bin/docker pull jwilder/nginx-proxy
+        ExecStartPre=/usr/bin/docker pull jwilder/nginx-proxy:alpine
         ExecStart=/usr/bin/docker run \
           --name proxy \
           --log-opt max-size=50m \
@@ -96,7 +96,7 @@ coreos:
           -v /etc/nginx/vhost.d \
           -v /usr/share/nginx/html \
           -v /var/run/docker.sock:/tmp/docker.sock:ro \
-          jwilder/nginx-proxy
+          jwilder/nginx-proxy:alpine
         ExecStop=/usr/bin/docker stop proxy
     - name: "nginx-letsencrypt.service"
       command: "start"

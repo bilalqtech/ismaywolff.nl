@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 // serve all static files in the project folder
-app.use(express.static(__dirname))
+app.use(express.static(__dirname), { maxAge: '1y' })
 
 // don't identify as an express server
 app.disable('x-powered-by')
