@@ -143,6 +143,11 @@ coreos:
         ExecStop=/usr/bin/docker stop app
 ```
 
+Useful commands:
+
+* View logs for a specific service: `journalctl -u application.service`
+* Restart specific service: `systemctl restart application.service`
+
 ## license
 
 [MIT](http://ismay.mit-license.org/)
