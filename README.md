@@ -114,8 +114,8 @@ coreos:
         ExecStart=/usr/bin/docker run \
           --name ssl \
           --log-opt max-size=50m \
-          -v /etc/ssl/certs:/etc/nginx/certs:rw \
           --volumes-from proxy \
+          -v /etc/ssl/certs:/etc/nginx/certs:rw \
           -v /var/run/docker.sock:/var/run/docker.sock:ro \
           jrcs/letsencrypt-nginx-proxy-companion
         ExecStop=/usr/bin/docker stop ssl
@@ -135,7 +135,6 @@ coreos:
         ExecStart=/usr/bin/docker run \
           --name app \
           --log-opt max-size=50m \
-          -p 80 \
           -e VIRTUAL_HOST=ismaywolff.nl \
           -e "LETSENCRYPT_HOST=ismaywolff.nl" \
           -e "LETSENCRYPT_EMAIL=email@youremailhere.com" \
