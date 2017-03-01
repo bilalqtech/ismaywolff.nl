@@ -1,9 +1,20 @@
 const express = require('express')
+const mime = require('mime-types')
 
 const app = express()
 
-// serve all static files in the project folder
-app.use(express.static(__dirname, { maxAge: '1y' }))
+// sets max-age to 0 for html
+const setCustomCacheControl = (res, path) => {
+  if (mime.lookup(path) === 'text/html') {
+    res.setHeader('Cache-Control', 'public, max-age=0')
+  }
+}
+
+// serve all static files from the root folder
+app.use(express.static(__dirname, {
+  maxAge: '1y',
+  setHeaders: setCustomCacheControl
+}))
 
 // don't identify as an express server
 app.disable('x-powered-by')
