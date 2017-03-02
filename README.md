@@ -37,7 +37,7 @@ CONTENT_DELIVERY_TOKEN=1234
 [![docker status][docker-badge]][docker-url]
 [![image status][image-badge]][image-url]
 
-Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is the following cloud-config: https://gist.github.com/ismay/da7acd94f07666a5308c4946f4482acb
+Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is [this cloud-config](https://gist.github.com/ismay/da7acd94f07666a5308c4946f4482acb).
 
 ## license
 
