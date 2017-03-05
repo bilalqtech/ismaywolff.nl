@@ -2,10 +2,10 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Header } from '../../header'
 import { Container } from '../../container'
-import About from '../../../scenes/about'
-import Work from '../../../scenes/work'
-import WorkDetail from '../../../scenes/workDetail'
-import Missing from '../../../scenes/missing'
+import About from '../../../scenes/About'
+import Work from '../../../scenes/Work'
+import WorkDetail from '../../../scenes/WorkDetail'
+import Missing from '../../../scenes/Missing'
 
 function Routes() {
   return (
