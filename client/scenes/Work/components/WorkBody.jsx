@@ -17,7 +17,7 @@ export function WorkBody({ entities, works }) {
       {works.result.map(id => (
         <Cell gutter={styles.gutter} width={1 / 3} key={id}>
           <ImageLink to={`/work/${entities[id].slug}`}>
-            <Image id={entities[id].thumbnail} width={200} height={200} />
+            <Image id={entities[id].thumbnail} width={250} height={250} />
           </ImageLink>
         </Cell>
       ))}

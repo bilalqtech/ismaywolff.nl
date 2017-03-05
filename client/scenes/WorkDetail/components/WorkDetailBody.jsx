@@ -20,7 +20,7 @@ function WorkDetailBody({ work }) {
       <Grid gutter={styles.gutter}>
         { work.images.map(id => (
           <Cell gutter={styles.gutter} width={1 / 3} key={id}>
-            <Image id={id} width={200} height={200} />
+            <Image id={id} width={250} height={250} />
           </Cell>
         ))}
       </Grid>

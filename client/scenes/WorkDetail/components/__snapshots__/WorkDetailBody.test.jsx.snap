@@ -23,9 +23,9 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
       width={0.3333333333333333}
     >
       <Connect(Image)
-        height={200}
+        height={250}
         id="one"
-        width={200}
+        width={250}
       />
     </styled.div>
   </styled.div>
