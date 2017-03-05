@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Image /> renders a loading state 1`] = `
+<div>
+  Loading image data...
+</div>
+`;
+
+exports[`<Image /> renders correctly 1`] = `
+<img
+  alt="title"
+  src="url?fit=fill&w=100&h=200&fl=progressive"
+/>
+`;

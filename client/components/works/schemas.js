@@ -3,7 +3,6 @@ import { schemas as links } from '../../data/links'
 
 export const works = new schema.Entity('works', {
   images: [links.links],
-  hero: links.links,
   thumbnail: links.links
 }, {
   processStrategy: value => value.fields,

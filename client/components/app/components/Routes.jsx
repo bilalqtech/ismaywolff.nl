@@ -1,22 +1,23 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { About } from '../../about'
 import { Header } from '../../header'
-import { Missing } from '../../missing'
-import { WorkDetailContainer, WorkListContainer } from '../../works'
-import AppWrapper from './AppWrapper'
+import { Container } from '../../container'
+import About from '../../../scenes/about'
+import Work from '../../../scenes/work'
+import WorkDetail from '../../../scenes/workDetail'
+import Missing from '../../../scenes/missing'
 
 function Routes() {
   return (
-    <AppWrapper>
+    <Container>
       <Header />
       <Switch>
         <Route path="/" exact component={About} />
-        <Route path="/work" exact component={WorkListContainer} />
-        <Route path="/work/:id" component={WorkDetailContainer} />
+        <Route path="/work" exact component={Work} />
+        <Route path="/work/:id" component={WorkDetail} />
         <Route component={Missing} />
       </Switch>
-    </AppWrapper>
+    </Container>
   )
 }
 

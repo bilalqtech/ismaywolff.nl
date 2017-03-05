@@ -1,6 +1,5 @@
 # ismaywolff.nl
 
-
 [![build status][build-badge]][build-url]
 [![coverage status][coverage-badge]][coverage-url]
 [![greenkeeper][greenkeeper-badge]][greenkeeper-url]
@@ -15,7 +14,7 @@
 
 ## install
 
-* clone and run `npm i`
+* clone and run `yarn`
 * create `./.env` with your preferred settings
 
 ```bash
