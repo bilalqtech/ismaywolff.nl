@@ -1,6 +1,10 @@
 # Node
 npm-debug.log
+yarn-error.log
 /node_modules
+
+# Server
+/server/node_modules
 
 # OSX
 .DS_Store

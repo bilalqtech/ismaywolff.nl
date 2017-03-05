@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WorkDetail /> renders a loading state 1`] = `<WorkLoading />`;
+
+exports[`<WorkDetail /> renders correctly 1`] = `
+<div>
+  <SideEffect(DocumentTitle)
+    title="title • Ismay Wolff"
+  />
+  <WorkDetailBody
+    work={
+      Object {
+        "title": "title",
+      }
+    }
+  />
+</div>
+`;

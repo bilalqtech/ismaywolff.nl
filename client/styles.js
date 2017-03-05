@@ -1,4 +1,5 @@
 const styles = {
+  gutter: '.5rem',
   link: {
     inactive: '1px dotted white',
     active: '1px dotted black'

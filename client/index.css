@@ -21,10 +21,10 @@ body {
   min-height: 100%;
 }
 
-/* Images */
+/* Responsive images */
 
 img {
-  display: block;
+  max-width: 100%;
 }
 
 /* Fonts */

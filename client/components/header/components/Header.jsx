@@ -2,11 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import HeaderTitle from './HeaderTitle'
 import HeaderLink from './HeaderLink'
-import HeaderWrapper from './HeaderWrapper'
+import HeaderContainer from './HeaderContainer'
 
 function Header() {
   return (
-    <HeaderWrapper>
+    <HeaderContainer>
       <HeaderLink size={'0.75rem'}>
         <NavLink
           activeClassName={'active'}
@@ -34,7 +34,7 @@ function Header() {
           writing
         </NavLink>
       </HeaderLink>
-    </HeaderWrapper>
+    </HeaderContainer>
   )
 }
 
