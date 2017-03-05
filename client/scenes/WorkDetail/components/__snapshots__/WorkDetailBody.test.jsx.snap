@@ -16,10 +16,10 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
     description
   </p>
   <styled.div
-    gutter="10px"
+    gutter=".5rem"
   >
     <styled.div
-      gutter="10px"
+      gutter=".5rem"
       width={0.3333333333333333}
     >
       <Connect(Image)

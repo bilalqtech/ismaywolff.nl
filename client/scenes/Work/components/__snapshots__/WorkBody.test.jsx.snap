@@ -4,10 +4,10 @@ exports[`<WorkBody /> renders a loading state 1`] = `<WorkLoading />`;
 
 exports[`<WorkBody /> renders correctly 1`] = `
 <styled.div
-  gutter="10px"
+  gutter=".5rem"
 >
   <styled.div
-    gutter="10px"
+    gutter=".5rem"
     width={0.3333333333333333}
   >
     <Styled(Link)

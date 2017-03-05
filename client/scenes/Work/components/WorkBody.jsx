@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import styles from '../../../styles'
 import { selectors } from '../../../components/works'
 import { Cell, Grid } from '../../../components/grid'
 import { ImageLink } from '../../../components/links'
@@ -12,9 +13,9 @@ export function WorkBody({ entities, works }) {
   }
 
   return (
-    <Grid gutter={'10px'}>
+    <Grid gutter={styles.gutter}>
       {works.result.map(id => (
-        <Cell gutter={'10px'} width={1 / 3} key={id}>
+        <Cell gutter={styles.gutter} width={1 / 3} key={id}>
           <ImageLink to={`/work/${entities[id].slug}`}>
             <Image id={entities[id].thumbnail} width={200} height={200} />
           </ImageLink>
