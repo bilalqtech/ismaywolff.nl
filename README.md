@@ -8,14 +8,14 @@
 
 ## requirements
 
-* node
-* an editor with editorconfig
+* [node](https://github.com/nodejs/node)
+* [yarn](https://github.com/yarnpkg/yarn)
 * a valid .env file in the root of your project (see below)
 
 ## install
 
-* clone and run `yarn`
-* create `./.env` with your preferred settings
+* clone this repository and run `yarn`
+* create `./.env` with your preferred settings:
 
 ```bash
 # Url parts for development

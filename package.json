@@ -8,6 +8,7 @@
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint:js": "eslint client/**/*.{js,jsx}",
     "lint:css": "stylelint client/**/*.{js,jsx}",
+    "lint:whitespace": "eclint check * client/** server/**",
     "start": "webpack-dev-server --content-base dist/",
     "test": "jest --watch"
   },
@@ -34,6 +35,7 @@
     "coveralls": "^2.11.15",
     "css-loader": "^0.26.0",
     "dotenv": "^4.0.0",
+    "eclint": "^1.1.5",
     "enzyme": "^2.6.0",
     "enzyme-to-json": "^1.4.4",
     "eslint": "^3.15.0",
