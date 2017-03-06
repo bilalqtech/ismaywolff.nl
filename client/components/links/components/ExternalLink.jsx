@@ -3,7 +3,7 @@ import styles from '../../../styles'
 
 const ExternalLink = styled.a`
   text-decoration: none;
-  color: black;
+  color: ${styles.color.black};
   border-bottom: ${styles.link.active};
 `
 

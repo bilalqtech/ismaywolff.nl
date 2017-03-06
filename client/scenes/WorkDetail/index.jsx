@@ -2,14 +2,14 @@ import React, { PropTypes } from 'react'
 import DocumentTitle from 'react-document-title'
 import { connect } from 'react-redux'
 import { selectors } from '../../components/works'
-import WorkLoading from './components/WorkLoading'
+import { Spinner } from '../../components/spinner'
 import WorkDetailBody from './components/WorkDetailBody'
 
 export function WorkDetail({ entities, match }) {
   const work = entities[match.params.id]
 
   if (!work) {
-    return <WorkLoading />
+    return <Spinner />
   }
 
   return (

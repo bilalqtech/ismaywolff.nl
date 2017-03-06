@@ -5,7 +5,7 @@ const HeaderLink = styled.span`
   & > a {
     text-decoration: none;
     font-family: 'Bitter', serif;
-    color: black;
+    color: ${styles.color.black};
     transition: all 200ms;
     padding-bottom: 0.25rem;
     font-size: ${props => props.size};

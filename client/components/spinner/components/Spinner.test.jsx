@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import WorkLoading from './WorkLoading'
+import Spinner from './Spinner'
 
-describe('<WorkLoading />', () => {
+describe('<Spinner />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<WorkLoading />)
+    const wrapper = shallow(<Spinner />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

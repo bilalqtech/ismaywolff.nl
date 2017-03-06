@@ -5,11 +5,11 @@ import { selectors } from '../../../components/works'
 import { Cell, Grid } from '../../../components/grid'
 import { ImageLink } from '../../../components/links'
 import { Image } from '../../../components/images'
-import WorkLoading from './WorkLoading'
+import { Spinner } from '../../../components/spinner'
 
 export function WorkBody({ entities, works }) {
   if (works.result.length === 0) {
-    return <WorkLoading />
+    return <Spinner />
   }
 
   return (

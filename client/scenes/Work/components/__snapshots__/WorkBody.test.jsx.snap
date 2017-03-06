@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WorkBody /> renders a loading state 1`] = `<WorkLoading />`;
+exports[`<WorkBody /> renders a loading state 1`] = `<styled.div />`;
 
 exports[`<WorkBody /> renders correctly 1`] = `
 <styled.div
