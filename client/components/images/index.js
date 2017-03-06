@@ -4,5 +4,5 @@ import * as sagas from './sagas'
 import * as schemas from './schemas'
 
 export { actionTypes, actions, sagas, schemas }
-export { default as Image } from './components/Image'
+export { default as Thumbnail } from './components/Thumbnail'
 export { default } from './reducer'

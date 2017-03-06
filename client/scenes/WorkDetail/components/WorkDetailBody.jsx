@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import styles from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
-import { Image } from '../../../components/images'
+import { Thumbnail } from '../../../components/images'
 
 function WorkDetailBody({ work }) {
   return (
@@ -20,7 +20,7 @@ function WorkDetailBody({ work }) {
       <Grid gutter={styles.gutter}>
         { work.images.map(id => (
           <Cell gutter={styles.gutter} width={1 / 3} key={id}>
-            <Image id={id} width={250} height={250} />
+            <Thumbnail id={id} size={250} />
           </Cell>
         ))}
       </Grid>

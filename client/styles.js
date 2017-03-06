@@ -1,6 +1,7 @@
 const styles = {
   color: {
-    black: 'black'
+    black: 'black',
+    gray: 'rgb(200,200,200)'
   },
   gutter: '.5rem',
   link: {

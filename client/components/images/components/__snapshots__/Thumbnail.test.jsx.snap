@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Thumbnail /> renders a loading state 1`] = `<styled.picture />`;
+
+exports[`<Thumbnail /> renders correctly 1`] = `
+<styled.picture>
+  <styled.img
+    alt="title"
+    srcSet="url?fit=fill&w=100&h=100&fl=progressive"
+  />
+</styled.picture>
+`;
