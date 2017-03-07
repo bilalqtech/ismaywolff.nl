@@ -13,9 +13,8 @@ exports[`<WorkBody /> renders correctly 1`] = `
     <Styled(Link)
       to="/work/slug"
     >
-      <Connect(Thumbnail)
+      <ResponsiveThumbnail
         id="thumbnail"
-        size={250}
       />
     </Styled(Link)>
   </styled.div>

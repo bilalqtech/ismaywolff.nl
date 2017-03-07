@@ -22,9 +22,8 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
       gutter=".5rem"
       width={0.3333333333333333}
     >
-      <Connect(Thumbnail)
+      <ResponsiveThumbnail
         id="one"
-        size={250}
       />
     </styled.div>
   </styled.div>

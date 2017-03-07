@@ -4,7 +4,7 @@ import styles from '../../../styles'
 import { selectors } from '../../../components/works'
 import { Cell, Grid } from '../../../components/grid'
 import { ImageLink } from '../../../components/links'
-import { Thumbnail } from '../../../components/images'
+import { ResponsiveThumbnail } from '../../../components/images'
 import { Spinner } from '../../../components/spinner'
 
 export function WorkBody({ entities, works }) {
@@ -17,7 +17,7 @@ export function WorkBody({ entities, works }) {
       {works.result.map(id => (
         <Cell gutter={styles.gutter} width={1 / 3} key={id}>
           <ImageLink to={`/work/${entities[id].slug}`}>
-            <Thumbnail id={entities[id].thumbnail} size={250} />
+            <ResponsiveThumbnail id={entities[id].thumbnail} />
           </ImageLink>
         </Cell>
       ))}
