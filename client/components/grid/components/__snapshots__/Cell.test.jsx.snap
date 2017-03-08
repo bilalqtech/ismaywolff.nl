@@ -2,19 +2,19 @@
 
 exports[`<Cell /> renders correctly 1`] = `
 <div
-  className="WHVWL"
+  className="cPTRnX"
 />
 `;
 
 exports[`<Cell /> renders correctly with gutter 1`] = `
 <div
-  className="gvmVWP"
+  className="KhGhY"
 />
 `;
 
 exports[`<Cell /> renders correctly with width 1`] = `
 <div
-  className="bEtZKN"
+  className="cPTRnX"
   width={0.5}
 />
 `;

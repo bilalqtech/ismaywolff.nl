@@ -30,7 +30,19 @@ img {
 /* Fonts */
 
 html {
-  font-size: 24px;
+  font-size: 20px;
+}
+
+@media (min-width: 450px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 24px;
+  }
 }
 
 body {

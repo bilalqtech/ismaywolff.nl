@@ -15,7 +15,13 @@ export function WorkBody({ entities, works }) {
   return (
     <Grid gutter={styles.gutter}>
       {works.result.map(id => (
-        <Cell gutter={styles.gutter} width={1 / 3} key={id}>
+        <Cell
+          gutter={styles.gutter}
+          sm={1 / 1}
+          md={1 / 2}
+          lg={1 / 3}
+          key={id}
+        >
           <ImageLink to={`/work/${entities[id].slug}`}>
             <ResponsiveThumbnail id={entities[id].thumbnail} />
           </ImageLink>
