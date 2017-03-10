@@ -4,12 +4,16 @@
     "jest": true,
     "node": true
   },
+  "plugins": [
+    "compat"
+  ],
   "extends": [
     "airbnb"
   ],
   "rules": {
     "arrow-parens": ["error", "as-needed"],
     "comma-dangle": ["error", "never"],
+    "compat/compat": 2,
     "func-names": ["error", "as-needed"],
     "semi": ["error", "never"],
     "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],

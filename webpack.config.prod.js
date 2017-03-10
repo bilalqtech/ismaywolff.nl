@@ -13,19 +13,19 @@ module.exports = {
   entry: {
     main: './client/index.jsx',
     'vendor-base': [
-      'babel-polyfill',
       'isomorphic-fetch',
       'normalize.css',
-      'react',
-      'react-dom'
-    ],
-    'vendor-volatile': [
       'normalizr',
+      'react',
       'react-document-title',
+      'react-dom',
       'react-redux',
       'react-router-dom',
       'redux',
-      'redux-saga',
+      'redux-saga'
+    ],
+    'vendor-volatile': [
+      'react-measure',
       'styled-components'
     ]
   },

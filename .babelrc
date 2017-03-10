@@ -1,8 +1,14 @@
 {
   "presets": [
-    ["es2015", { "modules": false }],
-    "react",
-    "stage-1"
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": { "browsers": [ "last 2 versions", "> 5%" ] },
+        "useBuiltIns": true
+      }
+    ],
+    "react"
   ],
   "plugins": [
     "transform-object-rest-spread",
@@ -11,7 +17,7 @@
   "env": {
     "test": {
       "presets": [
-        "es2015"
+        "env"
       ]
     }
   }
