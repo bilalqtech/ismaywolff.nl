@@ -9,7 +9,7 @@
     "lint:js": "eslint client/**/*.{js,jsx}",
     "lint:css": "stylelint client/**/*.{js,jsx}",
     "lint:whitespace": "eclint check * client/** server/**",
-    "start": "webpack-dev-server --content-base dist/",
+    "start": "webpack-dev-server --content-base dist/ --inline --hot",
     "test": "jest --watch"
   },
   "repository": {
@@ -48,7 +48,6 @@
     "html-webpack-plugin": "^2.24.1",
     "jest": "19.0.2",
     "react-addons-test-utils": "^15.4.1",
-    "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.13.1",
     "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0",

@@ -6,9 +6,6 @@ var webpack = require('webpack')
 module.exports = {
   entry: {
     main: [
-      'react-hot-loader/patch',
-      'webpack-dev-server/client?' + process.env.DEV_BASE + ':' + process.env.DEV_PORT,
-      'webpack/hot/only-dev-server',
       './client/index.jsx'
     ]
   },
@@ -58,7 +55,6 @@ module.exports = {
     hints: false
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([{ from: 'static' }]),
     new webpack.DefinePlugin({
       'process.env': {
