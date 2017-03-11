@@ -19,7 +19,7 @@ exports[`<ResponsiveThumbnail /> renders correctly 1`] = `
   >
     <Component
       id="one"
-      size={0}
+      size={50}
     >
       <div />
     </Component>
