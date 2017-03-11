@@ -8,8 +8,6 @@ describe('fetch', () => {
   it('should process headers', () => {
     const expected = 'headers'
 
-    // fetch is polyfilled with isomorphic-fetch
-    // eslint-disable-next-line compat/compat
     return fetch('endpoint', 'headers').then(() => (
       expect(window.Headers).toHaveBeenCalledWith(expected))
     )
@@ -21,7 +19,6 @@ describe('fetch', () => {
       options: 'options'
     }
 
-    // eslint-disable-next-line compat/compat
     return fetch('endpoint', 'headers', { options: 'options' }).then(() => (
       expect(window.fetch).toHaveBeenCalledWith('endpoint', init))
     )
@@ -34,7 +31,6 @@ describe('fetch', () => {
     const expected = { data }
 
     window.fetch.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
-    // eslint-disable-next-line compat/compat
     return fetch('endpoint', 'headers').then(actual => expect(actual).toEqual(expected))
   })
 
@@ -45,7 +41,6 @@ describe('fetch', () => {
     const expected = { error }
 
     window.fetch.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
-    // eslint-disable-next-line compat/compat
     return fetch('endpoint', 'headers').then(actual => expect(actual).toEqual(expected))
   })
 
@@ -55,7 +50,6 @@ describe('fetch', () => {
     const expected = { error }
 
     window.fetch.mockImplementationOnce(() => Promise.reject(new Error(message)))
-    // eslint-disable-next-line compat/compat
     return fetch('endpoint', 'headers').then(actual => expect(actual).toEqual(expected))
   })
 })

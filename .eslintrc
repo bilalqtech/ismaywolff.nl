@@ -7,6 +7,11 @@
   "plugins": [
     "compat"
   ],
+  "settings": {
+    "polyfills": [
+      "fetch"
+    ]
+  },
   "extends": [
     "airbnb"
   ],
