@@ -1,6 +1,6 @@
 async function fetchWrapper(endpoint, headers, options) {
   let init = { headers: new Headers(headers) }
-  if (options) init = { ...init, ...options }
+  if (options) init = Object.assign({}, init, options)
 
   try {
     const response = await fetch(endpoint, init)

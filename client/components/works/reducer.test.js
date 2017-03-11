@@ -9,10 +9,7 @@ describe('reducer', () => {
     result: []
   }
 
-  const fetchingState = {
-    ...initialState,
-    isFetching: true
-  }
+  const fetchingState = Object.assign({}, initialState, { isFetching: true })
 
   const payload = {
     result: 'result'
