@@ -12,9 +12,20 @@ exports[`<Cell /> renders correctly with gutter 1`] = `
 />
 `;
 
-exports[`<Cell /> renders correctly with width 1`] = `
+exports[`<Cell /> renders correctly with lg 1`] = `
 <div
-  className="cPTRnX"
-  width={0.5}
+  className="hzRmeD"
+/>
+`;
+
+exports[`<Cell /> renders correctly with md 1`] = `
+<div
+  className="iJwUki"
+/>
+`;
+
+exports[`<Cell /> renders correctly with sm 1`] = `
+<div
+  className="cmdSdm"
 />
 `;
