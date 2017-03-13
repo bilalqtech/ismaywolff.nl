@@ -22,7 +22,7 @@ module.exports = {
       'react-redux',
       'react-router-dom',
       'redux',
-      'redux-saga'
+      'redux-thunk'
     ],
     'vendor-volatile': [
       'react-measure',
@@ -51,16 +51,16 @@ module.exports = {
         test: /\.css$/,
         include: /node_modules/,
         loader: extractVendor.extract({
-          fallbackLoader: 'style-loader?sourceMap',
-          loader: 'css-loader?sourceMap'
+          fallback: 'style-loader?sourceMap',
+          use: 'css-loader?sourceMap'
         })
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         loader: extractBundle.extract({
-          fallbackLoader: 'style-loader?sourceMap',
-          loader: 'css-loader?sourceMap'
+          fallback: 'style-loader?sourceMap',
+          use: 'css-loader?sourceMap'
         })
       }
     ]

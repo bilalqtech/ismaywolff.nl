@@ -1,11 +1,11 @@
-import fetch from '../fetch'
+import fetchy from '../fetchy'
 import TOKEN from '../token'
 
 const get = endpoint => {
-  const options = { method: 'GET' }
-  const headers = { Authorization: `Bearer ${TOKEN}` }
+  const headers = new Headers({ Authorization: `Bearer ${TOKEN}` })
+  const init = { method: 'GET', headers }
 
-  return fetch(endpoint, headers, options)
+  return fetchy(endpoint, init)
 }
 
 export default get
