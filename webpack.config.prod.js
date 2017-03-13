@@ -13,7 +13,7 @@ module.exports = {
   entry: {
     main: './client/index.jsx',
     'vendor-base': [
-      'isomorphic-fetch',
+      'load-script',
       'normalize.css',
       'normalizr',
       'react',
