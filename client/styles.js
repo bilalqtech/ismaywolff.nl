@@ -1,13 +1,6 @@
-const styles = {
-  color: {
-    black: 'black',
-    gray: 'rgb(200,200,200)'
-  },
-  gutter: '.5rem',
-  link: {
-    inactive: '1px dotted white',
-    active: '1px dotted black'
-  }
+export const colors = {
+  black: 'rgb(25,25,25)',
+  gray: 'rgb(200,200,200)'
 }
 
-export default styles
+export const gutter = '0.5rem'

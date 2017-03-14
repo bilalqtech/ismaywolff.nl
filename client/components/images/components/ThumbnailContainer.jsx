@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import styles from '../../../styles'
+import { colors } from '../../../styles'
 
 const ThumbnailContainer = styled.picture`
   display: block;
@@ -7,7 +7,7 @@ const ThumbnailContainer = styled.picture`
   height: 0;
   width: 100%;
   padding-top: 100%; /* square aspect ratio by default */
-  background: ${styles.color.gray};
+  background: ${colors.gray};
 `
 
 export default ThumbnailContainer

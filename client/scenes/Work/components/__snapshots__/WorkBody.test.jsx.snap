@@ -4,23 +4,24 @@ exports[`<WorkBody /> renders a loading state 1`] = `<styled.div />`;
 
 exports[`<WorkBody /> renders correctly 1`] = `
 <styled.div
-  gutter=".5rem"
+  gutter="0.5rem"
 >
   <styled.div
-    gutter=".5rem"
+    gutter="0.5rem"
     lgBreak="40em"
     lgSize={0.3333333333333333}
     mdBreak="25em"
     mdSize={0.5}
     smSize={1}
   >
-    <Styled(Link)
+    <Link
+      replace={false}
       to="/work/slug"
     >
       <ResponsiveThumbnail
         id="thumbnail"
       />
-    </Styled(Link)>
+    </Link>
   </styled.div>
 </styled.div>
 `;

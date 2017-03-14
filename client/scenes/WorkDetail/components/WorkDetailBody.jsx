@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import styles from '../../../styles'
+import { gutter } from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
 import { ResponsiveThumbnail } from '../../../components/images'
@@ -17,10 +17,10 @@ function WorkDetailBody({ work }) {
       <p>{work.description}</p>
 
       {/* Gallery */}
-      <Grid gutter={styles.gutter}>
+      <Grid gutter={gutter}>
         { work.images.map(id => (
           <Cell
-            gutter={styles.gutter}
+            gutter={gutter}
             smSize={1 / 1}
             mdSize={1 / 2}
             lgSize={1 / 3}

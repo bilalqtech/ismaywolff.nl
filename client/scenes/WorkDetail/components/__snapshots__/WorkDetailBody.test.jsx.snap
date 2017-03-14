@@ -16,10 +16,10 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
     description
   </p>
   <styled.div
-    gutter=".5rem"
+    gutter="0.5rem"
   >
     <styled.div
-      gutter=".5rem"
+      gutter="0.5rem"
       lgBreak="40em"
       lgSize={0.3333333333333333}
       mdBreak="25em"

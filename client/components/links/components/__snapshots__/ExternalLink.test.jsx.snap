@@ -2,7 +2,7 @@
 
 exports[`<ExternalLink /> renders correctly 1`] = `
 <a
-  className="cRlpbE"
+  className="jsPSha"
   href="url"
 />
 `;

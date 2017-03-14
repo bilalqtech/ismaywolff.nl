@@ -2,14 +2,14 @@
 
 exports[`<HeaderLink /> accepts size parameter 1`] = `
 <span
-  className="gjyUEH"
+  className="czViOW"
   size="100%"
 />
 `;
 
 exports[`<HeaderLink /> renders correctly 1`] = `
 <span
-  className="kbUZEJ"
+  className="eIPbwU"
   size="1rem"
 />
 `;
