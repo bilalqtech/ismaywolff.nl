@@ -5,6 +5,11 @@ const HeaderContainer = styled.header`
   justify-content: center;
   align-items: baseline;
   padding-bottom: 1rem;
+  flex-wrap: wrap;
+
+  @media (min-width: 20em) {
+    flex-wrap: unset;
+  }
 `
 
 export default HeaderContainer

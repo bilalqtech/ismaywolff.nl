@@ -17,9 +17,11 @@ export function WorkBody({ entities, works }) {
       {works.result.map(id => (
         <Cell
           gutter={styles.gutter}
-          sm={1 / 1}
-          md={1 / 2}
-          lg={1 / 3}
+          smSize={1 / 1}
+          mdSize={1 / 2}
+          lgSize={1 / 3}
+          mdBreak={'25em'}
+          lgBreak={'40em'}
           key={id}
         >
           <ImageLink to={`/work/${entities[id].slug}`}>

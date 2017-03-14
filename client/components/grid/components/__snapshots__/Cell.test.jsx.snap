@@ -2,30 +2,30 @@
 
 exports[`<Cell /> renders correctly 1`] = `
 <div
-  className="cPTRnX"
+  className="iUrSsH"
 />
 `;
 
 exports[`<Cell /> renders correctly with gutter 1`] = `
 <div
-  className="KhGhY"
+  className="hTELSA"
 />
 `;
 
 exports[`<Cell /> renders correctly with lg 1`] = `
 <div
-  className="hzRmeD"
+  className="iUrSsH"
 />
 `;
 
 exports[`<Cell /> renders correctly with md 1`] = `
 <div
-  className="iJwUki"
+  className="iUrSsH"
 />
 `;
 
 exports[`<Cell /> renders correctly with sm 1`] = `
 <div
-  className="cmdSdm"
+  className="iUrSsH"
 />
 `;

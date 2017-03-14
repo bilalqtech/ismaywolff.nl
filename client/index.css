@@ -30,16 +30,25 @@ img {
 /* Fonts */
 
 html {
-  font-size: 20px;
+  font-size: 18px;
 }
 
-@media (min-width: 450px) {
+/* 35 x 16 = 560 */
+@media (min-width: 35em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* 40 x 16 = 640 */
+@media (min-width: 40em) {
   html {
     font-size: 22px;
   }
 }
 
-@media (min-width: 700px) {
+/* 45 x 16 = 720 */
+@media (min-width: 45em) {
   html {
     font-size: 24px;
   }
