@@ -31,7 +31,7 @@
     "clean-webpack-plugin": "^0.1.14",
     "copy-webpack-plugin": "^4.0.1",
     "coveralls": "^2.11.15",
-    "css-loader": "0.27.2",
+    "css-loader": "^0.27.3",
     "dotenv": "^4.0.0",
     "eclint": "^1.1.5",
     "enzyme": "^2.6.0",
