@@ -31,7 +31,7 @@ module.exports = {
   },
   output: {
     filename: '[name].[chunkhash].js',
-    path: './dist'
+    path: path.join(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -69,8 +69,8 @@ module.exports = {
   plugins: [
     extractVendor,
     extractBundle,
-    new CleanWebpackPlugin('./dist'),
-    new CopyWebpackPlugin([{ from: 'static' }]),
+    new CleanWebpackPlugin(path.join(__dirname, 'dist')),
+    new CopyWebpackPlugin([{ from: path.join(__dirname, 'static')}]),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
     }),
@@ -82,7 +82,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: 'client/index.ejs',
+      template: path.join(__dirname, 'client', 'index.ejs'),
       filename: 'index.html',
       minify: {
         collapseWhitespace: true,

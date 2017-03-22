@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve('./dist')
+    path: path.join(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -55,7 +55,7 @@ module.exports = {
     hints: false
   },
   plugins: [
-    new CopyWebpackPlugin([{ from: 'static' }]),
+    new CopyWebpackPlugin([{ from: path.join(__dirname, 'static')}]),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -65,6 +65,8 @@ module.exports = {
         CONTENT_PREVIEW_TOKEN: JSON.stringify(process.env.CONTENT_PREVIEW_TOKEN)
       }
     }),
-    new HtmlWebpackPlugin({ template: 'client/index.ejs' })
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'client', 'index.ejs')
+    })
   ]
 }
