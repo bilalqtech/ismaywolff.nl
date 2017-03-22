@@ -7,7 +7,7 @@ function ResponsiveThumbnail({ id }) {
   return (
     <Measure whitelist={['width']} includeMargin={false}>
       { dimensions =>
-        <Thumbnail id={id} size={multipleOf(dimensions.width, 50)} />
+        <Thumbnail id={id} width={multipleOf(dimensions.width, 50)} />
       }
     </Measure>
   )

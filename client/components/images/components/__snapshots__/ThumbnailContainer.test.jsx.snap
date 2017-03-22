@@ -2,6 +2,6 @@
 
 exports[`<ThumbnailContainer /> renders correctly 1`] = `
 <picture
-  className="cncIld"
+  className="lfSIGS"
 />
 `;

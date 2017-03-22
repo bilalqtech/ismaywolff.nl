@@ -5,7 +5,7 @@ import ThumbnailContainer from './ThumbnailContainer'
 import ThumbnailImage from './ThumbnailImage'
 
 // Renders a flat background color while the image is loading
-export function Thumbnail({ entities, id, size }) {
+export function Thumbnail({ entities, id, width }) {
   const image = entities[id]
 
   if (!image) {
@@ -15,7 +15,7 @@ export function Thumbnail({ entities, id, size }) {
   return (
     <ThumbnailContainer>
       <ThumbnailImage
-        srcSet={`${image.url}?fit=fill&w=${size}&h=${size}&fl=progressive`}
+        srcSet={`${image.url}?fit=fill&w=${width}&h=${width}&fl=progressive`}
         alt={image.title}
       />
     </ThumbnailContainer>
@@ -25,7 +25,7 @@ export function Thumbnail({ entities, id, size }) {
 Thumbnail.propTypes = {
   entities: PropTypes.object.isRequired,
   id: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired
+  width: PropTypes.number.isRequired
 }
 
 const mapStateToProps = state => ({

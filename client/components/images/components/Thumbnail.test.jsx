@@ -7,14 +7,14 @@ describe('<Thumbnail />', () => {
   it('renders correctly', () => {
     const entities = { one: { url: 'url', title: 'title' } }
     const wrapper = shallow(
-      <Thumbnail entities={entities} id={'one'} size={100} />
+      <Thumbnail entities={entities} id={'one'} width={100} />
     )
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a loading state', () => {
     const wrapper = shallow(
-      <Thumbnail entities={{}} id={'one'} size={100} />
+      <Thumbnail entities={{}} id={'one'} width={100} />
     )
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
