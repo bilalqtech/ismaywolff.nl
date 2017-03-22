@@ -9,7 +9,7 @@
     "lint:js": "eslint client/**/*.{js,jsx}",
     "lint:css": "stylelint client/**/*.{js,jsx}",
     "lint:whitespace": "eclint check * client/** server/**",
-    "start": "webpack-dev-server --content-base dist/ --inline --hot",
+    "start": "NODE_ENV=development webpack-dev-server --content-base dist/ --inline --hot",
     "test": "jest --watch"
   },
   "repository": {

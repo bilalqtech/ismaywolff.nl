@@ -74,13 +74,11 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        SPACE_ID: JSON.stringify(process.env.SPACE_ID),
-        CONTENT_DELIVERY_TOKEN: JSON.stringify(process.env.CONTENT_DELIVERY_TOKEN)
-      }
-    }),
+    new webpack.EnvironmentPlugin([
+      'NODE_ENV',
+      'SPACE_ID',
+      'CONTENT_DELIVERY_TOKEN'
+    ]),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'client', 'index.ejs'),
       filename: 'index.html',
