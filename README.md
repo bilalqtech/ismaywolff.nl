@@ -18,17 +18,21 @@
 * create `./.env` with your preferred settings:
 
 ```bash
-# Url parts for development
+# url parts for development
 DEV_BASE=http://0.0.0.0
 DEV_HOST=0.0.0.0
 DEV_PORT=8080
 
-# Contentful api tokens
+# contentful api tokens
 SPACE_ID=1234
 CONTENT_PREVIEW_TOKEN=1234
 
-# Only used when building a production version locally, for travis generated containers this variable is set in .travis.yml
+# only used when building a production version locally, for travis generated containers this variable is set in .travis.yml
 CONTENT_DELIVERY_TOKEN=1234
+
+# tracking ids
+DEV_TRACKING_ID=UA-XXXXX-Y
+PROD_TRACKING_ID=UA-XXXXX-Y
 ```
 
 ## containers

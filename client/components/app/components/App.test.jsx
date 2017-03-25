@@ -3,6 +3,8 @@ import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import { App } from './App'
 
+jest.mock('react-router')
+
 describe('<App />', () => {
   const store = {
     getState: () => {},
@@ -15,6 +17,7 @@ describe('<App />', () => {
     const wrapper = shallow(
       <App
         store={store}
+        history={{}}
         fetchWorks={() => {}}
         fetchImages={() => {}}
       />
@@ -26,6 +29,7 @@ describe('<App />', () => {
     const spy = jest.fn()
     mount(<App
       store={store}
+      history={{}}
       fetchWorks={spy}
       fetchImages={() => {}}
     />)
@@ -36,6 +40,7 @@ describe('<App />', () => {
     const spy = jest.fn()
     mount(<App
       store={store}
+      history={{}}
       fetchWorks={() => {}}
       fetchImages={spy}
     />)

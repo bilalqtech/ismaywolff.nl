@@ -4,12 +4,18 @@
     "jest": true,
     "node": true
   },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
   "plugins": [
     "compat"
   ],
   "settings": {
     "polyfills": [
-      "fetch"
+      "fetch",
+      "promises"
     ]
   },
   "extends": [

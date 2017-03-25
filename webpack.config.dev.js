@@ -61,7 +61,8 @@ module.exports = {
       'DEV_BASE',
       'DEV_PORT',
       'SPACE_ID',
-      'CONTENT_PREVIEW_TOKEN'
+      'CONTENT_PREVIEW_TOKEN',
+      'DEV_TRACKING_ID'
     ]),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'client', 'index.ejs')

@@ -13,6 +13,7 @@ module.exports = {
   entry: {
     main: './client/index.jsx',
     'vendor-base': [
+      'history',
       'load-script',
       'normalize.css',
       'normalizr',
@@ -20,6 +21,7 @@ module.exports = {
       'react-document-title',
       'react-dom',
       'react-redux',
+      'react-router',
       'react-router-dom',
       'redux',
       'redux-thunk'
@@ -77,7 +79,8 @@ module.exports = {
     new webpack.EnvironmentPlugin([
       'NODE_ENV',
       'SPACE_ID',
-      'CONTENT_DELIVERY_TOKEN'
+      'CONTENT_DELIVERY_TOKEN',
+      'PROD_TRACKING_ID'
     ]),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'client', 'index.ejs'),

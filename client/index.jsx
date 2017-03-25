@@ -6,6 +6,7 @@ import './index.css'
 import load from 'load-script'
 import React from 'react'
 import { render } from 'react-dom'
+import createHistory from 'history/createBrowserHistory'
 import { App } from './components/app'
 import configureStore from './store'
 
@@ -18,9 +19,13 @@ function boot(error) {
     )
   } else {
     const store = configureStore({})
+    const history = createHistory()
+
+    import('./services/analytics')
+      .then(analytics => analytics.init(history))
 
     render(
-      <App store={store} />,
+      <App store={store} history={history} />,
       document.getElementById('app')
     )
   }

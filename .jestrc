@@ -3,6 +3,7 @@
     "client/**/*.{js,jsx}",
     "!client/index.jsx",
     "!client/{rootReducer,store}.js",
-    "!client/{components,data,services}/*/index.js"
+    "!client/{components,data,services}/*/index.js",
+    "!client/services/analytics/**"
   ]
 }

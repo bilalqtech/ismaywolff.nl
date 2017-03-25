@@ -9,6 +9,9 @@
     ],
     "react"
   ],
+  "plugins": [
+    "syntax-dynamic-import"
+  ],
   "env": {
     "test": {
       "presets": [

@@ -11,8 +11,10 @@ exports[`<App /> renders correctly 1`] = `
     }
   }
 >
-  <BrowserRouter>
+  <Router
+    history={Object {}}
+  >
     <Routes />
-  </BrowserRouter>
+  </Router>
 </Provider>
 `;
