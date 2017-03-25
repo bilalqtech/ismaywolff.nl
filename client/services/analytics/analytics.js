@@ -13,7 +13,7 @@ import trackRouteChanges from './trackRouteChanges'
  * values for each of them.
  */
 
-export const init = history => {
+const init = history => {
   // load analytics in the background
   load('https://www.google-analytics.com/analytics.js')
 
@@ -27,3 +27,5 @@ export const init = history => {
   sendNavigationTimingMetrics()
   trackRouteChanges(history)
 }
+
+export default init
