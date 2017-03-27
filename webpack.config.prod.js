@@ -13,25 +13,28 @@ module.exports = {
   entry: {
     main: './client/index.jsx',
     'vendor-base': [
-      'babel-polyfill',
-      'isomorphic-fetch',
+      'history',
+      'load-script',
       'normalize.css',
-      'react',
-      'react-dom'
-    ],
-    'vendor-volatile': [
       'normalizr',
+      'react',
       'react-document-title',
+      'react-dom',
+      'react-medium-image-zoom',
       'react-redux',
+      'react-router',
       'react-router-dom',
       'redux',
-      'redux-saga',
+      'redux-thunk'
+    ],
+    'vendor-volatile': [
+      'react-measure',
       'styled-components'
     ]
   },
   output: {
     filename: '[name].[chunkhash].js',
-    path: './dist'
+    path: path.join(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -51,16 +54,16 @@ module.exports = {
         test: /\.css$/,
         include: /node_modules/,
         loader: extractVendor.extract({
-          fallbackLoader: 'style-loader?sourceMap',
-          loader: 'css-loader?sourceMap'
+          fallback: 'style-loader?sourceMap',
+          use: 'css-loader?sourceMap'
         })
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         loader: extractBundle.extract({
-          fallbackLoader: 'style-loader?sourceMap',
-          loader: 'css-loader?sourceMap'
+          fallback: 'style-loader?sourceMap',
+          use: 'css-loader?sourceMap'
         })
       }
     ]
@@ -69,20 +72,19 @@ module.exports = {
   plugins: [
     extractVendor,
     extractBundle,
-    new CleanWebpackPlugin('./dist'),
-    new CopyWebpackPlugin([{ from: 'static' }]),
+    new CleanWebpackPlugin(path.join(__dirname, 'dist')),
+    new CopyWebpackPlugin([{ from: path.join(__dirname, 'static')}]),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        SPACE_ID: JSON.stringify(process.env.SPACE_ID),
-        CONTENT_DELIVERY_TOKEN: JSON.stringify(process.env.CONTENT_DELIVERY_TOKEN)
-      }
-    }),
+    new webpack.EnvironmentPlugin([
+      'NODE_ENV',
+      'SPACE_ID',
+      'CONTENT_DELIVERY_TOKEN',
+      'PROD_TRACKING_ID'
+    ]),
     new HtmlWebpackPlugin({
-      template: 'client/index.ejs',
+      template: path.join(__dirname, 'client', 'index.ejs'),
       filename: 'index.html',
       minify: {
         collapseWhitespace: true,

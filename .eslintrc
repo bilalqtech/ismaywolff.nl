@@ -4,12 +4,27 @@
     "jest": true,
     "node": true
   },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "plugins": [
+    "compat"
+  ],
+  "settings": {
+    "polyfills": [
+      "fetch",
+      "promises"
+    ]
+  },
   "extends": [
     "airbnb"
   ],
   "rules": {
     "arrow-parens": ["error", "as-needed"],
     "comma-dangle": ["error", "never"],
+    "compat/compat": 2,
     "func-names": ["error", "as-needed"],
     "semi": ["error", "never"],
     "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],

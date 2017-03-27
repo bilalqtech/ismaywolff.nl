@@ -2,19 +2,30 @@
 
 exports[`<Cell /> renders correctly 1`] = `
 <div
-  className="WHVWL"
+  className="iUrSsH"
 />
 `;
 
 exports[`<Cell /> renders correctly with gutter 1`] = `
 <div
-  className="gvmVWP"
+  className="hTELSA"
 />
 `;
 
-exports[`<Cell /> renders correctly with width 1`] = `
+exports[`<Cell /> renders correctly with lg 1`] = `
 <div
-  className="bEtZKN"
-  width={0.5}
+  className="iUrSsH"
+/>
+`;
+
+exports[`<Cell /> renders correctly with md 1`] = `
+<div
+  className="iUrSsH"
+/>
+`;
+
+exports[`<Cell /> renders correctly with sm 1`] = `
+<div
+  className="iUrSsH"
 />
 `;

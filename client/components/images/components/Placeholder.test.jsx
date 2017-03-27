@@ -1,11 +1,13 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import WorkLoading from './WorkLoading'
+import Placeholder from './Placeholder'
 
-describe('<WorkLoading />', () => {
+describe('<Placeholder />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<WorkLoading />)
+    const wrapper = shallow(
+      <Placeholder width={1} height={2} />
+    )
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

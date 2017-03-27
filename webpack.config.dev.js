@@ -6,15 +6,12 @@ var webpack = require('webpack')
 module.exports = {
   entry: {
     main: [
-      'react-hot-loader/patch',
-      'webpack-dev-server/client?' + process.env.DEV_BASE + ':' + process.env.DEV_PORT,
-      'webpack/hot/only-dev-server',
       './client/index.jsx'
     ]
   },
   output: {
     filename: '[name].js',
-    path: path.resolve('./dist')
+    path: path.join(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -58,17 +55,17 @@ module.exports = {
     hints: false
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new CopyWebpackPlugin([{ from: 'static' }]),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        DEV_BASE: JSON.stringify(process.env.DEV_BASE),
-        DEV_PORT: JSON.stringify(process.env.DEV_PORT),
-        SPACE_ID: JSON.stringify(process.env.SPACE_ID),
-        CONTENT_PREVIEW_TOKEN: JSON.stringify(process.env.CONTENT_PREVIEW_TOKEN)
-      }
-    }),
-    new HtmlWebpackPlugin({ template: 'client/index.ejs' })
+    new CopyWebpackPlugin([{ from: path.join(__dirname, 'static')}]),
+    new webpack.EnvironmentPlugin([
+      'NODE_ENV',
+      'DEV_BASE',
+      'DEV_PORT',
+      'SPACE_ID',
+      'CONTENT_PREVIEW_TOKEN',
+      'DEV_TRACKING_ID'
+    ]),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'client', 'index.ejs')
+    })
   ]
 }

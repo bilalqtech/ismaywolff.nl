@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
-import styles from '../../../styles'
+import { gutter } from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
-import { Image } from '../../../components/images'
+import { ResponsiveZoomable } from '../../../components/images'
 
 function WorkDetailBody({ work }) {
   return (
@@ -17,10 +17,18 @@ function WorkDetailBody({ work }) {
       <p>{work.description}</p>
 
       {/* Gallery */}
-      <Grid gutter={styles.gutter}>
+      <Grid gutter={gutter}>
         { work.images.map(id => (
-          <Cell gutter={styles.gutter} width={1 / 3} key={id}>
-            <Image id={id} width={200} height={200} />
+          <Cell
+            gutter={gutter}
+            smSize={1 / 1}
+            mdSize={1 / 2}
+            lgSize={1 / 3}
+            mdBreak={'25em'}
+            lgBreak={'40em'}
+            key={id}
+          >
+            <ResponsiveZoomable id={id} />
           </Cell>
         ))}
       </Grid>

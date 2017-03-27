@@ -16,16 +16,18 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
     description
   </p>
   <styled.div
-    gutter=".5rem"
+    gutter="0.5rem"
   >
     <styled.div
-      gutter=".5rem"
-      width={0.3333333333333333}
+      gutter="0.5rem"
+      lgBreak="40em"
+      lgSize={0.3333333333333333}
+      mdBreak="25em"
+      mdSize={0.5}
+      smSize={1}
     >
-      <Connect(Image)
-        height={200}
+      <ResponsiveZoomable
         id="one"
-        width={200}
       />
     </styled.div>
   </styled.div>

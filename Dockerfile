@@ -1,12 +1,13 @@
 FROM node:alpine
 
-# create and set workdir
+# create app folder
 WORKDIR /app
 
-# copy server and dist files
-COPY server/index.js /app
-COPY server/package.json /app
-COPY dist /app
+# copy server files to app root
+COPY server /app
+
+# move dist files to public folder
+COPY dist /app/public
 
 # install dependencies
 RUN npm install

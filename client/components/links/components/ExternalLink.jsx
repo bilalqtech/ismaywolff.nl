@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-import styles from '../../../styles'
+import { colors } from '../../../styles'
 
 const ExternalLink = styled.a`
-  text-decoration: none;
-  color: black;
-  border-bottom: ${styles.link.active};
+  color: ${colors.black};
 `
 
 export default ExternalLink

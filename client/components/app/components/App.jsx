@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { Router } from 'react-router'
 import { Provider, connect } from 'react-redux'
 import Routes from './Routes'
 import { actions as works } from '../../works'
@@ -14,7 +14,7 @@ export class App extends Component {
   render() {
     return (
       <Provider store={this.props.store}>
-        <Router>
+        <Router history={this.props.history}>
           <Routes />
         </Router>
       </Provider>
@@ -25,7 +25,8 @@ export class App extends Component {
 App.propTypes = {
   fetchImages: PropTypes.func.isRequired,
   fetchWorks: PropTypes.func.isRequired,
-  store: PropTypes.object.isRequired
+  store: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 }
 
 const actions = {
