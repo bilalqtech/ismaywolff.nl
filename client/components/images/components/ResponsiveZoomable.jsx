@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react'
 import Measure from 'react-measure'
-import Thumbnail from './Thumbnail'
+import Zoomable from './Zoomable'
 import { roundUp } from '../utils'
 
-function ResponsiveThumbnail({ id }) {
+function ResponsiveZoomable({ id }) {
   return (
     <Measure whitelist={['width']} includeMargin={false}>
       { dimensions =>
-        <Thumbnail
+        <Zoomable
           id={id}
           width={roundUp(dimensions.width)}
         />
@@ -16,8 +16,8 @@ function ResponsiveThumbnail({ id }) {
   )
 }
 
-ResponsiveThumbnail.propTypes = {
+ResponsiveZoomable.propTypes = {
   id: PropTypes.string.isRequired
 }
 
-export default ResponsiveThumbnail
+export default ResponsiveZoomable

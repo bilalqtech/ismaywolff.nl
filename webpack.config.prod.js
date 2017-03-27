@@ -20,6 +20,7 @@ module.exports = {
       'react',
       'react-document-title',
       'react-dom',
+      'react-medium-image-zoom',
       'react-redux',
       'react-router',
       'react-router-dom',

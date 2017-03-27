@@ -76,6 +76,7 @@
     "react-document-title": "^2.0.2",
     "react-dom": "^15.4.1",
     "react-measure": "^1.4.6",
+    "react-medium-image-zoom": "^0.8.0",
     "react-redux": "^5.0.2",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",

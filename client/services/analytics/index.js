@@ -1,4 +1,2 @@
-import init from './analytics'
-import trackError from './trackError'
-
-export { init, trackError }
+export { default as init } from './analytics'
+export { default as trackError } from './trackError'

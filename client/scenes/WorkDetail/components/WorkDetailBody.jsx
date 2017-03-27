@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { gutter } from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
-import { ResponsiveThumbnail } from '../../../components/images'
+import { ResponsiveZoomable } from '../../../components/images'
 
 function WorkDetailBody({ work }) {
   return (
@@ -28,7 +28,7 @@ function WorkDetailBody({ work }) {
             lgBreak={'40em'}
             key={id}
           >
-            <ResponsiveThumbnail id={id} />
+            <ResponsiveZoomable id={id} />
           </Cell>
         ))}
       </Grid>

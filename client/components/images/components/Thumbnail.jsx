@@ -1,24 +1,23 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { getImageEntities } from '../selectors'
-import ThumbnailContainer from './ThumbnailContainer'
-import ThumbnailImage from './ThumbnailImage'
+import { createUrl } from '../utils'
+import Placeholder from './Placeholder'
 
-// Renders a flat background color while the image is loading
 export function Thumbnail({ entities, id, width }) {
   const image = entities[id]
 
   if (!image) {
-    return <ThumbnailContainer />
+    return <Placeholder height={1} width={1} />
   }
 
   return (
-    <ThumbnailContainer>
-      <ThumbnailImage
-        srcSet={`${image.url}?fit=fill&w=${width}&h=${width}&fl=progressive`}
+    <Placeholder height={1} width={1}>
+      <img
+        src={createUrl({ url: image.url, width, height: width, fill: true })}
         alt={image.title}
       />
-    </ThumbnailContainer>
+    </Placeholder>
   )
 }
 

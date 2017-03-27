@@ -5444,6 +5444,10 @@ react-measure@^1.4.6:
     get-node-dimensions "^1.2.0"
     resize-observer-polyfill "^1.4.1"
 
+react-medium-image-zoom@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-0.8.0.tgz#e9166eb0523f3de2be7fd9e88f024f05330695b1"
+
 react-redux@^5.0.2:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.3.tgz#86c3b68d56e74294a42e2a740ab66117ef6c019f"

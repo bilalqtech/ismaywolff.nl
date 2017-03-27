@@ -1,12 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import ThumbnailImage from './ThumbnailImage'
+import Placeholder from './Placeholder'
 
-describe('<ThumbnailImage />', () => {
+describe('<Placeholder />', () => {
   it('renders correctly', () => {
     const wrapper = shallow(
-      <ThumbnailImage />
+      <Placeholder width={1} height={2} />
     )
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
