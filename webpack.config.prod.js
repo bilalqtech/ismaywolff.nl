@@ -1,3 +1,4 @@
+var PreloadWebpackPlugin = require('preload-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -90,6 +91,9 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true
       }
+    }),
+    new PreloadWebpackPlugin({
+      rel: 'preload'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: [
