@@ -4,15 +4,23 @@ exports[`<WorkDetail /> renders a loading state 1`] = `<styled.div />`;
 
 exports[`<WorkDetail /> renders correctly 1`] = `
 <div>
-  <SideEffect(DocumentTitle)
-    title="title • Ismay Wolff"
-  />
-  <WorkDetailBody
-    work={
-      Object {
-        "title": "title",
+  <div>
+    <SideEffect(DocumentTitle)
+      title="title • Ismay Wolff"
+    />
+    <WorkDetailBody
+      work={
+        Object {
+          "title": "title",
+        }
       }
-    }
-  />
+    />
+  </div>
+</div>
+`;
+
+exports[`<WorkDetail /> renders errors 1`] = `
+<div>
+  Something went wrong
 </div>
 `;

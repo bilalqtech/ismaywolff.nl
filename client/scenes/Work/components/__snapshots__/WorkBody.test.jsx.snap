@@ -25,3 +25,9 @@ exports[`<WorkBody /> renders correctly 1`] = `
   </styled.div>
 </styled.div>
 `;
+
+exports[`<WorkBody /> renders errors 1`] = `
+<div>
+  Something went wrong
+</div>
+`;

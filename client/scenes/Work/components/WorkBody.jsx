@@ -8,8 +8,12 @@ import { ResponsiveThumbnail } from '../../../components/images'
 import { Spinner } from '../../../components/spinner'
 
 export function WorkBody({ entities, works }) {
-  if (works.result.length === 0) {
+  if (works.isFetching) {
     return <Spinner />
+  }
+
+  if (works.hasError) {
+    return <div>{works.errorMessage}</div>
   }
 
   return (

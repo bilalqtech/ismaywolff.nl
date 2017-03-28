@@ -19,7 +19,13 @@ describe('<WorkBody />', () => {
   })
 
   it('renders a loading state', () => {
-    const works = { result: [] }
+    const works = { isFetching: true }
+    const wrapper = shallow(<WorkBody entities={{}} works={works} />)
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
+
+  it('renders errors', () => {
+    const works = { hasError: true, errorMessage: 'Something went wrong' }
     const wrapper = shallow(<WorkBody entities={{}} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
