@@ -3,7 +3,11 @@ import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import { App } from './App'
 
-jest.mock('react-router')
+jest.mock('react-router', () => ({
+  withRouter: input => input,
+  Router: () => <div />
+}))
+jest.mock('../../scroll')
 
 describe('<App />', () => {
   const store = {

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Router } from 'react-router'
 import { Provider, connect } from 'react-redux'
 import Routes from './Routes'
+import { ScrollToTop } from '../../scroll'
 import { actions as works } from '../../works'
 import { actions as images } from '../../images'
 
@@ -15,7 +16,10 @@ export class App extends Component {
     return (
       <Provider store={this.props.store}>
         <Router history={this.props.history}>
-          <Routes />
+          <div>
+            <ScrollToTop />
+            <Routes />
+          </div>
         </Router>
       </Provider>
     )

@@ -14,7 +14,10 @@ exports[`<App /> renders correctly 1`] = `
   <Router
     history={Object {}}
   >
-    <Routes />
+    <div>
+      <ScrollToTop />
+      <Routes />
+    </div>
   </Router>
 </Provider>
 `;
