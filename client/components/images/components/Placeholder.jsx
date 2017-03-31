@@ -18,7 +18,7 @@ const Placeholder = styled.picture`
   padding-top: ${setPadding};
   background: ${colors.gray};
 
-  & > img {
+  & img {
     position: absolute;
     top: 0;
     left: 0;
