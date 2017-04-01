@@ -28,7 +28,7 @@ exports[`<WorkDetail /> renders correctly 1`] = `
 `;
 
 exports[`<WorkDetail /> renders errors 1`] = `
-<div>
-  Something went wrong
-</div>
+<Error
+  error="Something went wrong"
+/>
 `;

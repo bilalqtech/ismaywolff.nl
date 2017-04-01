@@ -27,6 +27,12 @@ img {
   max-width: 100%;
 }
 
+/* Cascade svg fill color */
+
+svg {
+  fill: currentColor;
+}
+
 /* Fonts */
 
 html {

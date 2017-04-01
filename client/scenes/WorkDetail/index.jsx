@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../components/works'
 import { Spinner } from '../../components/spinner'
+import { Error } from '../../components/error'
 import WorkDetailBody from './components/WorkDetailBody'
 
 export function WorkDetail({ entities, works, match }) {
@@ -13,7 +14,7 @@ export function WorkDetail({ entities, works, match }) {
   }
 
   if (works.hasError) {
-    return <div>{works.errorMessage}</div>
+    return <Error error={works.errorMessage} />
   }
 
   return (
