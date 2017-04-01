@@ -1,11 +1,14 @@
 import React from 'react'
-import DocumentTitle from 'react-document-title'
+import { Helmet } from 'react-helmet'
 import { ExternalLink } from '../../components/links'
 
 function About() {
   return (
     <div>
-      <DocumentTitle title={'Ismay Wolff'} />
+      <Helmet>
+        <title>Ismay Wolff</title>
+        <meta name="description" content="About me" />
+      </Helmet>
       <p>
         I&#39;m an artist, a social scientist and a programmer. My work is a combination of
         these fields and an exploration of the most inspiring parts of each discipline.

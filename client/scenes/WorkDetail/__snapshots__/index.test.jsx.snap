@@ -5,9 +5,17 @@ exports[`<WorkDetail /> renders a loading state 1`] = `<styled.div />`;
 exports[`<WorkDetail /> renders correctly 1`] = `
 <div>
   <div>
-    <SideEffect(DocumentTitle)
-      title="title • Ismay Wolff"
-    />
+    <HelmetWrapper
+      encodeSpecialCharacters={true}
+    >
+      <title>
+        title • Ismay Wolff
+      </title>
+      <meta
+        content="Detailed view of title"
+        name="description"
+      />
+    </HelmetWrapper>
     <WorkDetailBody
       work={
         Object {

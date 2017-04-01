@@ -19,7 +19,7 @@ module.exports = {
       'normalize.css',
       'normalizr',
       'react',
-      'react-document-title',
+      'react-helmet',
       'react-dom',
       'react-medium-image-zoom',
       'react-redux',

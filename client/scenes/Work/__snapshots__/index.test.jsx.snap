@@ -2,9 +2,17 @@
 
 exports[`<Work /> renders correctly 1`] = `
 <div>
-  <SideEffect(DocumentTitle)
-    title="Work • Ismay Wolff"
-  />
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Work • Ismay Wolff
+    </title>
+    <meta
+      content="An overview of my work"
+      name="description"
+    />
+  </HelmetWrapper>
   <Connect(WorkBody) />
 </div>
 `;

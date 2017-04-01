@@ -2,9 +2,13 @@
 
 exports[`<Missing /> renders correctly 1`] = `
 <div>
-  <SideEffect(DocumentTitle)
-    title="Page not found"
-  />
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Page not found
+    </title>
+  </HelmetWrapper>
   <p>
     That page does not exist
   </p>

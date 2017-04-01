@@ -1,11 +1,14 @@
 import React from 'react'
-import DocumentTitle from 'react-document-title'
+import { Helmet } from 'react-helmet'
 import WorkBody from './components/WorkBody'
 
 function Work() {
   return (
     <div>
-      <DocumentTitle title={'Work • Ismay Wolff'} />
+      <Helmet>
+        <title>Work • Ismay Wolff</title>
+        <meta name="description" content="An overview of my work" />
+      </Helmet>
       <WorkBody />
     </div>
   )

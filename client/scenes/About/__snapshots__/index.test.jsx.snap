@@ -2,9 +2,17 @@
 
 exports[`<About /> renders correctly 1`] = `
 <div>
-  <SideEffect(DocumentTitle)
-    title="Ismay Wolff"
-  />
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Ismay Wolff
+    </title>
+    <meta
+      content="About me"
+      name="description"
+    />
+  </HelmetWrapper>
   <p>
     I'm an artist, a social scientist and a programmer. My work is a combination of these fields and an exploration of the most inspiring parts of each discipline. I was born 1983 in Heerde and live and work in Groningen in the Netherlands.
   </p>

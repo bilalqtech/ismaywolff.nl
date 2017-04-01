@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import DocumentTitle from 'react-document-title'
+import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../components/works'
 import { Spinner } from '../../components/spinner'
@@ -20,7 +20,10 @@ export function WorkDetail({ entities, works, match }) {
     <div>
       {work &&
         <div>
-          <DocumentTitle title={`${work.title} • Ismay Wolff`} />
+          <Helmet>
+            <title>{`${work.title} • Ismay Wolff`}</title>
+            <meta name="description" content={`Detailed view of ${work.title}`} />
+          </Helmet>
           <WorkDetailBody work={work} />
         </div>
       }

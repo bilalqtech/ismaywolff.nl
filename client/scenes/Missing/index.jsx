@@ -1,5 +1,5 @@
 import React from 'react'
-import DocumentTitle from 'react-document-title'
+import { Helmet } from 'react-helmet'
 
 function Missing() {
   const error = new Error(`Missing page: ${window.location.href}`)
@@ -9,7 +9,9 @@ function Missing() {
 
   return (
     <div>
-      <DocumentTitle title={'Page not found'} />
+      <Helmet>
+        <title>Page not found</title>
+      </Helmet>
       <p>That page does not exist</p>
     </div>
   )
