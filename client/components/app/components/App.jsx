@@ -3,7 +3,7 @@ import { Router } from 'react-router'
 import { Provider, connect } from 'react-redux'
 import Routes from './Routes'
 import { ScrollToTop } from '../../scroll'
-import { actions as works } from '../../works'
+import { actions as works } from '../../../data/works'
 import { actions as images } from '../../images'
 
 export class App extends Component {

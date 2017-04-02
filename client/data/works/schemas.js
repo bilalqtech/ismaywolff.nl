@@ -1,5 +1,5 @@
 import { schema } from 'normalizr'
-import { schemas as links } from '../../data/links'
+import { schemas as links } from '../links'
 
 export const works = new schema.Entity('works', {
   images: [links.links],

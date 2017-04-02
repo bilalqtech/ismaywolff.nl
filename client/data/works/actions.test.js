@@ -5,8 +5,8 @@ import * as actions from './actions'
 
 jest.mock('../../services/get', () => jest.fn())
 jest.mock('./schemas')
-jest.mock('../images/schemas')
-jest.mock('../../data/links')
+jest.mock('../../components/images/schemas')
+jest.mock('../links')
 jest.mock('normalizr', () => ({
   normalize: items => items,
   schema: { Entity: jest.fn() }
