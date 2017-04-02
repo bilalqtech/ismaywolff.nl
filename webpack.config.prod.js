@@ -14,6 +14,7 @@ module.exports = {
   entry: {
     main: './client/index.jsx',
     'vendor-base': [
+      'date-fns',
       'history',
       'load-script',
       'normalize.css',

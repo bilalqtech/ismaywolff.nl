@@ -8,7 +8,7 @@ describe('<WorkDetailBody />', () => {
     const work = {
       title: 'title',
       type: 'type',
-      published: 'published',
+      published: '2011-04-01',
       description: 'description',
       images: ['one']
     }
