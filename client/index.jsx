@@ -10,6 +10,11 @@ import createHistory from 'history/createBrowserHistory'
 import { App } from './components/app'
 import configureStore from './store'
 
+// feature tests
+const hasFetch = 'fetch' in window
+const hasPromise = 'Promise' in window
+const hasObjectAssign = typeof Object.assign === 'function'
+
 // boots the app, shows errors if there were any
 function boot(error) {
   if (error) {
@@ -31,8 +36,8 @@ function boot(error) {
   }
 }
 
-// tests if the client supports all necessary features, and polyfills them if necessary
-if (window.Promise && window.fetch && Object.assign) {
+// checks if the client supports all necessary features, and polyfills them if necessary
+if (hasFetch && hasPromise && hasObjectAssign) {
   boot()
 } else {
   load('https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Object.assign,Promise', boot)
