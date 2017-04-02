@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../components/works'
 import { Spinner } from '../../components/spinner'
-import { ApiError } from '../../components/error'
+import { ApiError } from '../../components/errors'
 import WorkDetailBody from './components/WorkDetailBody'
 
 export function WorkDetail({ entities, works, match }) {

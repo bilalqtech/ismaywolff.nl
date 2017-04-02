@@ -9,10 +9,10 @@ exports[`<MissingPageError /> renders correctly 1`] = `
     Oops, that page can't be found!
   </styled.h2>
   <p>
-    The page you're trying to view doesn't exist. If you entered the url manually check whether it's correct. If you clicked a link then either I made a mistake, or the page just doesn't exist yet. Either way, I'll get on it, and make sure that it'll be fixed as soon as possible!
+    The page you're trying to view doesn't exist. If you entered the url manually check whether it's correct. If you clicked a link then either I made a mistake, or the page just doesn't exist yet. Either way, I'll get on it, and make sure that it's fixed as soon as possible!
   </p>
   <p>
-    In the meantime, might I interest you in checking out 
+    In the meantime, might I interest you in checking out the page with 
     <Styled(Link)
       to="/work"
     >

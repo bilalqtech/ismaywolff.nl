@@ -6,7 +6,7 @@ import { selectors } from '../../../components/works'
 import { Cell, Grid } from '../../../components/grid'
 import { ResponsiveThumbnail } from '../../../components/images'
 import { Spinner } from '../../../components/spinner'
-import { ApiError } from '../../../components/error'
+import { ApiError } from '../../../components/errors'
 
 export function WorkBody({ entities, works }) {
   if (works.isFetching) {
