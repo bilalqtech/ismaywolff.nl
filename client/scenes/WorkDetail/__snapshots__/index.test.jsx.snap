@@ -28,7 +28,7 @@ exports[`<WorkDetail /> renders correctly 1`] = `
 `;
 
 exports[`<WorkDetail /> renders errors 1`] = `
-<Error
+<ApiError
   error="Something went wrong"
 />
 `;

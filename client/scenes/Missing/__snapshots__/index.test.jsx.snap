@@ -9,8 +9,6 @@ exports[`<Missing /> renders correctly 1`] = `
       Page not found
     </title>
   </HelmetWrapper>
-  <p>
-    That page does not exist
-  </p>
+  <MissingPageError />
 </div>
 `;

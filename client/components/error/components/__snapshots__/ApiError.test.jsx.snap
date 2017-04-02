@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Error /> renders correctly 1`] = `
-<styled.div>
+exports[`<ApiError /> renders correctly 1`] = `
+<styled.div
+  background="rgb(239,141,141)"
+  color="rgb(195,35,35)"
+>
   <styled.h2>
     Oops, something went wrong!
   </styled.h2>

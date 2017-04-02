@@ -6,7 +6,7 @@ import { selectors } from '../../../components/works'
 import { Cell, Grid } from '../../../components/grid'
 import { ResponsiveThumbnail } from '../../../components/images'
 import { Spinner } from '../../../components/spinner'
-import { Error } from '../../../components/error'
+import { ApiError } from '../../../components/error'
 
 export function WorkBody({ entities, works }) {
   if (works.isFetching) {
@@ -14,7 +14,7 @@ export function WorkBody({ entities, works }) {
   }
 
   if (works.hasError) {
-    return <Error error={works.errorMessage} />
+    return <ApiError error={works.errorMessage} />
   }
 
   return (

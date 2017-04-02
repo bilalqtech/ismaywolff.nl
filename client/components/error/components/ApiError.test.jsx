@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import Error from './Error'
+import ApiError from './ApiError'
 
-describe('<Error />', () => {
+describe('<ApiError />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<Error error={'Error message.'} />)
+    const wrapper = shallow(<ApiError error={'Error message.'} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

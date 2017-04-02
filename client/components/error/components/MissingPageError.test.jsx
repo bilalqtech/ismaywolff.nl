@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import ErrorContainer from './ErrorContainer'
+import MissingPageError from './MissingPageError'
 
-describe('<ErrorContainer />', () => {
+describe('<MissingPageError />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<ErrorContainer background={'green'} color={'blue'} />)
+    const wrapper = shallow(<MissingPageError />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

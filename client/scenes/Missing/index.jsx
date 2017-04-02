@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { MissingPageError } from '../../components/error'
 
 function Missing() {
   const error = new Error(`Missing page: ${window.location.href}`)
@@ -12,7 +13,7 @@ function Missing() {
       <Helmet>
         <title>Page not found</title>
       </Helmet>
-      <p>That page does not exist</p>
+      <MissingPageError />
     </div>
   )
 }
