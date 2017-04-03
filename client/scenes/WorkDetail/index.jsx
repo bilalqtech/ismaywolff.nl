@@ -3,31 +3,37 @@ import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../data/works'
 import { Spinner } from '../../components/spinner'
-import { ApiError } from '../../components/errors'
+import { ApiError, MissingPageError } from '../../components/errors'
 import WorkDetailBody from './components/WorkDetailBody'
 
 export function WorkDetail({ entities, works, match }) {
   const work = entities[match.params.id]
+  const hasWorks = works.result.length > 0
 
-  if (works.isFetching) {
+  // if fetching or hasn't fetched yet
+  if (works.isFetching || !works.didFetch) {
     return <Spinner />
   }
 
+  // if there's an error
   if (works.hasError) {
     return <ApiError error={works.errorMessage} />
   }
 
+  // if there's work but not the requested one
+  if (hasWorks && !work) {
+    return <MissingPageError />
+  }
+
   return (
     <div>
-      {work &&
-        <div>
-          <Helmet>
-            <title>{`${work.title} • Ismay Wolff`}</title>
-            <meta name="description" content={`Detailed view of ${work.title}`} />
-          </Helmet>
-          <WorkDetailBody work={work} />
-        </div>
-      }
+      <div>
+        <Helmet>
+          <title>{`${work.title} • Ismay Wolff`}</title>
+          <meta name="description" content={`Detailed view of ${work.title}`} />
+        </Helmet>
+        <WorkDetailBody work={work} />
+      </div>
     </div>
   )
 }

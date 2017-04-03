@@ -2,6 +2,14 @@
 
 exports[`<WorkDetail /> renders a loading state 1`] = `<styled.div />`;
 
+exports[`<WorkDetail /> renders a missing page error 1`] = `<MissingPageError />`;
+
+exports[`<WorkDetail /> renders api errors 1`] = `
+<ApiError
+  error="Something went wrong"
+/>
+`;
+
 exports[`<WorkDetail /> renders correctly 1`] = `
 <div>
   <div>
@@ -25,10 +33,4 @@ exports[`<WorkDetail /> renders correctly 1`] = `
     />
   </div>
 </div>
-`;
-
-exports[`<WorkDetail /> renders errors 1`] = `
-<ApiError
-  error="Something went wrong"
-/>
 `;

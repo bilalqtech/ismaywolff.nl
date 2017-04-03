@@ -7,19 +7,29 @@ describe('<WorkDetail />', () => {
   it('renders correctly', () => {
     const match = { params: { id: 'one' } }
     const entities = { one: { title: 'title' } }
-    const wrapper = shallow(<WorkDetail match={match} entities={entities} works={{}} />)
+    const works = { result: ['one'], isFetching: false, didFetch: true }
+    const wrapper = shallow(<WorkDetail match={match} entities={entities} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a loading state', () => {
     const match = { params: { id: 'one' } }
-    const wrapper = shallow(<WorkDetail match={match} entities={{}} works={{ isFetching: true }} />)
+    const works = { result: [], isFetching: true, didFetch: false }
+    const wrapper = shallow(<WorkDetail match={match} entities={{}} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
-  it('renders errors', () => {
+  it('renders a missing page error', () => {
     const match = { params: { id: 'one' } }
-    const works = { hasError: true, errorMessage: 'Something went wrong' }
+    const entities = { two: { title: 'title' } }
+    const works = { result: ['two'], isFetching: false, didFetch: true }
+    const wrapper = shallow(<WorkDetail match={match} entities={entities} works={works} />)
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
+
+  it('renders api errors', () => {
+    const match = { params: { id: 'one' } }
+    const works = { hasError: true, errorMessage: 'Something went wrong', result: [], didFetch: true }
     const wrapper = shallow(<WorkDetail match={match} entities={{}} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })

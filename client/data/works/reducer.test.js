@@ -3,6 +3,7 @@ import * as types from './actionTypes'
 
 describe('reducer', () => {
   const initialState = {
+    didFetch: false,
     errorMessage: '',
     hasError: false,
     isFetching: false,
@@ -35,6 +36,7 @@ describe('reducer', () => {
       payload
     })
     const expected = {
+      didFetch: true,
       errorMessage: '',
       hasError: false,
       isFetching: false,
@@ -50,6 +52,7 @@ describe('reducer', () => {
       payload: new Error('error')
     })
     const expected = {
+      didFetch: true,
       errorMessage: 'error',
       hasError: true,
       isFetching: false,
