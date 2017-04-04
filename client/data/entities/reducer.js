@@ -1,4 +1,5 @@
 const initialState = {
+  articles: {},
   images: {},
   works: {}
 }
@@ -9,6 +10,13 @@ export default function entities(state = initialState, action) {
     const works = Object.assign({}, state.works, action.payload.entities.works)
 
     return Object.assign({}, state, { works })
+  }
+
+  if (action.payload && action.payload.entities && action.payload.entities.articles) {
+    // merge new articles with existing articles
+    const articles = Object.assign({}, state.articles, action.payload.entities.articles)
+
+    return Object.assign({}, state, { articles })
   }
 
   if (action.payload && action.payload.entities && action.payload.entities.images) {

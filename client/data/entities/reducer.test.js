@@ -2,6 +2,7 @@ import reducer from './reducer'
 
 describe('reducer', () => {
   const initialState = {
+    articles: {},
     images: {},
     works: {}
   }
@@ -23,8 +24,27 @@ describe('reducer', () => {
       }
     })
     const expected = {
+      articles: {},
       images: {},
       works: { item: 'item' }
+    }
+
+    expect(actual).toEqual(expected)
+  })
+
+  it('should handle articles entities', () => {
+    const actual = reducer(undefined, {
+      type: 'ACTION',
+      payload: {
+        entities: {
+          articles: { item: 'item' }
+        }
+      }
+    })
+    const expected = {
+      works: {},
+      images: {},
+      articles: { item: 'item' }
     }
 
     expect(actual).toEqual(expected)
@@ -40,6 +60,7 @@ describe('reducer', () => {
       }
     })
     const expected = {
+      articles: {},
       images: { item: 'item' },
       works: {}
     }

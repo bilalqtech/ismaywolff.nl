@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextLine /> renders correctly for direction left 1`] = `
+<div
+  className="eMVHAg"
+  direction="left"
+/>
+`;
+
+exports[`<TextLine /> renders correctly for direction right 1`] = `
+<div
+  className="eMVHAg"
+  direction="right"
+/>
+`;

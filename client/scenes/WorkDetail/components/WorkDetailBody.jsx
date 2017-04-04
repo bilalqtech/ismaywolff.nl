@@ -25,8 +25,6 @@ function WorkDetailBody({ work }) {
             smSize={1 / 1}
             mdSize={1 / 2}
             lgSize={1 / 3}
-            mdBreak={'25em'}
-            lgBreak={'40em'}
             key={id}
           >
             <ResponsiveZoomable id={id} />

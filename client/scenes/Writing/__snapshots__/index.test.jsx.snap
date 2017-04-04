@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Writing /> renders correctly 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Writing • Ismay Wolff
+    </title>
+    <meta
+      content="An overview of my writing"
+      name="description"
+    />
+  </HelmetWrapper>
+  <Connect(WritingBody) />
+</div>
+`;

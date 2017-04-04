@@ -13,7 +13,7 @@ var extractVendor = new ExtractTextPlugin('vendor-[hash].css')
 module.exports = {
   entry: {
     main: './client/index.jsx',
-    'vendor-base': [
+    'vendor': [
       'date-fns',
       'history',
       'load-script',
@@ -29,8 +29,13 @@ module.exports = {
       'redux',
       'redux-thunk'
     ],
-    'vendor-volatile': [
-      'react-measure',
+    'measure': [
+      'react-measure'
+    ],
+    'markdown': [
+      'react-markdown'
+    ],
+    'styled': [
       'styled-components'
     ]
   },
@@ -98,8 +103,10 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: [
-        'vendor-base',
-        'vendor-volatile',
+        'vendor',
+        'measure',
+        'markdown',
+        'styled',
         'manifest'
       ]
     })

@@ -9,10 +9,12 @@ import { Spinner } from '../../../components/spinner'
 import { ApiError } from '../../../components/errors'
 
 export function WorkBody({ entities, works }) {
-  if (works.isFetching) {
+  // if fetching or hasn't fetched yet
+  if (works.isFetching || !works.didFetch) {
     return <Spinner />
   }
 
+  // if there's an error
   if (works.hasError) {
     return <ApiError error={works.errorMessage} />
   }
@@ -25,8 +27,6 @@ export function WorkBody({ entities, works }) {
           smSize={1 / 1}
           mdSize={1 / 2}
           lgSize={1 / 3}
-          mdBreak={'25em'}
-          lgBreak={'40em'}
           key={id}
         >
           <Link to={`/work/${entities[id].slug}`}>

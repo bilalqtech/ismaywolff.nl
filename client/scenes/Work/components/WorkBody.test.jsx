@@ -12,7 +12,8 @@ describe('<WorkBody />', () => {
       }
     }
     const works = {
-      result: ['one']
+      result: ['one'],
+      didFetch: true
     }
     const wrapper = shallow(<WorkBody entities={entities} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
@@ -25,7 +26,7 @@ describe('<WorkBody />', () => {
   })
 
   it('renders errors', () => {
-    const works = { hasError: true, errorMessage: 'Something went wrong' }
+    const works = { hasError: true, errorMessage: 'Something went wrong', didFetch: true }
     const wrapper = shallow(<WorkBody entities={{}} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })

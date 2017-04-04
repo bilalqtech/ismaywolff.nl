@@ -1,4 +1,3 @@
-import { PropTypes } from 'react'
 import styled from 'styled-components'
 
 const setGutter = props => `calc(0.5 * ${props.gutter})`
@@ -24,14 +23,11 @@ const Cell = styled.div`
 
 Cell.defaultProps = {
   gutter: 0,
-  smSize: '100%',
-  mdSize: '100%',
-  lgSize: '100%'
-}
-
-Cell.propTypes = {
-  mdBreak: PropTypes.string.isRequired,
-  lgBreak: PropTypes.string.isRequired
+  mdBreak: '25em',
+  lgBreak: '40em',
+  smSize: '1',
+  mdSize: '1',
+  lgSize: '1'
 }
 
 export default Cell

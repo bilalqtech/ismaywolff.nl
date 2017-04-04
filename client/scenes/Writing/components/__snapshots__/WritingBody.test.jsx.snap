@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WritingBody /> renders a loading state 1`] = `<styled.div />`;
+
+exports[`<WritingBody /> renders correctly 1`] = `
+<styled.div
+  gutter="0.5rem"
+>
+  <styled.div
+    gutter="0.5rem"
+    lgBreak="40em"
+    lgSize="1"
+    mdBreak="25em"
+    mdSize="1"
+    smSize="1"
+  >
+    <Styled(Link)
+      to="/writing/slug"
+    >
+      <styled.div>
+        <styled.span
+          direction="right"
+        >
+          title
+        </styled.span>
+        <styled.span>
+          October 2000
+        </styled.span>
+      </styled.div>
+    </Styled(Link)>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`<WritingBody /> renders errors 1`] = `
+<ApiError
+  error="Something went wrong"
+/>
+`;

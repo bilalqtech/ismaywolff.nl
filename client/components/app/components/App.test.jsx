@@ -22,6 +22,7 @@ describe('<App />', () => {
       <App
         store={store}
         history={{}}
+        fetchArticles={() => {}}
         fetchWorks={() => {}}
         fetchImages={() => {}}
       />
@@ -34,6 +35,7 @@ describe('<App />', () => {
     mount(<App
       store={store}
       history={{}}
+      fetchArticles={() => {}}
       fetchWorks={spy}
       fetchImages={() => {}}
     />)
@@ -45,8 +47,21 @@ describe('<App />', () => {
     mount(<App
       store={store}
       history={{}}
+      fetchArticles={() => {}}
       fetchWorks={() => {}}
       fetchImages={spy}
+    />)
+    expect(spy).toBeCalled()
+  })
+
+  it('fetches articles', () => {
+    const spy = jest.fn()
+    mount(<App
+      store={store}
+      history={{}}
+      fetchArticles={spy}
+      fetchWorks={() => {}}
+      fetchImages={() => {}}
     />)
     expect(spy).toBeCalled()
   })
