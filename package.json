@@ -70,7 +70,7 @@
     "webpack-dev-server": "^2.2.1"
   },
   "dependencies": {
-    "date-fns": "^1.28.2",
+    "dateformat": "^2.0.0",
     "history": "^4.6.1",
     "load-script": "^1.0.0",
     "normalize.css": "^6.0.0",

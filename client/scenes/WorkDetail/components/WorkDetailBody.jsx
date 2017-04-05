@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import format from 'date-fns/format'
+import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
@@ -11,7 +11,7 @@ function WorkDetailBody({ work }) {
       {/* Header */}
       <TitleContainer>
         <Title>{work.title}</Title>
-        <SubTitle>{work.type} - {format(work.published, 'MMMM YYYY')}</SubTitle>
+        <SubTitle>{work.type} - {dateformat(work.published, 'mmmm yyyy')}</SubTitle>
       </TitleContainer>
 
       {/* Body */}

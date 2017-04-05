@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import format from 'date-fns/format'
+import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
 import { selectors } from '../../../data/articles'
 import { Cell, Grid } from '../../../components/grid'
@@ -30,7 +30,7 @@ export function WritingBody({ entities, articles }) {
           <InternalLink to={`/writing/${entities[id].slug}`}>
             <TextLine>
               <TextLineFill direction={'right'}>{entities[id].title}</TextLineFill>
-              <TextLineFit>{format(entities[id].published, 'MMMM YYYY')}</TextLineFit>
+              <TextLineFit>{dateformat(entities[id].published, 'mmmm yyyy')}</TextLineFit>
             </TextLine>
           </InternalLink>
         </Cell>

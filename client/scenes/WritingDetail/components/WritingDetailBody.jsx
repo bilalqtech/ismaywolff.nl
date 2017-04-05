@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import format from 'date-fns/format'
+import dateformat from 'dateformat'
 import ReactMarkdown from 'react-markdown'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
 
@@ -9,7 +9,7 @@ function WritingDetailBody({ article }) {
       {/* Header */}
       <TitleContainer>
         <Title>{article.title}</Title>
-        <SubTitle>{format(article.published, 'MMMM YYYY')}</SubTitle>
+        <SubTitle>{dateformat(article.published, 'mmmm yyyy')}</SubTitle>
       </TitleContainer>
 
       {/* Body */}
