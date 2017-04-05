@@ -1,23 +1,20 @@
 import React, { PropTypes } from 'react'
-import Measure from 'react-measure'
+import sizeMe from 'react-sizeme'
 import Zoomable from './Zoomable'
 import { roundUp } from '../utils'
 
-function ResponsiveZoomable({ id }) {
+export function ResponsiveZoomable({ id, size }) {
   return (
-    <Measure whitelist={['width']} includeMargin={false}>
-      { dimensions =>
-        <Zoomable
-          id={id}
-          width={roundUp(dimensions.width)}
-        />
-      }
-    </Measure>
+    <Zoomable
+      id={id}
+      width={roundUp(size.width)}
+    />
   )
 }
 
 ResponsiveZoomable.propTypes = {
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  size: PropTypes.object.isRequired
 }
 
-export default ResponsiveZoomable
+export default sizeMe()(ResponsiveZoomable)

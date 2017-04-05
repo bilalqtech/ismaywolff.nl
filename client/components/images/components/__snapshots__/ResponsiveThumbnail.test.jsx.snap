@@ -3,26 +3,17 @@
 exports[`<ResponsiveThumbnail /> renders correctly 1`] = `
 <ResponsiveThumbnail
   id="one"
->
-  <Measure
-    blacklist={Array []}
-    cloneOptions={Object {}}
-    includeMargin={false}
-    onMeasure={[Function]}
-    shouldMeasure={true}
-    useClone={false}
-    whitelist={
-      Array [
-        "width",
-      ]
+  size={
+    Object {
+      "width": 50,
     }
+  }
+>
+  <Component
+    id="one"
+    width={50}
   >
-    <Component
-      id="one"
-      width={50}
-    >
-      <div />
-    </Component>
-  </Measure>
+    <div />
+  </Component>
 </ResponsiveThumbnail>
 `;

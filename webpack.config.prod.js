@@ -26,11 +26,12 @@ module.exports = {
       'react-redux',
       'react-router',
       'react-router-dom',
+      'react-sizeme',
       'redux',
       'redux-thunk'
     ],
-    'measure': [
-      'react-measure'
+    'sizeme': [
+      'react-sizeme'
     ],
     'markdown': [
       'react-markdown'
@@ -104,7 +105,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: [
         'vendor',
-        'measure',
+        'sizeme',
         'markdown',
         'styled',
         'manifest'
