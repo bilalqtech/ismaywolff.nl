@@ -15,5 +15,8 @@ yarn-error.log
 # Build results
 /dist
 
+# Build statistics
+stats.json
+
 # Environment specific settings
 .env

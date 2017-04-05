@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "NODE_ENV=production webpack -p --bail",
+    "build:stats": "NODE_ENV=production webpack -p --json > stats.json",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint:js": "eslint client/**/*.{js,jsx}",
     "lint:css": "stylelint client/**/*.{js,jsx}",
