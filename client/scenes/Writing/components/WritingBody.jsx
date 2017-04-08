@@ -6,7 +6,7 @@ import { selectors } from '../../../data/articles'
 import { Cell, Grid } from '../../../components/grid'
 import { InternalLink } from '../../../components/links'
 import { Spinner } from '../../../components/spinner'
-import { ApiError } from '../../../components/errors'
+import { AppError } from '../../../components/errors'
 import { TextLine, TextLineFill, TextLineFit } from '../../../components/text'
 
 export function WritingBody({ entities, articles }) {
@@ -17,7 +17,7 @@ export function WritingBody({ entities, articles }) {
 
   // if there's an error
   if (articles.hasError) {
-    return <ApiError error={articles.errorMessage} />
+    return <AppError error={articles.errorMessage} />
   }
 
   return (

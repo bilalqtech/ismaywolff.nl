@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../data/articles'
 import { Spinner } from '../../components/spinner'
-import { ApiError, MissingPageError } from '../../components/errors'
+import { AppError, MissingPageError } from '../../components/errors'
 import WritingDetailBody from './components/WritingDetailBody'
 
 export function WritingDetail({ entities, articles, match }) {
@@ -17,7 +17,7 @@ export function WritingDetail({ entities, articles, match }) {
 
   // if there's an error
   if (articles.hasError) {
-    return <ApiError error={articles.errorMessage} />
+    return <AppError error={articles.errorMessage} />
   }
 
   // if there's an article but not the requested one

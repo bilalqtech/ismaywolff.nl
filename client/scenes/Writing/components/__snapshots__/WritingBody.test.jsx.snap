@@ -33,7 +33,7 @@ exports[`<WritingBody /> renders correctly 1`] = `
 `;
 
 exports[`<WritingBody /> renders errors 1`] = `
-<ApiError
+<AppError
   error="Something went wrong"
 />
 `;

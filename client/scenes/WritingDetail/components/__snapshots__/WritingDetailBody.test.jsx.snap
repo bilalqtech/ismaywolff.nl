@@ -10,9 +10,7 @@ exports[`<WritingDetailBody /> renders correctly 1`] = `
       April 2011
     </styled.p>
   </styled.div>
-  <ReactMarkdown
-    containerTagName="div"
-    parserOptions={Object {}}
+  <Loadable
     source="text"
   />
 </div>

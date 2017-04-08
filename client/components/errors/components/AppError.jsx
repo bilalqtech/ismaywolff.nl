@@ -4,7 +4,11 @@ import ErrorTitle from './ErrorTitle'
 import { ExternalLink } from '../../links'
 import { colors } from '../../../styles'
 
-function ApiError({ error }) {
+/**
+ * Shown for api errors and dynamic import errors.
+ */
+
+function AppError({ error }) {
   return (
     <ErrorContainer background={colors.lightRed} color={colors.darkRed}>
       <ErrorTitle>Oops, something went wrong!</ErrorTitle>
@@ -19,8 +23,8 @@ function ApiError({ error }) {
   )
 }
 
-ApiError.propTypes = {
+AppError.propTypes = {
   error: PropTypes.string.isRequired
 }
 
-export default ApiError
+export default AppError

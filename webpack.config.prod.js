@@ -12,33 +12,7 @@ var extractVendor = new ExtractTextPlugin('vendor-[hash].css')
 
 module.exports = {
   entry: {
-    main: './client/index.jsx',
-    'vendor': [
-      'dateformat',
-      'history',
-      'load-script',
-      'normalize.css',
-      'normalizr',
-      'react',
-      'react-helmet',
-      'react-dom',
-      'react-medium-image-zoom',
-      'react-redux',
-      'react-router',
-      'react-router-dom',
-      'react-sizeme',
-      'redux',
-      'redux-thunk'
-    ],
-    'sizeme': [
-      'react-sizeme'
-    ],
-    'markdown': [
-      'react-markdown'
-    ],
-    'styled': [
-      'styled-components'
-    ]
+    main: './client/index.jsx'
   },
   output: {
     filename: '[name].[chunkhash].js',
@@ -80,7 +54,10 @@ module.exports = {
   plugins: [
     extractVendor,
     extractBundle,
-    new CleanWebpackPlugin(path.join(__dirname, 'dist')),
+    new CleanWebpackPlugin(
+      path.join(__dirname, 'dist'),
+      { verbose: false }
+    ),
     new CopyWebpackPlugin([{ from: path.join(__dirname, 'static')}]),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
@@ -102,14 +79,20 @@ module.exports = {
     new PreloadWebpackPlugin({
       rel: 'preload'
     }),
+    // split chunks
+    // https://github.com/webpack/webpack/issues/4638#issuecomment-292702190
+    // http://stackoverflow.com/a/43291641/5918874
     new webpack.optimize.CommonsChunkPlugin({
-      names: [
-        'vendor',
-        'sizeme',
-        'markdown',
-        'styled',
-        'manifest'
-      ]
+      name: 'vendor',
+      minChunks: (m) => /node_modules/.test(m.context)
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'react',
+      minChunks: (m) => /node_modules\/(?:react\/|react-dom\/)/.test(m.context)
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "manifest",
+      minChunks: Infinity
     })
   ]
 }

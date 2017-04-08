@@ -27,7 +27,7 @@ exports[`<WorkBody /> renders correctly 1`] = `
 `;
 
 exports[`<WorkBody /> renders errors 1`] = `
-<ApiError
+<AppError
   error="Something went wrong"
 />
 `;

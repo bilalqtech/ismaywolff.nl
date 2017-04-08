@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../data/works'
 import { Spinner } from '../../components/spinner'
-import { ApiError, MissingPageError } from '../../components/errors'
+import { AppError, MissingPageError } from '../../components/errors'
 import WorkDetailBody from './components/WorkDetailBody'
 
 export function WorkDetail({ entities, works, match }) {
@@ -17,7 +17,7 @@ export function WorkDetail({ entities, works, match }) {
 
   // if there's an error
   if (works.hasError) {
-    return <ApiError error={works.errorMessage} />
+    return <AppError error={works.errorMessage} />
   }
 
   // if there's work but not the requested one

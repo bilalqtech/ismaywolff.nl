@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import dateformat from 'dateformat'
-import ReactMarkdown from 'react-markdown'
+import { AsyncReactMarkdown } from '../../../components/async'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
 
 function WritingDetailBody({ article }) {
@@ -13,7 +13,7 @@ function WritingDetailBody({ article }) {
       </TitleContainer>
 
       {/* Body */}
-      <ReactMarkdown source={article.text} />
+      <AsyncReactMarkdown source={article.text} />
     </div>
   )
 }

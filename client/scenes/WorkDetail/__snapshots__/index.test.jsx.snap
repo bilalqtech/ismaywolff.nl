@@ -5,7 +5,7 @@ exports[`<WorkDetail /> renders a loading state 1`] = `<styled.div />`;
 exports[`<WorkDetail /> renders a missing page error 1`] = `<MissingPageError />`;
 
 exports[`<WorkDetail /> renders api errors 1`] = `
-<ApiError
+<AppError
   error="Something went wrong"
 />
 `;

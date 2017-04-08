@@ -6,7 +6,7 @@ import { selectors } from '../../../data/works'
 import { Cell, Grid } from '../../../components/grid'
 import { ResponsiveThumbnail } from '../../../components/images'
 import { Spinner } from '../../../components/spinner'
-import { ApiError } from '../../../components/errors'
+import { AppError } from '../../../components/errors'
 
 export function WorkBody({ entities, works }) {
   // if fetching or hasn't fetched yet
@@ -16,7 +16,7 @@ export function WorkBody({ entities, works }) {
 
   // if there's an error
   if (works.hasError) {
-    return <ApiError error={works.errorMessage} />
+    return <AppError error={works.errorMessage} />
   }
 
   return (
