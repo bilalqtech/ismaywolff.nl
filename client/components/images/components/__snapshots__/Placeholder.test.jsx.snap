@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Placeholder /> renders correctly 1`] = `
+.css-qy1nm1,
+[data-css-qy1nm1] {
+  display: block;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-top: 200%;
+  background: rgb(200,200,200);
+}
+
 <picture
   className="css-qy1nm1"
 />

@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Spinner /> renders correctly 1`] = `
+.css-ae4b0b,
+[data-css-ae4b0b] {
+  -webkit-animation: animation_1xb4i9s 1s infinite ease-in-out;
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem auto;
+  background-color: rgb(25,25,25);
+  border-radius: 100%;
+  animation: animation_1xb4i9s 1s infinite ease-in-out;
+}
+
 <div
   className="css-ae4b0b"
 />

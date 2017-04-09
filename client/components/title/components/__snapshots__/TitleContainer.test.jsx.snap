@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TitleContainer /> renders correctly 1`] = `
+.css-znl30m,
+[data-css-znl30m] {
+  margin: 2rem 0;
+}
+
 <div
   className="css-znl30m"
 />

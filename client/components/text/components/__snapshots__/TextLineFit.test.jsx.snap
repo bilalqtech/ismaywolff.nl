@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextLineFit /> renders correctly 1`] = `
+.css-xm5bud,
+[data-css-xm5bud] {
+  white-space: nowrap;
+}
+
 <span
   className="css-xm5bud"
 />

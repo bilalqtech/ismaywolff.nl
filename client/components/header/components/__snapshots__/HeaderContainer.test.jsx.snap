@@ -1,6 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HeaderContainer /> renders correctly 1`] = `
+.css-1xnt1rf,
+[data-css-1xnt1rf] {
+  -webkit-flex-wrap: wrap;
+  -webkit-box-lines: multiple;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: baseline;
+  -ms-flex-pack: center;
+  -ms-flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  align-items: baseline;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 <header
   className="css-1xnt1rf"
 />

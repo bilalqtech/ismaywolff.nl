@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ExternalLink /> renders correctly 1`] = `
+.css-1duc6ce,
+[data-css-1duc6ce] {
+  color: currentColor;
+}
+
 <a
   className="css-1duc6ce"
   href="url"

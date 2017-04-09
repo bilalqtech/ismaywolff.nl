@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ErrorTitle /> renders correctly 1`] = `
+.css-1iby2t6,
+[data-css-1iby2t6] {
+  margin: 0;
+  text-align: center;
+}
+
 <h2
   className="css-1iby2t6"
 />
