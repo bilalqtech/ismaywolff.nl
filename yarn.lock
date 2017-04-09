@@ -913,10 +913,6 @@ base64-js@^1.0.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.2.0.tgz#a39992d723584811982be5e290bb6a53d86700f1"
 
-batch-processor@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
-
 batch@0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.5.3.tgz#3f3414f380321743bfc1042f9a83ff1d5824d464"
@@ -1999,12 +1995,6 @@ electron-to-chromium@^1.2.3, electron-to-chromium@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.2.6.tgz#f38ad51d1919b06bc07275c62629db803ddca05a"
 
-element-resize-detector@^1.1.11:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.11.tgz#34dc9aff624239e0ebdba6cdadeeae88a4cf0b1b"
-  dependencies:
-    batch-processor "^1.0.0"
-
 elliptic@^6.0.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.4.0.tgz#cac9af8762c85836187003c8dfe193e5e2eae5df"
@@ -2779,6 +2769,10 @@ generate-object-property@^1.1.0:
 get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
+
+get-node-dimensions@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/get-node-dimensions/-/get-node-dimensions-1.2.2.tgz#7a71e8624cf9e1ab74599bb05b7e5116e995e45b"
 
 get-stdin@^4.0.1:
   version "4.0.1"
@@ -5506,6 +5500,13 @@ react-markdown@^2.4.6:
     commonmark-react-renderer "^4.2.4"
     in-publish "^2.0.0"
 
+react-measure@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-1.4.6.tgz#db3f91bf819922933cc9af34664d098d3242a955"
+  dependencies:
+    get-node-dimensions "^1.2.0"
+    resize-observer-polyfill "^1.4.1"
+
 react-medium-image-zoom@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-0.9.0.tgz#9d776441b5591c51105c2f56936cc4d698a47e97"
@@ -5543,14 +5544,6 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^0.2.2"
-
-react-sizeme@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/react-sizeme/-/react-sizeme-2.3.1.tgz#a5d7817e727024084c758b1bc1a217826f358dd6"
-  dependencies:
-    element-resize-detector "^1.1.11"
-    invariant "^2.2.2"
-    lodash "^4.17.4"
 
 react@^15.4.1:
   version "15.4.2"
@@ -5820,6 +5813,10 @@ requireindex@^1.1.0:
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+resize-observer-polyfill@^1.4.1:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.4.2.tgz#a37198e6209e888acb1532a9968e06d38b6788e5"
 
 resolve-from@^1.0.0:
   version "1.0.1"

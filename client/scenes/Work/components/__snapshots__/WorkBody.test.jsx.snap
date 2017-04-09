@@ -18,7 +18,7 @@ exports[`<WorkBody /> renders correctly 1`] = `
       replace={false}
       to="/work/slug"
     >
-      <SizeMe(ResponsiveThumbnail)
+      <ResponsiveThumbnail
         id="thumbnail"
       />
     </Link>
