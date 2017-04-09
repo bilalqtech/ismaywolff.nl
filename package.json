@@ -73,7 +73,7 @@
   "dependencies": {
     "dateformat": "^2.0.0",
     "glamor": "^2.20.24",
-    "glamorous": "^2.0.1",
+    "glamorous": "^3.0.0",
     "history": "^4.6.1",
     "load-script": "^1.0.0",
     "normalize.css": "^6.0.0",

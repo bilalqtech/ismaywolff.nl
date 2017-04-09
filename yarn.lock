@@ -2807,9 +2807,9 @@ glamor@^2.20.24:
     fbjs "^0.8.8"
     object-assign "^4.1.0"
 
-glamorous@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-2.0.1.tgz#5839ab3aefcb5f02297373f31031e88c2960fea0"
+glamorous@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-3.0.0.tgz#8d0b399665c8216f9fc1678302d2f80467807e4d"
   dependencies:
     html-tag-names "^1.1.1"
     svg-tag-names "^1.1.0"
