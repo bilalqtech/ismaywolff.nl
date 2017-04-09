@@ -1,19 +1,19 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const HeaderTitle = styled.h1`
-  white-space: nowrap;
-  order: 1;
-  width: 100%;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
+const HeaderTitle = glamorous.h1({
+  whiteSpace: 'nowrap',
+  order: 1,
+  width: '100%',
+  textAlign: 'center',
+  marginTop: 0,
+  marginBottom: 0,
 
-  @media (min-width: 20em) {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: auto;
-    order: unset;
+  '@media (min-width: 20em)': {
+    marginLeft: '1rem',
+    marginRight: '1rem',
+    width: 'auto',
+    order: 'unset'
   }
-`
+})
 
 export default HeaderTitle

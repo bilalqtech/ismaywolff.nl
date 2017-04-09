@@ -2,7 +2,7 @@
 
 exports[`<InternalLink /> renders correctly 1`] = `
 <Link
-  className="cwNWvq"
+  className="css-1duc6ce"
   replace={false}
   to="/url"
 />

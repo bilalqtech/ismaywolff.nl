@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header /> renders correctly 1`] = `
-<styled.header>
-  <styled.span
+<glamorous(header)>
+  <glamorous(span)
     size="0.75rem"
   >
     <NavLink
@@ -11,9 +11,9 @@ exports[`<Header /> renders correctly 1`] = `
     >
       work
     </NavLink>
-  </styled.span>
-  <styled.h1>
-    <styled.span
+  </glamorous(span)>
+  <glamorous(h1)>
+    <glamorous(span)
       size="1.5rem"
     >
       <NavLink
@@ -23,9 +23,9 @@ exports[`<Header /> renders correctly 1`] = `
       >
         Ismay Wolff
       </NavLink>
-    </styled.span>
-  </styled.h1>
-  <styled.span
+    </glamorous(span)>
+  </glamorous(h1)>
+  <glamorous(span)
     size="0.75rem"
   >
     <NavLink
@@ -34,6 +34,6 @@ exports[`<Header /> renders correctly 1`] = `
     >
       writing
     </NavLink>
-  </styled.span>
-</styled.header>
+  </glamorous(span)>
+</glamorous(header)>
 `;

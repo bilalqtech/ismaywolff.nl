@@ -2,8 +2,6 @@
 
 exports[`<Placeholder /> renders correctly 1`] = `
 <picture
-  className="bECPYv"
-  height={2}
-  width={1}
+  className="css-qy1nm1"
 />
 `;

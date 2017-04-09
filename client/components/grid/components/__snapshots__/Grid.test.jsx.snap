@@ -2,12 +2,12 @@
 
 exports[`<Grid /> renders correctly 1`] = `
 <div
-  className="dfHekD"
+  className="css-13n4620"
 />
 `;
 
 exports[`<Grid /> renders correctly with gutter 1`] = `
 <div
-  className="AKcFG"
+  className="css-1nd4jt7"
 />
 `;

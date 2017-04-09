@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const TextLineFit = styled.span`
-  white-space: nowrap;
-`
+const TextLineFit = glamorous.span({
+  whiteSpace: 'nowrap'
+})
 
 export default TextLineFit

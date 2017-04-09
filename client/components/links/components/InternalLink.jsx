@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const InternalLink = styled(Link)`
-  color: currentColor;
-`
+const InternalLink = glamorous(Link)({
+  color: 'currentColor'
+})
 
 export default InternalLink

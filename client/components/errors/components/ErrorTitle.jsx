@@ -1,9 +1,8 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const ErrorContainer = styled.h2`
-  margin: 0;
-  text-align: center;
-`
+const ErrorContainer = glamorous.h2({
+  margin: 0,
+  textAlign: 'center'
+})
 
 export default ErrorContainer
-

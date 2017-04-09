@@ -2,6 +2,6 @@
 
 exports[`<Title /> renders correctly 1`] = `
 <h2
-  className="fkPPFr"
+  className="css-hg6hj5"
 />
 `;

@@ -2,6 +2,6 @@
 
 exports[`<ErrorTitle /> renders correctly 1`] = `
 <h2
-  className="jJclbE"
+  className="css-1iby2t6"
 />
 `;

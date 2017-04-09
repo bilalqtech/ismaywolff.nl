@@ -2,7 +2,6 @@
 
 exports[`<ErrorContainer /> renders correctly 1`] = `
 <div
-  className="iCFpre"
-  color="blue"
+  className="css-qjaeoj"
 />
 `;

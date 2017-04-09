@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WorkBody /> renders a loading state 1`] = `<styled.div />`;
+exports[`<WorkBody /> renders a loading state 1`] = `<glamorous(div) />`;
 
 exports[`<WorkBody /> renders correctly 1`] = `
-<styled.div
+<glamorous(div)
   gutter="0.5rem"
 >
-  <styled.div
+  <glamorous(div)
     gutter="0.5rem"
     lgBreak="40em"
     lgSize={0.3333333333333333}
@@ -22,8 +22,8 @@ exports[`<WorkBody /> renders correctly 1`] = `
         id="thumbnail"
       />
     </Link>
-  </styled.div>
-</styled.div>
+  </glamorous(div)>
+</glamorous(div)>
 `;
 
 exports[`<WorkBody /> renders errors 1`] = `

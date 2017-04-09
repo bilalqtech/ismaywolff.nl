@@ -2,6 +2,6 @@
 
 exports[`<HeaderTitle /> renders correctly 1`] = `
 <h1
-  className="isAfFO"
+  className="css-1d7040l"
 />
 `;

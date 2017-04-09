@@ -1,8 +1,8 @@
 import { PropTypes } from 'react'
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 import { colors } from '../../../styles'
 
-const setPadding = props => `${(props.height / props.width) * 100}%`
+const setPaddingTop = props => `${(props.height / props.width) * 100}%`
 
 /**
  * Renders a background color while the child image is loading. Expects an img
@@ -10,22 +10,22 @@ const setPadding = props => `${(props.height / props.width) * 100}%`
  * actual sizes aren't necessary.
  */
 
-const Placeholder = styled.picture`
-  display: block;
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-top: ${setPadding};
-  background: ${colors.gray};
+const Placeholder = glamorous.picture(props => ({
+  display: 'block',
+  position: 'relative',
+  height: 0,
+  width: '100%',
+  paddingTop: setPaddingTop(props),
+  background: colors.gray,
 
-  & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  '& img': {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%'
   }
-`
+}))
 
 Placeholder.propTypes = {
   height: PropTypes.number.isRequired,

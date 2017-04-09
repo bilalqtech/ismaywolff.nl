@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const TextLine = styled.div`
-  display: flex;
-`
+const TextLine = glamorous.div({
+  display: 'flex'
+})
 
 export default TextLine

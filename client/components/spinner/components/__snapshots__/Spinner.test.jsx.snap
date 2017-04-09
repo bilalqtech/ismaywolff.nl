@@ -2,6 +2,6 @@
 
 exports[`<Spinner /> renders correctly 1`] = `
 <div
-  className="dyQRNl"
+  className="css-ae4b0b"
 />
 `;

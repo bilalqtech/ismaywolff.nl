@@ -2,7 +2,7 @@
 
 exports[`<AsyncLoader /> does not render a spinner before the delay 1`] = `null`;
 
-exports[`<AsyncLoader /> renders a spinner after the delay 1`] = `<styled.div />`;
+exports[`<AsyncLoader /> renders a spinner after the delay 1`] = `<glamorous(div) />`;
 
 exports[`<AsyncLoader /> renders correctly 1`] = `null`;
 

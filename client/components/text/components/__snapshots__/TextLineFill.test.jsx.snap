@@ -2,14 +2,12 @@
 
 exports[`<TextLine /> renders correctly for direction left 1`] = `
 <div
-  className="eMVHAg"
-  direction="left"
+  className="css-1cqgl9p"
 />
 `;
 
 exports[`<TextLine /> renders correctly for direction right 1`] = `
 <div
-  className="eMVHAg"
-  direction="right"
+  className="css-1cqgl9p"
 />
 `;

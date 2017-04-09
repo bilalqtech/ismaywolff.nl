@@ -2,6 +2,6 @@
 
 exports[`<HeaderContainer /> renders correctly 1`] = `
 <header
-  className="cjeHko"
+  className="css-1xnt1rf"
 />
 `;

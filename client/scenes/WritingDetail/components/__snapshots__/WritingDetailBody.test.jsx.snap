@@ -2,14 +2,14 @@
 
 exports[`<WritingDetailBody /> renders correctly 1`] = `
 <div>
-  <styled.div>
-    <styled.h2>
+  <glamorous(div)>
+    <glamorous(h2)>
       title
-    </styled.h2>
-    <styled.p>
+    </glamorous(h2)>
+    <glamorous(p)>
       April 2011
-    </styled.p>
-  </styled.div>
+    </glamorous(p)>
+  </glamorous(div)>
   <Loadable
     source="text"
   />

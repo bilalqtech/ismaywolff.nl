@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const Title = styled.h2`
-  text-align: center;
-  font-size: 2rem;
-  margin: 0;
-`
+const Title = glamorous.h2({
+  textAlign: 'center',
+  fontSize: '2rem',
+  margin: 0
+})
 
 export default Title

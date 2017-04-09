@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const TitleContainer = styled.div`
-  margin: 2rem 0;
-`
+const TitleContainer = glamorous.div({
+  margin: '2rem 0'
+})
 
 export default TitleContainer
 
