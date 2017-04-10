@@ -18,7 +18,7 @@ const trackError = (err, fieldsObj = {}) => {
   ga('send', 'event', Object.assign({
     eventCategory: 'Error',
     eventAction: err.name,
-    eventLabel: `${err.message}\n${err.stack || '(no stack trace)'}`,
+    eventLabel: err.message,
     nonInteraction: true
   }, fieldsObj))
 }

@@ -1,11 +1,15 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import { shallowToJson } from 'enzyme-to-json'
+import { mount } from 'enzyme'
+import { mountToJson } from 'enzyme-to-json'
 import MissingPageError from './MissingPageError'
+
+jest.mock('../../links', () => ({
+  InternalLink: () => <a href="https://test.com">Test</a>
+}))
 
 describe('<MissingPageError />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<MissingPageError />)
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    const wrapper = mount(<MissingPageError />)
+    expect(mountToJson(wrapper)).toMatchSnapshot()
   })
 })
