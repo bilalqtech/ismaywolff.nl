@@ -1,3 +1,5 @@
+/* eslint-disable import/first */
+
 // globally scoped css
 import 'normalize.css'
 import './index.css'

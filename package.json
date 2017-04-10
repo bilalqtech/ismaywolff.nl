@@ -8,7 +8,6 @@
     "build:stats": "NODE_ENV=production webpack -p --json > stats.json",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint:js": "eslint client/**/*.{js,jsx}",
-    "lint:css": "stylelint client/**/*.{js,jsx}",
     "lint:whitespace": "eclint check client/** server/**",
     "start": "NODE_ENV=development webpack-dev-server --content-base dist/ --inline --hot",
     "test": "jest --watch"
@@ -66,9 +65,6 @@
     "preload-webpack-plugin": "^1.2.2",
     "react-addons-test-utils": "^15.4.1",
     "style-loader": "^0.16.0",
-    "stylelint": "^7.8.0",
-    "stylelint-config-standard": "^16.0.0",
-    "stylelint-processor-styled-components": "^0.1.0",
     "webpack": "^2.3.0",
     "webpack-dev-server": "^2.2.1",
     "webpack-md5-hash": "^0.0.5"

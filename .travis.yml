@@ -10,7 +10,6 @@ services:
 script:
   - yarn run coverage
   - yarn run lint:js
-  - yarn run lint:css
   - yarn run lint:whitespace
   - yarn run build
 after_success:

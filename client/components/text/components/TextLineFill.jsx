@@ -1,3 +1,5 @@
+/* eslint-disable no-confusing-arrow */
+
 import { PropTypes } from 'react'
 import glamorous from 'glamorous'
 
