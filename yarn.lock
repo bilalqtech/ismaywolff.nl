@@ -5306,9 +5306,9 @@ react-measure@^1.4.7:
     prop-types "^15.5.4"
     resize-observer-polyfill "^1.4.1"
 
-react-medium-image-zoom@^0.9.2:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-0.9.2.tgz#b58fa45a6d813bc71b4d2334cdb000eb3145121c"
+react-medium-image-zoom@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-1.0.0.tgz#a722e516fae5337a6fdf0c2f557def389f6460f1"
 
 react-redux@^5.0.4:
   version "5.0.4"
