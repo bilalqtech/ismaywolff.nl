@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'

@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { shallowToJson } from 'enzyme-to-json'
 import { Thumbnail } from './Thumbnail'
 
 describe('<Thumbnail />', () => {
@@ -9,13 +8,13 @@ describe('<Thumbnail />', () => {
     const wrapper = shallow(
       <Thumbnail entities={entities} id={'one'} width={100} />
     )
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('renders a loading state', () => {
     const wrapper = shallow(
       <Thumbnail entities={{}} id={'one'} width={100} />
     )
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })

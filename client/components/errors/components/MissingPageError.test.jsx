@@ -1,6 +1,5 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { mountToJson } from 'enzyme-to-json'
 import MissingPageError from './MissingPageError'
 
 jest.mock('../../links', () => ({
@@ -10,6 +9,6 @@ jest.mock('../../links', () => ({
 describe('<MissingPageError />', () => {
   it('renders correctly', () => {
     const wrapper = mount(<MissingPageError />)
-    expect(mountToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })

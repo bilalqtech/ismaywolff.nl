@@ -1,6 +1,6 @@
 /* eslint-disable no-confusing-arrow */
 
-import { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import glamorous from 'glamorous'
 
 const setLeftPadding = props => props.direction === 'left' ? '1rem' : 0

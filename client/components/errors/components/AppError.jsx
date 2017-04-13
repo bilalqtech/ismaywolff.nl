@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import ErrorContainer from './ErrorContainer'
 import ErrorTitle from './ErrorTitle'
 import { ExternalLink } from '../../links'

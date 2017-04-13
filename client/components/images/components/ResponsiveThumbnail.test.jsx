@@ -1,6 +1,5 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { mountToJson } from 'enzyme-to-json'
 import { ResponsiveThumbnail } from './ResponsiveThumbnail'
 
 jest.mock('./Thumbnail', () => (
@@ -12,6 +11,6 @@ describe('<ResponsiveThumbnail />', () => {
     const wrapper = mount(
       <ResponsiveThumbnail id={'one'} size={{ width: 50 }} />
     )
-    expect(mountToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })

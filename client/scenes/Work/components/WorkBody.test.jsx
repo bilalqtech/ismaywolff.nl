@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { shallowToJson } from 'enzyme-to-json'
 import { WorkBody } from './WorkBody'
 
 describe('<WorkBody />', () => {
@@ -16,18 +15,18 @@ describe('<WorkBody />', () => {
       didFetch: true
     }
     const wrapper = shallow(<WorkBody entities={entities} works={works} />)
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('renders a loading state', () => {
     const works = { isFetching: true }
     const wrapper = shallow(<WorkBody entities={{}} works={works} />)
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('renders errors', () => {
     const works = { hasError: true, errorMessage: 'Something went wrong', didFetch: true }
     const wrapper = shallow(<WorkBody entities={{}} works={works} />)
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })

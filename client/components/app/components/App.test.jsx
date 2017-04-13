@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { shallowToJson } from 'enzyme-to-json'
 import { App } from './App'
 
 jest.mock('react-router', () => ({
@@ -27,7 +26,7 @@ describe('<App />', () => {
         fetchImages={() => {}}
       />
     )
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('fetches works', () => {
