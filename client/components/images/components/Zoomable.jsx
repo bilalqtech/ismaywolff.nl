@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object, string, number } from 'prop-types'
 import ImageZoom from 'react-medium-image-zoom'
 import { connect } from 'react-redux'
 import { getImageEntities } from '../selectors'
@@ -34,9 +34,9 @@ export function Zoomable({ entities, id, width }) {
 }
 
 Zoomable.propTypes = {
-  entities: PropTypes.object.isRequired,
-  id: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired
+  entities: object.isRequired,
+  id: string.isRequired,
+  width: number.isRequired
 }
 
 const mapStateToProps = state => ({

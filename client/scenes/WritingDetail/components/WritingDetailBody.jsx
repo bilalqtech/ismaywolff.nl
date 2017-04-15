@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 import dateformat from 'dateformat'
 import { AsyncReactMarkdown } from '../../../components/async'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
@@ -20,7 +20,7 @@ function WritingDetailBody({ article }) {
 }
 
 WritingDetailBody.propTypes = {
-  article: PropTypes.object.isRequired
+  article: object.isRequired
 }
 
 export default WritingDetailBody

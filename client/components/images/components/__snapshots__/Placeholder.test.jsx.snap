@@ -2,7 +2,7 @@
 
 exports[`<Placeholder /> renders correctly 1`] = `
 <picture
-  className="sc-bdVaJa gYRRNA"
+  className="sc-bdVaJa dBmbei"
   height={2}
   width={1}
 />

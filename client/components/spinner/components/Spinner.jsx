@@ -2,13 +2,8 @@ import styled, { keyframes } from 'styled-components'
 import { colors } from '../../../styles'
 
 const scale = keyframes`
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-    opacity: 0;
-  }
+  from { transform: scale(0); }
+  to { transform: scale(1); opacity: 0; }
 `
 
 const Spinner = styled.div`

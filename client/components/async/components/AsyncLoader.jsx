@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { bool, instanceOf } from 'prop-types'
 import { Spinner } from '../../spinner'
 import { AppError } from '../../errors'
 
@@ -14,9 +14,9 @@ function AsyncLoader({ isLoading, error, pastDelay }) {
 }
 
 AsyncLoader.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
-  error: PropTypes.object,
-  pastDelay: PropTypes.bool.isRequired
+  isLoading: bool.isRequired,
+  error: instanceOf(Error),
+  pastDelay: bool.isRequired
 }
 
 AsyncLoader.defaultProps = {

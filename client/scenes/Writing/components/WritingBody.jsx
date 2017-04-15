@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 import { connect } from 'react-redux'
 import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
@@ -41,8 +41,8 @@ export function WritingBody({ entities, articles }) {
 }
 
 WritingBody.propTypes = {
-  entities: PropTypes.object.isRequired,
-  articles: PropTypes.object.isRequired
+  entities: object.isRequired,
+  articles: object.isRequired
 }
 
 const mapStateToProps = state => ({

@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types'
+import { number } from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../../../styles'
-
-const setPadding = props => `${(props.height / props.width) * 100}%`
 
 /**
  * Renders a background color while the child image is loading. Expects an img
@@ -15,7 +13,7 @@ const Placeholder = styled.picture`
   position: relative;
   height: 0;
   width: 100%;
-  padding-top: ${setPadding};
+  padding-top: calc(${props => props.height / props.width} * 100%);
   background: ${colors.gray};
 
   & img {
@@ -28,8 +26,8 @@ const Placeholder = styled.picture`
 `
 
 Placeholder.propTypes = {
-  height: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired
+  height: number.isRequired,
+  width: number.isRequired
 }
 
 export default Placeholder

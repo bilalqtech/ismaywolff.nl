@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
@@ -37,7 +37,7 @@ function WorkDetailBody({ work }) {
 }
 
 WorkDetailBody.propTypes = {
-  work: PropTypes.object.isRequired
+  work: object.isRequired
 }
 
 export default WorkDetailBody

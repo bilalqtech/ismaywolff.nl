@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../data/works'
@@ -40,9 +40,9 @@ export function WorkDetail({ entities, works, match }) {
 }
 
 WorkDetail.propTypes = {
-  match: PropTypes.object.isRequired,
-  entities: PropTypes.object.isRequired,
-  works: PropTypes.object.isRequired
+  match: object.isRequired,
+  entities: object.isRequired,
+  works: object.isRequired
 }
 
 const mapStateToProps = state => ({

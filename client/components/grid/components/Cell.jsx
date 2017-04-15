@@ -1,20 +1,16 @@
 import styled from 'styled-components'
 
-const setProp = type => props => props[type]
-const setPadding = props => `calc(0.5 * ${props.gutter})`
-const setWidth = type => props => `calc(100% * ${props[type]})`
-
 const Cell = styled.div`
   flex-basis: auto;
-  padding: ${setPadding};
-  width: ${setWidth('smSize')};
+  padding: calc(0.5 * ${props => props.gutter});
+  width: calc(100% * ${props => props.smSize});
 
-  @media (min-width: ${setProp('mdBreak')}) {
-    width: ${setWidth('mdSize')};
+  @media (min-width: ${props => props.mdBreak}) {
+    width: calc(100% * ${props => props.mdSize});
   }
 
-  @media (min-width: ${setProp('lgBreak')}) {
-    width: ${setWidth('lgSize')};
+  @media (min-width: ${props => props.lgBreak}) {
+    width: calc(100% * ${props => props.lgSize});
   }
 `
 

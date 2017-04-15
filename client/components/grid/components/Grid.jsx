@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
-const setMargin = props => `calc(-0.5 * ${props.gutter})`
-
 const Grid = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin: 0 ${setMargin};
+  margin: 0 calc(-0.5 * ${props => props.gutter});
 `
 
 Grid.defaultProps = {

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { string } from 'prop-types'
 import { AsyncReactMeasure } from '../../async'
 import Thumbnail from './Thumbnail'
 import { roundUp } from '../utils'
@@ -19,7 +19,7 @@ export function ResponsiveThumbnail({ id }) {
 }
 
 ResponsiveThumbnail.propTypes = {
-  id: PropTypes.string.isRequired
+  id: string.isRequired
 }
 
 export default ResponsiveThumbnail

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../data/articles'
@@ -40,9 +40,9 @@ export function WritingDetail({ entities, articles, match }) {
 }
 
 WritingDetail.propTypes = {
-  match: PropTypes.object.isRequired,
-  entities: PropTypes.object.isRequired,
-  articles: PropTypes.object.isRequired
+  match: object.isRequired,
+  entities: object.isRequired,
+  articles: object.isRequired
 }
 
 const mapStateToProps = state => ({

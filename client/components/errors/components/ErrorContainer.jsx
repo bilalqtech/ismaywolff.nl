@@ -1,19 +1,17 @@
-import PropTypes from 'prop-types'
+import { string } from 'prop-types'
 import styled from 'styled-components'
 
-const setProp = type => props => props[type]
-
 const ErrorContainer = styled.div`
-  background: ${setProp('background')};
-  color: ${setProp('color')};
-  fill: ${setProp('color')};
+  background: ${props => props.background};
+  color: ${props => props.color};
+  fill: ${props => props.color};
   border-radius: 0.15em;
   padding: 0.5rem 1rem;
 `
 
 ErrorContainer.propTypes = {
-  background: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired
+  background: string.isRequired,
+  color: string.isRequired
 }
 
 export default ErrorContainer

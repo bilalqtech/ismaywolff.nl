@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { gutter } from '../../../styles'
@@ -40,8 +40,8 @@ export function WorkBody({ entities, works }) {
 }
 
 WorkBody.propTypes = {
-  entities: PropTypes.object.isRequired,
-  works: PropTypes.object.isRequired
+  entities: object.isRequired,
+  works: object.isRequired
 }
 
 const mapStateToProps = state => ({

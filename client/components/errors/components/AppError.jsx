@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { string } from 'prop-types'
 import ErrorContainer from './ErrorContainer'
 import ErrorTitle from './ErrorTitle'
 import { ExternalLink } from '../../links'
@@ -25,7 +25,7 @@ function AppError({ error }) {
 }
 
 AppError.propTypes = {
-  error: PropTypes.string.isRequired
+  error: string.isRequired
 }
 
 export default AppError

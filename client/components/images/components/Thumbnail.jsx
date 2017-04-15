@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object, string, number } from 'prop-types'
 import { connect } from 'react-redux'
 import { getImageEntities } from '../selectors'
 import { createUrl } from '../utils'
@@ -23,9 +23,9 @@ export function Thumbnail({ entities, id, width }) {
 }
 
 Thumbnail.propTypes = {
-  entities: PropTypes.object.isRequired,
-  id: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired
+  entities: object.isRequired,
+  id: string.isRequired,
+  width: number.isRequired
 }
 
 const mapStateToProps = state => ({
