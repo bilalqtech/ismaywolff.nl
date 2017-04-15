@@ -1,19 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { matcher, serializer } from 'jest-glamor-react'
 import HeaderLink from './HeaderLink'
-
-expect.addSnapshotSerializer(serializer)
-expect.extend(matcher)
 
 describe('<HeaderLink />', () => {
   it('renders correctly', () => {
     const wrapper = shallow(<HeaderLink />)
-    expect(wrapper).toMatchSnapshotWithGlamor()
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('accepts size parameter', () => {
     const wrapper = shallow(<HeaderLink size={'100%'} />)
-    expect(wrapper).toMatchSnapshotWithGlamor()
+    expect(wrapper).toMatchSnapshot()
   })
 })

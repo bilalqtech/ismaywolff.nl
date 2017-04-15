@@ -2,23 +2,23 @@
 
 exports[`<WorkDetailBody /> renders correctly 1`] = `
 <div>
-  <glamorous(div)>
-    <glamorous(h2)>
+  <styled.div>
+    <styled.h2>
       title
-    </glamorous(h2)>
-    <glamorous(p)>
+    </styled.h2>
+    <styled.p>
       type
        - 
       April 2011
-    </glamorous(p)>
-  </glamorous(div)>
+    </styled.p>
+  </styled.div>
   <p>
     description
   </p>
-  <glamorous(div)
+  <styled.div
     gutter="0.5rem"
   >
-    <glamorous(div)
+    <styled.div
       gutter="0.5rem"
       lgBreak="40em"
       lgSize={0.3333333333333333}
@@ -29,7 +29,7 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
       <ResponsiveZoomable
         id="one"
       />
-    </glamorous(div)>
-  </glamorous(div)>
+    </styled.div>
+  </styled.div>
 </div>
 `;

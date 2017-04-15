@@ -1,7 +1,7 @@
-import glamorous from 'glamorous'
+import styled from 'styled-components'
 
-const ExternalLink = glamorous.a({
-  color: 'currentColor'
-})
+const ExternalLink = styled.a`
+  color: currentColor;
+`
 
 export default ExternalLink

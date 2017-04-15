@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Thumbnail /> renders a loading state 1`] = `
-<glamorous(picture)
+<styled.picture
   height={1}
   width={1}
 />
 `;
 
 exports[`<Thumbnail /> renders correctly 1`] = `
-<glamorous(picture)
+<styled.picture
   height={1}
   width={1}
 >
@@ -16,5 +16,5 @@ exports[`<Thumbnail /> renders correctly 1`] = `
     alt="title"
     src="url?fit=fill&w=100&h=100&fl=progressive"
   />
-</glamorous(picture)>
+</styled.picture>
 `;

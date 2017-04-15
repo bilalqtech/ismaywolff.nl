@@ -1,16 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ErrorContainer /> renders correctly 1`] = `
-.css-qjaeoj,
-[data-css-qjaeoj] {
-  background: green;
-  color: blue;
-  fill: blue;
-  border-radius: 0.15em;
-  padding: 0.5rem 1rem;
-}
-
 <div
-  className="css-qjaeoj"
+  className="sc-bdVaJa bKLbWR"
+  color="blue"
 />
 `;

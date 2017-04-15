@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WritingBody /> renders a loading state 1`] = `<glamorous(div) />`;
+exports[`<WritingBody /> renders a loading state 1`] = `<styled.div />`;
 
 exports[`<WritingBody /> renders correctly 1`] = `
-<glamorous(div)
+<styled.div
   gutter="0.5rem"
 >
-  <glamorous(div)
+  <styled.div
     gutter="0.5rem"
     lgBreak="40em"
     lgSize="1"
@@ -14,22 +14,22 @@ exports[`<WritingBody /> renders correctly 1`] = `
     mdSize="1"
     smSize="1"
   >
-    <glamorous(Link)
+    <Styled(undefined)
       to="/writing/slug"
     >
-      <glamorous(div)>
-        <glamorous(span)
+      <styled.div>
+        <styled.span
           direction="right"
         >
           title
-        </glamorous(span)>
-        <glamorous(span)>
+        </styled.span>
+        <styled.span>
           October 2000
-        </glamorous(span)>
-      </glamorous(div)>
-    </glamorous(Link)>
-  </glamorous(div)>
-</glamorous(div)>
+        </styled.span>
+      </styled.div>
+    </Styled(undefined)>
+  </styled.div>
+</styled.div>
 `;
 
 exports[`<WritingBody /> renders errors 1`] = `

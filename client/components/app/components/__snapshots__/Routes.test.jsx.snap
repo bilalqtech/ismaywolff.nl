@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Routes /> renders correctly 1`] = `
-<glamorous(div)>
+<styled.div>
   <Header />
   <Switch>
     <Route
@@ -31,5 +31,5 @@ exports[`<Routes /> renders correctly 1`] = `
       component={[Function]}
     />
   </Switch>
-</glamorous(div)>
+</styled.div>
 `;

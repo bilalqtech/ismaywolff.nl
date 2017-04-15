@@ -1,15 +1,15 @@
-import glamorous from 'glamorous'
+import styled from 'styled-components'
 
-const HeaderContainer = glamorous.header({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'baseline',
-  paddingBottom: '1rem',
-  flexWrap: 'wrap',
+const HeaderContainer = styled.header`
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
 
-  '@media (min-width: 20em)': {
-    flexWrap: 'unset'
+  @media (min-width: 20em) {
+    flex-wrap: unset;
   }
-})
+`
 
 export default HeaderContainer

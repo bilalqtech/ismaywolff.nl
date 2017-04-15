@@ -18,17 +18,17 @@ exports[`<About /> renders correctly 1`] = `
   </p>
   <p>
     I've obtained a master in social psychology from the University of Groningen, and a bachelor's degree in fine art from Academie Minerva of Groningen. A lot of my work can be found on 
-    <glamorous(a)
+    <styled.a
       href="https://github.com/ismay"
     >
       github
-    </glamorous(a)>
+    </styled.a>
      and my public keys are on 
-    <glamorous(a)
+    <styled.a
       href="https://keybase.io/ismay"
     >
       keybase
-    </glamorous(a)>
+    </styled.a>
     .
   </p>
 </div>

@@ -2,20 +2,21 @@
 
 exports[`<MissingPageError /> renders correctly 1`] = `
 <MissingPageError>
-  <glamorous(div)
+  <styled.div
     background="rgb(141,171,239)"
     color="rgb(35,67,195)"
   >
     <div
-      className="css-yqxbjj"
+      className="sc-bdVaJa iWqNhX"
+      color="rgb(35,67,195)"
     >
-      <glamorous(h2)>
+      <styled.h2>
         <h2
-          className="css-1iby2t6"
+          className="sc-bwzfXH lmCFaF"
         >
           Oops, that page can't be found!
         </h2>
-      </glamorous(h2)>
+      </styled.h2>
       <p>
         The page you're trying to view doesn't exist. If you entered the url manually check whether it's correct. If you clicked a link then either I made a mistake, or the page just doesn't exist yet. Either way, I'll get on it, and make sure that it's fixed as soon as possible!
       </p>
@@ -33,6 +34,6 @@ exports[`<MissingPageError /> renders correctly 1`] = `
         ? It's brand new and has barely got any miles on it. Well maintained and previously owned by an old webmaster who just kept it on a server in his garage. I even still have the original manual!
       </p>
     </div>
-  </glamorous(div)>
+  </styled.div>
 </MissingPageError>
 `;

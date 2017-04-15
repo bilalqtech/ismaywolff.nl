@@ -1,35 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextLineFill /> renders correctly for direction left 1`] = `
-.css-14lf9wb,
-[data-css-14lf9wb] {
-  margin-left: auto;
-  margin-right: 0;
-  padding-left: 1rem;
-  padding-right: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 <span
-  className="css-14lf9wb"
+  className="sc-bdVaJa dmQFGP"
+  direction="left"
 />
 `;
 
 exports[`<TextLineFill /> renders correctly for direction right 1`] = `
-.css-tpga9u,
-[data-css-tpga9u] {
-  margin-left: 0;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 1rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 <span
-  className="css-tpga9u"
+  className="sc-bdVaJa VefSC"
+  direction="right"
 />
 `;

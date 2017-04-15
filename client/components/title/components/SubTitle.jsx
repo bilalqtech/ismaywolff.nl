@@ -1,8 +1,8 @@
-import glamorous from 'glamorous'
+import styled from 'styled-components'
 
-const SubTitle = glamorous.p({
-  textAlign: 'center',
-  margin: 0
-})
+const SubTitle = styled.p`
+  text-align: center;
+  margin: 0;
+`
 
 export default SubTitle

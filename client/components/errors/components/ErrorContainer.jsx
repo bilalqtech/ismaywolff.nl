@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
-import glamorous from 'glamorous'
+import styled from 'styled-components'
 
-const ErrorContainer = glamorous.div(props => ({
-  background: props.background,
-  color: props.color,
-  fill: props.color,
-  borderRadius: '0.15em',
-  padding: '0.5rem 1rem'
-}))
+const setProp = type => props => props[type]
+
+const ErrorContainer = styled.div`
+  background: ${setProp('background')};
+  color: ${setProp('color')};
+  fill: ${setProp('color')};
+  border-radius: 0.15em;
+  padding: 0.5rem 1rem;
+`
 
 ErrorContainer.propTypes = {
   background: PropTypes.string.isRequired,

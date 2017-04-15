@@ -1,31 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HeaderLink /> accepts size parameter 1`] = `
-.css-17jrciu,
-[data-css-17jrciu] {
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 <span
-  className="css-17jrciu"
+  className="sc-bdVaJa koEgFb"
+  size="100%"
 />
 `;
 
 exports[`<HeaderLink /> renders correctly 1`] = `
-.css-lznqd0,
-[data-css-lznqd0] {
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 <span
-  className="css-lznqd0"
+  className="sc-bdVaJa kXfJYg"
+  size="1rem"
 />
 `;

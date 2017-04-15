@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WritingDetail /> renders a loading state 1`] = `<glamorous(div) />`;
+exports[`<WritingDetail /> renders a loading state 1`] = `<styled.div />`;
 
 exports[`<WritingDetail /> renders a missing page error 1`] = `<MissingPageError />`;
 

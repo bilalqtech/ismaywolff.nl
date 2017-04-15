@@ -1,25 +1,22 @@
-import glamorous from 'glamorous'
+import styled from 'styled-components'
 
+const setProp = type => props => props[type]
 const setPadding = props => `calc(0.5 * ${props.gutter})`
-const setSmWidth = props => `calc(100% * ${props.smSize})`
-const setMdWidth = props => `calc(100% * ${props.mdSize})`
-const setLgWidth = props => `calc(100% * ${props.lgSize})`
-const setMdBreak = props => `@media(min-width: ${props.mdBreak})`
-const setLgBreak = props => `@media(min-width: ${props.lgBreak})`
+const setWidth = type => props => `calc(100% * ${props[type]})`
 
-const Cell = glamorous.div(props => ({
-  flexBasis: 'auto',
-  padding: setPadding(props),
-  width: setSmWidth(props),
+const Cell = styled.div`
+  flex-basis: auto;
+  padding: ${setPadding};
+  width: ${setWidth('smSize')};
 
-  [setMdBreak(props)]: {
-    width: setMdWidth(props)
-  },
-
-  [setLgBreak(props)]: {
-    width: setLgWidth(props)
+  @media (min-width: ${setProp('mdBreak')}) {
+    width: ${setWidth('mdSize')};
   }
-}))
+
+  @media (min-width: ${setProp('lgBreak')}) {
+    width: ${setWidth('lgSize')};
+  }
+`
 
 Cell.defaultProps = {
   gutter: 0,

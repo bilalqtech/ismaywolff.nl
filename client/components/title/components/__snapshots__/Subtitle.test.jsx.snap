@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SubTitle /> renders correctly 1`] = `
-.css-2h84iw,
-[data-css-2h84iw] {
-  text-align: center;
-  margin: 0;
-}
-
 <p
-  className="css-2h84iw"
+  className="sc-bdVaJa gBuJdk"
 />
 `;

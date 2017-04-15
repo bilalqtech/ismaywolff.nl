@@ -1,12 +1,12 @@
-import glamorous from 'glamorous'
+import styled from 'styled-components'
 
-const setMargin = props => `0 calc(-0.5 * ${props.gutter})`
+const setMargin = props => `calc(-0.5 * ${props.gutter})`
 
-const Grid = glamorous.div(props => ({
-  display: 'flex',
-  flexFlow: 'row wrap',
-  margin: setMargin(props)
-}))
+const Grid = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 ${setMargin};
+`
 
 Grid.defaultProps = {
   gutter: 0

@@ -1,16 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextLine /> renders correctly 1`] = `
-.css-1cqgl9p,
-[data-css-1cqgl9p] {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
 <div
-  className="css-1cqgl9p"
+  className="sc-bdVaJa kZAgjJ"
 />
 `;
