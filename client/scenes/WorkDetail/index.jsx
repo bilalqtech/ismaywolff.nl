@@ -8,7 +8,7 @@ import { AppError, MissingPageError } from '../../components/errors'
 import WorkDetailBody from './components/WorkDetailBody'
 
 export function WorkDetail({ entities, works, match }) {
-  const work = entities[match.params.id]
+  const requestedWork = entities[match.params.id]
   const hasWorks = works.result.length > 0
 
   // if fetching or hasn't fetched yet
@@ -22,7 +22,7 @@ export function WorkDetail({ entities, works, match }) {
   }
 
   // if there's work but not the requested one
-  if (hasWorks && !work) {
+  if (hasWorks && !requestedWork) {
     return <MissingPageError />
   }
 
@@ -30,10 +30,10 @@ export function WorkDetail({ entities, works, match }) {
     <div>
       <div>
         <Helmet>
-          <title>{`${work.title} • Ismay Wolff`}</title>
-          <meta name="description" content={`Detailed view of ${work.title}`} />
+          <title>{`${requestedWork.title} • Ismay Wolff`}</title>
+          <meta name="description" content={`Detailed view of ${requestedWork.title}`} />
         </Helmet>
-        <WorkDetailBody work={work} />
+        <WorkDetailBody work={requestedWork} />
       </div>
     </div>
   )

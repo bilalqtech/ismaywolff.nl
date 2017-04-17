@@ -8,7 +8,7 @@ import { AppError, MissingPageError } from '../../components/errors'
 import WritingDetailBody from './components/WritingDetailBody'
 
 export function WritingDetail({ entities, articles, match }) {
-  const article = entities[match.params.id]
+  const requestedArticle = entities[match.params.id]
   const hasArticles = articles.result.length > 0
 
   // if fetching or hasn't fetched yet
@@ -22,7 +22,7 @@ export function WritingDetail({ entities, articles, match }) {
   }
 
   // if there's an article but not the requested one
-  if (hasArticles && !article) {
+  if (hasArticles && !requestedArticle) {
     return <MissingPageError />
   }
 
@@ -30,10 +30,10 @@ export function WritingDetail({ entities, articles, match }) {
     <div>
       <div>
         <Helmet>
-          <title>{`${article.title} • Ismay Wolff`}</title>
-          <meta name="description" content={`Detailed view of ${article.title}`} />
+          <title>{`${requestedArticle.title} • Ismay Wolff`}</title>
+          <meta name="description" content={`Detailed view of ${requestedArticle.title}`} />
         </Helmet>
-        <WritingDetailBody article={article} />
+        <WritingDetailBody article={requestedArticle} />
       </div>
     </div>
   )
