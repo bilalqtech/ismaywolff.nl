@@ -8,6 +8,6 @@ exports[`<AsyncLoader /> renders correctly 1`] = `null`;
 
 exports[`<AsyncLoader /> renders errors 1`] = `
 <AppError
-  error="error"
+  errorMessage="error"
 />
 `;

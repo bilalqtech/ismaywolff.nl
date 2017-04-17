@@ -17,7 +17,7 @@ export function WorkBody({ entities, works }) {
 
   // if there's an error
   if (works.hasError) {
-    return <AppError error={works.errorMessage} />
+    return <AppError errorMessage={works.errorMessage} />
   }
 
   return (

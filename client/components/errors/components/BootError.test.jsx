@@ -1,10 +1,12 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import BootError from './BootError'
+
+window.ga = () => {}
 
 describe('<BootError />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<BootError error={'Error message.'} />)
+    const wrapper = mount(<BootError errorMessage={'Error message.'} />)
     expect(wrapper).toMatchSnapshot()
   })
 })

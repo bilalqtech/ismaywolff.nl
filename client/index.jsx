@@ -21,22 +21,20 @@ const hasObjectAssign = typeof Object.assign === 'function'
 
 // boots the app, shows errors if there were any
 function boot(error) {
+  // start analytics
+  const history = createHistory()
+  import('./services/analytics').then(analytics => analytics.init(history))
+
   if (error) {
     render(
       <Container>
-        <BootError error={error.message} />
+        <BootError errorMessage={error.message} />
       </Container>,
       document.getElementById('app')
     )
   } else {
-    const store = configureStore({})
-    const history = createHistory()
-
-    import('./services/analytics')
-      .then(analytics => analytics.init(history))
-
     render(
-      <App store={store} history={history} />,
+      <App store={configureStore({})} history={history} />,
       document.getElementById('app')
     )
   }

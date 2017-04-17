@@ -18,7 +18,7 @@ export function WorkDetail({ entities, works, match }) {
 
   // if there's an error
   if (works.hasError) {
-    return <AppError error={works.errorMessage} />
+    return <AppError errorMessage={works.errorMessage} />
   }
 
   // if there's work but not the requested one

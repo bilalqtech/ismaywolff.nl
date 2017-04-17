@@ -2,6 +2,8 @@ import React from 'react'
 import { mount } from 'enzyme'
 import MissingPageError from './MissingPageError'
 
+window.ga = () => {}
+
 jest.mock('../../links', () => ({
   InternalLink: () => <a href="https://test.com">Test</a>
 }))

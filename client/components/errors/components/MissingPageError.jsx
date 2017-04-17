@@ -4,9 +4,13 @@ import ErrorTitle from './ErrorTitle'
 import { InternalLink } from '../../links'
 import { colors } from '../../../styles'
 
+/**
+ * Shown for missing pages.
+ */
+
 export class MissingPageError extends Component {
   componentDidMount() {
-    const error = new Error(`Missing page: ${window.location.href}`)
+    const error = new Error(`Missing page error: ${window.location.href}`)
 
     import('../../../services/analytics')
       .then(analytics => analytics.trackError(error))

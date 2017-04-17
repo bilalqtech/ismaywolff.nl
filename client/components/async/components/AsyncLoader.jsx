@@ -7,7 +7,7 @@ function AsyncLoader({ isLoading, error, pastDelay }) {
   if (isLoading) {
     return pastDelay ? <Spinner /> : null
   } else if (error) {
-    return <AppError error={error.message} />
+    return <AppError errorMessage={error.message} />
   }
 
   return null

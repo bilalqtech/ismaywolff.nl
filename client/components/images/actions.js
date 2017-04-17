@@ -24,11 +24,6 @@ export const fetchImages = () => (
       .then(response => response.json())
       .then(data => normalize(data.items, [schemas.images]))
       .then(normalized => dispatch(fetchImagesSuccess(normalized)))
-      .catch(error => {
-        import('../../services/analytics')
-          .then(analytics => analytics.trackError(error))
-
-        dispatch(fetchImagesFail(error))
-      })
+      .catch(error => dispatch(fetchImagesFail(error)))
   }
 )

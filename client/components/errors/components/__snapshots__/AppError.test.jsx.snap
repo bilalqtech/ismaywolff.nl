@@ -1,29 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AppError /> renders correctly 1`] = `
-<styled.div
-  background="rgb(239,141,141)"
-  color="rgb(195,35,35)"
+<AppError
+  errorMessage="Error message."
 >
-  <styled.h2>
-    Oops, something went wrong!
-  </styled.h2>
-  <p>
-    Something went wrong while loading this page. Try refreshing the page and check if your browser extensions aren't blocking anything critical.
-  </p>
-  <p>
-    In most cases I'll be notified automatically that something went wrong and I'll make sure to fix it as soon as possible. If you want to report this error you can do so on the issues tab of my 
-    <styled.a
-      href="https://github.com/ismay/ismaywolff.nl"
+  <styled.div
+    background="rgb(239,141,141)"
+    color="rgb(195,35,35)"
+  >
+    <div
+      className="sc-bdVaJa eiBdpD"
+      color="rgb(195,35,35)"
     >
-      github repo
-    </styled.a>
-    .
-  </p>
-  <p>
-    The error was: "
-    Error message.
-    ".
-  </p>
-</styled.div>
+      <styled.h2>
+        <h2
+          className="sc-bwzfXH lmCFaF"
+        >
+          Oops, something went wrong!
+        </h2>
+      </styled.h2>
+      <p>
+        Something went wrong while loading this page. Try refreshing the page and check if your browser extensions aren't blocking anything critical.
+      </p>
+      <p>
+        In most cases I'll be notified automatically that something went wrong and I'll make sure to fix it as soon as possible. If you want to report this error you can do so on the issues tab of my 
+        <styled.a
+          href="https://github.com/ismay/ismaywolff.nl"
+        >
+          <a
+            className="sc-htpNat eOaUzP"
+            href="https://github.com/ismay/ismaywolff.nl"
+          >
+            github repo
+          </a>
+        </styled.a>
+        .
+      </p>
+      <p>
+        The error was: "
+        Error message.
+        ".
+      </p>
+    </div>
+  </styled.div>
+</AppError>
 `;

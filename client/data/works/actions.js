@@ -24,11 +24,6 @@ export const fetchWorks = () => (
       .then(response => response.json())
       .then(data => normalize(data.items, [schemas.works]))
       .then(normalized => dispatch(fetchWorksSuccess(normalized)))
-      .catch(error => {
-        import('../../services/analytics')
-          .then(analytics => analytics.trackError(error))
-
-        dispatch(fetchWorksFail(error))
-      })
+      .catch(error => dispatch(fetchWorksFail(error)))
   }
 )

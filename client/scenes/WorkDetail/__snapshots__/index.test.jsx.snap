@@ -6,7 +6,7 @@ exports[`<WorkDetail /> renders a missing page error 1`] = `<MissingPageError />
 
 exports[`<WorkDetail /> renders api errors 1`] = `
 <AppError
-  error="Something went wrong"
+  errorMessage="Something went wrong"
 />
 `;
 

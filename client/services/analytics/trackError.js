@@ -12,13 +12,10 @@
  */
 
 const trackError = (err, fieldsObj = {}) => {
-  // initialize the command queue in case analytics.js hasn't loaded yet
-  window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args))
-
   ga('send', 'event', Object.assign({
     eventCategory: 'Error',
-    eventAction: err.name,
-    eventLabel: err.message,
+    eventAction: err.name || 'No error name was set',
+    eventLabel: err.message || 'No error message was set',
     nonInteraction: true
   }, fieldsObj))
 }

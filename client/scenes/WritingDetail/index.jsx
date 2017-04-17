@@ -18,7 +18,7 @@ export function WritingDetail({ entities, articles, match }) {
 
   // if there's an error
   if (articles.hasError) {
-    return <AppError error={articles.errorMessage} />
+    return <AppError errorMessage={articles.errorMessage} />
   }
 
   // if there's an article but not the requested one
