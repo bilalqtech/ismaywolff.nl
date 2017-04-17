@@ -10,6 +10,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import createHistory from 'history/createBrowserHistory'
 import { App } from './components/app'
+import { Container } from './components/container'
+import { BootError } from './components/errors'
 import configureStore from './store'
 
 // feature tests
@@ -21,7 +23,9 @@ const hasObjectAssign = typeof Object.assign === 'function'
 function boot(error) {
   if (error) {
     render(
-      <div>{error.message}</div>,
+      <Container>
+        <BootError error={error.message} />
+      </Container>,
       document.getElementById('app')
     )
   } else {
