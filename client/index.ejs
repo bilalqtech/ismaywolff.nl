@@ -34,6 +34,7 @@
     <% for (key in htmlWebpackPlugin.files.chunks) { %>
       <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
     <% } %>
-    <!--! generated on <%= htmlWebpackPlugin.options.environment.DATE %> from https://github.com/ismay/ismaywolff.nl/commit/<%= htmlWebpackPlugin.options.environment.COMMIT %> -->
+    <!--! generated on <%= htmlWebpackPlugin.options.environment.DATE %> -->
+    <!--! generated from https://github.com/ismay/ismaywolff.nl/commit/<%= htmlWebpackPlugin.options.environment.COMMIT %> -->
   </body>
 </html>
