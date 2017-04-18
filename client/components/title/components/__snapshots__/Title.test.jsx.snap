@@ -2,6 +2,6 @@
 
 exports[`<Title /> renders correctly 1`] = `
 <h2
-  className="sc-bdVaJa kLiBgR"
+  className="sc-bdVaJa bLUrnw"
 />
 `;

@@ -2,14 +2,14 @@
 
 exports[`<TextLineFill /> renders correctly for direction left 1`] = `
 <span
-  className="sc-bdVaJa dmQFGP"
+  className="sc-bdVaJa bJELEO"
   direction="left"
 />
 `;
 
 exports[`<TextLineFill /> renders correctly for direction right 1`] = `
 <span
-  className="sc-bdVaJa VefSC"
+  className="sc-bdVaJa gGzGJw"
   direction="right"
 />
 `;

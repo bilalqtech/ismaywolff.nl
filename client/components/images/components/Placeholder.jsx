@@ -9,19 +9,19 @@ import { colors } from '../../../styles'
  */
 
 const Placeholder = styled.picture`
-  display: block;
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-top: calc(${props => props.height / props.width} * 100%);
   background: ${colors.gray};
+  display: block;
+  height: 0;
+  padding-top: calc(${props => props.height / props.width} * 100%);
+  position: relative;
+  width: 100%;
 
   & img {
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
   }
 `
 

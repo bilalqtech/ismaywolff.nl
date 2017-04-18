@@ -2,6 +2,6 @@
 
 exports[`<SubTitle /> renders correctly 1`] = `
 <p
-  className="sc-bdVaJa gBuJdk"
+  className="sc-bdVaJa jWEcKt"
 />
 `;

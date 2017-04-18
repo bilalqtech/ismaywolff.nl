@@ -2,7 +2,7 @@
 
 exports[`<ErrorContainer /> renders correctly 1`] = `
 <div
-  className="sc-bdVaJa bKLbWR"
+  className="sc-bdVaJa kjnIgK"
   color="blue"
 />
 `;

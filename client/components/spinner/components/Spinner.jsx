@@ -7,18 +7,18 @@ const scale = keyframes`
   }
 
   to {
-    transform: scale(1);
     opacity: 0;
+    transform: scale(1);
   }
 `
 
 const Spinner = styled.div`
-  width: 2rem;
-  height: 2rem;
-  margin: 2rem auto;
+  animation: ${scale} 1s infinite ease-in-out;
   background-color: ${colors.black};
   border-radius: 100%;
-  animation: ${scale} 1s infinite ease-in-out;
+  height: 2rem;
+  margin: 2rem auto;
+  width: 2rem;
 `
 
 export default Spinner

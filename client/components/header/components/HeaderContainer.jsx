@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: center;
   align-items: baseline;
-  padding-bottom: 1rem;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 1rem;
 
   @media (min-width: 20em) {
     flex-wrap: unset;

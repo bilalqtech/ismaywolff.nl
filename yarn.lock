@@ -6366,6 +6366,14 @@ stylelint-no-unsupported-browser-features@^0.1.0:
     postcss "^5.2.16"
     stylelint ">=5.0.0"
 
+stylelint-order@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-0.4.3.tgz#1311550e3fe9c1d2efa1f334a370fd82bc998b91"
+  dependencies:
+    lodash "^4.17.4"
+    postcss "^5.2.16"
+    stylelint "^7.9.0"
+
 stylelint-processor-styled-components@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-processor-styled-components/-/stylelint-processor-styled-components-0.1.0.tgz#47cd66bbf39a94931bb2a445c2fc7017f536df2a"
@@ -6373,7 +6381,7 @@ stylelint-processor-styled-components@^0.1.0:
     babel-traverse "^6.16.0"
     babylon "^6.12.0"
 
-stylelint@>=5.0.0, stylelint@^7.10.1:
+stylelint@>=5.0.0, stylelint@^7.10.1, stylelint@^7.9.0:
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.10.1.tgz#209a7ce5e781fc2a62489fbb31ec0201ec675db2"
   dependencies:

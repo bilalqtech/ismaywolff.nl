@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const ErrorContainer = styled.div`
   background: ${props => props.background};
+  border-radius: 0.15em;
   color: ${props => props.color};
   fill: ${props => props.color};
-  border-radius: 0.15em;
   padding: 0.5rem 1rem;
 `
 

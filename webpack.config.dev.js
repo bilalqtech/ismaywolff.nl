@@ -65,7 +65,9 @@ module.exports = {
       'DEV_TRACKING_ID'
     ]),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'client', 'index.ejs')
+      template: path.join(__dirname, 'client', 'index.ejs'),
+      inject: false,
+      filename: 'index.html'
     })
   ]
 }

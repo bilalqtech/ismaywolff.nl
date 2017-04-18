@@ -2,6 +2,6 @@
 
 exports[`<HeaderContainer /> renders correctly 1`] = `
 <header
-  className="sc-bdVaJa dWdRNL"
+  className="sc-bdVaJa dwxgLA"
 />
 `;
