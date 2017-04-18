@@ -1,8 +1,9 @@
 import * as types from './actionTypes'
 
+const fallbackMessage = 'Something went wrong, but no errormessage was provided.'
 const initialState = {
+  didFetch: false,
   errorMessage: '',
-  hasError: false,
   isFetching: false,
   result: []
 }
@@ -13,15 +14,15 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, { isFetching: true })
     case types.FETCH_IMAGES_SUCCESS:
       return {
+        didFetch: true,
         errorMessage: '',
-        hasError: false,
         isFetching: false,
         result: action.payload.result
       }
     case types.FETCH_IMAGES_FAIL:
       return Object.assign({}, state, {
-        errorMessage: action.payload.message,
-        hasError: true,
+        didFetch: true,
+        errorMessage: action.payload.message || fallbackMessage,
         isFetching: false
       })
     default:

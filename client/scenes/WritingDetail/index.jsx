@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { bool, object } from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../data/articles'
@@ -7,9 +7,8 @@ import { Spinner } from '../../components/spinner'
 import { AppError, MissingPageError } from '../../components/errors'
 import WritingDetailBody from './components/WritingDetailBody'
 
-export function WritingDetail({ entities, articles, match }) {
+export function WritingDetail({ entities, articles, hasArticles, match }) {
   const requestedArticle = entities[match.params.id]
-  const hasArticles = articles.result.length > 0
 
   // if fetching or hasn't fetched yet
   if (articles.isFetching || !articles.didFetch) {
@@ -17,7 +16,7 @@ export function WritingDetail({ entities, articles, match }) {
   }
 
   // if there's an error
-  if (articles.hasError) {
+  if (articles.errorMessage) {
     return <AppError errorMessage={articles.errorMessage} />
   }
 
@@ -40,14 +39,16 @@ export function WritingDetail({ entities, articles, match }) {
 }
 
 WritingDetail.propTypes = {
-  match: object.isRequired,
+  articles: object.isRequired,
   entities: object.isRequired,
-  articles: object.isRequired
+  hasArticles: bool.isRequired,
+  match: object.isRequired
 }
 
 const mapStateToProps = state => ({
+  articles: selectors.getArticleState(state),
   entities: selectors.getArticleEntities(state),
-  articles: selectors.getArticleState(state)
+  hasArticles: selectors.checkHasArticles(state)
 })
 
 export default connect(mapStateToProps)(WritingDetail)

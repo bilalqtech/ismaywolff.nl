@@ -17,7 +17,7 @@ export function WritingBody({ entities, articles }) {
   }
 
   // if there's an error
-  if (articles.hasError) {
+  if (articles.errorMessage) {
     return <AppError errorMessage={articles.errorMessage} />
   }
 

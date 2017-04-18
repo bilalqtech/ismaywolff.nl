@@ -26,7 +26,7 @@ describe('<WritingBody />', () => {
   })
 
   it('renders errors', () => {
-    const articles = { hasError: true, errorMessage: 'Something went wrong', didFetch: true }
+    const articles = { errorMessage: 'Something went wrong', didFetch: true }
     const wrapper = shallow(<WritingBody entities={{}} articles={articles} />)
     expect(wrapper).toMatchSnapshot()
   })

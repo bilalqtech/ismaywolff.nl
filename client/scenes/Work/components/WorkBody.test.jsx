@@ -25,7 +25,7 @@ describe('<WorkBody />', () => {
   })
 
   it('renders errors', () => {
-    const works = { hasError: true, errorMessage: 'Something went wrong', didFetch: true }
+    const works = { errorMessage: 'Something went wrong', didFetch: true }
     const wrapper = shallow(<WorkBody entities={{}} works={works} />)
     expect(wrapper).toMatchSnapshot()
   })

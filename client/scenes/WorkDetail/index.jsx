@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { object, bool } from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors } from '../../data/works'
@@ -7,9 +7,8 @@ import { Spinner } from '../../components/spinner'
 import { AppError, MissingPageError } from '../../components/errors'
 import WorkDetailBody from './components/WorkDetailBody'
 
-export function WorkDetail({ entities, works, match }) {
+export function WorkDetail({ entities, works, hasWorks, match }) {
   const requestedWork = entities[match.params.id]
-  const hasWorks = works.result.length > 0
 
   // if fetching or hasn't fetched yet
   if (works.isFetching || !works.didFetch) {
@@ -17,7 +16,7 @@ export function WorkDetail({ entities, works, match }) {
   }
 
   // if there's an error
-  if (works.hasError) {
+  if (works.errorMessage) {
     return <AppError errorMessage={works.errorMessage} />
   }
 
@@ -40,13 +39,15 @@ export function WorkDetail({ entities, works, match }) {
 }
 
 WorkDetail.propTypes = {
-  match: object.isRequired,
   entities: object.isRequired,
+  hasWorks: bool.isRequired,
+  match: object.isRequired,
   works: object.isRequired
 }
 
 const mapStateToProps = state => ({
   entities: selectors.getWorkEntities(state),
+  hasWorks: selectors.checkHasWorks(state),
   works: selectors.getWorkState(state)
 })
 
