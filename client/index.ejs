@@ -20,8 +20,20 @@
     <meta name="apple-mobile-web-app-title" content="Ismay Wolff">
     <meta name="application-name" content="Ismay Wolff">
     <meta name="theme-color" content="#ffffff">
+    <!-- inline webpack chunk manifest -->
+    <%= htmlWebpackPlugin.files.webpackChunkManifest %>
+    <!-- css -->
+    <% for (key in htmlWebpackPlugin.files.css) { %>
+      <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+    <% } %>
   </head>
   <body>
+    <!-- mount point -->
     <div id="app"></div>
+    <!-- scripts -->
+    <% for (key in htmlWebpackPlugin.files.chunks) { %>
+      <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+    <% } %>
+    <!--! generated on <%= htmlWebpackPlugin.options.environment.DATE %> from https://github.com/ismay/ismaywolff.nl/commit/<%= htmlWebpackPlugin.options.environment.COMMIT %> -->
   </body>
 </html>

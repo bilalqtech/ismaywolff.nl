@@ -22,11 +22,11 @@ exports[`<BootError /> renders correctly 1`] = `
       <p>
         This page uses modern javascript that your browser doesn't support and patching it has failed. Make sure that your browser extensions are not blocking the polyfill.io domain and refresh the page to retry or 
         <styled.a
-          href="http://browsehappy.com"
+          href="http://outdatedbrowser.com"
         >
           <a
             className="sc-htpNat eOaUzP"
-            href="http://browsehappy.com"
+            href="http://outdatedbrowser.com"
           >
             update your browser
           </a>

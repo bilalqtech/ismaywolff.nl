@@ -104,7 +104,12 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'client', 'index.ejs'),
+      inject: false,
       filename: 'index.html',
+      environment: {
+        COMMIT: process.env.COMMIT,
+        DATE: new Date()
+      },
       minify: {
         collapseWhitespace: true,
         removeComments: true
