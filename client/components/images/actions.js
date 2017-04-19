@@ -1,8 +1,8 @@
 import { normalize } from 'normalizr'
-import * as types from './actionTypes'
-import * as schemas from './schemas'
 import get from '../../services/get'
 import { endpoints } from '../../services/endpoints'
+import * as types from './actionTypes'
+import * as schemas from './schemas'
 
 export const fetchImagesSuccess = payload => ({
   type: types.FETCH_IMAGES_SUCCESS,

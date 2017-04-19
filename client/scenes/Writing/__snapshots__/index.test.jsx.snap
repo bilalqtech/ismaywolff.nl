@@ -13,6 +13,6 @@ exports[`<Writing /> renders correctly 1`] = `
       name="description"
     />
   </HelmetWrapper>
-  <Connect(WritingBody) />
+  <Connect(DumbWritingBody) />
 </div>
 `;

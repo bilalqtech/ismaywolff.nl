@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { string } from 'prop-types'
-import ErrorContainer from './ErrorContainer'
-import ErrorTitle from './ErrorTitle'
 import { ExternalLink } from '../../links'
 import { colors } from '../../../styles'
+import ErrorContainer from './ErrorContainer'
+import ErrorTitle from './ErrorTitle'
 
 /**
  * Shown for errors that occur while booting / polyfilling.
  */
 
-export class BootError extends Component {
+class BootError extends Component {
   componentDidMount() {
     const error = new Error(`Boot error: ${this.props.errorMessage}`)
 

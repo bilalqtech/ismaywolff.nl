@@ -1,10 +1,10 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { AsyncReactMeasure } from '../../async'
-import Zoomable from './Zoomable'
 import { roundUp } from '../utils'
+import Zoomable from './Zoomable'
 
-export function ResponsiveZoomable({ id }) {
+function ResponsiveZoomable({ id }) {
   return (
     <AsyncReactMeasure includeMargin={false} whitelist={['width']}>
       {dimensions => (

@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { string } from 'prop-types'
-import ErrorContainer from './ErrorContainer'
-import ErrorTitle from './ErrorTitle'
 import { ExternalLink } from '../../links'
 import { colors } from '../../../styles'
+import ErrorContainer from './ErrorContainer'
+import ErrorTitle from './ErrorTitle'
 
 /**
  * Shown for api errors and async component errors.
  */
 
-export class AppError extends Component {
+class AppError extends Component {
   componentDidMount() {
     const error = new Error(`App error: ${this.props.errorMessage}`)
 

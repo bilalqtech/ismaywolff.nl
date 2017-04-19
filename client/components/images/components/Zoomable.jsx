@@ -6,7 +6,7 @@ import { getImageEntities } from '../selectors'
 import { createUrl, getAvailableWidth, roundUp } from '../utils'
 import Placeholder from './Placeholder'
 
-export function Zoomable({ entities, id, width }) {
+export function DumbZoomable({ entities, id, width }) {
   const image = entities[id]
 
   if (!image) {
@@ -33,7 +33,7 @@ export function Zoomable({ entities, id, width }) {
   )
 }
 
-Zoomable.propTypes = {
+DumbZoomable.propTypes = {
   entities: object.isRequired,
   id: string.isRequired,
   width: number.isRequired
@@ -43,4 +43,4 @@ const mapStateToProps = state => ({
   entities: getImageEntities(state)
 })
 
-export default connect(mapStateToProps)(Zoomable)
+export default connect(mapStateToProps)(DumbZoomable)

@@ -27,10 +27,10 @@
     "func-names": ["error", "as-needed"],
     "semi": ["error", "never"],
     "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
+    "import/order": ["error"],
     "compat/compat": 2,
     "react/forbid-prop-types": 0,
     "import/no-extraneous-dependencies": 0,
-    "import/no-named-as-default": 0,
     "import/prefer-default-export": 0
   }
 }

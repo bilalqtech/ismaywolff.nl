@@ -9,12 +9,12 @@ exports[`<BootError /> renders correctly 1`] = `
     color="rgb(195,35,35)"
   >
     <div
-      className="sc-bdVaJa dwWgHY"
+      className="sc-htpNat dOCroC"
       color="rgb(195,35,35)"
     >
       <styled.h2>
         <h2
-          className="sc-bwzfXH lmCFaF"
+          className="sc-bxivhb jXeQqu"
         >
           Oops, something went wrong!
         </h2>
@@ -25,7 +25,7 @@ exports[`<BootError /> renders correctly 1`] = `
           href="http://outdatedbrowser.com"
         >
           <a
-            className="sc-htpNat eOaUzP"
+            className="sc-bdVaJa dTLtLZ"
             href="http://outdatedbrowser.com"
           >
             update your browser
@@ -39,7 +39,7 @@ exports[`<BootError /> renders correctly 1`] = `
           href="https://github.com/ismay/ismaywolff.nl"
         >
           <a
-            className="sc-htpNat eOaUzP"
+            className="sc-bdVaJa dTLtLZ"
             href="https://github.com/ismay/ismaywolff.nl"
           >
             github repo

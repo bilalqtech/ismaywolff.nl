@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { func, object } from 'prop-types'
 import { Router } from 'react-router'
 import { Provider, connect } from 'react-redux'
-import Routes from './Routes'
 import { ScrollToTop } from '../../scroll'
 import { actions as works } from '../../../data/works'
 import { actions as articles } from '../../../data/articles'
 import { actions as images } from '../../images'
+import Routes from './Routes'
 
 export class App extends Component {
   componentDidMount() {

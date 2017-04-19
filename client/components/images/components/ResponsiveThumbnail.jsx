@@ -1,10 +1,10 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { AsyncReactMeasure } from '../../async'
-import Thumbnail from './Thumbnail'
 import { roundUp } from '../utils'
+import Thumbnail from './Thumbnail'
 
-export function ResponsiveThumbnail({ id }) {
+function ResponsiveThumbnail({ id }) {
   return (
     <AsyncReactMeasure includeMargin={false} whitelist={['width']}>
       {dimensions => (

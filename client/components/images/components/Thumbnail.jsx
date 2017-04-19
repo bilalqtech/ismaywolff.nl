@@ -5,7 +5,7 @@ import { getImageEntities } from '../selectors'
 import { createUrl } from '../utils'
 import Placeholder from './Placeholder'
 
-export function Thumbnail({ entities, id, width }) {
+export function DumbThumbnail({ entities, id, width }) {
   const image = entities[id]
 
   if (!image) {
@@ -22,7 +22,7 @@ export function Thumbnail({ entities, id, width }) {
   )
 }
 
-Thumbnail.propTypes = {
+DumbThumbnail.propTypes = {
   entities: object.isRequired,
   id: string.isRequired,
   width: number.isRequired
@@ -32,4 +32,4 @@ const mapStateToProps = state => ({
   entities: getImageEntities(state)
 })
 
-export default connect(mapStateToProps)(Thumbnail)
+export default connect(mapStateToProps)(DumbThumbnail)

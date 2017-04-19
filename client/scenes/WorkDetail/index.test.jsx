@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { WorkDetail } from './index'
+import { DumbWorkDetail } from './index'
 
 describe('<WorkDetail />', () => {
   it('renders correctly', () => {
@@ -8,7 +8,7 @@ describe('<WorkDetail />', () => {
     const entities = { one: { title: 'title' } }
     const works = { result: ['one'], isFetching: false, didFetch: true }
     const wrapper = shallow(
-      <WorkDetail match={match} entities={entities} works={works} hasWorks />
+      <DumbWorkDetail match={match} entities={entities} works={works} hasWorks />
     )
     expect(wrapper).toMatchSnapshot()
   })
@@ -17,7 +17,7 @@ describe('<WorkDetail />', () => {
     const match = { params: { id: 'one' } }
     const works = { result: [], isFetching: true, didFetch: false }
     const wrapper = shallow(
-      <WorkDetail match={match} entities={{}} works={works} hasWorks={false} />
+      <DumbWorkDetail match={match} entities={{}} works={works} hasWorks={false} />
     )
     expect(wrapper).toMatchSnapshot()
   })
@@ -27,7 +27,7 @@ describe('<WorkDetail />', () => {
     const entities = { two: { title: 'title' } }
     const works = { result: ['two'], isFetching: false, didFetch: true }
     const wrapper = shallow(
-      <WorkDetail match={match} entities={entities} works={works} hasWorks />
+      <DumbWorkDetail match={match} entities={entities} works={works} hasWorks />
     )
     expect(wrapper).toMatchSnapshot()
   })
@@ -36,7 +36,7 @@ describe('<WorkDetail />', () => {
     const match = { params: { id: 'one' } }
     const works = { errorMessage: 'Something went wrong', result: [], didFetch: true }
     const wrapper = shallow(
-      <WorkDetail match={match} entities={{}} works={works} hasWorks={false} />
+      <DumbWorkDetail match={match} entities={{}} works={works} hasWorks={false} />
     )
     expect(wrapper).toMatchSnapshot()
   })

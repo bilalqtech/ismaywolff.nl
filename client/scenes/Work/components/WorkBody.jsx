@@ -9,7 +9,7 @@ import { ResponsiveThumbnail } from '../../../components/images'
 import { Spinner } from '../../../components/spinner'
 import { AppError } from '../../../components/errors'
 
-export function WorkBody({ entities, works }) {
+export function DumbWorkBody({ entities, works }) {
   // if fetching or hasn't fetched yet
   if (works.isFetching || !works.didFetch) {
     return <Spinner />
@@ -39,7 +39,7 @@ export function WorkBody({ entities, works }) {
   )
 }
 
-WorkBody.propTypes = {
+DumbWorkBody.propTypes = {
   entities: object.isRequired,
   works: object.isRequired
 }
@@ -49,4 +49,4 @@ const mapStateToProps = state => ({
   works: selectors.getWorkState(state)
 })
 
-export default connect(mapStateToProps)(WorkBody)
+export default connect(mapStateToProps)(DumbWorkBody)

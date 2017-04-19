@@ -7,7 +7,7 @@ import { Spinner } from '../../components/spinner'
 import { AppError, MissingPageError } from '../../components/errors'
 import WritingDetailBody from './components/WritingDetailBody'
 
-export function WritingDetail({ entities, articles, hasArticles, match }) {
+export function DumbWritingDetail({ entities, articles, hasArticles, match }) {
   const requestedArticle = entities[match.params.id]
 
   // if fetching or hasn't fetched yet
@@ -38,7 +38,7 @@ export function WritingDetail({ entities, articles, hasArticles, match }) {
   )
 }
 
-WritingDetail.propTypes = {
+DumbWritingDetail.propTypes = {
   articles: object.isRequired,
   entities: object.isRequired,
   hasArticles: bool.isRequired,
@@ -51,4 +51,4 @@ const mapStateToProps = state => ({
   hasArticles: selectors.checkHasArticles(state)
 })
 
-export default connect(mapStateToProps)(WritingDetail)
+export default connect(mapStateToProps)(DumbWritingDetail)

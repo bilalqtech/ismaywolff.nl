@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { ResponsiveThumbnail } from './ResponsiveThumbnail'
+import ResponsiveThumbnail from './ResponsiveThumbnail'
 
 jest.mock('./Thumbnail', () => (
   () => <div />

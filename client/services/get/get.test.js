@@ -1,6 +1,6 @@
 import 'isomorphic-fetch'
-import get from './get'
 import fetchy from '../fetchy'
+import get from './get'
 
 jest.mock('../fetchy', () => jest.fn())
 jest.mock('../token', () => 'token')

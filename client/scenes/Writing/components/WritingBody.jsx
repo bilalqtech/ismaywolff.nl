@@ -10,7 +10,7 @@ import { Spinner } from '../../../components/spinner'
 import { AppError } from '../../../components/errors'
 import { TextLine, TextLineFill, TextLineFit } from '../../../components/text'
 
-export function WritingBody({ entities, articles }) {
+export function DumbWritingBody({ entities, articles }) {
   // if fetching or hasn't fetched yet
   if (articles.isFetching || !articles.didFetch) {
     return <Spinner />
@@ -40,7 +40,7 @@ export function WritingBody({ entities, articles }) {
   )
 }
 
-WritingBody.propTypes = {
+DumbWritingBody.propTypes = {
   entities: object.isRequired,
   articles: object.isRequired
 }
@@ -50,4 +50,4 @@ const mapStateToProps = state => ({
   articles: selectors.getArticleState(state)
 })
 
-export default connect(mapStateToProps)(WritingBody)
+export default connect(mapStateToProps)(DumbWritingBody)

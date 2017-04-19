@@ -7,7 +7,7 @@ import { Spinner } from '../../components/spinner'
 import { AppError, MissingPageError } from '../../components/errors'
 import WorkDetailBody from './components/WorkDetailBody'
 
-export function WorkDetail({ entities, works, hasWorks, match }) {
+export function DumbWorkDetail({ entities, works, hasWorks, match }) {
   const requestedWork = entities[match.params.id]
 
   // if fetching or hasn't fetched yet
@@ -38,7 +38,7 @@ export function WorkDetail({ entities, works, hasWorks, match }) {
   )
 }
 
-WorkDetail.propTypes = {
+DumbWorkDetail.propTypes = {
   entities: object.isRequired,
   hasWorks: bool.isRequired,
   match: object.isRequired,
@@ -51,4 +51,4 @@ const mapStateToProps = state => ({
   works: selectors.getWorkState(state)
 })
 
-export default connect(mapStateToProps)(WorkDetail)
+export default connect(mapStateToProps)(DumbWorkDetail)

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import ErrorContainer from './ErrorContainer'
-import ErrorTitle from './ErrorTitle'
 import { InternalLink } from '../../links'
 import { colors } from '../../../styles'
+import ErrorContainer from './ErrorContainer'
+import ErrorTitle from './ErrorTitle'
 
 /**
  * Shown for missing pages.
  */
 
-export class MissingPageError extends Component {
+class MissingPageError extends Component {
   componentDidMount() {
     const error = new Error(`Missing page error: ${window.location.href}`)
 
