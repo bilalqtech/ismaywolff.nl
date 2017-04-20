@@ -61,7 +61,7 @@
     "eslint-plugin-react": "^6.9.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.24.1",
-    "inline-chunk-manifest-html-webpack-plugin": "^0.2.1",
+    "inline-chunk-manifest-html-webpack-plugin": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^19.0.2",
     "jest-serializer-enzyme": "^1.0.0",

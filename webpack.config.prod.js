@@ -163,13 +163,15 @@ module.exports = {
 
     new webpack.HashedModuleIdsPlugin(),
     new WebpackMd5Hash(),
-    new ChunkManifestPlugin({
-      filename: 'webpackManifest.json',
-      manifestVariable: 'webpackManifest'
-    }),
     new InlineChunkManifestHtmlWebpackPlugin({
-      filename: 'webpackManifest.json',
-      manifestVariable: 'webpackManifest'
+      manifestPlugins: [
+        new ChunkManifestPlugin({
+          filename: 'webpackChunkManifest.json',
+          manifestVariable: 'webpackChunkManifest'
+        })
+      ],
+      filename: 'webpackChunkManifest.json',
+      manifestVariable: 'webpackChunkManifest'
     })
   ]
 }
