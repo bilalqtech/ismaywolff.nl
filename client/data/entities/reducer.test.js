@@ -68,4 +68,3 @@ describe('reducer', () => {
     expect(actual).toEqual(expected)
   })
 })
-

@@ -7,13 +7,7 @@ import Zoomable from './Zoomable'
 function ResponsiveZoomable({ id }) {
   return (
     <AsyncReactMeasure includeMargin={false} whitelist={['width']}>
-      {dimensions => (
-        <Zoomable
-          id={id}
-          width={roundUp(dimensions.width)}
-        />
-      )
-      }
+      {dimensions => <Zoomable id={id} width={roundUp(dimensions.width)} />}
     </AsyncReactMeasure>
   )
 }

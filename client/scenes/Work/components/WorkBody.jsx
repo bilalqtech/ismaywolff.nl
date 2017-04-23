@@ -23,13 +23,7 @@ export function DumbWorkBody({ entities, works }) {
   return (
     <Grid gutter={gutter}>
       {works.result.map(id => (
-        <Cell
-          gutter={gutter}
-          smSize={1 / 1}
-          mdSize={1 / 2}
-          lgSize={1 / 3}
-          key={id}
-        >
+        <Cell gutter={gutter} smSize={1 / 1} mdSize={1 / 2} lgSize={1 / 3} key={id}>
           <Link to={`/work/${entities[id].slug}`}>
             <ResponsiveThumbnail id={entities[id].thumbnail} />
           </Link>

@@ -20,10 +20,17 @@ exports[`<AppError /> renders correctly 1`] = `
         </h2>
       </styled.h2>
       <p>
-        Something went wrong while loading this page. Try refreshing the page and check if your browser extensions aren't blocking anything critical.
+        Something went wrong while loading this page. Try refreshing the page and check if your browser extensions aren
+        '
+        t blocking anything critical.
       </p>
       <p>
-        In most cases I'll be notified automatically that something went wrong and I'll make sure to fix it as soon as possible. If you want to report this error you can do so on the issues tab of my 
+        In most cases I
+        '
+        ll be notified automatically that something went wrong and I
+        '
+        ll make sure to fix it as soon as possible. If you want to report this error you can do so on the issues tab of my
+         
         <styled.a
           href="https://github.com/ismay/ismaywolff.nl"
         >
@@ -37,9 +44,11 @@ exports[`<AppError /> renders correctly 1`] = `
         .
       </p>
       <p>
-        The error was: "
+        The error was: 
+        "
         Error message.
-        ".
+        "
+        .
       </p>
     </div>
   </styled.div>

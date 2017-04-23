@@ -12,7 +12,7 @@ const trackErrors = () => {
    */
 
   // eslint-disable-next-line no-mixed-operators, no-underscore-dangle
-  const loadErrorEvents = window.__e && window.__e.q || []
+  const loadErrorEvents = (window.__e && window.__e.q) || []
 
   // use a different eventCategory for uncaught errors
   const fieldsObj = { eventCategory: 'Uncaught Error' }

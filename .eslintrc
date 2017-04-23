@@ -22,15 +22,16 @@
     "airbnb"
   ],
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
-    "comma-dangle": ["error", "never"],
-    "func-names": ["error", "as-needed"],
-    "semi": ["error", "never"],
-    "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
-    "import/order": ["error"],
+    "arrow-parens": 0,
+    "comma-dangle": 0,
     "compat/compat": 2,
-    "react/forbid-prop-types": 0,
+    "func-names": ["error", "as-needed"],
     "import/no-extraneous-dependencies": 0,
-    "import/prefer-default-export": 0
+    "import/order": ["error"],
+    "import/prefer-default-export": 0,
+    "no-mixed-operators": 0,
+    "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
+    "react/forbid-prop-types": 0,
+    "semi": 0
   }
 }

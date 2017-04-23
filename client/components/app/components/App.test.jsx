@@ -31,37 +31,43 @@ describe('<App />', () => {
 
   it('fetches works', () => {
     const spy = jest.fn()
-    mount(<App
-      store={store}
-      history={{}}
-      fetchArticles={() => {}}
-      fetchWorks={spy}
-      fetchImages={() => {}}
-    />)
+    mount(
+      <App
+        store={store}
+        history={{}}
+        fetchArticles={() => {}}
+        fetchWorks={spy}
+        fetchImages={() => {}}
+      />
+    )
     expect(spy).toBeCalled()
   })
 
   it('fetches images', () => {
     const spy = jest.fn()
-    mount(<App
-      store={store}
-      history={{}}
-      fetchArticles={() => {}}
-      fetchWorks={() => {}}
-      fetchImages={spy}
-    />)
+    mount(
+      <App
+        store={store}
+        history={{}}
+        fetchArticles={() => {}}
+        fetchWorks={() => {}}
+        fetchImages={spy}
+      />
+    )
     expect(spy).toBeCalled()
   })
 
   it('fetches articles', () => {
     const spy = jest.fn()
-    mount(<App
-      store={store}
-      history={{}}
-      fetchArticles={spy}
-      fetchWorks={() => {}}
-      fetchImages={() => {}}
-    />)
+    mount(
+      <App
+        store={store}
+        history={{}}
+        fetchArticles={spy}
+        fetchWorks={() => {}}
+        fetchImages={() => {}}
+      />
+    )
     expect(spy).toBeCalled()
   })
 })

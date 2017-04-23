@@ -24,10 +24,7 @@ export function DumbWritingBody({ entities, articles }) {
   return (
     <Grid gutter={gutter}>
       {articles.result.map(id => (
-        <Cell
-          gutter={gutter}
-          key={id}
-        >
+        <Cell gutter={gutter} key={id}>
           <InternalLink to={`/writing/${entities[id].slug}`}>
             <TextLine>
               <TextLineFill direction={'right'}>{entities[id].title}</TextLineFill>

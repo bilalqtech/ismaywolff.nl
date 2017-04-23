@@ -20,14 +20,8 @@ function WorkDetailBody({ work }) {
 
       {/* Gallery */}
       <Grid gutter={gutter}>
-        { work.images.map(id => (
-          <Cell
-            gutter={gutter}
-            smSize={1 / 1}
-            mdSize={1 / 2}
-            lgSize={1 / 3}
-            key={id}
-          >
+        {work.images.map(id => (
+          <Cell gutter={gutter} smSize={1 / 1} mdSize={1 / 2} lgSize={1 / 3} key={id}>
             <ResponsiveZoomable id={id} />
           </Cell>
         ))}

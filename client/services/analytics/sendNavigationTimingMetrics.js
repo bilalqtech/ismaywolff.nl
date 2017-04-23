@@ -29,9 +29,7 @@ const sendNavigationTimingMetrics = () => {
    * e.g. 0, negative, or future times. This validates values before sending.
    */
 
-  const allValuesAreValid = (...values) => (
-    values.every(value => value > 0 && value < 6e6)
-  )
+  const allValuesAreValid = (...values) => values.every(value => value > 0 && value < 6e6)
 
   if (allValuesAreValid(responseEnd, domLoaded, windowLoaded)) {
     ga('send', 'event', {

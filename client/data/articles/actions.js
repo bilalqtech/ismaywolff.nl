@@ -14,16 +14,14 @@ export const fetchArticlesFail = payload => ({
   payload
 })
 
-export const fetchArticles = () => (
-  dispatch => {
-    // indicate start of fetch
-    dispatch({ type: types.FETCH_ARTICLES })
+export const fetchArticles = () => dispatch => {
+  // indicate start of fetch
+  dispatch({ type: types.FETCH_ARTICLES })
 
-    // fetch articles
-    return get(endpoints.ARTICLES)
-      .then(response => response.json())
-      .then(data => normalize(data.items, [schemas.articles]))
-      .then(normalized => dispatch(fetchArticlesSuccess(normalized)))
-      .catch(error => dispatch(fetchArticlesFail(error)))
-  }
-)
+  // fetch articles
+  return get(endpoints.ARTICLES)
+    .then(response => response.json())
+    .then(data => normalize(data.items, [schemas.articles]))
+    .then(normalized => dispatch(fetchArticlesSuccess(normalized)))
+    .catch(error => dispatch(fetchArticlesFail(error)))
+}

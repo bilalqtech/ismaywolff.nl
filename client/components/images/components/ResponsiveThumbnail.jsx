@@ -7,13 +7,7 @@ import Thumbnail from './Thumbnail'
 function ResponsiveThumbnail({ id }) {
   return (
     <AsyncReactMeasure includeMargin={false} whitelist={['width']}>
-      {dimensions => (
-        <Thumbnail
-          id={id}
-          width={roundUp(dimensions.width)}
-        />
-      )
-      }
+      {dimensions => <Thumbnail id={id} width={roundUp(dimensions.width)} />}
     </AsyncReactMeasure>
   )
 }

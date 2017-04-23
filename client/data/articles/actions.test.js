@@ -16,7 +16,8 @@ describe('fetchArticles', () => {
 
     get.mockImplementationOnce(() => Promise.resolve())
 
-    return actions.fetchArticles()(dispatch)
+    return actions
+      .fetchArticles()(dispatch)
       .then(() => expect(dispatch.mock.calls[0][0]).toEqual({ type: types.FETCH_ARTICLES }))
   })
 
@@ -27,10 +28,9 @@ describe('fetchArticles', () => {
 
     get.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
 
-    return actions.fetchArticles()(dispatch)
-      .then(() => expect(
-        dispatch.mock.calls[1][0]).toEqual(actions.fetchArticlesSuccess('items'))
-      )
+    return actions
+      .fetchArticles()(dispatch)
+      .then(() => expect(dispatch.mock.calls[1][0]).toEqual(actions.fetchArticlesSuccess('items')))
   })
 
   it('should create FETCH_ARTICLES_FAIL when fetching articles has failed', () => {
@@ -39,10 +39,9 @@ describe('fetchArticles', () => {
 
     get.mockImplementationOnce(() => Promise.reject(error))
 
-    return actions.fetchArticles()(dispatch)
-      .then(() => expect(
-        dispatch.mock.calls[1][0]).toEqual(actions.fetchArticlesFail(error))
-      )
+    return actions
+      .fetchArticles()(dispatch)
+      .then(() => expect(dispatch.mock.calls[1][0]).toEqual(actions.fetchArticlesFail(error)))
   })
 })
 

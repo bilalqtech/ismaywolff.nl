@@ -20,7 +20,10 @@ exports[`<BootError /> renders correctly 1`] = `
         </h2>
       </styled.h2>
       <p>
-        This page uses modern javascript that your browser doesn't support and patching it has failed. Make sure that your browser extensions are not blocking the polyfill.io domain and refresh the page to retry or 
+        This page uses modern javascript that your browser doesn
+        '
+        t support and patching it has failed. Make sure that your browser extensions are not blocking the polyfill.io domain and refresh the page to retry or
+         
         <styled.a
           href="http://outdatedbrowser.com"
         >
@@ -34,7 +37,12 @@ exports[`<BootError /> renders correctly 1`] = `
         .
       </p>
       <p>
-        In most cases I'll be notified automatically that something went wrong and I'll make sure to fix it as soon as possible. If you want to report this error you can do so on the issues tab of my 
+        In most cases I
+        '
+        ll be notified automatically that something went wrong and I
+        '
+        ll make sure to fix it as soon as possible. If you want to report this error you can do so on the issues tab of my
+         
         <styled.a
           href="https://github.com/ismay/ismaywolff.nl"
         >
@@ -48,9 +56,11 @@ exports[`<BootError /> renders correctly 1`] = `
         .
       </p>
       <p>
-        The error was: "
+        The error was: 
+        "
         Error message.
-        ".
+        "
+        .
       </p>
     </div>
   </styled.div>

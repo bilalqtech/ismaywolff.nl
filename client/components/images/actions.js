@@ -14,16 +14,14 @@ export const fetchImagesFail = payload => ({
   payload
 })
 
-export const fetchImages = () => (
-  dispatch => {
-    // indicate start of fetch
-    dispatch({ type: types.FETCH_IMAGES })
+export const fetchImages = () => dispatch => {
+  // indicate start of fetch
+  dispatch({ type: types.FETCH_IMAGES })
 
-    // fetch images
-    return get(endpoints.IMAGES)
-      .then(response => response.json())
-      .then(data => normalize(data.items, [schemas.images]))
-      .then(normalized => dispatch(fetchImagesSuccess(normalized)))
-      .catch(error => dispatch(fetchImagesFail(error)))
-  }
-)
+  // fetch images
+  return get(endpoints.IMAGES)
+    .then(response => response.json())
+    .then(data => normalize(data.items, [schemas.images]))
+    .then(normalized => dispatch(fetchImagesSuccess(normalized)))
+    .catch(error => dispatch(fetchImagesFail(error)))
+}

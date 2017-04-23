@@ -12,12 +12,19 @@
  */
 
 const trackError = (err, fieldsObj = {}) => {
-  ga('send', 'event', Object.assign({
-    eventCategory: 'Error',
-    eventAction: err.name || 'No error name was set',
-    eventLabel: err.message || 'No error message was set',
-    nonInteraction: true
-  }, fieldsObj))
+  ga(
+    'send',
+    'event',
+    Object.assign(
+      {
+        eventCategory: 'Error',
+        eventAction: err.name || 'No error name was set',
+        eventLabel: err.message || 'No error message was set',
+        nonInteraction: true
+      },
+      fieldsObj
+    )
+  )
 }
 
 export default trackError

@@ -14,16 +14,14 @@ export const fetchWorksFail = payload => ({
   payload
 })
 
-export const fetchWorks = () => (
-  dispatch => {
-    // indicate start of fetch
-    dispatch({ type: types.FETCH_WORKS })
+export const fetchWorks = () => dispatch => {
+  // indicate start of fetch
+  dispatch({ type: types.FETCH_WORKS })
 
-    // fetch works
-    return get(endpoints.WORKS)
-      .then(response => response.json())
-      .then(data => normalize(data.items, [schemas.works]))
-      .then(normalized => dispatch(fetchWorksSuccess(normalized)))
-      .catch(error => dispatch(fetchWorksFail(error)))
-  }
-)
+  // fetch works
+  return get(endpoints.WORKS)
+    .then(response => response.json())
+    .then(data => normalize(data.items, [schemas.works]))
+    .then(normalized => dispatch(fetchWorksSuccess(normalized)))
+    .catch(error => dispatch(fetchWorksFail(error)))
+}

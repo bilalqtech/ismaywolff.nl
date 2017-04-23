@@ -18,7 +18,8 @@ describe('fetchImages', () => {
 
     get.mockImplementationOnce(() => Promise.resolve())
 
-    return actions.fetchImages()(dispatch)
+    return actions
+      .fetchImages()(dispatch)
       .then(() => expect(dispatch.mock.calls[0][0]).toEqual({ type: types.FETCH_IMAGES }))
   })
 
@@ -29,10 +30,9 @@ describe('fetchImages', () => {
 
     get.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
 
-    return actions.fetchImages()(dispatch)
-      .then(() => expect(
-        dispatch.mock.calls[1][0]).toEqual(actions.fetchImagesSuccess('items'))
-      )
+    return actions
+      .fetchImages()(dispatch)
+      .then(() => expect(dispatch.mock.calls[1][0]).toEqual(actions.fetchImagesSuccess('items')))
   })
 
   it('should create FETCH_IMAGES_FAIL when fetching images has failed', () => {
@@ -41,10 +41,9 @@ describe('fetchImages', () => {
 
     get.mockImplementationOnce(() => Promise.reject(error))
 
-    return actions.fetchImages()(dispatch)
-      .then(() => expect(
-        dispatch.mock.calls[1][0]).toEqual(actions.fetchImagesFail(error))
-      )
+    return actions
+      .fetchImages()(dispatch)
+      .then(() => expect(dispatch.mock.calls[1][0]).toEqual(actions.fetchImagesFail(error)))
   })
 })
 

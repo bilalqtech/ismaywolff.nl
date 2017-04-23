@@ -8,7 +8,7 @@ export function roundUp(number, amount = 50) {
     return amount
   }
 
-  return (Math.ceil(number / amount) * amount)
+  return Math.ceil(number / amount) * amount
 }
 
 /**
@@ -41,7 +41,7 @@ export function getAvailableWidth({ image, window }) {
    */
 
   if (imageRatio > windowRatio) {
-    return Math.round((image.width * window.innerHeight) / image.height)
+    return Math.round(image.width * window.innerHeight / image.height)
   }
 
   // otherwise we can just use the width

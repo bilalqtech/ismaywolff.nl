@@ -33,10 +33,7 @@ function boot(error) {
       document.getElementById('app')
     )
   } else {
-    render(
-      <App store={configureStore({})} history={history} />,
-      document.getElementById('app')
-    )
+    render(<App store={configureStore({})} history={history} />, document.getElementById('app'))
   }
 }
 

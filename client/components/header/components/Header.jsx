@@ -8,29 +8,19 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderLink size={'0.75rem'}>
-        <NavLink
-          activeClassName={'active'}
-          to="/work"
-        >
+        <NavLink activeClassName={'active'} to="/work">
           work
         </NavLink>
       </HeaderLink>
       <HeaderTitle>
         <HeaderLink size={'1.5rem'}>
-          <NavLink
-            activeClassName={'active'}
-            to="/"
-            exact
-          >
+          <NavLink activeClassName={'active'} to="/" exact>
             Ismay Wolff
           </NavLink>
         </HeaderLink>
       </HeaderTitle>
       <HeaderLink size={'0.75rem'}>
-        <NavLink
-          activeClassName={'active'}
-          to="/writing"
-        >
+        <NavLink activeClassName={'active'} to="/writing">
           writing
         </NavLink>
       </HeaderLink>
