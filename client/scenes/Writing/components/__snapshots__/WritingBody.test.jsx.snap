@@ -14,7 +14,7 @@ exports[`<WritingBody /> renders correctly 1`] = `
     mdSize="1"
     smSize="1"
   >
-    <Styled(undefined)
+    <Styled(Link)
       to="/writing/slug"
     >
       <styled.div>
@@ -27,7 +27,7 @@ exports[`<WritingBody /> renders correctly 1`] = `
           October 2000
         </styled.span>
       </styled.div>
-    </Styled(undefined)>
+    </Styled(Link)>
   </styled.div>
 </styled.div>
 `;
