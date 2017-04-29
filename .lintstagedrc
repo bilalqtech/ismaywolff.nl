@@ -1,9 +1,7 @@
 {
-  "src/**/*": "lintspaces -e ./.editorconfig -i 'js-comments' 'src/{client,server}/**/!(*.snap)*'",
   "src/**/*.{js,jsx}": [
     "prettier --print-width 100 --tab-width 2 --no-semi --single-quote --write",
     "git add",
-    "jest --bail --findRelatedTests",
     "eslint",
     "stylelint"
   ]

@@ -3,7 +3,6 @@
 import { Component } from 'react'
 import { object } from 'prop-types'
 import { withRouter } from 'react-router'
-import { isInBrowser } from '../../../services/environment'
 
 /**
  * Scrolls window to top on navigation
@@ -11,7 +10,7 @@ import { isInBrowser } from '../../../services/environment'
 
 export class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
-    if (isInBrowser && this.props.location !== prevProps.location) {
+    if (typeof window === 'object' && this.props.location !== prevProps.location) {
       window.scrollTo(0, 0)
     }
   }

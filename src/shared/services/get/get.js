@@ -1,3 +1,5 @@
+/* global Headers */
+
 import fetchy from '../fetchy'
 import TOKEN from '../token'
 

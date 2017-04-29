@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+
 import manifest from '../../dist/public/webpackChunkManifest.json'
 import assets from '../../dist/public/webpackAssets.json'
 
@@ -35,7 +37,9 @@ function renderFullPage({ html, title, meta, css, preloadedState }) {
         <script>
           window.preloadedState = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
-        ${assets.js.map(asset => `<script src="${asset}" type="text/javascript"></script>`).join('')}
+        ${assets.js
+    .map(asset => `<script src="${asset}" type="text/javascript"></script>`)
+    .join('')}
       </body>
     </html>
   `

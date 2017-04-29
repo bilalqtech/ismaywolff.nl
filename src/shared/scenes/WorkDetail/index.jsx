@@ -10,10 +10,7 @@ import WorkDetailBody from './components/WorkDetailBody'
 
 export class DumbWorkDetail extends Component {
   static getNeeds() {
-    return [
-      workActions.fetchWorks(),
-      imageActions.fetchImages()
-    ]
+    return [workActions.fetchWorks(), imageActions.fetchImages()]
   }
 
   componentDidMount() {

@@ -33,14 +33,14 @@ export function createUrl({ url, width, height, fill }) {
 export function getAvailableWidth({ image, viewport }) {
   // ratio over 1 means portrait orientation, under 1 is landscape
   const imageRatio = image.height / image.width
-  const windowRatio = viewport.height / viewport.width
+  const viewportRatio = viewport.height / viewport.width
 
   /**
    * For this ratio difference, height of the image is the limiting factor.
    * So we use height to proportionally calculate the width.
    */
 
-  if (imageRatio > windowRatio) {
+  if (imageRatio > viewportRatio) {
     return Math.round(image.width * viewport.height / image.height)
   }
 

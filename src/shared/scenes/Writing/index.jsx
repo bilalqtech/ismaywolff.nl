@@ -7,9 +7,7 @@ import WritingBody from './components/WritingBody'
 
 export class DumbWriting extends Component {
   static getNeeds() {
-    return [
-      articleActions.fetchArticles()
-    ]
+    return [articleActions.fetchArticles()]
   }
 
   componentDidMount() {

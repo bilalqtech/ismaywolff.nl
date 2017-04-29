@@ -1,3 +1,5 @@
+/* global Response */
+
 import 'isomorphic-fetch'
 import get from '../../services/get'
 import * as types from './actionTypes'

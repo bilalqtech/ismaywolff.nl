@@ -7,16 +7,19 @@ const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
 const WebpackMd5Hash = require('webpack-md5-hash')
 const webpack = require('webpack')
 
-// define two different css extractors
 const extractBundle = new ExtractTextPlugin('[name]-[chunkhash].css')
 const extractVendor = new ExtractTextPlugin('vendor-[chunkhash].css')
 
-// constants
+/**
+ * Name of the entrypoint. Currently there's only one client-side entrypoint. The name is defined
+ * here so that it can be referenced when extracting the asset names for the server-side template.
+ */
+
 const ENTRYPOINT = 'main'
 
 /**
  * Transforms the webpack stats object. Parses it into arrays of assets that are in the proper
- * order for server side use.
+ * order for server-side use.
  */
 
 function transformStats(stats) {
@@ -41,10 +44,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: [
-      './src/client',
-      'node_modules'
-    ]
+    modules: ['node_modules']
   },
   module: {
     rules: [
@@ -75,14 +75,14 @@ module.exports = {
   plugins: [
 
     /**
-     * extract required css to a separate file. Create a vendor and an application bundle.
+     * Extract required css to a separate file. Create a vendor and an application bundle.
      */
 
     extractVendor,
     extractBundle,
 
     /**
-     * clean dist before building
+     * Clean dist before building.
      */
 
     new CleanWebpackPlugin(
@@ -91,13 +91,13 @@ module.exports = {
     ),
 
     /**
-     * copy all static assets to dist
+     * Copy all static assets to dist.
      */
 
     new CopyWebpackPlugin([{ from: path.join(__dirname, 'src', 'static') }]),
 
     /**
-     * minify the generated js and pass along the sourcemaps
+     * Minify the generated js and pass along the sourcemaps.
      */
 
     new webpack.optimize.UglifyJsPlugin({
@@ -105,7 +105,7 @@ module.exports = {
     }),
 
     /**
-     * add all the necessary environment variables
+     * Add all the necessary environment variables.
      */
 
     new webpack.EnvironmentPlugin([
@@ -116,13 +116,13 @@ module.exports = {
     ]),
 
     /**
-     * split chunks
+     * Split chunks
      *
      * splitting passes modules from top to bottom, see also:
      * - https://github.com/webpack/webpack/issues/4638#issuecomment-292702190
      * - http://stackoverflow.com/a/43291641/5918874
      *
-     * extracts:
+     * Extracts:
      *
      * - vendor chunk
      * - react chunk (react and react-dom)
@@ -143,7 +143,7 @@ module.exports = {
     }),
 
     /**
-     * enable deterministic builds, to prevent needless cache-busting
+     * Enable deterministic builds, to prevent needless cache-busting
      *
      * - hash module ids so the module identifiers won't change across builds
      * - hash file contents with md5, so the hashes are based on the actual file contents
@@ -156,6 +156,11 @@ module.exports = {
     new ChunkManifestPlugin({
       filename: 'webpackChunkManifest.json'
     }),
+
+    /**
+     * Parse the webpack stats object and output a json file with the assets grouped by type
+     */
+
     new StatsWriterPlugin({
       filename: 'webpackAssets.json',
       fields: null,

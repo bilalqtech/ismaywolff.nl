@@ -19,7 +19,7 @@
   },
   "betterScripts": {
     "build:client": {
-      "command": "webpack --config webpack.config.client.js -p --bail",
+      "command": "webpack --config webpack.config.client.prod.js -p --bail",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "client"
@@ -33,7 +33,7 @@
       }
     },
     "dev:client": {
-      "command": "webpack-dev-server --config webpack.config.client.js --inline --hot",
+      "command": "webpack-dev-server --config webpack.config.client.dev.js --inline --hot",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "client"

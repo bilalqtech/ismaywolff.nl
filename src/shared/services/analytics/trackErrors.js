@@ -1,3 +1,5 @@
+/* global window */
+
 import trackError from './trackError'
 
 /**

@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { DumbWritingDetail } from './index'
 
 describe('<WritingDetail />', () => {
@@ -8,16 +8,51 @@ describe('<WritingDetail />', () => {
     const entities = { one: { title: 'title', published: '01-01-2000', text: 'text' } }
     const articles = { result: ['one'], isFetching: false, didFetch: true }
     const wrapper = shallow(
-      <DumbWritingDetail match={match} entities={entities} articles={articles} hasArticles />
+      <DumbWritingDetail
+        match={match}
+        entities={entities}
+        articles={articles}
+        hasArticles
+        fetchArticles={() => {}}
+      />
     )
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('has server side data needs defined', () => {
+    expect(DumbWritingDetail.getNeeds()).toMatchSnapshot()
+  })
+
+  it('fetches data after mounting', () => {
+    const spyArticles = jest.fn()
+    const match = { params: { id: 'one' } }
+    const entities = { one: { title: 'title', published: '01-01-2000', text: 'text' } }
+    const articles = { result: ['one'], isFetching: false, didFetch: true }
+
+    mount(
+      <DumbWritingDetail
+        match={match}
+        entities={entities}
+        articles={articles}
+        hasArticles
+        fetchArticles={spyArticles}
+      />
+    )
+
+    expect(spyArticles).toHaveBeenCalled()
   })
 
   it('renders a loading state', () => {
     const match = { params: { id: 'one' } }
     const articles = { result: [], isFetching: true, didFetch: false }
     const wrapper = shallow(
-      <DumbWritingDetail match={match} entities={{}} articles={articles} hasArticles={false} />
+      <DumbWritingDetail
+        match={match}
+        entities={{}}
+        articles={articles}
+        hasArticles={false}
+        fetchArticles={() => {}}
+      />
     )
     expect(wrapper).toMatchSnapshot()
   })
@@ -27,7 +62,13 @@ describe('<WritingDetail />', () => {
     const entities = { two: { title: 'title' } }
     const articles = { result: ['two'], isFetching: false, didFetch: true }
     const wrapper = shallow(
-      <DumbWritingDetail match={match} entities={entities} articles={articles} hasArticles />
+      <DumbWritingDetail
+        match={match}
+        entities={entities}
+        articles={articles}
+        hasArticles
+        fetchArticles={() => {}}
+      />
     )
     expect(wrapper).toMatchSnapshot()
   })
@@ -36,7 +77,13 @@ describe('<WritingDetail />', () => {
     const match = { params: { id: 'one' } }
     const articles = { errorMessage: 'Something went wrong', result: [], didFetch: true }
     const wrapper = shallow(
-      <DumbWritingDetail match={match} entities={{}} articles={articles} hasArticles={false} />
+      <DumbWritingDetail
+        match={match}
+        entities={{}}
+        articles={articles}
+        hasArticles={false}
+        fetchArticles={() => {}}
+      />
     )
     expect(wrapper).toMatchSnapshot()
   })

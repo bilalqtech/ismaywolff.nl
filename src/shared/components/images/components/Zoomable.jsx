@@ -6,18 +6,14 @@ import ImageZoom from 'react-medium-image-zoom'
 import { connect } from 'react-redux'
 import { getImageEntities } from '../selectors'
 import { createUrl, getAvailableWidth, roundUp } from '../utils'
-import { isInBrowser } from '../../../services/environment'
 import Placeholder from './Placeholder'
 
 export function DumbZoomable({ entities, id, width }) {
   const image = entities[id]
-  const viewport = { height: 1, width: 1 }
-
-  // TODO: fails server side
-  // if (isInBrowser) {
-  //   viewport.height = window.innerHeight
-  //   viewport.width = window.innerWidth
-  // }
+  const viewport = {
+    height: typeof window === 'object' ? window.innerHeight : 250,
+    width: typeof window === 'object' ? window.innerWidth : 250
+  }
 
   if (!image) {
     return <Placeholder height={1} width={1} />

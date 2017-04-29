@@ -1,7 +1,5 @@
 /* global ga */
 
-import { isInBrowser } from '../environment'
-
 /**
  * Tracks a JavaScript error with optional fields object overrides.
  * This function is exported so it can be used in other parts of the codebase.
@@ -14,6 +12,8 @@ import { isInBrowser } from '../environment'
  */
 
 const trackError = (err, fieldsObj = {}) => {
+  if (typeof window !== 'object') return
+
   ga(
     'send',
     'event',
@@ -29,11 +29,4 @@ const trackError = (err, fieldsObj = {}) => {
   )
 }
 
-// protect against accidental server-side usage
-function trackErrorIfInBrowser(...args) {
-  if (!isInBrowser) return undefined
-
-  return trackError(...args)
-}
-
-export default trackErrorIfInBrowser
+export default trackError

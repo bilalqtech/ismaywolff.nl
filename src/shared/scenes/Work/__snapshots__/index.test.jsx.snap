@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Work /> has server side data needs defined 1`] = `
+Array [
+  [Function],
+  [Function],
+]
+`;
+
 exports[`<Work /> renders correctly 1`] = `
 <div>
   <HelmetWrapper

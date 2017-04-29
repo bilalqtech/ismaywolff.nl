@@ -3,10 +3,10 @@
     "<rootDir>/node_modules/jest-serializer-enzyme"
   ],
   "collectCoverageFrom": [
-    "src/client/**/*.{js,jsx}",
+    "src/**/*.{js,jsx}",
     "!src/client/index.jsx",
-    "!src/client/{rootReducer,store}.js",
-    "!src/client/{components,data,services}/*/index.js",
-    "!src/client/services/analytics/**"
+    "!src/{client,server,shared}/{components,data,services}/*/index.js",
+    "!src/shared/{rootReducer,store}.js",
+    "!src/shared/services/analytics/**"
   ]
 }

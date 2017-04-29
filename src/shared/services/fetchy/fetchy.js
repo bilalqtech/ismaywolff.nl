@@ -1,3 +1,5 @@
+/* global fetch */
+
 const fetchy = (...args) =>
   fetch(...args).then(response => {
     if (response.ok) {

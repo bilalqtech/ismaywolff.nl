@@ -8,10 +8,7 @@ import WorkBody from './components/WorkBody'
 
 export class DumbWork extends Component {
   static getNeeds() {
-    return [
-      workActions.fetchWorks(),
-      imageActions.fetchImages()
-    ]
+    return [workActions.fetchWorks(), imageActions.fetchImages()]
   }
 
   componentDidMount() {

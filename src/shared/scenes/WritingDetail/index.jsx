@@ -9,9 +9,7 @@ import WritingDetailBody from './components/WritingDetailBody'
 
 export class DumbWritingDetail extends Component {
   static getNeeds() {
-    return [
-      articleActions.fetchArticles()
-    ]
+    return [articleActions.fetchArticles()]
   }
 
   componentDidMount() {

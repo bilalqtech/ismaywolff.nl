@@ -28,10 +28,9 @@ function handleRender(req, res) {
 
   // render after resolving all necessary data
   Promise.all(actions).then(() => {
-    // render appropriate route to a string
-    const html = renderToString(sheet.collectStyles(
-      <App location={req.url} context={context} store={store} />
-    ))
+    const html = renderToString(
+      sheet.collectStyles(<App location={req.url} context={context} store={store} />)
+    )
 
     const css = sheet.getStyleTags()
     const helmet = Helmet.renderStatic()

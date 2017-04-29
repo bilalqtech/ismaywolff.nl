@@ -17,10 +17,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
-    modules: [
-      './src/server',
-      'node_modules'
-    ]
+    modules: ['node_modules']
   },
   module: {
     rules: [
@@ -36,7 +33,8 @@ module.exports = {
   plugins: [
     new webpack.EnvironmentPlugin([
       'NODE_ENV',
-      'DEV_PORT'
+      'SPACE_ID',
+      'CONTENT_DELIVERY_TOKEN'
     ])
   ]
 }

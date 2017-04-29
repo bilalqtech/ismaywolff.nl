@@ -1,3 +1,5 @@
+/* global Headers */
+
 import 'isomorphic-fetch'
 import fetchy from '../fetchy'
 import get from './get'

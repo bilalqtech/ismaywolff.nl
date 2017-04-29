@@ -1,7 +1,6 @@
 // polyfill fetch
 import 'isomorphic-fetch'
 
-// import dependencies
 import express from 'express'
 import { PUBLIC_PATH, PORT } from './constants'
 import handleRender from './handleRender'

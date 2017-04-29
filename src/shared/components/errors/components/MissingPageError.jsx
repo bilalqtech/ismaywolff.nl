@@ -1,3 +1,5 @@
+/* global window */
+
 import React, { Component } from 'react'
 import { InternalLink } from '../../links'
 import { colors } from '../../../styles'

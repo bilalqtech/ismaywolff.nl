@@ -1,3 +1,5 @@
+/* global window, Response, fetch */
+
 import 'isomorphic-fetch'
 import fetchy from './fetchy'
 

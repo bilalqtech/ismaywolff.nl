@@ -15,10 +15,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: [
-      './src/client',
-      'node_modules'
-    ]
+    modules: ['node_modules']
   },
   module: {
     rules: [

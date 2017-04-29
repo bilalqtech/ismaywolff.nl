@@ -39,8 +39,8 @@ describe('createUrl', () => {
 describe('getAvailableWidth', () => {
   it('calculates the correct width for landscape ratio differences', () => {
     const image = { width: 100, height: 10 }
-    const window = { innerHeight: 1000, innerWidth: 1000 }
-    const actual = getAvailableWidth({ image, window })
+    const viewport = { height: 1000, width: 1000 }
+    const actual = getAvailableWidth({ image, viewport })
     const expected = 1000
 
     expect(actual).toEqual(expected)
@@ -48,8 +48,8 @@ describe('getAvailableWidth', () => {
 
   it('calculates the correct width for portrait ratio differences', () => {
     const image = { width: 10, height: 100 }
-    const window = { innerHeight: 1000, innerWidth: 1000 }
-    const actual = getAvailableWidth({ image, window })
+    const viewport = { height: 1000, width: 1000 }
+    const actual = getAvailableWidth({ image, viewport })
     const expected = 100
 
     expect(actual).toEqual(expected)

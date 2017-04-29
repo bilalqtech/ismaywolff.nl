@@ -9,9 +9,7 @@ function Routes() {
     <Container>
       <Header />
       <Switch>
-        {routes.map(route => (
-          <Route {...route} key={route.path || 'missing'} />
-        ))}
+        {routes.map(route => <Route {...route} key={route.path || 'missing'} />)}
       </Switch>
     </Container>
   )

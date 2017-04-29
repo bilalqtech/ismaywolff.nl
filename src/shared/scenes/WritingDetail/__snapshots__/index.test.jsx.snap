@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<WritingDetail /> has server side data needs defined 1`] = `
+Array [
+  [Function],
+]
+`;
+
 exports[`<WritingDetail /> renders a loading state 1`] = `<styled.div />`;
 
 exports[`<WritingDetail /> renders a missing page error 1`] = `<MissingPageError />`;
