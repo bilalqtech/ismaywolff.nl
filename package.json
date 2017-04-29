@@ -4,16 +4,54 @@
   "name": "ismaywolff.nl",
   "version": "1.0.0",
   "scripts": {
-    "build": "COMMIT=$(git rev-parse HEAD) NODE_ENV=production webpack -p --bail",
-    "build:stats": "NODE_ENV=production webpack -p --json > stats.json",
-    "lint:css": "stylelint 'client/**/*.{js,jsx}'",
-    "lint:js": "eslint 'client/**/*.{js,jsx}'",
-    "lint:prettier": "prettier --list-different --print-width 100 --tab-width 2 --no-semi --single-quote '{client,server}/**/*.{js,jsx}'",
-    "lint:whitespace": "eclint check client/** server/**",
+    "build:client": "bnr build:client",
+    "build:server": "bnr build:server",
+    "dev:client": "bnr dev:client",
+    "dev:server": "bnr dev:server",
+    "lint:css": "stylelint 'src/**/*.{js,jsx}'",
+    "lint:js": "eslint 'src/**/*.{js,jsx}'",
+    "lint:prettier": "prettier --list-different --print-width 100 --tab-width 2 --no-semi --single-quote 'src/**/*.{js,jsx}'",
+    "lint:whitespace": "lintspaces -e ./.editorconfig -i 'js-comments' 'src/{client,server}/**/!(*.snap)*'",
     "precommit": "lint-staged",
-    "start": "NODE_ENV=development webpack-dev-server --content-base dist/ --inline --hot",
-    "test": "jest --watch",
-    "test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "start": "bnr start",
+    "test": "jest --config .jestrc --watch",
+    "test:coverage": "jest --config .jestrc --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "betterScripts": {
+    "build:client": {
+      "command": "webpack --config webpack.config.client.js -p --bail",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "client"
+      }
+    },
+    "build:server": {
+      "command": "webpack --config webpack.config.server.js --bail",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "server"
+      }
+    },
+    "dev:client": {
+      "command": "webpack-dev-server --config webpack.config.client.js --inline --hot",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "client"
+      }
+    },
+    "dev:server": {
+      "command": "babel-watch src/server/index.js",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "server"
+      }
+    },
+    "start": {
+      "command": "node dist/index.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -26,18 +64,6 @@
       "eslint-plugin-jsx-a11y"
     ]
   },
-  "jest": {
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-serializer-enzyme"
-    ],
-    "collectCoverageFrom": [
-      "client/**/*.{js,jsx}",
-      "!client/index.jsx",
-      "!client/{rootReducer,store}.js",
-      "!client/{components,data,services}/*/index.js",
-      "!client/services/analytics/**"
-    ]
-  },
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.2.0",
@@ -46,13 +72,13 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.3.3",
     "babel-preset-react": "^6.16.0",
+    "babel-watch": "^2.0.6",
+    "better-npm-run": "^0.0.15",
     "chunk-manifest-webpack-plugin": "^1.0.0",
     "clean-webpack-plugin": "^0.1.14",
     "copy-webpack-plugin": "^4.0.1",
     "coveralls": "^2.11.15",
     "css-loader": "^0.28.0",
-    "dotenv": "^4.0.0",
-    "eclint": "^2.0.1",
     "enzyme": "^2.8.1",
     "eslint": "^3.15.0",
     "eslint-config-airbnb": "^14.1.0",
@@ -61,15 +87,15 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
+    "express": "^4.15.2",
     "extract-text-webpack-plugin": "^2.1.0",
-    "html-webpack-plugin": "^2.24.1",
+    "html-webpack-plugin": "^2.28.0",
     "husky": "^0.13.3",
-    "inline-chunk-manifest-html-webpack-plugin": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^19.0.2",
     "jest-serializer-enzyme": "^1.0.0",
     "lint-staged": "^3.4.0",
-    "preload-webpack-plugin": "^1.2.2",
+    "lintspaces-cli": "^0.6.0",
     "prettier": "^1.2.2",
     "react-test-renderer": "^15.5.4",
     "spdx-expression-parse": "^1.0.4",
@@ -81,7 +107,9 @@
     "stylelint-processor-styled-components": "^0.1.0",
     "webpack": "^2.3.0",
     "webpack-dev-server": "^2.2.1",
-    "webpack-md5-hash": "^0.0.5"
+    "webpack-md5-hash": "^0.0.5",
+    "webpack-node-externals": "^1.5.4",
+    "webpack-stats-plugin": "^0.1.5"
   },
   "dependencies": {
     "dateformat": "^2.0.0",

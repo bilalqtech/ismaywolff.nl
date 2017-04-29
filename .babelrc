@@ -1,25 +1,25 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "modules": false,
-        "targets": { "browsers": [ "last 2 versions", "> 5%" ] }
-      }
-    ],
-    "react"
-  ],
-  "plugins": [
-    "syntax-dynamic-import"
-  ],
   "env": {
+    "client": {
+      "presets": [
+        ["env", { "modules": false, "targets": { "browsers": ["last 2 versions", "> 5%"] } }],
+        "react"
+      ],
+      "plugins": [ "syntax-dynamic-import" ]
+    },
+    "server": {
+      "presets": [
+        ["env", { "targets": { "node": 7 } }],
+        "react"
+      ],
+      "plugins": [ "dynamic-import-node" ]
+    },
     "test": {
       "presets": [
-        "env"
+        ["env", { "targets": { "node": "current" } }],
+        "react"
       ],
-      "plugins": [
-        "dynamic-import-node"
-      ]
+      "plugins": [ "dynamic-import-node" ]
     }
   }
 }

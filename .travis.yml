@@ -13,7 +13,6 @@ script:
   - yarn run lint:js
   - yarn run lint:css
   - yarn run lint:whitespace
-  - yarn run build
 after_success:
   # login to docker hub
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
