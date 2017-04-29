@@ -1,19 +1,16 @@
 FROM node:alpine
 
-# install yarn
-RUN npm install -g yarn
-
 # install dependencies
-RUN yarn
+RUN npm install
 
 # build client
-RUN yarn run build:client
+RUN npm run build:client
 
 # build server
-RUN yarn run build:server
+RUN npm run build:server
 
 # expose port 80 for incoming requests
 EXPOSE 80
 
 # start the server
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
