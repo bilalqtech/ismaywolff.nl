@@ -10,4 +10,4 @@ COPY dist /server
 EXPOSE 80
 
 # start the server
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
