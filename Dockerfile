@@ -5,6 +5,10 @@ WORKDIR /server
 
 # copy server files to server root
 COPY dist /server
+COPY package.json /server
+
+# install unbundled dependencies
+RUN npm install
 
 # expose port 80 for incoming requests
 EXPOSE 80
