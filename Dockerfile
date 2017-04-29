@@ -1,13 +1,10 @@
 FROM node:alpine
 
-# install dependencies
-RUN npm install
+# create server folder
+WORKDIR /server
 
-# build client
-RUN npm run build:client
-
-# build server
-RUN npm run build:server
+# copy server files to server root
+COPY dist /server
 
 # expose port 80 for incoming requests
 EXPOSE 80
