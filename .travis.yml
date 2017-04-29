@@ -14,6 +14,8 @@ script:
   - yarn run lint:css
   - yarn run lint:whitespace
 after_success:
+  - yarn run build:client
+  - yarn run build:server
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - export REPO=ismay/ismaywolff.nl
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)

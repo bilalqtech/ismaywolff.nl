@@ -3,13 +3,11 @@ FROM node:alpine
 # create server folder
 WORKDIR /server
 
-# copy source
+# copy all source files to server root
 COPY . /server
 
-# install unbundled dependencies and build
+# install unbundled dependencies
 RUN npm install
-RUN npm run build:client
-RUN npm run build:server
 
 # expose port 80 for incoming requests
 EXPOSE 80
