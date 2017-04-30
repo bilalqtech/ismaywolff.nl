@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Missing /> renders correctly 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Page not found
+    </title>
+  </HelmetWrapper>
+  <MissingPageError />
+</div>
+`;

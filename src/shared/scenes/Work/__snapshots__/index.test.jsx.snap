@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Work /> has server side data needs defined 1`] = `
+Array [
+  [Function],
+  [Function],
+]
+`;
+
+exports[`<Work /> renders correctly 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Work • Ismay Wolff
+    </title>
+    <meta
+      content="An overview of my work"
+      name="description"
+    />
+  </HelmetWrapper>
+  <Connect(DumbWorkBody) />
+</div>
+`;

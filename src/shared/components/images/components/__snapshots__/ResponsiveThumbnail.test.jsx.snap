@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResponsiveThumbnail /> renders correctly 1`] = `
+<ResponsiveThumbnail
+  id="one"
+>
+  <Loadable
+    includeMargin={false}
+    whitelist={
+      Array [
+        "width",
+      ]
+    }
+  >
+    <Measure
+      blacklist={Array []}
+      cloneOptions={Object {}}
+      includeMargin={false}
+      onMeasure={[Function]}
+      shouldMeasure={true}
+      useClone={false}
+      whitelist={
+        Array [
+          "width",
+        ]
+      }
+    >
+      <Component
+        id="one"
+        width={250}
+      >
+        <div />
+      </Component>
+    </Measure>
+  </Loadable>
+</ResponsiveThumbnail>
+`;

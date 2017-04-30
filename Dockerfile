@@ -1,16 +1,16 @@
 FROM node:alpine
 
-# create app folder
-WORKDIR /app
+# create server folder
+WORKDIR /server
 
-# copy server files to app root
-COPY server /app
+# copy all source files to server root
+COPY . /server
 
-# move dist files to public folder
-COPY dist /app/public
-
-# install dependencies
+# install unbundled dependencies
 RUN npm install
 
+# expose port 80 for incoming requests
 EXPOSE 80
-CMD ["node", "index.js"]
+
+# start the server
+CMD ["npm", "start"]

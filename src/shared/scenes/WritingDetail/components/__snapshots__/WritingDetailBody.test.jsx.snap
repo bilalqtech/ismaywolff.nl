@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WritingDetailBody /> renders correctly 1`] = `
+<div>
+  <styled.div>
+    <styled.h2>
+      title
+    </styled.h2>
+    <styled.p>
+      April 2011
+    </styled.p>
+  </styled.div>
+  <Loadable
+    source="text"
+  />
+</div>
+`;

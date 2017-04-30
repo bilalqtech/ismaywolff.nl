@@ -42,6 +42,12 @@ PROD_TRACKING_ID=UA-XXXXX-Y
 
 Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is [this cloud-config](https://gist.github.com/ismay/da7acd94f07666a5308c4946f4482acb).
 
+## credits
+
+A thank you to [browserstack](https://www.browserstack.com) for the open-source account on which I do my cross-browser testing:
+
+[![browserstack logo][browserstack-logo]][browserstack-url]
+
 ## license
 
 [MIT](http://ismay.mit-license.org/)
@@ -56,3 +62,5 @@ Docker containers of this project are built automatically and can be found on [D
 [docker-url]: https://hub.docker.com/r/ismay/ismaywolff.nl/
 [image-badge]: https://images.microbadger.com/badges/image/ismay/ismaywolff.nl.svg
 [image-url]: https://hub.docker.com/r/ismay/ismaywolff.nl/
+[browserstack-logo]: https://i.imgur.com/NjXLL0d.png
+[browserstack-url]: https://www.browserstack.com

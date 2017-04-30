@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Zoomable /> renders a loading state 1`] = `
+<styled.picture
+  height={1}
+  width={1}
+/>
+`;
+
+exports[`<Zoomable /> renders correctly 1`] = `
+<styled.picture
+  height={1}
+  width={NaN}
+>
+  <ImageZoom
+    defaultStyles={
+      Object {
+        "image": Object {},
+        "overlay": Object {},
+        "zoomContainer": Object {},
+        "zoomImage": Object {},
+      }
+    }
+    image={
+      Object {
+        "alt": "title",
+        "src": "url?w=100&fl=progressive",
+      }
+    }
+    isZoomed={false}
+    onUnzoom={[Function]}
+    onZoom={[Function]}
+    shouldHandleZoom={[Function]}
+    shouldPreload={true}
+    shouldReplaceImage={true}
+    shouldRespectMaxDimension={false}
+    zoomImage={
+      Object {
+        "alt": "title",
+        "src": "url?w=1050&fl=progressive",
+      }
+    }
+    zoomMargin={40}
+  />
+</styled.picture>
+`;

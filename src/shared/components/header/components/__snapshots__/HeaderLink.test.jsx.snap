@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderLink /> accepts size parameter 1`] = `
+<span
+  className="sc-bdVaJa jtHpJJ"
+  size="100%"
+/>
+`;
+
+exports[`<HeaderLink /> renders correctly 1`] = `
+<span
+  className="sc-bdVaJa jpjtmG"
+  size="1rem"
+/>
+`;

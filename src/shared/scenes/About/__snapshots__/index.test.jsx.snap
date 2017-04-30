@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<About /> renders correctly 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Ismay Wolff
+    </title>
+    <meta
+      content="About me"
+      name="description"
+    />
+  </HelmetWrapper>
+  <p>
+    I
+    '
+    m an artist, a social scientist and a programmer. My work is a combination of these fields and an exploration of the most inspiring parts of each discipline. I was born 1983 in Heerde and live and work in Groningen in the Netherlands.
+  </p>
+  <p>
+    I
+    '
+    ve obtained a master in social psychology from the University of Groningen, and a bachelor
+    '
+    s degree in fine art from Academie Minerva of Groningen. A lot of my work can be found on
+     
+    <styled.a
+      href="https://github.com/ismay"
+    >
+      github
+    </styled.a>
+     
+    and my public keys are on 
+    <styled.a
+      href="https://keybase.io/ismay"
+    >
+      keybase
+    </styled.a>
+    .
+  </p>
+</div>
+`;

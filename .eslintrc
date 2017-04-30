@@ -1,39 +1,26 @@
 {
-  "env": {
-    "browser": true,
-    "jest": true,
-    "node": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": true
-  },
-  "plugins": [
-    "compat"
-  ],
-  "settings": {
-    "polyfills": [
-      "fetch",
-      "promises"
-    ]
-  },
   "extends": [
     "airbnb"
   ],
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
-    "comma-dangle": ["error", "never"],
-    "compat/compat": 2,
+    "arrow-parens": 0,
+    "comma-dangle": 0,
     "func-names": ["error", "as-needed"],
-    "semi": ["error", "never"],
-    "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
-    "no-confusing-arrow": 0,
-    "global-require": 0,
-    "react/forbid-prop-types": 0,
-    "import/first": 0,
     "import/no-extraneous-dependencies": 0,
-    "import/no-named-as-default": 0,
-    "import/prefer-default-export": 0
+    "import/order": ["error"],
+    "import/prefer-default-export": 0,
+    "no-mixed-operators": 0,
+    "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
+    "react/forbid-prop-types": 0,
+    "semi": 0,
+    "spaced-comment": ["error", "always"],
+    "capitalized-comments": ["error", "always"],
+    "lines-around-comment": ["error", {
+      "beforeBlockComment": true,
+      "afterBlockComment": true,
+      "beforeLineComment": true,
+      "afterLineComment": false,
+      "allowBlockStart": true
+    }]
   }
 }

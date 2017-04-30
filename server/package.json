@@ -1,9 +1,0 @@
-{
-  "name": "ismaywolff.nl-server",
-  "version": "1.0.0",
-  "dependencies": {
-    "express": "^4.14.1",
-    "mime-types": "^2.1.14"
-  }
-}
-

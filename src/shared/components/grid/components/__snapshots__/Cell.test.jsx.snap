@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cell /> renders correctly 1`] = `
+<div
+  className="sc-bdVaJa dBoZoY"
+/>
+`;
+
+exports[`<Cell /> renders correctly with gutter 1`] = `
+<div
+  className="sc-bdVaJa kYLCCF"
+/>
+`;
+
+exports[`<Cell /> renders correctly with lg 1`] = `
+<div
+  className="sc-bdVaJa dBoZoY"
+/>
+`;
+
+exports[`<Cell /> renders correctly with md 1`] = `
+<div
+  className="sc-bdVaJa dBoZoY"
+/>
+`;
+
+exports[`<Cell /> renders correctly with sm 1`] = `
+<div
+  className="sc-bdVaJa dBoZoY"
+/>
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WorkDetailBody /> renders correctly 1`] = `
+<div>
+  <styled.div>
+    <styled.h2>
+      title
+    </styled.h2>
+    <styled.p>
+      type
+       - 
+      April 2011
+    </styled.p>
+  </styled.div>
+  <p>
+    description
+  </p>
+  <styled.div
+    gutter="0.5rem"
+  >
+    <styled.div
+      gutter="0.5rem"
+      lgBreak="40em"
+      lgSize={0.3333333333333333}
+      mdBreak="25em"
+      mdSize={0.5}
+      smSize={1}
+    >
+      <ResponsiveZoomable
+        id="one"
+      />
+    </styled.div>
+  </styled.div>
+</div>
+`;
