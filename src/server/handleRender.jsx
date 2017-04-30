@@ -1,52 +1,47 @@
-import { matchPath } from 'react-router-dom'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet } from 'styled-components'
-import React from 'react'
 import routes from '../shared/routes'
 import configureStore from '../shared/store'
 import renderFullPage from './renderFullPage'
+import getNeeds from './getNeeds'
 import { App } from './components/app'
 
 function handleRender(req, res) {
   const context = {}
   const sheet = new ServerStyleSheet()
   const store = configureStore({})
-  const actions = []
+  const needs = getNeeds(routes, req.url, store)
 
-  // gather all async data needs for the requested route
-  routes.some(route => {
-    const match = matchPath(req.url, route)
+  Promise.all(needs)
+    .then(() => {
+      const html = renderToString(
+        sheet.collectStyles(<App location={req.url} context={context} store={store} />)
+      )
 
-    if (match && route.component && route.component.getNeeds) {
-      const needs = route.component.getNeeds()
-      needs.map(need => actions.push(need(store.dispatch)))
-    }
+      const styledComponentsCss = sheet.getStyleTags()
+      const helmet = Helmet.renderStatic()
+      const title = helmet.title.toString()
+      const meta = helmet.meta.toString()
+      const preloadedState = store.getState()
 
-    return match
-  })
-
-  // render after resolving all necessary data
-  Promise.all(actions).then(() => {
-    const html = renderToString(
-      sheet.collectStyles(<App location={req.url} context={context} store={store} />)
-    )
-
-    const css = sheet.getStyleTags()
-    const helmet = Helmet.renderStatic()
-    const title = helmet.title.toString()
-    const meta = helmet.meta.toString()
-    const preloadedState = store.getState()
-
-    if (context.url) {
-      res.status(302)
-      res.setHeader('Location', context.url)
+      if (context.url) {
+        // Redirect if react-router wants to redirect
+        res.status(302)
+        res.setHeader('Location', context.url)
+        res.end()
+      } else {
+        // Send a page with any fetched data
+        res.setHeader('Cache-Control', 'public, max-age=0')
+        res.send(renderFullPage({ html, title, meta, styledComponentsCss, preloadedState }))
+      }
+    })
+    .catch(() => {
+      // If anything fails while fetching catch it and send a server error
+      res.status(500)
       res.end()
-    } else {
-      res.setHeader('Cache-Control', 'public, max-age=0')
-      res.send(renderFullPage({ html, title, meta, css, preloadedState }))
-    }
-  })
+    })
 }
 
 export default handleRender

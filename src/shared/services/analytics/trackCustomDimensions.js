@@ -11,11 +11,12 @@ const trackCustomDimensions = () => {
    * because Google Analytics will drop rows with empty dimension values
    * in your reports.
    */
+
   Object.keys(dimensions).forEach(key => {
     ga('set', dimensions[key], NULL_VALUE)
   })
 
-  // adds tracking of dimensions known at page load time
+  // Adds tracking of dimensions known at page load time
   ga(tracker => {
     tracker.set({
       [dimensions.TRACKING_VERSION]: TRACKING_VERSION,

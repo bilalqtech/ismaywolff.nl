@@ -1,20 +1,13 @@
-import { roundUp, createUrl, getAvailableWidth } from './utils'
+import { getImageWidth, createUrl, getAvailableWidth } from './utils'
 
-describe('roundUp', () => {
+describe('getImageWidth', () => {
   it('rounds up to the nearest upper multiple', () => {
-    expect(roundUp(110, 50)).toEqual(150)
+    expect(getImageWidth(110)).toEqual(150)
   })
 
-  it('returns target if number is smaller than target and positive', () => {
-    expect(roundUp(10, 50)).toEqual(50)
-  })
-
-  it('returns target if number is zero', () => {
-    expect(roundUp(0, 50)).toEqual(50)
-  })
-
-  it('returns target if number is smaller than target and negative', () => {
-    expect(roundUp(-10, 50)).toEqual(50)
+  it('returns a fallback width for invalid values', () => {
+    expect(getImageWidth(0)).toEqual(250)
+    expect(getImageWidth(-10)).toEqual(250)
   })
 })
 

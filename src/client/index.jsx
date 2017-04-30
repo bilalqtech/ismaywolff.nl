@@ -1,6 +1,6 @@
 /* eslint-disable import/first */
 
-// globally scoped css
+// Globally scoped css
 import 'normalize.css'
 import './index.css'
 
@@ -11,12 +11,12 @@ import createHistory from 'history/createBrowserHistory'
 import configureStore from '../shared/store'
 import { App, AppWithErrors } from './components/app'
 
-// feature tests
+// Feature tests
 const hasFetch = 'fetch' in window
 const hasPromise = 'Promise' in window
 const hasObjectAssign = typeof Object.assign === 'function'
 
-// boots the app, shows errors if there were any
+// Boots the app, shows errors if there were any
 function boot(error) {
   const history = createHistory()
   import('../shared/services/analytics').then(analytics => analytics.init(history))
@@ -24,7 +24,7 @@ function boot(error) {
   if (error) {
     render(<AppWithErrors error={error} />, document.getElementById('app'))
   } else {
-    // hydrate store
+    // Hydrate store
     const preloadedState = window.preloadedState
     delete window.preloadedState
     const store = configureStore(preloadedState)
@@ -33,7 +33,7 @@ function boot(error) {
   }
 }
 
-// checks if the client supports all necessary features, and polyfills them if necessary
+// Checks if the client supports all necessary features, and polyfills them if necessary
 if (hasFetch && hasPromise && hasObjectAssign) {
   boot()
 } else {

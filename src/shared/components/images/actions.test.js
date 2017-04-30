@@ -1,53 +1,52 @@
-/* global Response */
-
 import 'isomorphic-fetch'
-import get from '../../services/get'
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
+import nock from 'nock'
 import * as types from './actionTypes'
 import * as actions from './actions'
 
-jest.mock('../../services/get', () => jest.fn())
-jest.mock('./schemas')
-jest.mock('../../data/works')
-jest.mock('../../data/links')
-jest.mock('normalizr', () => ({
-  normalize: items => items,
-  schema: { Entity: jest.fn() }
-}))
+/**
+ * Mocks
+ */
 
-describe('fetchImages', () => {
-  it('should create FETCH_IMAGES when fetching images starts', () => {
-    const dispatch = jest.fn()
+const middlewares = [thunk]
+const mockStore = configureMockStore(middlewares)
+const mockResponse = {
+  items: [
+    {
+      fields: {
+        title: 'title',
+        file: {
+          url: 'url',
+          details: {
+            image: {
+              width: 'width',
+              height: 'height'
+            }
+          }
+        }
+      },
+      sys: { id: 'id' }
+    }
+  ]
+}
+const mockNormalized = {
+  entities: {
+    images: {
+      id: {
+        title: 'title',
+        url: 'url',
+        width: 'width',
+        height: 'height'
+      }
+    }
+  },
+  result: ['id']
+}
 
-    get.mockImplementationOnce(() => Promise.resolve())
-
-    return actions
-      .fetchImages()(dispatch)
-      .then(() => expect(dispatch.mock.calls[0][0]).toEqual({ type: types.FETCH_IMAGES }))
-  })
-
-  it('should create FETCH_IMAGES_SUCCESS when fetching images has succeeded', () => {
-    const dispatch = jest.fn()
-    const body = JSON.stringify({ items: 'items' })
-    const init = { status: 200, statusText: 'OK' }
-
-    get.mockImplementationOnce(() => Promise.resolve(new Response(body, init)))
-
-    return actions
-      .fetchImages()(dispatch)
-      .then(() => expect(dispatch.mock.calls[1][0]).toEqual(actions.fetchImagesSuccess('items')))
-  })
-
-  it('should create FETCH_IMAGES_FAIL when fetching images has failed', () => {
-    const dispatch = jest.fn()
-    const error = new Error('Unauthorized')
-
-    get.mockImplementationOnce(() => Promise.reject(error))
-
-    return actions
-      .fetchImages()(dispatch)
-      .then(() => expect(dispatch.mock.calls[1][0]).toEqual(actions.fetchImagesFail(error)))
-  })
-})
+/**
+ * Tests
+ */
 
 describe('fetchImagesSuccess', () => {
   it('should create a FETCH_IMAGES_SUCCESS action', () => {
@@ -70,5 +69,76 @@ describe('fetchImagesFail', () => {
     }
 
     expect(actual).toEqual(expected)
+  })
+})
+
+describe('fetchImages', () => {
+  afterEach(() => {
+    nock.cleanAll()
+  })
+
+  it('should handle succesful fetches', () => {
+    nock(/contentful\.com/).get(/image/).reply(200, mockResponse)
+
+    const store = mockStore({})
+    const expectedActions = [
+      { type: types.FETCH_IMAGES },
+      { type: types.FETCH_IMAGES_SUCCESS, payload: mockNormalized }
+    ]
+
+    return store
+      .dispatch(actions.fetchImages())
+      .then(() => expect(store.getActions()).toEqual(expectedActions))
+  })
+
+  it('should handle unsuccesful fetches', () => {
+    const error = new Error('Internal Server Error')
+    nock(/contentful\.com/).get(/image/).reply(500, error)
+
+    const store = mockStore({})
+    const expectedActions = [
+      { type: types.FETCH_IMAGES },
+      { type: types.FETCH_IMAGES_FAIL, payload: error }
+    ]
+
+    return store
+      .dispatch(actions.fetchImages())
+      .then(() => expect(store.getActions()).toEqual(expectedActions))
+  })
+})
+
+describe('fetchImagesIfNeeded', () => {
+  afterEach(() => {
+    nock.cleanAll()
+  })
+
+  it('should fetch images if needed', () => {
+    nock(/contentful\.com/).get(/image/).reply(200, mockResponse)
+
+    const store = mockStore({ images: { isFetching: false, result: [] } })
+    const expectedActions = [
+      { type: types.FETCH_IMAGES },
+      { type: types.FETCH_IMAGES_SUCCESS, payload: mockNormalized }
+    ]
+
+    return store
+      .dispatch(actions.fetchImagesIfNeeded())
+      .then(() => expect(store.getActions()).toEqual(expectedActions))
+  })
+
+  it('should not fetch images if already fetching', () => {
+    const store = mockStore({ images: { isFetching: true, result: [] } })
+
+    return store
+      .dispatch(actions.fetchImagesIfNeeded())
+      .then(() => expect(store.getActions()).toEqual([]))
+  })
+
+  it('should not fetch images if there are already images', () => {
+    const store = mockStore({ images: { isFetching: false, result: ['image'] } })
+
+    return store
+      .dispatch(actions.fetchImagesIfNeeded())
+      .then(() => expect(store.getActions()).toEqual([]))
   })
 })

@@ -1,14 +1,24 @@
 /**
- * Rounds input number to the upper multiple of the given amount.
- * Useful for staggering image resizes to maximize cache hits.
+ * Takes an input width and staggers it by a set amount, to maximize
+ * cache hits. Protects against invalid values (when used on server
+ * for example) by returning a fallback value.
+ *
+ * The fallback doesn't have an obvious default since it can be used
+ * for fullscreen images, or a grid of multiple images. So 250 is chosen
+ * as something that isn't too big, but won't look completely terrible either.
  */
 
-export function roundUp(number, amount = 50) {
-  if (number < amount) {
-    return amount
+export function getImageWidth(width) {
+  const fallbackWidth = 250
+  const interval = 50
+
+  // If on the server or the width is invalid, return a default width
+  if (width <= 0) {
+    return fallbackWidth
   }
 
-  return Math.ceil(number / amount) * amount
+  // Otherwise round width up to the nearest interval
+  return Math.ceil(width / interval) * interval
 }
 
 /**
@@ -31,7 +41,7 @@ export function createUrl({ url, width, height, fill }) {
  */
 
 export function getAvailableWidth({ image, viewport }) {
-  // ratio over 1 means portrait orientation, under 1 is landscape
+  // Ratio over 1 means portrait orientation, under 1 is landscape
   const imageRatio = image.height / image.width
   const viewportRatio = viewport.height / viewport.width
 
@@ -44,6 +54,6 @@ export function getAvailableWidth({ image, viewport }) {
     return Math.round(image.width * viewport.height / image.height)
   }
 
-  // otherwise we can just use the width
+  // Otherwise we can just use the width
   return viewport.width
 }

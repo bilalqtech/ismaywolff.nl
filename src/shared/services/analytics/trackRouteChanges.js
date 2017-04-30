@@ -2,7 +2,7 @@
 
 import dimensions from './dimensions'
 
-// listen for changes to the current location and track them
+// Listen for changes to the current location and track them
 const trackRouteChanges = history => {
   history.listen(location => {
     ga('set', 'page', location.pathname)

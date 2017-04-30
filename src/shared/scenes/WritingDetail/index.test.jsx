@@ -13,14 +13,14 @@ describe('<WritingDetail />', () => {
         entities={entities}
         articles={articles}
         hasArticles
-        fetchArticles={() => {}}
+        fetchArticlesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()
   })
 
   it('has server side data needs defined', () => {
-    expect(DumbWritingDetail.getNeeds()).toMatchSnapshot()
+    expect(DumbWritingDetail.needs()).toMatchSnapshot()
   })
 
   it('fetches data after mounting', () => {
@@ -35,7 +35,7 @@ describe('<WritingDetail />', () => {
         entities={entities}
         articles={articles}
         hasArticles
-        fetchArticles={spyArticles}
+        fetchArticlesIfNeeded={spyArticles}
       />
     )
 
@@ -51,7 +51,7 @@ describe('<WritingDetail />', () => {
         entities={{}}
         articles={articles}
         hasArticles={false}
-        fetchArticles={() => {}}
+        fetchArticlesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()
@@ -67,7 +67,7 @@ describe('<WritingDetail />', () => {
         entities={entities}
         articles={articles}
         hasArticles
-        fetchArticles={() => {}}
+        fetchArticlesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()
@@ -82,7 +82,7 @@ describe('<WritingDetail />', () => {
         entities={{}}
         articles={articles}
         hasArticles={false}
-        fetchArticles={() => {}}
+        fetchArticlesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()

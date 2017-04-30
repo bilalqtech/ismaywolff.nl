@@ -6,7 +6,7 @@ jest.mock('./Zoomable', () => () => <div />)
 
 describe('<ResponsiveZoomable />', () => {
   it('renders correctly', () => {
-    const wrapper = mount(<ResponsiveZoomable id={'one'} size={{ width: 50 }} />)
+    const wrapper = mount(<ResponsiveZoomable id={'one'} />)
     expect(wrapper).toMatchSnapshot()
   })
 })

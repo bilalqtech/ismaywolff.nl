@@ -10,12 +10,12 @@ import { Spinner } from '../../../components/spinner'
 import { AppError } from '../../../components/errors'
 
 export function DumbWorkBody({ entities, works }) {
-  // if fetching or hasn't fetched yet
+  // If fetching or hasn't fetched yet
   if (works.isFetching || !works.didFetch) {
     return <Spinner />
   }
 
-  // if there's an error
+  // If there's an error
   if (works.errorMessage) {
     return <AppError errorMessage={works.errorMessage} />
   }

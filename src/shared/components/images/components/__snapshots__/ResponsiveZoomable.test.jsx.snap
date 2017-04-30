@@ -3,11 +3,6 @@
 exports[`<ResponsiveZoomable /> renders correctly 1`] = `
 <ResponsiveZoomable
   id="one"
-  size={
-    Object {
-      "width": 50,
-    }
-  }
 >
   <Loadable
     includeMargin={false}
@@ -32,7 +27,7 @@ exports[`<ResponsiveZoomable /> renders correctly 1`] = `
     >
       <Component
         id="one"
-        width={50}
+        width={250}
       >
         <div />
       </Component>

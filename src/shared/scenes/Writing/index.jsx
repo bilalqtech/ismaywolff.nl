@@ -6,12 +6,12 @@ import { actions as articleActions } from '../../data/articles'
 import WritingBody from './components/WritingBody'
 
 export class DumbWriting extends Component {
-  static getNeeds() {
-    return [articleActions.fetchArticles()]
+  static needs() {
+    return [articleActions.fetchArticlesIfNeeded()]
   }
 
   componentDidMount() {
-    this.props.fetchArticles()
+    this.props.fetchArticlesIfNeeded()
   }
 
   render() {
@@ -28,11 +28,11 @@ export class DumbWriting extends Component {
 }
 
 DumbWriting.propTypes = {
-  fetchArticles: func.isRequired
+  fetchArticlesIfNeeded: func.isRequired
 }
 
 const actions = {
-  fetchArticles: articleActions.fetchArticles
+  fetchArticlesIfNeeded: articleActions.fetchArticlesIfNeeded
 }
 
 export default connect(null, actions)(DumbWriting)

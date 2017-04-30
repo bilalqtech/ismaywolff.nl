@@ -5,14 +5,26 @@ import { object, string, number } from 'prop-types'
 import ImageZoom from 'react-medium-image-zoom'
 import { connect } from 'react-redux'
 import { getImageEntities } from '../selectors'
-import { createUrl, getAvailableWidth, roundUp } from '../utils'
+import { createUrl, getAvailableWidth, getImageWidth } from '../utils'
 import Placeholder from './Placeholder'
+
+/**
+ * Fallback viewport size when window isn't available (so on the server).
+ * Taken from: http://gs.statcounter.com/screen-resolution-stats
+ */
+
+const fallbackViewport = {
+  height: 640,
+  width: 360
+}
 
 export function DumbZoomable({ entities, id, width }) {
   const image = entities[id]
   const viewport = {
-    height: typeof window === 'object' ? window.innerHeight : 250,
-    width: typeof window === 'object' ? window.innerWidth : 250
+    /* istanbul ignore next: window isn't available when testing */
+    height: typeof window === 'object' ? window.innerHeight : fallbackViewport.height,
+    /* istanbul ignore next: window isn't available when testing */
+    width: typeof window === 'object' ? window.innerWidth : fallbackViewport.width
   }
 
   if (!image) {
@@ -29,7 +41,7 @@ export function DumbZoomable({ entities, id, width }) {
         zoomImage={{
           src: createUrl({
             url: image.url,
-            width: roundUp(getAvailableWidth({ image, viewport }))
+            width: getImageWidth(getAvailableWidth({ image, viewport }))
           }),
           alt: image.title
         }}

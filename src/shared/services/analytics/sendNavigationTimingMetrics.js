@@ -8,10 +8,10 @@ import metrics from './metrics'
  */
 
 const sendNavigationTimingMetrics = () => {
-  // only track performance in supporting browsers
+  // Only track performance in supporting browsers
   if (!(window.performance && window.performance.timing)) return
 
-  // if the window hasn't loaded, run this function after the `load` event
+  // If the window hasn't loaded, run this function after the `load` event
   if (document.readyState !== 'complete') {
     window.addEventListener('load', sendNavigationTimingMetrics)
     return

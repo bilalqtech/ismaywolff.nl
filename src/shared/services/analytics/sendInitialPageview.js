@@ -2,7 +2,7 @@
 
 import dimensions from './dimensions'
 
-// sends the initial pageview to Google Analytics
+// Sends the initial pageview to Google Analytics
 const sendInitialPageview = history => {
   ga('set', 'page', history.location.pathname)
   ga('set', 'title', history.location.pathname)

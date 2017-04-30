@@ -4,9 +4,8 @@
   ],
   "collectCoverageFrom": [
     "src/**/*.{js,jsx}",
-    "!src/client/index.jsx",
+    "!src/{client,server,shared}/*.{js,jsx}",
     "!src/{client,server,shared}/{components,data,services}/*/index.js",
-    "!src/shared/{rootReducer,store}.js",
     "!src/shared/services/analytics/**"
   ]
 }

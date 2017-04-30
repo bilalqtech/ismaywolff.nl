@@ -6,7 +6,7 @@ jest.mock('./Thumbnail', () => () => <div />)
 
 describe('<ResponsiveThumbnail />', () => {
   it('renders correctly', () => {
-    const wrapper = mount(<ResponsiveThumbnail id={'one'} size={{ width: 50 }} />)
+    const wrapper = mount(<ResponsiveThumbnail id={'one'} />)
     expect(wrapper).toMatchSnapshot()
   })
 })

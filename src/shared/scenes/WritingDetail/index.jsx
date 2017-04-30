@@ -8,29 +8,29 @@ import { AppError, MissingPageError } from '../../components/errors'
 import WritingDetailBody from './components/WritingDetailBody'
 
 export class DumbWritingDetail extends Component {
-  static getNeeds() {
-    return [articleActions.fetchArticles()]
+  static needs() {
+    return [articleActions.fetchArticlesIfNeeded()]
   }
 
   componentDidMount() {
-    this.props.fetchArticles()
+    this.props.fetchArticlesIfNeeded()
   }
 
   render() {
     const { entities, articles, hasArticles, match } = this.props
     const requestedArticle = entities[match.params.id]
 
-    // if fetching or hasn't fetched yet
+    // If fetching or hasn't fetched yet
     if (articles.isFetching || !articles.didFetch) {
       return <Spinner />
     }
 
-    // if there's an error
+    // If there's an error
     if (articles.errorMessage) {
       return <AppError errorMessage={articles.errorMessage} />
     }
 
-    // if there's an article but not the requested one
+    // If there's an article but not the requested one
     if (hasArticles && !requestedArticle) {
       return <MissingPageError />
     }
@@ -50,7 +50,7 @@ export class DumbWritingDetail extends Component {
 }
 
 DumbWritingDetail.propTypes = {
-  fetchArticles: func.isRequired,
+  fetchArticlesIfNeeded: func.isRequired,
   articles: object.isRequired,
   entities: object.isRequired,
   hasArticles: bool.isRequired,
@@ -64,7 +64,7 @@ const mapStateToProps = state => ({
 })
 
 const actions = {
-  fetchArticles: articleActions.fetchArticles
+  fetchArticlesIfNeeded: articleActions.fetchArticlesIfNeeded
 }
 
 export default connect(mapStateToProps, actions)(DumbWritingDetail)

@@ -7,13 +7,13 @@ import { actions as imageActions } from '../../components/images'
 import WorkBody from './components/WorkBody'
 
 export class DumbWork extends Component {
-  static getNeeds() {
-    return [workActions.fetchWorks(), imageActions.fetchImages()]
+  static needs() {
+    return [workActions.fetchWorksIfNeeded(), imageActions.fetchImagesIfNeeded()]
   }
 
   componentDidMount() {
-    this.props.fetchWorks()
-    this.props.fetchImages()
+    this.props.fetchWorksIfNeeded()
+    this.props.fetchImagesIfNeeded()
   }
 
   render() {
@@ -30,13 +30,13 @@ export class DumbWork extends Component {
 }
 
 DumbWork.propTypes = {
-  fetchImages: func.isRequired,
-  fetchWorks: func.isRequired
+  fetchImagesIfNeeded: func.isRequired,
+  fetchWorksIfNeeded: func.isRequired
 }
 
 const actions = {
-  fetchWorks: workActions.fetchWorks,
-  fetchImages: imageActions.fetchImages
+  fetchWorksIfNeeded: workActions.fetchWorksIfNeeded,
+  fetchImagesIfNeeded: imageActions.fetchImagesIfNeeded
 }
 
 export default connect(null, actions)(DumbWork)

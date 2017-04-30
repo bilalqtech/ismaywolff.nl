@@ -1,4 +1,4 @@
-/* global window, ga*/
+/* global window, ga */
 
 import React from 'react'
 import { mount } from 'enzyme'

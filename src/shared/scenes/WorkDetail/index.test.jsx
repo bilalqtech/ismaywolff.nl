@@ -13,15 +13,15 @@ describe('<WorkDetail />', () => {
         entities={entities}
         works={works}
         hasWorks
-        fetchWorks={() => {}}
-        fetchImages={() => {}}
+        fetchWorksIfNeeded={() => {}}
+        fetchImagesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()
   })
 
   it('has server side data needs defined', () => {
-    expect(DumbWorkDetail.getNeeds()).toMatchSnapshot()
+    expect(DumbWorkDetail.needs()).toMatchSnapshot()
   })
 
   it('fetches data after mounting', () => {
@@ -36,8 +36,8 @@ describe('<WorkDetail />', () => {
         entities={{}}
         works={works}
         hasWorks={false}
-        fetchWorks={spyWorks}
-        fetchImages={spyImages}
+        fetchWorksIfNeeded={spyWorks}
+        fetchImagesIfNeeded={spyImages}
       />
     )
 
@@ -54,8 +54,8 @@ describe('<WorkDetail />', () => {
         entities={{}}
         works={works}
         hasWorks={false}
-        fetchWorks={() => {}}
-        fetchImages={() => {}}
+        fetchWorksIfNeeded={() => {}}
+        fetchImagesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()
@@ -71,8 +71,8 @@ describe('<WorkDetail />', () => {
         entities={entities}
         works={works}
         hasWorks
-        fetchWorks={() => {}}
-        fetchImages={() => {}}
+        fetchWorksIfNeeded={() => {}}
+        fetchImagesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()
@@ -87,8 +87,8 @@ describe('<WorkDetail />', () => {
         entities={{}}
         works={works}
         hasWorks={false}
-        fetchWorks={() => {}}
-        fetchImages={() => {}}
+        fetchWorksIfNeeded={() => {}}
+        fetchImagesIfNeeded={() => {}}
       />
     )
     expect(wrapper).toMatchSnapshot()

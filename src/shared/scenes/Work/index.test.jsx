@@ -6,19 +6,21 @@ jest.mock('./components/WorkBody')
 
 describe('<Work />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<DumbWork fetchWorks={() => {}} fetchImages={() => {}} />)
+    const wrapper = shallow(
+      <DumbWork fetchWorksIfNeeded={() => {}} fetchImagesIfNeeded={() => {}} />
+    )
     expect(wrapper).toMatchSnapshot()
   })
 
   it('has server side data needs defined', () => {
-    expect(DumbWork.getNeeds()).toMatchSnapshot()
+    expect(DumbWork.needs()).toMatchSnapshot()
   })
 
   it('fetches data after mounting', () => {
     const spyImages = jest.fn()
     const spyWorks = jest.fn()
 
-    mount(<DumbWork fetchWorks={spyWorks} fetchImages={spyImages} />)
+    mount(<DumbWork fetchWorksIfNeeded={spyWorks} fetchImagesIfNeeded={spyImages} />)
 
     expect(spyWorks).toHaveBeenCalled()
     expect(spyImages).toHaveBeenCalled()

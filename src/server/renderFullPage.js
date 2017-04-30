@@ -3,7 +3,35 @@
 import manifest from '../../dist/public/webpackChunkManifest.json'
 import assets from '../../dist/public/webpackAssets.json'
 
-function renderFullPage({ html, title, meta, css, preloadedState }) {
+// Inlines the store state so it can be reused clientside
+const inlineStore = preloadedState =>
+  `
+  <script>
+    window.preloadedState = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+  </script>
+`
+
+// Inlines the webpack chunk manifest, so the manifest can remain static even when hashes change
+const inlineManifest = `
+  <script type="text/javascript">
+    window.webpackManifest=${JSON.stringify(manifest)}
+  </script>
+`
+
+// Preloads dynamic imports so they'll be cached already
+const preloadDynamicImports = assets.dynamic
+  .map(asset => `<link rel="preload" href="${asset}" as="script">`)
+  .join('')
+
+// The css extracted from the clientside application
+const clientCss = assets.css.map(asset => `<link href="${asset}" rel="stylesheet">`).join('')
+
+// The scripts required for booting the app clientside
+const clientScripts = assets.js
+  .map(asset => `<script src="${asset}" type="text/javascript"></script>`)
+  .join('')
+
+function renderFullPage({ html, title, meta, styledComponentsCss, preloadedState }) {
   return `
     <!doctype html>
     <html>
@@ -27,19 +55,15 @@ function renderFullPage({ html, title, meta, css, preloadedState }) {
         <meta name="theme-color" content="#ffffff">
         ${title}
         ${meta}
-        <script type="text/javascript">window.webpackManifest=${JSON.stringify(manifest)}</script>
-        ${assets.dynamic.map(asset => `<link rel="preload" href="${asset}" as="script">`).join('')}
-        ${assets.css.map(asset => `<link href="${asset}" rel="stylesheet">`).join('')}
-        ${css}
+        ${inlineManifest}
+        ${preloadDynamicImports}
+        ${clientCss}
+        ${styledComponentsCss}
       </head>
       <body>
         <div id="app">${html}</div>
-        <script>
-          window.preloadedState = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-        </script>
-        ${assets.js
-    .map(asset => `<script src="${asset}" type="text/javascript"></script>`)
-    .join('')}
+        ${inlineStore(preloadedState)}
+        ${clientScripts}
       </body>
     </html>
   `

@@ -11,12 +11,12 @@ import { AppError } from '../../../components/errors'
 import { TextLine, TextLineFill, TextLineFit } from '../../../components/text'
 
 export function DumbWritingBody({ entities, articles }) {
-  // if fetching or hasn't fetched yet
+  // If fetching or hasn't fetched yet
   if (articles.isFetching || !articles.didFetch) {
     return <Spinner />
   }
 
-  // if there's an error
+  // If there's an error
   if (articles.errorMessage) {
     return <AppError errorMessage={articles.errorMessage} />
   }

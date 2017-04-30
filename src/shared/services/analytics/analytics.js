@@ -16,10 +16,10 @@ import trackRouteChanges from './trackRouteChanges'
 const init = history => {
   if (typeof window !== 'object') return
 
-  // load analytics in the background
+  // Load analytics in the background
   load('https://www.google-analytics.com/analytics.js')
 
-  // initialize the command queue in case analytics.js hasn't loaded yet
+  // Initialize the command queue in case analytics.js hasn't loaded yet
   window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args))
 
   createTracker()

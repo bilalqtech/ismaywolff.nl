@@ -16,16 +16,16 @@ const trackErrors = () => {
   // eslint-disable-next-line no-mixed-operators, no-underscore-dangle
   const loadErrorEvents = (window.__e && window.__e.q) || []
 
-  // use a different eventCategory for uncaught errors
+  // Use a different eventCategory for uncaught errors
   const fieldsObj = { eventCategory: 'Uncaught Error' }
 
-  // replay any stored load error events
+  // Replay any stored load error events
   // eslint-disable-next-line no-restricted-syntax
   for (const event of loadErrorEvents) {
     trackError(event.error, fieldsObj)
   }
 
-  // add a new listener to track future events immediately
+  // Add a new listener to track future events immediately
   window.addEventListener('error', event => {
     trackError(event.error, fieldsObj)
   })
