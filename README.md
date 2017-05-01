@@ -6,6 +6,36 @@
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
+I use this project to test anything I might find interesting as a developer. It is a
+[universal javascript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) application
+based on [React](https://facebook.github.io/react/). A quick rundown of the most interesting parts:
+
+### structure
+
+The application's organization is by function, not by type, as I've found that to be a much more
+maintainable structure in the long run. I've based the approach mainly on these two articles:
+
+* [Three Rules For Structuring (Redux) Applications](https://jaysoo.ca/2016/02/28/organizing-redux-application/) by Jack Hsu
+* [How to better organize your React applications?](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1) by Alexis Mangin
+
+They're definitely worth your time if you're looking for an efficient way to organize a React
+codebase.
+
+### browser support
+
+As a frontend developer you'll always have to keep browser support in mind when writing code. I've
+automated checking browser support for my code as much as possible:
+
+* [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) checks the browser
+compatibility for my javascript
+* [stylelint-no-unsupported-browser-features](https://github.com/ismay/stylelint-no-unsupported-browser-features)
+does the same for my css
+* [babel-preset-env](https://github.com/babel/babel-preset-env) compiles only what needs to be
+compiled, meaning I'm always shipping javascript that's as modern as possible
+
+The browsers that I want to support are defined in the [browserslist](browserslist). Browserslist
+documentation can be found [here](https://github.com/ai/browserslist).
+
 ## requirements
 
 * [node](https://github.com/nodejs/node)
@@ -38,13 +68,11 @@ PROD_TRACKING_ID=UA-XXXXX-Y
 [![docker status][docker-badge]][docker-url]
 [![image status][image-badge]][image-url]
 
-Docker containers of this project are built automatically and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is [this cloud-config](https://gist.github.com/ismay/da7acd94f07666a5308c4946f4482acb).
+Docker containers of this project are built automatically by [Travis](https://travis-ci.org/) and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is my [Cloud-Config](https://gist.github.com/ismay/da7acd94f07666a5308c4946f4482acb).
 
 ## credits
 
-A thank you to [browserstack](https://www.browserstack.com) for the open-source account on which I do my cross-browser testing:
-
-[![browserstack logo][browserstack-logo]][browserstack-url]
+A thank you to [Browserstack](https://www.browserstack.com) for the open-source account on which I do my cross-browser testing.
 
 ## license
 
