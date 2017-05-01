@@ -20,10 +20,9 @@ const fallbackViewport = {
 
 export function DumbZoomable({ entities, id, width }) {
   const image = entities[id]
+  /* istanbul ignore next: window isn't available when testing */
   const viewport = {
-    /* istanbul ignore next: window isn't available when testing */
     height: typeof window === 'object' ? window.innerHeight : fallbackViewport.height,
-    /* istanbul ignore next: window isn't available when testing */
     width: typeof window === 'object' ? window.innerWidth : fallbackViewport.width
   }
 
