@@ -1,4 +1,4 @@
-import { getImageEntities, getImageState, checkHasImages } from './selectors'
+import { getImageEntities, getImageState, checkHasImages, shouldFetchImages } from './selectors'
 
 describe('getImageEntities', () => {
   it('should return image entities', () => {
@@ -26,5 +26,28 @@ describe('checkHasImages', () => {
     const actual = checkHasImages(state)
 
     expect(actual).toEqual(true)
+  })
+})
+
+describe('shouldFetchImages', () => {
+  it('should return false when fetching', () => {
+    const state = { images: { isFetching: true, result: [] } }
+    const actual = shouldFetchImages(state)
+
+    expect(actual).toEqual(false)
+  })
+
+  it('should return true if not fetching and it has no images', () => {
+    const state = { images: { isFetching: false, result: [] } }
+    const actual = shouldFetchImages(state)
+
+    expect(actual).toEqual(true)
+  })
+
+  it('should return false if not fetching and it has images', () => {
+    const state = { images: { isFetching: false, result: ['image'] } }
+    const actual = shouldFetchImages(state)
+
+    expect(actual).toEqual(false)
   })
 })
