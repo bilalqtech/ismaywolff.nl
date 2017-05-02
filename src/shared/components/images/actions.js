@@ -5,27 +5,6 @@ import * as types from './actionTypes'
 import * as schemas from './schemas'
 import * as selectors from './selectors'
 
-/**
- * Checks whether images should be fetched based on the current state
- */
-
-const shouldFetchImages = state => {
-  const hasImages = selectors.checkHasImages(state)
-  const imageState = selectors.getImageState(state)
-
-  if (imageState.isFetching) {
-    return false
-  } else if (!hasImages) {
-    return true
-  }
-
-  return false
-}
-
-/**
- * Action creators
- */
-
 export const fetchImagesSuccess = payload => ({
   type: types.FETCH_IMAGES_SUCCESS,
   payload
@@ -47,7 +26,7 @@ export const fetchImages = () => dispatch => {
 }
 
 export const fetchImagesIfNeeded = () => (dispatch, getState) => {
-  if (shouldFetchImages(getState())) {
+  if (selectors.shouldFetchImages(getState())) {
     return dispatch(fetchImages())
   }
 

@@ -4,7 +4,7 @@
  * that isolates only data captured with the most recent tracking changes.
  */
 
-export const TRACKING_VERSION = '3'
+export const TRACKING_VERSION = '4'
 
 /**
  * A default value for dimensions so unset values always are reported as

@@ -34,7 +34,12 @@ module.exports = {
     new webpack.EnvironmentPlugin([
       'NODE_ENV',
       'SPACE_ID',
-      'CONTENT_DELIVERY_TOKEN'
+      'CONTENT_DELIVERY_TOKEN',
+      'SENTRY_CLIENT_KEY',
+      'SENTRY_SERVER_KEY',
+      'SENTRY_APP',
+      'COMMIT',
+      'BABEL_ENV'
     ])
   ]
 }

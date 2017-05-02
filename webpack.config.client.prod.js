@@ -112,7 +112,12 @@ module.exports = {
       'NODE_ENV',
       'SPACE_ID',
       'CONTENT_DELIVERY_TOKEN',
-      'PROD_TRACKING_ID'
+      'PROD_TRACKING_ID',
+      'SENTRY_CLIENT_KEY',
+      'SENTRY_SERVER_KEY',
+      'SENTRY_APP',
+      'COMMIT',
+      'BABEL_ENV'
     ]),
 
     /**

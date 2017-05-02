@@ -1,56 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<MissingPageError /> renders correctly 1`] = `
-<MissingPageError>
-  <styled.div
-    background="rgb(141,171,239)"
-    color="rgb(35,67,195)"
-  >
-    <div
-      className="sc-bdVaJa cjbJyf"
-      color="rgb(35,67,195)"
+<styled.div
+  background="rgb(141,171,239)"
+  color="rgb(35,67,195)"
+>
+  <styled.h2>
+    Oops, that page can
+    '
+    t be found!
+  </styled.h2>
+  <p>
+    The page you
+    '
+    re trying to view doesn
+    '
+    t exist. If you entered the url manually check whether it
+    '
+    s correct. If you clicked a link then either I made a mistake, or the page just doesn
+    '
+    t exist yet. Either way, I
+    '
+    ll get on it, and make sure that it
+    '
+    s fixed as soon as possible!
+  </p>
+  <p>
+    In the meantime, might I interest you in checking out the page with
+     
+    <Styled(Link)
+      to="/work"
     >
-      <styled.h2>
-        <h2
-          className="sc-bwzfXH lmCFaF"
-        >
-          Oops, that page can
-          '
-          t be found!
-        </h2>
-      </styled.h2>
-      <p>
-        The page you
-        '
-        re trying to view doesn
-        '
-        t exist. If you entered the url manually check whether it
-        '
-        s correct. If you clicked a link then either I made a mistake, or the page just doesn
-        '
-        t exist yet. Either way, I
-        '
-        ll get on it, and make sure that it
-        '
-        s fixed as soon as possible!
-      </p>
-      <p>
-        In the meantime, might I interest you in checking out the page with
-         
-        <InternalLink
-          to="/work"
-        >
-          <a
-            href="https://test.com"
-          >
-            Test
-          </a>
-        </InternalLink>
-        ? It
-        '
-        s brand new and has barely got any miles on it. Well maintained and previously owned by an old webmaster who just kept it on a server in his garage. I even still have the original manual!
-      </p>
-    </div>
-  </styled.div>
-</MissingPageError>
+      my work
+    </Styled(Link)>
+    ? It
+    '
+    s brand new and has barely got any miles on it. Well maintained and previously owned by an old webmaster who just kept it on a server in his garage. I even still have the original manual!
+  </p>
+</styled.div>
 `;

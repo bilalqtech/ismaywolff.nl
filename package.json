@@ -19,28 +19,28 @@
   },
   "betterScripts": {
     "build:client": {
-      "command": "webpack --config webpack.config.client.prod.js -p --bail",
+      "command": "COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.client.prod.js -p --bail",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "client"
       }
     },
     "build:server": {
-      "command": "webpack --config webpack.config.server.js --bail",
+      "command": "COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.server.js --bail",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "server"
       }
     },
     "dev:client": {
-      "command": "webpack-dev-server --config webpack.config.client.dev.js --inline --hot",
+      "command": "COMMIT=$(git rev-parse HEAD) webpack-dev-server --config webpack.config.client.dev.js --inline --hot",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "client"
       }
     },
     "dev:server": {
-      "command": "babel-watch src/server/index.js",
+      "command": "COMMIT=$(git rev-parse HEAD) babel-watch src/server/index.js",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "server"
@@ -98,6 +98,7 @@
     "lintspaces-cli": "^0.6.0",
     "nock": "^9.0.13",
     "prettier": "^1.2.2",
+    "raven": "^1.2.1",
     "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.3",
     "spdx-expression-parse": "^1.0.4",

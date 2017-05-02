@@ -59,7 +59,12 @@ module.exports = {
       'DEV_PORT',
       'SPACE_ID',
       'CONTENT_PREVIEW_TOKEN',
-      'DEV_TRACKING_ID'
+      'DEV_TRACKING_ID',
+      'SENTRY_CLIENT_KEY',
+      'SENTRY_SERVER_KEY',
+      'SENTRY_APP',
+      'COMMIT',
+      'BABEL_ENV'
     ]),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'client', 'index.ejs')

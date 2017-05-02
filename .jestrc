@@ -6,6 +6,7 @@
     "src/**/*.{js,jsx}",
     "!src/{client,server,shared}/*.{js,jsx}",
     "!src/{client,server,shared}/{components,data,services}/*/index.js",
-    "!src/shared/services/analytics/**"
+    "!src/client/services/analytics/**",
+    "!src/shared/services/raven/**"
   ]
 }

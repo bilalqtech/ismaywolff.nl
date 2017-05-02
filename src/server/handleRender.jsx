@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet } from 'styled-components'
 import routes from '../shared/routes'
 import configureStore from '../shared/store'
+import { logError } from '../shared/services/raven'
 import renderFullPage from './renderFullPage'
 import getNeeds from './getNeeds'
 import { App } from './components/app'
@@ -37,8 +38,9 @@ function handleRender(req, res) {
         res.send(renderFullPage({ html, title, meta, styledComponentsCss, preloadedState }))
       }
     })
-    .catch(() => {
-      // If anything fails while fetching catch it and send a server error
+    .catch(error => {
+      // If anything fails while fetching log it and send a server error
+      logError(error, { extra: { req } })
       res.status(500)
       res.end()
     })

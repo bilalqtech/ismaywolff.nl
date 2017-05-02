@@ -26,6 +26,9 @@ const preloadDynamicImports = assets.dynamic
 // The css extracted from the clientside application
 const clientCss = assets.css.map(asset => `<link href="${asset}" rel="stylesheet">`).join('')
 
+// The sentry clientside script
+const sentryJs = '<script src="https://cdn.ravenjs.com/3.14.2/raven.min.js"></script>'
+
 // The scripts required for booting the app clientside
 const clientScripts = assets.js
   .map(asset => `<script src="${asset}" type="text/javascript"></script>`)
@@ -40,11 +43,7 @@ function renderFullPage({ html, title, meta, styledComponentsCss, preloadedState
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <base href="/">
-        <!-- add an event listener to capture uncaught errors -->
-        <script>addEventListener('error', window.__e=function f(e){f.q=f.q||[];f.q.push(e)});</script>
-        <!-- fonts -->
         <link href="https://fonts.googleapis.com/css?family=Bitter|Crimson+Text" rel="stylesheet">
-        <!-- favicons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -63,6 +62,7 @@ function renderFullPage({ html, title, meta, styledComponentsCss, preloadedState
       <body>
         <div id="app">${html}</div>
         ${inlineStore(preloadedState)}
+        ${sentryJs}
         ${clientScripts}
       </body>
     </html>
