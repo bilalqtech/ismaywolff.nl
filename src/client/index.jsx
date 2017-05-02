@@ -1,3 +1,4 @@
+/* global Raven */
 /* eslint-disable import/first */
 
 // Globally scoped css
@@ -8,8 +9,12 @@ import load from 'load-script'
 import React from 'react'
 import { render } from 'react-dom'
 import createHistory from 'history/createBrowserHistory'
+import { url, config, logError } from '../shared/services/raven'
 import configureStore from '../shared/store'
 import { App, AppWithErrors } from './components/app'
+
+// Initialize error tracking
+Raven.config(url, config).install()
 
 // Feature tests
 const hasFetch = 'fetch' in window
@@ -18,12 +23,14 @@ const hasObjectAssign = typeof Object.assign === 'function'
 
 // Boots the app, shows errors if there were any
 function boot(error) {
-  const history = createHistory()
-  import('../shared/services/analytics').then(analytics => analytics.init(history))
-
   if (error) {
-    render(<AppWithErrors error={error} />, document.getElementById('app'))
+    logError(error)
+    render(<AppWithErrors errorMessage={error.message} />, document.getElementById('app'))
   } else {
+    // Initialize analytics
+    const history = createHistory()
+    import('./services/analytics').then(analytics => analytics.init(history))
+
     // Hydrate store
     const preloadedState = window.preloadedState
     delete window.preloadedState

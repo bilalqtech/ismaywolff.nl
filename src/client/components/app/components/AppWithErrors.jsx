@@ -1,18 +1,18 @@
 import React from 'react'
-import { instanceOf } from 'prop-types'
+import { string } from 'prop-types'
 import { Container } from '../../../../shared/components/container'
 import { BootError } from '../../../../shared/components/errors'
 
-function AppWithErrors({ error }) {
+function AppWithErrors({ errorMessage }) {
   return (
     <Container>
-      <BootError errorMessage={error.message} />
+      <BootError errorMessage={errorMessage} />
     </Container>
   )
 }
 
 AppWithErrors.propTypes = {
-  error: instanceOf(Error).isRequired
+  errorMessage: string.isRequired
 }
 
 export default AppWithErrors

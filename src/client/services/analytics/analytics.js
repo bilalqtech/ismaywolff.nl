@@ -5,7 +5,6 @@ import createTracker from './createTracker'
 import sendInitialPageview from './sendInitialPageview'
 import sendNavigationTimingMetrics from './sendNavigationTimingMetrics'
 import trackCustomDimensions from './trackCustomDimensions'
-import trackErrors from './trackErrors'
 import trackRouteChanges from './trackRouteChanges'
 
 /**
@@ -14,8 +13,6 @@ import trackRouteChanges from './trackRouteChanges'
  */
 
 const init = history => {
-  if (typeof window !== 'object') return
-
   // Load analytics in the background
   load('https://www.google-analytics.com/analytics.js')
 
@@ -23,7 +20,6 @@ const init = history => {
   window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args))
 
   createTracker()
-  trackErrors()
   trackCustomDimensions()
   sendInitialPageview(history)
   sendNavigationTimingMetrics()

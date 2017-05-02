@@ -1,14 +1,10 @@
-/* global window, ga */
-
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import BootError from './BootError'
-
-window.ga = () => {}
 
 describe('<BootError />', () => {
   it('renders correctly', () => {
-    const wrapper = mount(<BootError errorMessage={'Error message.'} />)
+    const wrapper = shallow(<BootError errorMessage={'Error message.'} />)
     expect(wrapper).toMatchSnapshot()
   })
 })

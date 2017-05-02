@@ -4,7 +4,7 @@ import AppWithErrors from './AppWithErrors'
 
 describe('<AppWithErrors />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<AppWithErrors error={new Error('Message')} />)
+    const wrapper = shallow(<AppWithErrors errorMessage={'Message'} />)
     expect(wrapper).toMatchSnapshot()
   })
 })
