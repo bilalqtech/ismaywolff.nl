@@ -7,7 +7,10 @@
  */
 
 function logError(error, additional = {}) {
-  Raven.captureException(error, additional)
+  const hasRaven = typeof Raven !== 'undefined' && 'captureException' in Raven
+  if (hasRaven) {
+    Raven.captureException(error, additional)
+  }
 }
 
 export default logError
