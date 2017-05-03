@@ -118,7 +118,7 @@
     "dateformat": "^2.0.0",
     "history": "^4.6.1",
     "load-script": "^1.0.0",
-    "normalize.css": "^6.0.0",
+    "normalize.css": "^7.0.0",
     "normalizr": "^3.0.0",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
