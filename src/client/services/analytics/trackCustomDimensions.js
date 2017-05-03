@@ -1,4 +1,4 @@
-/* global ga, document */
+/* global ga */
 
 import dimensions from './dimensions'
 import uuid from './uuid'

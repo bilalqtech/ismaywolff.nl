@@ -1,4 +1,4 @@
-/* global ga, window, document, performance */
+/* global ga, performance */
 
 import metrics from './metrics'
 

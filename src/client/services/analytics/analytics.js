@@ -1,4 +1,4 @@
-/* global window, ga */
+/* global ga */
 
 import load from 'load-script'
 import createTracker from './createTracker'
