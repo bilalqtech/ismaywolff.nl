@@ -4,8 +4,7 @@ import manifest from '../../dist/public/webpackChunkManifest.json'
 import assets from '../../dist/public/webpackAssets.json'
 
 // Inlines the store state so it can be reused clientside
-const inlineStore = preloadedState =>
-  `
+const inlineStore = preloadedState => `
   <script>
     window.preloadedState = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
   </script>

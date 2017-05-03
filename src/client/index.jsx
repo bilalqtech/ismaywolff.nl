@@ -14,7 +14,10 @@ import configureStore from '../shared/store'
 import { App, AppWithErrors } from './components/app'
 
 // Initialize error tracking
-Raven.config(url, config).install()
+const hasRaven = typeof Raven !== 'undefined' && 'config' in Raven
+if (hasRaven) {
+  Raven.config(url, config).install()
+}
 
 // Feature tests
 const hasFetch = 'fetch' in window
