@@ -3,6 +3,8 @@
 [![build status][build-badge]][build-url]
 [![coverage status][coverage-badge]][coverage-url]
 [![greenkeeper][greenkeeper-badge]][greenkeeper-url]
+[![docker status][docker-badge]][docker-url]
+[![image status][image-badge]][image-url]
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
@@ -36,6 +38,20 @@ compiled, meaning I'm always shipping javascript that's as modern as possible
 The browsers that I want to support are defined in the [browserslist](browserslist). Browserslist
 documentation can be found [here](https://github.com/ai/browserslist).
 
+### deployment
+
+I run this project on a [CoreOS](https://coreos.com/) server with this [Cloud-Config](https://gist.github.com/ismay/da7acd94f07666a5308c4946f4482acb)
+on [Digital Ocean](https://www.digitalocean.com/). It is comprised of three dockers, where one is
+built from the code in this repository (so an [Express](https://expressjs.com/) server serving the
+React application), and the other two are:
+
+* An [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy)
+* A [Let's Encrypt service](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) that
+takes care of generating and automatically renewing my ssl certificates through [Let's Encrypt](https://letsencrypt.org/).
+
+The docker container for this project is built by [Travis](https://travis-ci.org/) and can be found
+on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/).
+
 ## requirements
 
 * [node](https://github.com/nodejs/node)
@@ -67,13 +83,6 @@ SENTRY_CLIENT_KEY=1234
 SENTRY_SERVER_KEY=1234
 SENTRY_APP=1234
 ```
-
-## containers
-
-[![docker status][docker-badge]][docker-url]
-[![image status][image-badge]][image-url]
-
-Docker containers of this project are built automatically by [Travis](https://travis-ci.org/) and can be found on [Dockerhub](https://hub.docker.com/r/ismay/ismaywolff.nl/). I run this project on a [CoreOS](https://coreos.com/) server on [Digital Ocean](https://www.digitalocean.com/), with an [Nginx reverse proxy](https://github.com/jwilder/nginx-proxy) and automatically renewing [Let's Encrypt](https://letsencrypt.org/) certificates. All that's needed is my [Cloud-Config](https://gist.github.com/ismay/da7acd94f07666a5308c4946f4482acb).
 
 ## credits
 
