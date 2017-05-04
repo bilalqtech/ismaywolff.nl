@@ -3,6 +3,7 @@ const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const SentryPlugin = require('webpack-sentry-plugin')
 const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
 const WebpackMd5Hash = require('webpack-md5-hash')
 const webpack = require('webpack')
@@ -114,9 +115,8 @@ module.exports = {
       'CONTENT_DELIVERY_TOKEN',
       'PROD_TRACKING_ID',
       'SENTRY_CLIENT_KEY',
-      'SENTRY_SERVER_KEY',
       'SENTRY_APP',
-      'COMMIT',
+      'RELEASE',
       'BABEL_ENV'
     ]),
 
@@ -170,6 +170,17 @@ module.exports = {
       filename: 'webpackAssets.json',
       fields: null,
       transform: transformStats
+    }),
+
+    /**
+     * Upload source and sourcemaps to Sentry
+     */
+
+    new SentryPlugin({
+      organisation: 'ismay',
+      project: 'ismaywolff-nl',
+      apiKey: process.env.SENTRY_API_KEY,
+      release: process.env.RELEASE
     })
   ]
 }

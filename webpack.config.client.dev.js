@@ -61,9 +61,7 @@ module.exports = {
       'CONTENT_PREVIEW_TOKEN',
       'DEV_TRACKING_ID',
       'SENTRY_CLIENT_KEY',
-      'SENTRY_SERVER_KEY',
       'SENTRY_APP',
-      'COMMIT',
       'BABEL_ENV'
     ]),
     new HtmlWebpackPlugin({

@@ -15,7 +15,8 @@ import { App, AppWithErrors } from './components/app'
 
 // Initialize error tracking
 const hasRaven = typeof Raven !== 'undefined' && 'config' in Raven
-if (hasRaven) {
+const isProd = process.env.NODE_ENV === 'production'
+if (isProd && hasRaven) {
   Raven.config(url, config).install()
 }
 
