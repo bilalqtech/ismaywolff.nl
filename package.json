@@ -19,28 +19,28 @@
   },
   "betterScripts": {
     "build:client": {
-      "command": "COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.client.prod.js -p --bail",
+      "command": "RELEASE=$(git rev-parse HEAD)-$(date +%s)-client webpack --config webpack.config.client.prod.js -p --bail",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "client"
       }
     },
     "build:server": {
-      "command": "COMMIT=$(git rev-parse HEAD) webpack --config webpack.config.server.js --bail",
+      "command": "RELEASE=$(git rev-parse HEAD)-$(date +%s)-server webpack --config webpack.config.server.prod.js --bail",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "server"
       }
     },
     "dev:client": {
-      "command": "COMMIT=$(git rev-parse HEAD) webpack-dev-server --config webpack.config.client.dev.js --inline --hot",
+      "command": "webpack-dev-server --config webpack.config.client.dev.js --inline --hot",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "client"
       }
     },
     "dev:server": {
-      "command": "COMMIT=$(git rev-parse HEAD) babel-watch src/server/index.js",
+      "command": "babel-watch src/server/index.js",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "server"
@@ -112,6 +112,7 @@
     "webpack-dev-server": "^2.2.1",
     "webpack-md5-hash": "^0.0.5",
     "webpack-node-externals": "^1.5.4",
+    "webpack-sentry-plugin": "^1.9.2",
     "webpack-stats-plugin": "^0.1.5"
   },
   "dependencies": {

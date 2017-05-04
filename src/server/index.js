@@ -6,7 +6,10 @@ import { PUBLIC_PATH, PORT } from './constants'
 import handleRender from './handleRender'
 
 // Initialize error tracking
-Raven.config(url, config).install()
+const isProd = process.env.NODE_ENV === 'production'
+if (isProd) {
+  Raven.config(url, config).install()
+}
 
 // Initialize server
 const server = express()
