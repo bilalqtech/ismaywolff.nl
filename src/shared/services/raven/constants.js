@@ -14,8 +14,5 @@ export const url = `https://${SENTRY_KEY}@sentry.io/${SENTRY_APP}`
  */
 
 export const config = {
-  release: process.env.RELEASE,
-  tags: {
-    host: process.env.BABEL_ENV
-  }
+  release: process.env.RELEASE
 }
