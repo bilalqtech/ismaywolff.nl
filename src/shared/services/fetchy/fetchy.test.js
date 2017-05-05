@@ -25,9 +25,38 @@ describe('fetch', () => {
     return fetchy('endpoint').catch(error => expect(error.message).toEqual(statusText))
   })
 
-  it('should reject with an error on fetch errors', () => {
+  it('should reject with an error on fetch errors without a stacktrace', () => {
     const message = 'No network connection'
     const expected = new Error(message)
+
+    if (expected.stack) {
+      delete expected.stack
+    }
+
+    window.fetch.mockImplementationOnce(() => Promise.reject(expected))
+    return fetchy('endpoint').catch(error => expect(error).toEqual(expected))
+  })
+
+  it('should reject with an error on fetch errors without a valid stacktrace', () => {
+    const message = 'No network connection'
+    const expected = new Error(message)
+
+    expected.stack = 'Invalid'
+
+    window.fetch.mockImplementationOnce(() => Promise.reject(expected))
+    return fetchy('endpoint').catch(error => expect(error).toEqual(expected))
+  })
+
+  it('should reject with an error on fetch errors with a valid stacktrace', () => {
+    const message = 'No network connection'
+    const expected = new Error(message)
+
+    expected.stack = `
+      trace@file:///C:/example.html:9:17
+      b@file:///C:/example.html:16:13
+      a@file:///C:/example.html:19:13
+      @file:///C:/example.html:21:9
+    `
 
     window.fetch.mockImplementationOnce(() => Promise.reject(expected))
     return fetchy('endpoint').catch(error => expect(error).toEqual(expected))
