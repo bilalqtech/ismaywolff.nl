@@ -11,7 +11,7 @@ describe('<App />', () => {
   }
 
   it('renders correctly', () => {
-    const wrapper = shallow(<App store={store} location={'/'} context={{}} />)
+    const wrapper = shallow(<App store={store} location={'/'} />)
     expect(wrapper).toMatchSnapshot()
   })
 })
