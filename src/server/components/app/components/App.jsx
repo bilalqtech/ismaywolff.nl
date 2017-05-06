@@ -4,10 +4,10 @@ import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { Routes } from '../../../../shared/components/routes'
 
-function App({ location, context, store }) {
+function App({ location, store }) {
   return (
     <Provider store={store}>
-      <StaticRouter location={location} context={context}>
+      <StaticRouter location={location} context={{}}>
         <Routes />
       </StaticRouter>
     </Provider>
@@ -16,8 +16,7 @@ function App({ location, context, store }) {
 
 App.propTypes = {
   store: object.isRequired,
-  location: string.isRequired,
-  context: object.isRequired
+  location: string.isRequired
 }
 
 export default App
