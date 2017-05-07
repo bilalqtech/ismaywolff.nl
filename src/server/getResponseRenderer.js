@@ -51,6 +51,9 @@ function getResponseRenderer({ appRenderer, sheet, store }) {
   // Get the state and escape any tags
   const getStoreState = () => JSON.stringify(store.getState()).replace(/</g, '\\u003c')
 
+  // Get styled-components styles
+  const getStyleTags = () => sheet.getStyleTags().replace(/(\r\n|\n|\r)/gm, '')
+
   return template`
     <!doctype html>
     <html>
@@ -75,25 +78,16 @@ function getResponseRenderer({ appRenderer, sheet, store }) {
       <body>
         <div id="app">${appRenderer}</div>
         <script>
-          var appendToHead = function (string) {
-            var container = document.createElement('div')
-            container.innerHTML = string
-            document.head.appendChild(container.firstChild)
-          }
-
           // Append styled-components styles to head
-          appendToHead('${() => sheet.getStyleTags().replace(/(\r\n|\n|\r)/gm, '')}')
+          document.head.insertAdjacentHTML('beforeend', '${getStyleTags}')
 
           // Set title and meta description
           ${() => {
             helmet = Helmet.renderStatic()
             return ''
           }}
-          appendToHead('${() => helmet.title.toString()}')
-          appendToHead('${() => helmet.meta.toString()}')
-
-          // Allow appendToHead to be garbage collected
-          appendToHead = null
+          document.head.insertAdjacentHTML('beforeend', '${() => helmet.title.toString()}')
+          document.head.insertAdjacentHTML('beforeend', '${() => helmet.meta.toString()}')
 
           // Expose initial state to client store bootstrap code
           window.preloadedState = ${getStoreState}
