@@ -1,6 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HeaderLink /> accepts size parameter 1`] = `
+.jtHpJJ {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.jtHpJJ > a {
+  color: rgb(25,25,25);
+  font-family: Bitter,​ serif;
+  font-size: 100%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.jtHpJJ > a.active,
+.jtHpJJ > a:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media (min-width: 20em) {
+  .jtHpJJ {
+    margin-left: 0;
+    margin-right: 0;
+    -webkit-order: unset;
+    -ms-flex-order: unset;
+    order: unset;
+  }
+}
+
 <span
   className="sc-bdVaJa jtHpJJ"
   size="100%"
@@ -8,6 +40,38 @@ exports[`<HeaderLink /> accepts size parameter 1`] = `
 `;
 
 exports[`<HeaderLink /> renders correctly 1`] = `
+.jpjtmG {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.jpjtmG > a {
+  color: rgb(25,25,25);
+  font-family: Bitter,​ serif;
+  font-size: 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.jpjtmG > a.active,
+.jpjtmG > a:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media (min-width: 20em) {
+  .jpjtmG {
+    margin-left: 0;
+    margin-right: 0;
+    -webkit-order: unset;
+    -ms-flex-order: unset;
+    order: unset;
+  }
+}
+
 <span
   className="sc-bdVaJa jpjtmG"
   size="1rem"

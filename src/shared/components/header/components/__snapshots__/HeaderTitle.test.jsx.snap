@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HeaderTitle /> renders correctly 1`] = `
+.cmEifW {
+  margin-bottom: 0;
+  margin-top: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-text-align: center;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
+@media (min-width: 20em) {
+  .cmEifW {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    -webkit-order: unset;
+    -ms-flex-order: unset;
+    order: unset;
+    width: auto;
+  }
+}
+
 <h1
   className="sc-bdVaJa cmEifW"
 />
