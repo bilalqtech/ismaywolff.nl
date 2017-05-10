@@ -4,6 +4,7 @@ import { AsyncReactMeasure } from '../../async'
 import { getImageWidth } from '../utils'
 import Zoomable from './Zoomable'
 
+/* istanbul ignore next: dynamic import won't be executed when testing */
 function ResponsiveZoomable({ id }) {
   return (
     <AsyncReactMeasure includeMargin={false} whitelist={['width']}>

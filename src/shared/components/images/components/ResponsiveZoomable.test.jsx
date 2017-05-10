@@ -1,12 +1,13 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import ResponsiveZoomable from './ResponsiveZoomable'
 
 jest.mock('./Zoomable', () => () => <div />)
 
 describe('<ResponsiveZoomable />', () => {
   it('renders correctly', () => {
-    const wrapper = mount(<ResponsiveZoomable id={'one'} />)
-    expect(wrapper).toMatchSnapshot()
+    const wrapper = shallow(<ResponsiveZoomable id={'one'} />)
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

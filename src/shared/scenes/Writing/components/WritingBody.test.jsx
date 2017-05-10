@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import { DumbWritingBody } from './WritingBody'
 
 describe('<WritingBody />', () => {
@@ -16,18 +17,18 @@ describe('<WritingBody />', () => {
       didFetch: true
     }
     const wrapper = shallow(<DumbWritingBody entities={entities} articles={articles} />)
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a loading state', () => {
     const articles = { isFetching: true }
     const wrapper = shallow(<DumbWritingBody entities={{}} articles={articles} />)
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders errors', () => {
     const articles = { errorMessage: 'Something went wrong', didFetch: true }
     const wrapper = shallow(<DumbWritingBody entities={{}} articles={articles} />)
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import { DumbWorkDetail } from './index'
 
 describe('<WorkDetail />', () => {
@@ -7,6 +8,7 @@ describe('<WorkDetail />', () => {
     const match = { params: { id: 'one' } }
     const entities = { one: { title: 'title' } }
     const works = { result: ['one'], isFetching: false, didFetch: true }
+
     const wrapper = shallow(
       <DumbWorkDetail
         match={match}
@@ -17,7 +19,8 @@ describe('<WorkDetail />', () => {
         fetchImagesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('has server side data needs defined', () => {
@@ -58,7 +61,7 @@ describe('<WorkDetail />', () => {
         fetchImagesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a missing page error', () => {
@@ -75,7 +78,7 @@ describe('<WorkDetail />', () => {
         fetchImagesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders api errors', () => {
@@ -91,6 +94,6 @@ describe('<WorkDetail />', () => {
         fetchImagesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

@@ -1,7 +1,4 @@
 {
-  "snapshotSerializers": [
-    "<rootDir>/node_modules/jest-serializer-enzyme"
-  ],
   "collectCoverageFrom": [
     "src/**/*.{js,jsx}",
     "!src/{client,server,shared}/*.{js,jsx}",

@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import { DumbWritingDetail } from './index'
 
 describe('<WritingDetail />', () => {
@@ -16,7 +17,7 @@ describe('<WritingDetail />', () => {
         fetchArticlesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('has server side data needs defined', () => {
@@ -54,7 +55,7 @@ describe('<WritingDetail />', () => {
         fetchArticlesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a missing page error', () => {
@@ -70,7 +71,7 @@ describe('<WritingDetail />', () => {
         fetchArticlesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders api errors', () => {
@@ -85,6 +86,6 @@ describe('<WritingDetail />', () => {
         fetchArticlesIfNeeded={() => {}}
       />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })
