@@ -103,7 +103,6 @@
     "raven": "^1.2.1",
     "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.3",
-    "spdx-expression-parse": "^1.0.4",
     "style-loader": "^0.17.0",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
