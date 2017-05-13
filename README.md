@@ -5,6 +5,7 @@
 [![greenkeeper][greenkeeper-badge]][greenkeeper-url]
 [![docker status][docker-badge]][docker-url]
 [![image status][image-badge]][image-url]
+[![nsp status][nsp-badge]][nsp-url]
 
 > Source for [https://ismaywolff.nl](https://ismaywolff.nl)
 
@@ -105,3 +106,5 @@ A thank you to [Browserstack](https://www.browserstack.com) for the open-source 
 [image-url]: https://hub.docker.com/r/ismay/ismaywolff.nl/
 [browserstack-logo]: https://i.imgur.com/NjXLL0d.png
 [browserstack-url]: https://www.browserstack.com
+[nsp-badge]: https://nodesecurity.io/orgs/ismay/projects/4719c95b-b54e-4586-abc7-e7f6f8b0a707/badge
+[nsp-url]: https://nodesecurity.io/orgs/ismay/projects/4719c95b-b54e-4586-abc7-e7f6f8b0a707
