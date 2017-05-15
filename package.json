@@ -106,7 +106,7 @@
     "style-loader": "^0.17.0",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
-    "stylelint-no-unsupported-browser-features": "^0.1.0",
+    "stylelint-no-unsupported-browser-features": "^1.0.0",
     "stylelint-order": "^0.4.3",
     "stylelint-processor-styled-components": "^0.1.0",
     "webpack": "^2.3.0",
