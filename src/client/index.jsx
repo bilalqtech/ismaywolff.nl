@@ -41,7 +41,8 @@ function boot(error) {
     const store = configureStore(preloadedState)
 
     // Set cookie
-    document.cookie = `release=${process.env.RELEASE}`
+    const releaseWithoutSuffix = process.env.RELEASE.replace('-client', '')
+    document.cookie = `release=${releaseWithoutSuffix}`
 
     render(<App store={store} history={history} />, document.getElementById('app'))
   }
