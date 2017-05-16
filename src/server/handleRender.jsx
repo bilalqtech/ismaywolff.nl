@@ -4,7 +4,8 @@ import handleBots from './handleBots'
 import handleNewUser from './handleNewUser'
 
 function handleRender(req, res) {
-  const returningUser = req.cookies.release && req.cookies.release === process.env.RELEASE
+  const releaseWithoutSuffix = process.env.RELEASE.replace('-server', '')
+  const returningUser = req.cookies.release && req.cookies.release === releaseWithoutSuffix
   const agent = useragent.lookup(req.headers['user-agent'])
   const isBot = agent.device.toJSON().family === 'Spider'
 
