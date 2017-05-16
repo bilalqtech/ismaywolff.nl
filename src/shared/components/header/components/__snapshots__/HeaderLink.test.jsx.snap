@@ -11,7 +11,8 @@ exports[`<HeaderLink /> accepts size parameter 1`] = `
 
 .jtHpJJ > a {
   color: rgb(25,25,25);
-  font-family: Bitter,​ serif;
+  font-family: Bitter,
+ serif;
   font-size: 100%;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -50,7 +51,8 @@ exports[`<HeaderLink /> renders correctly 1`] = `
 
 .jpjtmG > a {
   color: rgb(25,25,25);
-  font-family: Bitter,​ serif;
+  font-family: Bitter,
+ serif;
   font-size: 1rem;
   -webkit-text-decoration: none;
   text-decoration: none;

@@ -40,6 +40,9 @@ function boot(error) {
     delete window.preloadedState
     const store = configureStore(preloadedState)
 
+    // Set cookie
+    document.cookie = `release=${process.env.RELEASE}`
+
     render(<App store={store} history={history} />, document.getElementById('app'))
   }
 }

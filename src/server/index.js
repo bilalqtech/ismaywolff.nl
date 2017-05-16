@@ -1,6 +1,7 @@
 import 'isomorphic-fetch'
 import express from 'express'
 import Raven from 'raven'
+import cookieParser from 'cookie-parser'
 import { url, config, logError } from '../shared/services/raven'
 import { PUBLIC_PATH, PORT } from './constants'
 import handleRender from './handleRender'
@@ -17,6 +18,9 @@ const server = express()
 // Don't identify as an express server
 server.disable('x-powered-by')
 
+// Parse any cookies in request
+server.use(cookieParser())
+
 // Serve static assets
 server.use(
   express.static(PUBLIC_PATH, {
@@ -28,8 +32,9 @@ server.use(
 server.use(handleRender)
 
 // Log any uncaught errors
-server.use((error, req, res) => {
-  logError(error, { extra: { req } })
+// eslint-disable-next-line no-unused-vars
+server.use((error, req, res, next) => {
+  logError(error)
   res.status(500)
   res.end()
 })
