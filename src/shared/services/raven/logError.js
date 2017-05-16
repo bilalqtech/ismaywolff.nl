@@ -9,8 +9,14 @@
 function logError(error, additional = {}) {
   const hasRaven = typeof Raven !== 'undefined' && 'captureException' in Raven
   const isProd = process.env.NODE_ENV === 'production'
+
   if (isProd && hasRaven) {
     Raven.captureException(error, additional)
+  }
+
+  if (!isProd) {
+    // eslint-disable-next-line no-console
+    console.log(error)
   }
 }
 

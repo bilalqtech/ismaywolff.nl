@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import WorkDetailBody from './WorkDetailBody'
 
 describe('<WorkDetailBody />', () => {
@@ -12,6 +13,6 @@ describe('<WorkDetailBody />', () => {
       images: ['one']
     }
     const wrapper = shallow(<WorkDetailBody work={work} />)
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

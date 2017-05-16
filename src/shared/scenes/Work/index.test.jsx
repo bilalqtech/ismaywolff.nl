@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import { DumbWork } from './index'
 
 jest.mock('./components/WorkBody')
@@ -9,7 +10,7 @@ describe('<Work />', () => {
     const wrapper = shallow(
       <DumbWork fetchWorksIfNeeded={() => {}} fetchImagesIfNeeded={() => {}} />
     )
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('has server side data needs defined', () => {

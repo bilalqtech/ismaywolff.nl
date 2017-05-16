@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import WritingDetailBody from './WritingDetailBody'
 
 describe('<WritingDetailBody />', () => {
@@ -10,6 +11,6 @@ describe('<WritingDetailBody />', () => {
       text: 'text'
     }
     const wrapper = shallow(<WritingDetailBody article={article} />)
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

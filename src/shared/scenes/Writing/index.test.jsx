@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
+import { shallowToJson } from 'enzyme-to-json'
 import { DumbWriting } from './index'
 
 jest.mock('./components/WritingBody')
@@ -7,7 +8,7 @@ jest.mock('./components/WritingBody')
 describe('<Writing />', () => {
   it('renders correctly', () => {
     const wrapper = shallow(<DumbWriting fetchArticlesIfNeeded={() => {}} />)
-    expect(wrapper).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('has server side data needs defined', () => {

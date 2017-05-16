@@ -1,31 +1,24 @@
-import React from 'react'
-import { ServerStyleSheet } from 'styled-components'
-import { render } from 'rapscallion'
-import routes from '../shared/routes'
-import configureStore from '../shared/store'
-import { logError } from '../shared/services/raven'
-import { App } from './components/app'
-import getResponseRenderer from './getResponseRenderer'
-import getNeeds from './getNeeds'
+import useragent from 'useragent'
+import handleReturningUser from './handleReturningUser'
+import handleBots from './handleBots'
+import handleNewUser from './handleNewUser'
 
 function handleRender(req, res) {
-  const store = configureStore({})
-  const needs = getNeeds(routes, req.url, store)
+  const returningUser = req.cookies.release && req.cookies.release === process.env.RELEASE
+  const agent = useragent.lookup(req.headers['user-agent'])
+  const isBot = agent.device.toJSON().family === 'Spider'
 
-  Promise.all(needs)
-    .then(() => {
-      const sheet = new ServerStyleSheet()
-      const appRenderer = render(sheet.collectStyles(<App location={req.url} store={store} />))
-      const responseRenderer = getResponseRenderer({ appRenderer, sheet, store })
+  if (returningUser) {
+    handleReturningUser(req, res)
+    return
+  }
 
-      res.setHeader('Cache-Control', 'public, max-age=0')
-      responseRenderer.toStream().pipe(res)
-    })
-    .catch(error => {
-      logError(error, { extra: { req } })
-      res.status(500)
-      res.end()
-    })
+  if (isBot) {
+    handleBots(req, res)
+    return
+  }
+
+  handleNewUser(req, res)
 }
 
 export default handleRender

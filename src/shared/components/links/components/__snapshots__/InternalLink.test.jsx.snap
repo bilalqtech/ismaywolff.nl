@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<InternalLink /> renders correctly 1`] = `
+.dTLtLZ {
+  color: currentColor;
+}
+
 <Link
   className="sc-bdVaJa dTLtLZ"
   replace={false}

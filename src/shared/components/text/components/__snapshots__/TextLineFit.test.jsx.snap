@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextLineFit /> renders correctly 1`] = `
+.eVMmut {
+  white-space: nowrap;
+}
+
 <span
   className="sc-bdVaJa eVMmut"
 />

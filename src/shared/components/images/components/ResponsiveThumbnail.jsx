@@ -4,6 +4,7 @@ import { AsyncReactMeasure } from '../../async'
 import { getImageWidth } from '../utils'
 import Thumbnail from './Thumbnail'
 
+/* istanbul ignore next: dynamic import won't be executed when testing */
 function ResponsiveThumbnail({ id }) {
   return (
     <AsyncReactMeasure includeMargin={false} whitelist={['width']}>
