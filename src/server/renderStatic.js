@@ -6,13 +6,7 @@ import scripts from './templates/scripts'
 import sentry from './templates/sentry'
 import head from './templates/head'
 
-function renderStatic({
-  html = '',
-  title = '',
-  meta = '',
-  styledComponentsCss = '',
-  preloadedState = {}
-}) {
+function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }) {
   return `
     <!doctype html>
     <html>
