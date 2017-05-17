@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { object, func, shape } from 'prop-types'
 import { Router } from 'react-router'
 import { Provider } from 'react-redux'
 import { ScrollToTop } from '../../scroll'
@@ -19,8 +19,13 @@ function App({ history, store }) {
 }
 
 App.propTypes = {
-  store: object.isRequired,
-  history: object.isRequired
+  store: shape({
+    dispatch: func.isRequired,
+    getState: func.isRequired
+  }).isRequired,
+  history: shape({
+    location: object.isRequired
+  }).isRequired
 }
 
 export default App

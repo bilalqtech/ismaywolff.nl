@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { object, bool, func } from 'prop-types'
+import { object, objectOf, bool, func, shape, string, arrayOf } from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors, actions as workActions } from '../../data/works'
@@ -54,10 +54,17 @@ export class DumbWorkDetail extends Component {
 DumbWorkDetail.propTypes = {
   fetchImagesIfNeeded: func.isRequired,
   fetchWorksIfNeeded: func.isRequired,
-  entities: object.isRequired,
+  entities: objectOf(object).isRequired,
   hasWorks: bool.isRequired,
-  match: object.isRequired,
-  works: object.isRequired
+  match: shape({
+    params: object.isRequired
+  }).isRequired,
+  works: shape({
+    didFetch: bool.isRequired,
+    errorMessage: string.isRequired,
+    isFetching: bool.isRequired,
+    result: arrayOf(string).isRequired
+  }).isRequired
 }
 
 const mapStateToProps = state => ({

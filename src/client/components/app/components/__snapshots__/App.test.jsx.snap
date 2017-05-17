@@ -12,7 +12,11 @@ exports[`<App /> renders correctly 1`] = `
   }
 >
   <Router
-    history={Object {}}
+    history={
+      Object {
+        "location": Object {},
+      }
+    }
   >
     <div>
       <withRouter(ScrollToTop) />

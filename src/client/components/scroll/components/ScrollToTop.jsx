@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { object } from 'prop-types'
+import { shape, string } from 'prop-types'
 import { withRouter } from 'react-router'
 
 /**
@@ -19,7 +19,9 @@ export class ScrollToTop extends Component {
 }
 
 ScrollToTop.propTypes = {
-  location: object.isRequired
+  location: shape({
+    pathname: string.isRequired
+  }).isRequired
 }
 
 export default withRouter(ScrollToTop)

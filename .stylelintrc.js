@@ -1,4 +1,4 @@
-{
+module.exports = {
   "extends": "stylelint-config-standard",
   "processors": ["stylelint-processor-styled-components"],
   "syntax": "scss",

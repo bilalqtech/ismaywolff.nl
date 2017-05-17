@@ -42,7 +42,7 @@ function boot(error) {
 
     // Set cookie
     const release = process.env.RELEASE
-    const commit = release.substring(0, release.indexOf('-'))
+    const commit = release ? release.substring(0, release.indexOf('-')) : ''
     document.cookie = `commit=${commit}`
 
     render(<App store={store} history={history} />, document.getElementById('app'))

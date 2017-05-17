@@ -6,8 +6,23 @@ import { DumbWorkDetail } from './index'
 describe('<WorkDetail />', () => {
   it('renders correctly', () => {
     const match = { params: { id: 'one' } }
-    const entities = { one: { title: 'title' } }
-    const works = { result: ['one'], isFetching: false, didFetch: true }
+    const entities = {
+      one: {
+        title: 'title',
+        slug: 'slug',
+        type: 'type',
+        published: '2011-04-01',
+        description: 'description',
+        images: ['one'],
+        thumbnail: 'thumbnail'
+      }
+    }
+    const works = {
+      result: ['one'],
+      isFetching: false,
+      didFetch: true,
+      errorMessage: ''
+    }
 
     const wrapper = shallow(
       <DumbWorkDetail
@@ -31,7 +46,12 @@ describe('<WorkDetail />', () => {
     const spyImages = jest.fn()
     const spyWorks = jest.fn()
     const match = { params: { id: 'one' } }
-    const works = { result: [], isFetching: true, didFetch: false }
+    const works = {
+      result: [],
+      isFetching: true,
+      didFetch: false,
+      errorMessage: ''
+    }
 
     mount(
       <DumbWorkDetail
@@ -50,7 +70,12 @@ describe('<WorkDetail />', () => {
 
   it('renders a loading state', () => {
     const match = { params: { id: 'one' } }
-    const works = { result: [], isFetching: true, didFetch: false }
+    const works = {
+      result: [],
+      isFetching: true,
+      didFetch: false,
+      errorMessage: ''
+    }
     const wrapper = shallow(
       <DumbWorkDetail
         match={match}
@@ -67,7 +92,12 @@ describe('<WorkDetail />', () => {
   it('renders a missing page error', () => {
     const match = { params: { id: 'one' } }
     const entities = { two: { title: 'title' } }
-    const works = { result: ['two'], isFetching: false, didFetch: true }
+    const works = {
+      result: ['two'],
+      isFetching: false,
+      didFetch: true,
+      errorMessage: ''
+    }
     const wrapper = shallow(
       <DumbWorkDetail
         match={match}
@@ -83,7 +113,12 @@ describe('<WorkDetail />', () => {
 
   it('renders api errors', () => {
     const match = { params: { id: 'one' } }
-    const works = { errorMessage: 'Something went wrong', result: [], didFetch: true }
+    const works = {
+      result: [],
+      isFetching: false,
+      didFetch: true,
+      errorMessage: 'Something went wrong'
+    }
     const wrapper = shallow(
       <DumbWorkDetail
         match={match}

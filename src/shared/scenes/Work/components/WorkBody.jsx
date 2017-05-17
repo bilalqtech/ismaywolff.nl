@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { object, objectOf, shape, bool, string, arrayOf } from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { gutter } from '../../../styles'
@@ -34,8 +34,13 @@ export function DumbWorkBody({ entities, works }) {
 }
 
 DumbWorkBody.propTypes = {
-  entities: object.isRequired,
-  works: object.isRequired
+  entities: objectOf(object).isRequired,
+  works: shape({
+    didFetch: bool.isRequired,
+    errorMessage: string.isRequired,
+    isFetching: bool.isRequired,
+    result: arrayOf(string).isRequired
+  }).isRequired
 }
 
 const mapStateToProps = state => ({

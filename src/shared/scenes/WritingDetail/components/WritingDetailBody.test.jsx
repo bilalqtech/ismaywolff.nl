@@ -7,8 +7,9 @@ describe('<WritingDetailBody />', () => {
   it('renders correctly', () => {
     const article = {
       title: 'title',
-      published: '2011-04-01',
-      text: 'text'
+      slug: 'slug',
+      text: 'text',
+      published: '2011-04-01'
     }
     const wrapper = shallow(<WritingDetailBody article={article} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()

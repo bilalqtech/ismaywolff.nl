@@ -5,7 +5,8 @@ import { ScrollToTop } from './ScrollToTop'
 
 describe('<ScrollToTop />', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<ScrollToTop location={{}} />)
+    const location = { pathname: 'path' }
+    const wrapper = shallow(<ScrollToTop location={location} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
@@ -15,9 +16,9 @@ describe('<ScrollToTop />', () => {
       value: jest.fn()
     })
 
-    const wrapper = mount(<ScrollToTop location={{ url: 'old' }} />)
+    const wrapper = mount(<ScrollToTop location={{ pathname: 'old' }} />)
 
-    wrapper.setProps({ location: { url: 'new' } })
+    wrapper.setProps({ location: { pathname: 'new' } })
     expect(window.scrollTo).toHaveBeenCalledWith(0, 0)
   })
 
@@ -26,7 +27,7 @@ describe('<ScrollToTop />', () => {
       writable: true,
       value: jest.fn()
     })
-    const location = { url: 'old' }
+    const location = { pathname: 'old' }
     const wrapper = mount(<ScrollToTop location={location} />)
 
     wrapper.setProps({ location })

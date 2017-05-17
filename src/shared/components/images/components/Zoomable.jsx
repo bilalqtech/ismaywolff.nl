@@ -1,7 +1,7 @@
 /* global window */
 
 import React from 'react'
-import { object, string, number } from 'prop-types'
+import { string, number, objectOf, object } from 'prop-types'
 import ImageZoom from 'react-medium-image-zoom'
 import { connect } from 'react-redux'
 import { getImageEntities } from '../selectors'
@@ -51,7 +51,7 @@ export function DumbZoomable({ entities, id, width }) {
 }
 
 DumbZoomable.propTypes = {
-  entities: object.isRequired,
+  entities: objectOf(object).isRequired,
   id: string.isRequired,
   width: number.isRequired
 }

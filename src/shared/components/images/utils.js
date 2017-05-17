@@ -51,6 +51,7 @@ export function getAvailableWidth({ image, viewport }) {
    */
 
   if (imageRatio > viewportRatio) {
+    // eslint-disable-next-line no-mixed-operators
     return Math.round(image.width * viewport.height / image.height)
   }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { object, objectOf, shape, bool, string, arrayOf } from 'prop-types'
 import { connect } from 'react-redux'
 import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
@@ -38,8 +38,13 @@ export function DumbWritingBody({ entities, articles }) {
 }
 
 DumbWritingBody.propTypes = {
-  entities: object.isRequired,
-  articles: object.isRequired
+  entities: objectOf(object).isRequired,
+  articles: shape({
+    didFetch: bool.isRequired,
+    errorMessage: string.isRequired,
+    isFetching: bool.isRequired,
+    result: arrayOf(string).isRequired
+  }).isRequired
 }
 
 const mapStateToProps = state => ({

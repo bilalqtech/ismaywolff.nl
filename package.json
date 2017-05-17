@@ -24,7 +24,8 @@
       "!src/{client,server,shared}/{components,data,services}/*/index.js",
       "!src/client/services/analytics/**",
       "!src/shared/services/raven/**",
-      "!src/server/templates/**"
+      "!src/server/templates/**",
+      "!**/.eslintrc.js"
     ]
   },
   "betterScripts": {

@@ -34,7 +34,15 @@ exports[`<WorkDetail /> renders correctly 1`] = `
     <WorkDetailBody
       work={
         Object {
+          "description": "description",
+          "images": Array [
+            "one",
+          ],
+          "published": "2011-04-01",
+          "slug": "slug",
+          "thumbnail": "thumbnail",
           "title": "title",
+          "type": "type",
         }
       }
     />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { object, string } from 'prop-types'
+import { string, func, shape } from 'prop-types'
 import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { Routes } from '../../../../shared/components/routes'
@@ -15,7 +15,10 @@ function App({ location, store }) {
 }
 
 App.propTypes = {
-  store: object.isRequired,
+  store: shape({
+    dispatch: func.isRequired,
+    getState: func.isRequired
+  }).isRequired,
   location: string.isRequired
 }
 
