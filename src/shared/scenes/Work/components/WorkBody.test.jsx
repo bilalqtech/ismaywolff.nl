@@ -13,20 +13,32 @@ describe('<WorkBody />', () => {
     }
     const works = {
       result: ['one'],
-      didFetch: true
+      didFetch: true,
+      errorMessage: '',
+      isFetching: false
     }
     const wrapper = shallow(<DumbWorkBody entities={entities} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a loading state', () => {
-    const works = { isFetching: true }
+    const works = {
+      result: [],
+      didFetch: false,
+      errorMessage: '',
+      isFetching: true
+    }
     const wrapper = shallow(<DumbWorkBody entities={{}} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders errors', () => {
-    const works = { errorMessage: 'Something went wrong', didFetch: true }
+    const works = {
+      result: [],
+      didFetch: true,
+      errorMessage: 'Something went wrong',
+      isFetching: false
+    }
     const wrapper = shallow(<DumbWorkBody entities={{}} works={works} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })

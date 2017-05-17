@@ -11,8 +11,12 @@ describe('<App />', () => {
     replaceReducer: () => {}
   }
 
+  const history = {
+    location: {}
+  }
+
   it('renders correctly', () => {
-    const wrapper = shallow(<App store={store} history={{}} />)
+    const wrapper = shallow(<App store={store} history={history} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 })

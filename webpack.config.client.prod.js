@@ -3,6 +3,9 @@ const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InlineChunkManifestHtmlWebpackPlugin = require('inline-chunk-manifest-html-webpack-plugin')
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const SentryPlugin = require('webpack-sentry-plugin')
 const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
 const WebpackMd5Hash = require('webpack-md5-hash')
@@ -121,6 +124,27 @@ module.exports = {
     ]),
 
     /**
+     * Generate static html.
+     */
+
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'client', 'index.ejs'),
+      filename: 'static.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+
+    /**
+     * Preload async chunks automatically
+     */
+
+    new PreloadWebpackPlugin({
+      rel: 'preload'
+    }),
+
+    /**
      * Split chunks
      *
      * splitting passes modules from top to bottom, see also:
@@ -153,13 +177,21 @@ module.exports = {
      * - hash module ids so the module identifiers won't change across builds
      * - hash file contents with md5, so the hashes are based on the actual file contents
      * - export json that maps chunk ids to their resulting asset files, means that the manifest
-     *   doesn't have to change if a chunk changes
+     *   doesn't have to change if a chunk changes, also inline the chunk manifest in the html
      */
 
     new webpack.HashedModuleIdsPlugin(),
     new WebpackMd5Hash(),
-    new ChunkManifestPlugin({
-      filename: 'webpackChunkManifest.json'
+    new InlineChunkManifestHtmlWebpackPlugin({
+      manifestPlugins: [
+        new ChunkManifestPlugin({
+          filename: 'webpackChunkManifest.json',
+          manifestVariable: 'webpackChunkManifest'
+        })
+      ],
+      filename: 'webpackChunkManifest.json',
+      manifestVariable: 'webpackManifest',
+      chunkManifestVariable: 'webpackChunkManifest'
     }),
 
     /**

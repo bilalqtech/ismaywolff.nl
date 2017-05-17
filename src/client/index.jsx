@@ -36,14 +36,9 @@ function boot(error) {
     import('./services/analytics').then(analytics => analytics.init(history))
 
     // Hydrate store
-    const preloadedState = window.preloadedState
-    delete window.preloadedState
+    const preloadedState = 'preloadedState' in window ? window.preloadedState : {}
+    if ('preloadedState' in window) delete window.preloadedState
     const store = configureStore(preloadedState)
-
-    // Set cookie
-    const release = process.env.RELEASE
-    const commit = release.substring(0, release.indexOf('-'))
-    document.cookie = `commit=${commit}`
 
     render(<App store={store} history={history} />, document.getElementById('app'))
   }

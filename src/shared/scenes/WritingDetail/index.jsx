@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { bool, object, func } from 'prop-types'
+import { bool, object, objectOf, func, shape, string, arrayOf } from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { selectors, actions as articleActions } from '../../data/articles'
@@ -51,10 +51,17 @@ export class DumbWritingDetail extends Component {
 
 DumbWritingDetail.propTypes = {
   fetchArticlesIfNeeded: func.isRequired,
-  articles: object.isRequired,
-  entities: object.isRequired,
-  hasArticles: bool.isRequired,
-  match: object.isRequired
+  entities: objectOf(object).isRequired,
+  articles: shape({
+    didFetch: bool.isRequired,
+    errorMessage: string.isRequired,
+    isFetching: bool.isRequired,
+    result: arrayOf(string).isRequired
+  }).isRequired,
+  match: shape({
+    params: object.isRequired
+  }).isRequired,
+  hasArticles: bool.isRequired
 }
 
 const mapStateToProps = state => ({

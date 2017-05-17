@@ -34,6 +34,7 @@ exports[`<WritingDetail /> renders correctly 1`] = `
       article={
         Object {
           "published": "01-01-2000",
+          "slug": "slug",
           "text": "text",
           "title": "title",
         }

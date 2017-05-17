@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { shape, string, arrayOf } from 'prop-types'
 import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
 import { Title, SubTitle, TitleContainer } from '../../../components/title'
@@ -31,7 +31,15 @@ function WorkDetailBody({ work }) {
 }
 
 WorkDetailBody.propTypes = {
-  work: object.isRequired
+  work: shape({
+    title: string.isRequired,
+    slug: string.isRequired,
+    type: string.isRequired,
+    published: string.isRequired,
+    description: string.isRequired,
+    images: arrayOf(string).isRequired,
+    thumbnail: string.isRequired
+  }).isRequired
 }
 
 export default WorkDetailBody

@@ -7,10 +7,12 @@ describe('<WorkDetailBody />', () => {
   it('renders correctly', () => {
     const work = {
       title: 'title',
+      slug: 'slug',
       type: 'type',
       published: '2011-04-01',
       description: 'description',
-      images: ['one']
+      images: ['one'],
+      thumbnail: 'thumbnail'
     }
     const wrapper = shallow(<WorkDetailBody work={work} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()

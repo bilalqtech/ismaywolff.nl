@@ -1,5 +1,5 @@
 import React from 'react'
-import { object, string, number } from 'prop-types'
+import { string, number, objectOf, object } from 'prop-types'
 import { connect } from 'react-redux'
 import { getImageEntities } from '../selectors'
 import { createUrl } from '../utils'
@@ -23,7 +23,7 @@ export function DumbThumbnail({ entities, id, width }) {
 }
 
 DumbThumbnail.propTypes = {
-  entities: object.isRequired,
+  entities: objectOf(object).isRequired,
   id: string.isRequired,
   width: number.isRequired
 }

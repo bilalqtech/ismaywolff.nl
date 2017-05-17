@@ -14,20 +14,32 @@ describe('<WritingBody />', () => {
     }
     const articles = {
       result: ['one'],
-      didFetch: true
+      didFetch: true,
+      errorMessage: '',
+      isFetching: false
     }
     const wrapper = shallow(<DumbWritingBody entities={entities} articles={articles} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders a loading state', () => {
-    const articles = { isFetching: true }
+    const articles = {
+      result: [],
+      didFetch: false,
+      errorMessage: '',
+      isFetching: true
+    }
     const wrapper = shallow(<DumbWritingBody entities={{}} articles={articles} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
   it('renders errors', () => {
-    const articles = { errorMessage: 'Something went wrong', didFetch: true }
+    const articles = {
+      result: [],
+      didFetch: true,
+      errorMessage: 'Something went wrong',
+      isFetching: false
+    }
     const wrapper = shallow(<DumbWritingBody entities={{}} articles={articles} />)
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
