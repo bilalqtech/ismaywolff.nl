@@ -1,9 +1,4 @@
 /* global Raven */
-/* eslint-disable import/first */
-
-// Globally scoped css
-import 'normalize.css'
-import './index.css'
 
 import load from 'load-script'
 import React from 'react'

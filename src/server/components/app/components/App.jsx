@@ -2,13 +2,13 @@ import React from 'react'
 import { string, func, shape, object } from 'prop-types'
 import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { Routes } from '../../../../shared/components/routes'
+import { Root } from '../../../../shared/components/root'
 
 function App({ location, context, store }) {
   return (
     <Provider store={store}>
       <StaticRouter location={location} context={context}>
-        <Routes />
+        <Root />
       </StaticRouter>
     </Provider>
   )

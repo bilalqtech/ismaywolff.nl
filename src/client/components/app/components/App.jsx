@@ -3,7 +3,7 @@ import { object, func, shape } from 'prop-types'
 import { Router } from 'react-router'
 import { Provider } from 'react-redux'
 import { ScrollToTop } from '../../scroll'
-import { Routes } from '../../../../shared/components/routes'
+import { Root } from '../../../../shared/components/root'
 
 function App({ history, store }) {
   return (
@@ -11,7 +11,7 @@ function App({ history, store }) {
       <Router history={history}>
         <div>
           <ScrollToTop />
-          <Routes />
+          <Root />
         </div>
       </Router>
     </Provider>
