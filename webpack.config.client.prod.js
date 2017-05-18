@@ -1,7 +1,6 @@
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const InlineChunkManifestHtmlWebpackPlugin = require('inline-chunk-manifest-html-webpack-plugin')
 const PreloadWebpackPlugin = require('preload-webpack-plugin')
@@ -9,9 +8,6 @@ const SentryPlugin = require('webpack-sentry-plugin')
 const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
 const WebpackMd5Hash = require('webpack-md5-hash')
 const webpack = require('webpack')
-
-const extractBundle = new ExtractTextPlugin('[name]-[chunkhash].css')
-const extractVendor = new ExtractTextPlugin('vendor-[chunkhash].css')
 
 /**
  * Name of the entrypoint. Currently there's only one client-side entrypoint. The name is defined
@@ -27,13 +23,12 @@ const ENTRYPOINT = 'main'
 
 function transformStats(stats) {
   const assetsByEntrypoint = stats.entrypoints[ENTRYPOINT].assets
-  const css = assetsByEntrypoint.filter(asset => asset.endsWith('.css'))
   const js = assetsByEntrypoint.filter(asset => asset.endsWith('.js'))
   const dynamic = stats.assets
     .filter(asset => (asset.chunkNames.length === 0 && asset.name.endsWith('.js')))
     .map(asset => asset.name)
 
-  return JSON.stringify({ css, js, dynamic })
+  return JSON.stringify({ js, dynamic })
 }
 
 module.exports = {
@@ -55,34 +50,11 @@ module.exports = {
         test: /\.js$|\.jsx$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        include: /node_modules/,
-        loader: extractVendor.extract({
-          fallback: 'style-loader?sourceMap',
-          use: 'css-loader?sourceMap'
-        })
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        loader: extractBundle.extract({
-          fallback: 'style-loader?sourceMap',
-          use: 'css-loader?sourceMap'
-        })
       }
     ]
   },
   devtool: 'source-map',
   plugins: [
-
-    /**
-     * Extract required css to a separate file. Create a vendor and an application bundle.
-     */
-
-    extractVendor,
-    extractBundle,
 
     /**
      * Clean dist before building.

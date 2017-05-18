@@ -16,7 +16,7 @@ exports[`<App /> renders correctly 1`] = `
     context={Object {}}
     location="/"
   >
-    <Routes />
+    <Root />
   </StaticRouter>
 </Provider>
 `;
