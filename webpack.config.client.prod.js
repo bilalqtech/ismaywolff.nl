@@ -1,5 +1,4 @@
 const path = require('path')
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -177,29 +176,18 @@ module.exports = {
      * - hash module ids so the module identifiers won't change across builds
      * - hash file contents with md5, so the hashes are based on the actual file contents
      * - export json that maps chunk ids to their resulting asset files, means that the manifest
-     *   doesn't have to change if a chunk changes, also inline the chunk manifest in the html
+     *   doesn't have to change if a chunk changes and inline the result in the html
      */
 
     new webpack.HashedModuleIdsPlugin(),
     new WebpackMd5Hash(),
-    new InlineChunkManifestHtmlWebpackPlugin({
-      manifestPlugins: [
-        new ChunkManifestPlugin({
-          filename: 'webpackChunkManifest.json',
-          manifestVariable: 'webpackChunkManifest'
-        })
-      ],
-      filename: 'webpackChunkManifest.json',
-      manifestVariable: 'webpackManifest',
-      chunkManifestVariable: 'webpackChunkManifest'
-    }),
+    new InlineChunkManifestHtmlWebpackPlugin(),
 
     /**
      * Parse the webpack stats object and output a json file with the assets grouped by type
      */
 
     new StatsWriterPlugin({
-      filename: 'webpackAssets.json',
       fields: null,
       transform: transformStats
     }),
