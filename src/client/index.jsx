@@ -1,5 +1,5 @@
 /* global Raven */
-/* eslint-disable import/first */
+/* eslint-disable import/first, no-underscore-dangle, no-mixed-operators */
 
 // Globally scoped css
 import 'normalize.css'
@@ -13,19 +13,32 @@ import { url, config, logError } from '../shared/services/raven'
 import configureStore from '../shared/store'
 import { App, AppWithErrors } from './components/app'
 
-// Initialize error tracking in production
+/**
+ * Initialize error tracking in production and log uncaught errors
+ */
+
 if (process.env.NODE_ENV === 'production') {
   load('https://cdn.ravenjs.com/3.14.2/raven.min.js', () => {
     Raven.config(url, config).install()
+
+    const errorEvents = (window.__ERROR_EVENTS__ && window.__ERROR_EVENTS__.q) || []
+    errorEvents.map(event => logError(event.error))
+    if ('__ERROR_EVENTS__' in window) delete window.__ERROR_EVENTS__
   })
 }
 
-// Feature tests
+/**
+ * Feature tests
+ */
+
 const hasFetch = 'fetch' in window
 const hasPromise = 'Promise' in window
 const hasObjectAssign = typeof Object.assign === 'function'
 
-// Boots the app, shows errors if there were any
+/**
+ * Boots the app, shows errors if there were any
+ */
+
 function boot(error) {
   if (error) {
     logError(error)
@@ -36,15 +49,18 @@ function boot(error) {
     import('./services/analytics').then(analytics => analytics.init(history))
 
     // Hydrate store
-    const preloadedState = 'preloadedState' in window ? window.preloadedState : {}
-    if ('preloadedState' in window) delete window.preloadedState
+    const preloadedState = '__PRELOADEDSTATE__' in window ? window.__PRELOADEDSTATE__ : {}
+    if ('__PRELOADEDSTATE__' in window) delete window.__PRELOADEDSTATE__
     const store = configureStore(preloadedState)
 
     render(<App store={store} history={history} />, document.getElementById('app'))
   }
 }
 
-// Checks if the client supports all necessary features, and polyfills them if necessary
+/**
+ * Checks if the client supports all necessary features, and polyfills them if necessary
+ */
+
 if (hasFetch && hasPromise && hasObjectAssign) {
   boot()
 } else {

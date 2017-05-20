@@ -4,6 +4,7 @@ import preloadDynamic from './templates/preloadDynamic'
 import scripts from './templates/scripts'
 import head from './templates/head'
 import styles from './templates/styles'
+import catchErrors from './templates/catchErrors'
 
 function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }) {
   return `
@@ -13,6 +14,7 @@ function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }
         ${head}
         ${title}
         ${meta}
+        ${catchErrors}
         ${inlineManifest}
         ${preloadDynamic}
         ${styles}
