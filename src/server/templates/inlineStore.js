@@ -1,6 +1,6 @@
 const inlineStore = preloadedState => `
   <script>
-    window.preloadedState = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+    window.__PRELOADEDSTATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
   </script>
 `
 

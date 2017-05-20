@@ -11,8 +11,7 @@ import handleBots from './handleBots'
  * Error tracking
  */
 
-const isProd = process.env.NODE_ENV === 'production'
-if (isProd) {
+if (process.env.NODE_ENV === 'production') {
   Raven.config(url, config).install()
 }
 
@@ -53,7 +52,8 @@ server.get('*', (req, res) => {
 server.use((error, req, res, next) => {
   logError(error)
   res.status(500)
-  res.end()
+  res.setHeader('Cache-Control', 'public, max-age=0')
+  res.sendFile(path.join(PUBLIC_PATH, 'static.html'))
 })
 
 /**
