@@ -13,11 +13,11 @@ import { url, config, logError } from '../shared/services/raven'
 import configureStore from '../shared/store'
 import { App, AppWithErrors } from './components/app'
 
-// Initialize error tracking
-const hasRaven = typeof Raven !== 'undefined' && 'config' in Raven
-const isProd = process.env.NODE_ENV === 'production'
-if (isProd && hasRaven) {
-  Raven.config(url, config).install()
+// Initialize error tracking in production
+if (process.env.NODE_ENV === 'production') {
+  load('https://cdn.ravenjs.com/3.14.2/raven.min.js', () => {
+    Raven.config(url, config).install()
+  })
 }
 
 // Feature tests

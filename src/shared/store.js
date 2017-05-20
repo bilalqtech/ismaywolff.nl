@@ -1,21 +1,22 @@
 /* global window */
+/* eslint-disable no-underscore-dangle */
 
 import { compose, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from './rootReducer'
 import logErrors from './data/errors'
 
-// Initialize devtools if available and on the client
-const hasWindow = typeof window === 'object'
-// eslint-disable-next-line no-underscore-dangle
-const composeEnhancers = (hasWindow && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+// Initialize devtools if on the client
+const devTools = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION__
+  ? window.__REDUX_DEVTOOLS_EXTENSION__()
+  : f => f
 
 // Returns a store and accepts an initial state
 const configureStore = preloadedState => {
   const store = createStore(
     rootReducer,
     preloadedState,
-    composeEnhancers(applyMiddleware(thunk, logErrors))
+    compose(applyMiddleware(thunk, logErrors), devTools)
   )
 
   return store
