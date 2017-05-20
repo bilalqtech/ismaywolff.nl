@@ -4,8 +4,8 @@ const head = `
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
-  <link rel=“preload” href=“bitter.woff2” as=“font”>
-  <link rel=“preload” href=“crimsontext.woff2” as=“font”>
+  <link rel=“preload” href=“Bitter.woff2” as=“font”>
+  <link rel=“preload” href=“CrimsonText.woff2” as=“font”>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">

@@ -4,6 +4,7 @@ import preloadDynamic from './templates/preloadDynamic'
 import scripts from './templates/scripts'
 import sentry from './templates/sentry'
 import head from './templates/head'
+import styles from './templates/styles'
 
 function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }) {
   return `
@@ -15,6 +16,7 @@ function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }
         ${meta}
         ${inlineManifest}
         ${preloadDynamic}
+        ${styles}
         ${styledComponentsCss}
       </head>
       <body>

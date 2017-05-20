@@ -1,6 +1,8 @@
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const InlineChunkManifestHtmlWebpackPlugin = require('inline-chunk-manifest-html-webpack-plugin')
 const PreloadWebpackPlugin = require('preload-webpack-plugin')
@@ -23,12 +25,13 @@ const ENTRYPOINT = 'main'
 
 function transformStats(stats) {
   const assetsByEntrypoint = stats.entrypoints[ENTRYPOINT].assets
+  const css = assetsByEntrypoint.filter(asset => asset.endsWith('.css'))
   const js = assetsByEntrypoint.filter(asset => asset.endsWith('.js'))
   const dynamic = stats.assets
     .filter(asset => (asset.chunkNames.length === 0 && asset.name.endsWith('.js')))
     .map(asset => asset.name)
 
-  return JSON.stringify({ js, dynamic })
+  return JSON.stringify({ css, js, dynamic })
 }
 
 module.exports = {
@@ -50,6 +53,13 @@ module.exports = {
         test: /\.js$|\.jsx$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader?sourceMap',
+          use: 'css-loader?sourceMap&url=false'
+        })
       }
     ]
   },
@@ -64,6 +74,12 @@ module.exports = {
       path.join(__dirname, 'dist', 'public'),
       { verbose: false }
     ),
+
+    /**
+     * Extract required css to a separate file.
+     */
+
+    new ExtractTextPlugin('[name]-[chunkhash].css'),
 
     /**
      * Copy all static assets to dist.
@@ -104,8 +120,15 @@ module.exports = {
       minify: {
         collapseWhitespace: true,
         removeComments: true
-      }
+      },
+      inlineSource: '.css$'
     }),
+
+    /**
+     * Inline css
+     */
+
+    new HtmlWebpackInlineSourcePlugin(),
 
     /**
      * Preload async chunks automatically
