@@ -1,6 +1,6 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { ExternalLink } from '../../links'
+import { Link } from '../../link'
 import { colors } from '../../../styles'
 import ErrorContainer from './ErrorContainer'
 import ErrorTitle from './ErrorTitle'
@@ -22,7 +22,7 @@ function AppError({ errorMessage }) {
         make sure to fix it as soon as possible. If you want to report this error you can do so on
         the issues tab of my
         {' '}
-        <ExternalLink href="https://github.com/ismay/ismaywolff.nl">github repo</ExternalLink>
+        <Link href="https://github.com/ismay/ismaywolff.nl">github repo</Link>
         .
       </p>
       <p>The error was: {'"'}{errorMessage}{'"'}.</p>

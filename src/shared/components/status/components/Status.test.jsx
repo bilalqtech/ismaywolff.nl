@@ -1,11 +1,15 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import { StaticRouter } from 'react-router-dom'
+import { mount } from 'enzyme'
+import { StaticRouter, BrowserRouter } from 'react-router-dom'
 import Status from './Status'
 
 describe('<Status />', () => {
-  it('renders correctly', () => {
-    const wrapper = shallow(<Status code={404} />)
+  it('renders correctly with browser router', () => {
+    const wrapper = mount(
+      <BrowserRouter>
+        <Status code={404} />
+      </BrowserRouter>
+    )
     expect(wrapper).toMatchSnapshot()
   })
 

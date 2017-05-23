@@ -2,16 +2,10 @@
 
 exports[`<WorkDetailBody /> renders correctly 1`] = `
 <div>
-  <styled.div>
-    <styled.h2>
-      title
-    </styled.h2>
-    <styled.p>
-      type
-       - 
-      April 2011
-    </styled.p>
-  </styled.div>
+  <DetailTitle
+    main="title"
+    sub="type - April 2011"
+  />
   <p>
     description
   </p>

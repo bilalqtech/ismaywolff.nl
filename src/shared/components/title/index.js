@@ -1,3 +1,2 @@
-export { default as Title } from './components/Title'
-export { default as TitleContainer } from './components/TitleContainer'
-export { default as SubTitle } from './components/SubTitle'
+export { default as DetailTitle } from './components/DetailTitle'
+export { default as OverviewTitle } from './components/OverviewTitle'

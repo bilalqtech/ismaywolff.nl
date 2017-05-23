@@ -1,5 +1,5 @@
 import React from 'react'
-import { InternalLink } from '../../links'
+import { Link } from '../../link'
 import { colors } from '../../../styles'
 import ErrorContainer from './ErrorContainer'
 import ErrorTitle from './ErrorTitle'
@@ -21,7 +21,7 @@ function MissingPageError() {
       <p>
         In the meantime, might I interest you in checking out the page with
         {' '}
-        <InternalLink to="/work">my work</InternalLink>
+        <Link to="/work">my work</Link>
         ?
         It{"'"}s brand new and has barely got any miles on it. Well maintained and previously
         owned by an old webmaster who just kept it on a server in his garage. I even still have

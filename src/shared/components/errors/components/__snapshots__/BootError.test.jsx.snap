@@ -13,11 +13,11 @@ exports[`<BootError /> renders correctly 1`] = `
     '
     t support and patching it has failed. Make sure that your browser extensions are not blocking the polyfill.io domain and refresh the page to retry or
      
-    <styled.a
+    <Link
       href="http://outdatedbrowser.com"
     >
       update your browser
-    </styled.a>
+    </Link>
     .
   </p>
   <p>
@@ -27,11 +27,11 @@ exports[`<BootError /> renders correctly 1`] = `
     '
     ll make sure to fix it as soon as possible. If you want to report this error you can do so on the issues tab of my
      
-    <styled.a
+    <Link
       href="https://github.com/ismay/ismaywolff.nl"
     >
       github repo
-    </styled.a>
+    </Link>
     .
   </p>
   <p>

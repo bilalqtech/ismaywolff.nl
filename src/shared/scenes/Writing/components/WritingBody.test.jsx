@@ -8,7 +8,8 @@ describe('<WritingBody />', () => {
       one: {
         slug: 'slug',
         published: '10-12-2000',
-        title: 'title'
+        title: 'title',
+        summary: 'summary'
       }
     }
     const articles = {

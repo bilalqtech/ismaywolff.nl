@@ -28,11 +28,11 @@ exports[`<MissingPageError /> renders correctly 1`] = `
   <p>
     In the meantime, might I interest you in checking out the page with
      
-    <Styled(Link)
+    <Link
       to="/work"
     >
       my work
-    </Styled(Link)>
+    </Link>
     ? It
     '
     s brand new and has barely got any miles on it. Well maintained and previously owned by an old webmaster who just kept it on a server in his garage. I even still have the original manual!

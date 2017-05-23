@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
-  align-items: baseline;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 
-  @media (min-width: 20em) {
-    flex-wrap: unset;
+  @media (min-width: 30em) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
   }
 `
 

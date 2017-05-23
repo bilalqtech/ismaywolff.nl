@@ -14,14 +14,17 @@ exports[`<WorkBody /> renders correctly 1`] = `
     mdSize={0.5}
     smSize={1}
   >
-    <Link
-      replace={false}
-      to="/work/slug"
-    >
-      <ResponsiveThumbnail
-        id="thumbnail"
-      />
-    </Link>
+    <WorkItem
+      work={
+        Object {
+          "description": "description",
+          "slug": "slug",
+          "summary": "summary",
+          "thumbnail": "thumbnail",
+          "title": "title",
+        }
+      }
+    />
   </styled.div>
 </styled.div>
 `;

@@ -2,16 +2,13 @@ import React from 'react'
 import { shape, string } from 'prop-types'
 import dateformat from 'dateformat'
 import { AsyncReactMarkdown } from '../../../components/async'
-import { Title, SubTitle, TitleContainer } from '../../../components/title'
+import { DetailTitle } from '../../../components/title'
 
 function WritingDetailBody({ article }) {
   return (
     <div>
       {/* Header */}
-      <TitleContainer>
-        <Title>{article.title}</Title>
-        <SubTitle>{dateformat(article.published, 'mmmm yyyy')}</SubTitle>
-      </TitleContainer>
+      <DetailTitle main={article.title} sub={dateformat(article.published, 'mmmm yyyy')} />
 
       {/* Body */}
       <AsyncReactMarkdown source={article.text} />

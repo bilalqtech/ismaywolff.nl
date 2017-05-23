@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Internal /> renders clean correctly 1`] = `
+.iAmiWI {
+  color: currentColor;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<Link
+  className="sc-bdVaJa iAmiWI"
+  clean={true}
+  replace={false}
+  to="/url"
+>
+  Text
+</Link>
+`;
+
+exports[`<Internal /> renders correctly 1`] = `
+.dbNcXs {
+  color: currentColor;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<Link
+  className="sc-bdVaJa dbNcXs"
+  replace={false}
+  to="/url"
+>
+  Text
+</Link>
+`;
