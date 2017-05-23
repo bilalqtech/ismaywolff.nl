@@ -3,16 +3,9 @@
 exports[`<WritingBody /> renders a loading state 1`] = `<styled.div />`;
 
 exports[`<WritingBody /> renders correctly 1`] = `
-<styled.div
-  gutter="0.5rem"
->
+<div>
   <styled.div
-    gutter="0.5rem"
-    lgBreak="40em"
-    lgSize="1"
-    mdBreak="25em"
-    mdSize="1"
-    smSize="1"
+    bottom="2rem"
   >
     <WritingItem
       article={
@@ -25,7 +18,7 @@ exports[`<WritingBody /> renders correctly 1`] = `
       }
     />
   </styled.div>
-</styled.div>
+</div>
 `;
 
 exports[`<WritingBody /> renders errors 1`] = `

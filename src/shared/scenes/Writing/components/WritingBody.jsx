@@ -1,11 +1,10 @@
 import React from 'react'
 import { object, objectOf, shape, bool, string, arrayOf } from 'prop-types'
 import { connect } from 'react-redux'
-import { gutter } from '../../../styles'
 import { selectors } from '../../../data/articles'
-import { Cell, Grid } from '../../../components/grid'
 import { Spinner } from '../../../components/spinner'
 import { AppError } from '../../../components/errors'
+import { Spacer } from '../../../components/spacer'
 import WritingItem from './WritingItem'
 
 export function DumbWritingBody({ entities, articles }) {
@@ -20,13 +19,13 @@ export function DumbWritingBody({ entities, articles }) {
   }
 
   return (
-    <Grid gutter={gutter}>
+    <div>
       {articles.result.map(id => (
-        <Cell gutter={gutter} key={id}>
+        <Spacer bottom="2rem" key={id}>
           <WritingItem article={entities[id]} />
-        </Cell>
+        </Spacer>
       ))}
-    </Grid>
+    </div>
   )
 }
 
