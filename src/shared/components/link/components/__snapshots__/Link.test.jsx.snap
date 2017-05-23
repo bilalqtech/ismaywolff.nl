@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> renders external links correctly 1`] = `
+<styled.a
+  href="/url"
+>
+  Text
+</styled.a>
+`;
+
+exports[`<Link /> renders internal links correctly 1`] = `
+<Styled(Link)
+  to="/url"
+>
+  Text
+</Styled(Link)>
+`;

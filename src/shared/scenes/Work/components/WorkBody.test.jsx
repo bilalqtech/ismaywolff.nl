@@ -7,7 +7,10 @@ describe('<WorkBody />', () => {
     const entities = {
       one: {
         slug: 'slug',
-        thumbnail: 'thumbnail'
+        thumbnail: 'thumbnail',
+        title: 'title',
+        summary: 'summary',
+        description: 'description'
       }
     }
     const works = {

@@ -2,38 +2,14 @@
 
 exports[`<Header /> renders correctly 1`] = `
 <styled.header>
-  <styled.span
-    size="0.75rem"
-  >
-    <NavLink
-      activeClassName="active"
-      to="/work"
-    >
-      work
-    </NavLink>
-  </styled.span>
   <styled.h1>
-    <styled.span
-      size="1.5rem"
+    <Link
+      clean={true}
+      to="/"
     >
-      <NavLink
-        activeClassName="active"
-        exact={true}
-        to="/"
-      >
-        Ismay Wolff
-      </NavLink>
-    </styled.span>
+      Ismay Wolff
+    </Link>
   </styled.h1>
-  <styled.span
-    size="0.75rem"
-  >
-    <NavLink
-      activeClassName="active"
-      to="/writing"
-    >
-      writing
-    </NavLink>
-  </styled.span>
+  <Navigation />
 </styled.header>
 `;

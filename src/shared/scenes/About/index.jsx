@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { ExternalLink } from '../../components/links'
+import { Link } from '../../components/link'
 
 function About() {
   return (
@@ -19,10 +19,10 @@ function About() {
         bachelor{"'"}s degree in fine art from Academie Minerva of Groningen. A lot of my work can
         be found on
         {' '}
-        <ExternalLink href="https://github.com/ismay">github</ExternalLink>
+        <Link href="https://github.com/ismay">github</Link>
         {' '}
         and my public keys are
-        on <ExternalLink href="https://keybase.io/ismay">keybase</ExternalLink>.
+        on <Link href="https://keybase.io/ismay">keybase</Link>.
       </p>
     </div>
   )

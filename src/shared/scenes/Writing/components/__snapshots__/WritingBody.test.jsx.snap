@@ -14,20 +14,16 @@ exports[`<WritingBody /> renders correctly 1`] = `
     mdSize="1"
     smSize="1"
   >
-    <Styled(Link)
-      to="/writing/slug"
-    >
-      <styled.div>
-        <styled.span
-          direction="right"
-        >
-          title
-        </styled.span>
-        <styled.span>
-          October 2000
-        </styled.span>
-      </styled.div>
-    </Styled(Link)>
+    <WritingItem
+      article={
+        Object {
+          "published": "10-12-2000",
+          "slug": "slug",
+          "summary": "summary",
+          "title": "title",
+        }
+      }
+    />
   </styled.div>
 </styled.div>
 `;

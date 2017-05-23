@@ -2,7 +2,7 @@ import React from 'react'
 import { shape, string, arrayOf } from 'prop-types'
 import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
-import { Title, SubTitle, TitleContainer } from '../../../components/title'
+import { DetailTitle } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
 import { ResponsiveZoomable } from '../../../components/images'
 
@@ -10,10 +10,10 @@ function WorkDetailBody({ work }) {
   return (
     <div>
       {/* Header */}
-      <TitleContainer>
-        <Title>{work.title}</Title>
-        <SubTitle>{work.type} - {dateformat(work.published, 'mmmm yyyy')}</SubTitle>
-      </TitleContainer>
+      <DetailTitle
+        main={work.title}
+        sub={`${work.type} - ${dateformat(work.published, 'mmmm yyyy')}`}
+      />
 
       {/* Body */}
       <p>{work.description}</p>

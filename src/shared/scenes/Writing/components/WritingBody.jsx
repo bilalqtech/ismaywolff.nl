@@ -1,14 +1,12 @@
 import React from 'react'
 import { object, objectOf, shape, bool, string, arrayOf } from 'prop-types'
 import { connect } from 'react-redux'
-import dateformat from 'dateformat'
 import { gutter } from '../../../styles'
 import { selectors } from '../../../data/articles'
 import { Cell, Grid } from '../../../components/grid'
-import { InternalLink } from '../../../components/links'
 import { Spinner } from '../../../components/spinner'
 import { AppError } from '../../../components/errors'
-import { TextLine, TextLineFill, TextLineFit } from '../../../components/text'
+import WritingItem from './WritingItem'
 
 export function DumbWritingBody({ entities, articles }) {
   // If fetching or hasn't fetched yet
@@ -25,12 +23,7 @@ export function DumbWritingBody({ entities, articles }) {
     <Grid gutter={gutter}>
       {articles.result.map(id => (
         <Cell gutter={gutter} key={id}>
-          <InternalLink to={`/writing/${entities[id].slug}`}>
-            <TextLine>
-              <TextLineFill direction={'right'}>{entities[id].title}</TextLineFill>
-              <TextLineFit>{dateformat(entities[id].published, 'mmmm yyyy')}</TextLineFit>
-            </TextLine>
-          </InternalLink>
+          <WritingItem article={entities[id]} />
         </Cell>
       ))}
     </Grid>

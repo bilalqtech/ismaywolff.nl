@@ -1,6 +1,6 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { ExternalLink } from '../../links'
+import { Link } from '../../link'
 import { colors } from '../../../styles'
 import ErrorContainer from './ErrorContainer'
 import ErrorTitle from './ErrorTitle'
@@ -18,7 +18,7 @@ function BootError({ errorMessage }) {
         has failed. Make sure that your browser extensions are not blocking the polyfill.io
         domain and refresh the page to retry or
         {' '}
-        <ExternalLink href="http://outdatedbrowser.com">update your browser</ExternalLink>
+        <Link href="http://outdatedbrowser.com">update your browser</Link>
         .
       </p>
       <p>
@@ -26,7 +26,7 @@ function BootError({ errorMessage }) {
         make sure to fix it as soon as possible. If you want to report this error you can do so on
         the issues tab of my
         {' '}
-        <ExternalLink href="https://github.com/ismay/ismaywolff.nl">github repo</ExternalLink>
+        <Link href="https://github.com/ismay/ismaywolff.nl">github repo</Link>
         .
       </p>
       <p>The error was: {'"'}{errorMessage}{'"'}.</p>

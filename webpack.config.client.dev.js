@@ -37,7 +37,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     port: process.env.DEV_PORT,
-    host: process.env.DEV_HOST
+    host: process.env.DEV_HOST,
+    disableHostCheck: true
   },
   performance: {
     hints: false

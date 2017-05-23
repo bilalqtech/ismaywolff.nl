@@ -21,9 +21,12 @@ if (process.env.NODE_ENV === 'production') {
   load('https://cdn.ravenjs.com/3.14.2/raven.min.js', () => {
     Raven.config(url, config).install()
 
-    const errorEvents = (window.__ERROR_EVENTS__ && window.__ERROR_EVENTS__.q) || []
-    errorEvents.map(event => logError(event.error))
-    if ('__ERROR_EVENTS__' in window) delete window.__ERROR_EVENTS__
+    if ('__ERROR_EVENTS__' in window) {
+      const errorEvents = window.__ERROR_EVENTS__.q || []
+      errorEvents.map(event => logError(event.error))
+      removeEventListener('error', window.__ERROR_EVENTS__)
+      delete window.__ERROR_EVENTS__
+    }
   })
 }
 
