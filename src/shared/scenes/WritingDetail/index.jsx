@@ -37,13 +37,11 @@ export class DumbWritingDetail extends Component {
 
     return (
       <div>
-        <div>
-          <Helmet>
-            <title>{`${requestedArticle.title} • Ismay Wolff`}</title>
-            <meta name="description" content={`Detailed view of ${requestedArticle.title}`} />
-          </Helmet>
-          <WritingDetailBody article={requestedArticle} />
-        </div>
+        <Helmet>
+          <title>{`${requestedArticle.title} • Ismay Wolff`}</title>
+          <meta name="description" content={`Detailed view of ${requestedArticle.title}`} />
+        </Helmet>
+        <WritingDetailBody article={requestedArticle} />
       </div>
     )
   }
