@@ -1,5 +1,7 @@
 {
   "author": "ismay",
+  "private": true,
+  "license": "MIT",
   "description": "Source for ismaywolff.nl",
   "name": "ismaywolff.nl",
   "version": "1.0.0",

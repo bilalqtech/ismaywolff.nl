@@ -39,13 +39,11 @@ export class DumbWorkDetail extends Component {
 
     return (
       <div>
-        <div>
-          <Helmet>
-            <title>{`${requestedWork.title} • Ismay Wolff`}</title>
-            <meta name="description" content={`Detailed view of ${requestedWork.title}`} />
-          </Helmet>
-          <WorkDetailBody work={requestedWork} />
-        </div>
+        <Helmet>
+          <title>{`${requestedWork.title} • Ismay Wolff`}</title>
+          <meta name="description" content={`Detailed view of ${requestedWork.title}`} />
+        </Helmet>
+        <WorkDetailBody work={requestedWork} />
       </div>
     )
   }

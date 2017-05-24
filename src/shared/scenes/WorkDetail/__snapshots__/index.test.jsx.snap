@@ -19,33 +19,31 @@ exports[`<WorkDetail /> renders api errors 1`] = `
 
 exports[`<WorkDetail /> renders correctly 1`] = `
 <div>
-  <div>
-    <HelmetWrapper
-      encodeSpecialCharacters={true}
-    >
-      <title>
-        title • Ismay Wolff
-      </title>
-      <meta
-        content="Detailed view of title"
-        name="description"
-      />
-    </HelmetWrapper>
-    <WorkDetailBody
-      work={
-        Object {
-          "description": "description",
-          "images": Array [
-            "one",
-          ],
-          "published": "2011-04-01",
-          "slug": "slug",
-          "thumbnail": "thumbnail",
-          "title": "title",
-          "type": "type",
-        }
-      }
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      title • Ismay Wolff
+    </title>
+    <meta
+      content="Detailed view of title"
+      name="description"
     />
-  </div>
+  </HelmetWrapper>
+  <WorkDetailBody
+    work={
+      Object {
+        "description": "description",
+        "images": Array [
+          "one",
+        ],
+        "published": "2011-04-01",
+        "slug": "slug",
+        "thumbnail": "thumbnail",
+        "title": "title",
+        "type": "type",
+      }
+    }
+  />
 </div>
 `;
