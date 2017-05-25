@@ -7,6 +7,7 @@ module.exports = {
     "arrow-parens": 0,
     "comma-dangle": 0,
     "semi": 0,
+    "no-mixed-operators": 0,
 
     // Import settings
     "import/no-extraneous-dependencies": 0,

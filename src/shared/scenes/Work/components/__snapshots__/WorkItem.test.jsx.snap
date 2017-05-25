@@ -5,7 +5,7 @@ exports[`<WorkItem /> renders correctly 1`] = `
   <Link
     to="/work/slug"
   >
-    <ResponsiveThumbnail
+    <Connect(DumbThumbnail)
       id="thumbnail"
     />
   </Link>

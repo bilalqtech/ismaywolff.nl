@@ -1,27 +1,4 @@
 /**
- * Takes an input width and staggers it by a set amount, to maximize
- * cache hits. Protects against invalid values (when used on server
- * for example) by returning a fallback value.
- *
- * The fallback doesn't have an obvious default since it can be used
- * for fullscreen images, or a grid of multiple images. So 250 is chosen
- * as something that isn't too big, but won't look completely terrible either.
- */
-
-export function getImageWidth(width) {
-  const fallbackWidth = 250
-  const interval = 50
-
-  // If on the server or the width is invalid, return a default width
-  if (width <= 0) {
-    return fallbackWidth
-  }
-
-  // Otherwise round width up to the nearest interval
-  return Math.ceil(width / interval) * interval
-}
-
-/**
  * Appends any parameters to create a valid url for a
  * contentful image asset.
  */
@@ -35,26 +12,29 @@ export function createUrl({ url, width, height, fill }) {
 }
 
 /**
- * Calculates the available width for an image which should fill the
- * viewport without distorting its proportions. Since the image
- * is sized proportionally, we only return the width.
+ * Calculates amount of the viewport that the image will fill when
+ * displayed fullscreen. This depends on the proportions of the image vs
+ * the proportions of the viewport, since for images that are taller than the
+ * viewport the full width won't be used. Returns an integer that
+ * represents the percentage of the viewport that the image will
+ * fill horizontally.
  */
 
-export function getAvailableWidth({ image, viewport }) {
+export function getRatio({ image, viewport }) {
   // Ratio over 1 means portrait orientation, under 1 is landscape
   const imageRatio = image.height / image.width
   const viewportRatio = viewport.height / viewport.width
 
   /**
    * For this ratio difference, height of the image is the limiting factor.
-   * So we use height to proportionally calculate the width.
+   * So we use height to proportionally calculate the rendered width.
    */
 
   if (imageRatio > viewportRatio) {
-    // eslint-disable-next-line no-mixed-operators
-    return Math.round(image.width * viewport.height / image.height)
+    const renderedWidth = image.width * viewport.height / image.height
+    return Math.round(renderedWidth / viewport.width * 100)
   }
 
-  // Otherwise we can just use the width
-  return viewport.width
+  // Otherwise the image will fill a 100% of the viewport
+  return 100
 }
