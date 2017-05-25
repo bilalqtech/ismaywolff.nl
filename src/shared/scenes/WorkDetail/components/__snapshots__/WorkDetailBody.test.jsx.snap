@@ -20,7 +20,7 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
       mdSize={0.5}
       smSize={1}
     >
-      <ResponsiveZoomable
+      <Connect(DumbZoomable)
         id="one"
       />
     </styled.div>

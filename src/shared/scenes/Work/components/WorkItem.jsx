@@ -1,6 +1,6 @@
 import React from 'react'
 import { string, shape } from 'prop-types'
-import { ResponsiveThumbnail } from '../../../components/images'
+import { Thumbnail } from '../../../components/images'
 import { OverviewTitle } from '../../../components/title'
 import { Truncate } from '../../../components/text'
 import { OverviewParagraph } from '../../../components/paragraph'
@@ -10,7 +10,7 @@ function WorkItem({ work }) {
   return (
     <div>
       <Link to={`/work/${work.slug}`}>
-        <ResponsiveThumbnail id={work.thumbnail} />
+        <Thumbnail id={work.thumbnail} />
       </Link>
       <Link to={`/work/${work.slug}`} clean>
         <OverviewTitle><Truncate>{work.title}</Truncate></OverviewTitle>

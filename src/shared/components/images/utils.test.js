@@ -1,15 +1,4 @@
-import { getImageWidth, createUrl, getAvailableWidth } from './utils'
-
-describe('getImageWidth', () => {
-  it('rounds up to the nearest upper multiple', () => {
-    expect(getImageWidth(110)).toEqual(150)
-  })
-
-  it('returns a fallback width for invalid values', () => {
-    expect(getImageWidth(0)).toEqual(250)
-    expect(getImageWidth(-10)).toEqual(250)
-  })
-})
+import { createUrl, getRatio } from './utils'
 
 describe('createUrl', () => {
   it('accepts a fill parameter', () => {
@@ -29,21 +18,21 @@ describe('createUrl', () => {
   })
 })
 
-describe('getAvailableWidth', () => {
-  it('calculates the correct width for landscape ratio differences', () => {
+describe('getRatio', () => {
+  it('calculates the correct percentage for landscape ratio differences', () => {
     const image = { width: 100, height: 10 }
     const viewport = { height: 1000, width: 1000 }
-    const actual = getAvailableWidth({ image, viewport })
-    const expected = 1000
+    const actual = getRatio({ image, viewport })
+    const expected = 100
 
     expect(actual).toEqual(expected)
   })
 
-  it('calculates the correct width for portrait ratio differences', () => {
+  it('calculates the correct percentage for portrait ratio differences', () => {
     const image = { width: 10, height: 100 }
     const viewport = { height: 1000, width: 1000 }
-    const actual = getAvailableWidth({ image, viewport })
-    const expected = 100
+    const actual = getRatio({ image, viewport })
+    const expected = 10
 
     expect(actual).toEqual(expected)
   })

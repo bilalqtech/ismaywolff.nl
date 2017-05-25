@@ -24,20 +24,42 @@ exports[`<Zoomable /> renders correctly 1`] = `
     image={
       Object {
         "alt": "title",
-        "src": "url?w=100&fl=progressive",
+        "sizes": "
+          (min-width: 40em) 10rem,
+          (min-width: 30em) 15rem,
+          (min-width: 25em) 50vw,
+          100vw
+        ",
+        "src": "url?w=250&fl=progressive",
+        "srcSet": "
+          url?w=1500&fl=progressive 1500w,
+          url?w=1250&fl=progressive 1250w,
+          url?w=1000&fl=progressive 1000w,
+          url?w=750&fl=progressive 750w,
+          url?w=500&fl=progressive 500w,
+          url?w=250&fl=progressive 250w
+        ",
       }
     }
     isZoomed={false}
     onUnzoom={[Function]}
     onZoom={[Function]}
     shouldHandleZoom={[Function]}
-    shouldPreload={true}
     shouldReplaceImage={true}
     shouldRespectMaxDimension={false}
     zoomImage={
       Object {
         "alt": "title",
-        "src": "url?w=1050&fl=progressive",
+        "sizes": "100vw",
+        "src": "url?w=250&fl=progressive",
+        "srcSet": "
+          url?w=1500&fl=progressive 1500w,
+          url?w=1250&fl=progressive 1250w,
+          url?w=1000&fl=progressive 1000w,
+          url?w=750&fl=progressive 750w,
+          url?w=500&fl=progressive 500w,
+          url?w=250&fl=progressive 250w
+        ",
       }
     }
     zoomMargin={40}
