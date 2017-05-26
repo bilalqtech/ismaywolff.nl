@@ -152,6 +152,6 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "styled-components": "rc"
+    "styled-components": "^2.0.0"
   }
 }
