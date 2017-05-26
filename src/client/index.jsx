@@ -19,7 +19,9 @@ import { App, AppWithErrors } from './components/app'
 
 if (process.env.NODE_ENV === 'production') {
   load('https://cdn.ravenjs.com/3.14.2/raven.min.js', () => {
-    Raven.config(url, config).install()
+    if (typeof Raven !== 'undefined' && 'config' in Raven) {
+      Raven.config(url, config).install()
+    }
 
     if ('__ERROR_EVENTS__' in window) {
       const errorEvents = window.__ERROR_EVENTS__.q || []
