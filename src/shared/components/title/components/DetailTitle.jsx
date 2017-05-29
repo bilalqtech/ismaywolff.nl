@@ -4,14 +4,12 @@ import DetailMain from './DetailMain'
 import DetailSub from './DetailSub'
 import DetailContainer from './DetailContainer'
 
-function DetailTitle({ main, sub }) {
-  return (
-    <DetailContainer>
-      <DetailMain>{main}</DetailMain>
-      <DetailSub>{sub}</DetailSub>
-    </DetailContainer>
-  )
-}
+const DetailTitle = ({ main, sub }) => (
+  <DetailContainer>
+    <DetailMain>{main}</DetailMain>
+    <DetailSub>{sub}</DetailSub>
+  </DetailContainer>
+)
 
 DetailTitle.propTypes = {
   main: string.isRequired,

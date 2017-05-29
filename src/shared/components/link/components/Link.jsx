@@ -5,7 +5,7 @@ import { string } from 'prop-types'
 import Internal from './Internal'
 import External from './External'
 
-function Link(props) {
+const Link = props => {
   if (props.to) {
     return <Internal {...props} />
   }

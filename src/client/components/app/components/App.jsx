@@ -5,18 +5,16 @@ import { Provider } from 'react-redux'
 import { ScrollToTop } from '../../scroll'
 import { Root } from '../../../../shared/components/root'
 
-function App({ history, store }) {
-  return (
-    <Provider store={store}>
-      <Router history={history}>
-        <div>
-          <ScrollToTop />
-          <Root />
-        </div>
-      </Router>
-    </Provider>
-  )
-}
+const App = ({ history, store }) => (
+  <Provider store={store}>
+    <Router history={history}>
+      <div>
+        <ScrollToTop />
+        <Root />
+      </div>
+    </Router>
+  </Provider>
+)
 
 App.propTypes = {
   store: shape({
