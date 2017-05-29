@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<External /> renders clean correctly 1`] = `
-.iAmiWI {
+.hllEJG {
   color: currentColor;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 <a
-  className="sc-bdVaJa iAmiWI"
+  className="sc-bwzfXH hllEJG"
   href="/url"
 >
   Text
@@ -16,14 +16,14 @@ exports[`<External /> renders clean correctly 1`] = `
 `;
 
 exports[`<External /> renders correctly 1`] = `
-.dbNcXs {
+.hRLKqa {
   color: currentColor;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 <a
-  className="sc-bdVaJa dbNcXs"
+  className="sc-bwzfXH hRLKqa"
   href="/url"
 >
   Text

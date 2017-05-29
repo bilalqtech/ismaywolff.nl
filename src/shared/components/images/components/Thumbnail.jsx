@@ -5,7 +5,7 @@ import { getImageEntities } from '../selectors'
 import { createUrl } from '../utils'
 import Placeholder from './Placeholder'
 
-export function DumbThumbnail({ entities, id }) {
+export const DumbThumbnail = ({ entities, id }) => {
   const image = entities[id]
 
   if (!image) {

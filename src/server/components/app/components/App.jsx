@@ -4,15 +4,13 @@ import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { Root } from '../../../../shared/components/root'
 
-function App({ location, context, store }) {
-  return (
-    <Provider store={store}>
-      <StaticRouter location={location} context={context}>
-        <Root />
-      </StaticRouter>
-    </Provider>
-  )
-}
+const App = ({ location, context, store }) => (
+  <Provider store={store}>
+    <StaticRouter location={location} context={context}>
+      <Root />
+    </StaticRouter>
+  </Provider>
+)
 
 App.propTypes = {
   store: shape({

@@ -18,7 +18,7 @@ const fallbackViewport = {
   width: 360
 }
 
-export function DumbZoomable({ entities, id }) {
+export const DumbZoomable = ({ entities, id }) => {
   const image = entities[id]
 
   if (!image) {
