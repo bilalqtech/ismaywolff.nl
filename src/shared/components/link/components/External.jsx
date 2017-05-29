@@ -1,8 +1,5 @@
-import styled from 'styled-components'
+import Internal from './Internal'
 
-const External = styled.a`
-  color: currentColor;
-  text-decoration: ${props => (props.clean ? 'none' : 'underline')};
-`
+const External = Internal.withComponent('a')
 
 export default External
