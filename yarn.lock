@@ -3080,9 +3080,9 @@ html-tags@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-1.1.1.tgz#869f43859f12d9bdc3892419e494a628aa1b204e"
 
-html-webpack-inline-source-plugin@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/html-webpack-inline-source-plugin/-/html-webpack-inline-source-plugin-0.0.8.tgz#245c0f33e14e017c224d61dbdb74ac58536596c2"
+html-webpack-inline-source-plugin@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/html-webpack-inline-source-plugin/-/html-webpack-inline-source-plugin-0.0.9.tgz#e52dd3cf1164ac76ceaf39ba206f92e3597d054d"
   dependencies:
     escape-string-regexp "^1.0.5"
     slash "^1.0.0"
