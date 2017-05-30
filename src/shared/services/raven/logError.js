@@ -7,7 +7,7 @@
  * - https://docs.sentry.io/clients/javascript/usage/#passing-additional-data
  */
 
-function logError(error, additional = {}) {
+const logError = (error, additional = {}) => {
   const hasErrorEvents = typeof window === 'object' && '__ERROR_EVENTS__' in window
   const hasRaven = typeof Raven !== 'undefined' && 'captureException' in Raven
   const isProd = process.env.NODE_ENV === 'production'

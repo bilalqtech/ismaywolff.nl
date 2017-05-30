@@ -44,7 +44,7 @@ const hasObjectAssign = typeof Object.assign === 'function'
  * Boots the app, shows errors if there were any
  */
 
-function boot(error) {
+const boot = error => {
   if (error) {
     logError(error)
     render(<AppWithErrors errorMessage={error.message} />, document.getElementById('app'))

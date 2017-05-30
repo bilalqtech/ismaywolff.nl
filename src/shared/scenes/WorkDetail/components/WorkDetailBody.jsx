@@ -6,29 +6,27 @@ import { DetailTitle } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
 import { Zoomable } from '../../../components/images'
 
-function WorkDetailBody({ work }) {
-  return (
-    <div>
-      {/* Header */}
-      <DetailTitle
-        main={work.title}
-        sub={`${work.type} - ${dateformat(work.published, 'mmmm yyyy')}`}
-      />
+const WorkDetailBody = ({ work }) => (
+  <div>
+    {/* Header */}
+    <DetailTitle
+      main={work.title}
+      sub={`${work.type} - ${dateformat(work.published, 'mmmm yyyy')}`}
+    />
 
-      {/* Body */}
-      <p>{work.description}</p>
+    {/* Body */}
+    <p>{work.description}</p>
 
-      {/* Gallery */}
-      <Grid gutter={gutter}>
-        {work.images.map(id => (
-          <Cell gutter={gutter} smSize={1 / 1} mdSize={1 / 2} lgSize={1 / 3} key={id}>
-            <Zoomable id={id} />
-          </Cell>
-        ))}
-      </Grid>
-    </div>
-  )
-}
+    {/* Gallery */}
+    <Grid gutter={gutter}>
+      {work.images.map(id => (
+        <Cell gutter={gutter} smSize={1 / 1} mdSize={1 / 2} lgSize={1 / 3} key={id}>
+          <Zoomable id={id} />
+        </Cell>
+      ))}
+    </Grid>
+  </div>
+)
 
 WorkDetailBody.propTypes = {
   work: shape({

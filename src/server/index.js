@@ -1,11 +1,10 @@
 import 'isomorphic-fetch'
-import path from 'path'
-import useragent from 'useragent'
 import express from 'express'
 import Raven from 'raven'
 import { url, config, logError } from '../shared/services/raven'
 import { PUBLIC_PATH, PORT } from './constants'
-import handleBots from './handleBots'
+import handleRender from './handleRender'
+import renderStatic from './renderStatic'
 
 /**
  * Error tracking
@@ -29,20 +28,10 @@ server.use(
 )
 
 /**
- * Server render for bots, static html for humans
+ * Server render app
  */
 
-server.get('*', (req, res) => {
-  const agent = useragent.lookup(req.headers['user-agent'])
-  const isBot = agent.device && agent.device.toJSON().family === 'Spider'
-
-  if (isBot) {
-    handleBots(req, res)
-  } else {
-    res.setHeader('Cache-Control', 'public, max-age=0')
-    res.sendFile(path.join(PUBLIC_PATH, 'static.html'))
-  }
-})
+server.use(handleRender)
 
 /**
  * Custom error logging middleware
@@ -53,7 +42,7 @@ server.use((error, req, res, next) => {
   logError(error)
   res.status(500)
   res.setHeader('Cache-Control', 'public, max-age=0')
-  res.sendFile(path.join(PUBLIC_PATH, 'static.html'))
+  res.send(renderStatic())
 })
 
 /**

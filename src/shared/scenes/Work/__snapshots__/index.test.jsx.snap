@@ -20,6 +20,6 @@ exports[`<Work /> renders correctly 1`] = `
       name="description"
     />
   </HelmetWrapper>
-  <Connect(DumbWorkBody) />
+  <Connect(Component) />
 </div>
 `;

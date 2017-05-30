@@ -1,4 +1,3 @@
-import path from 'path'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 import { renderToString } from 'react-dom/server'
@@ -6,12 +5,11 @@ import { Helmet } from 'react-helmet'
 import routes from '../shared/routes'
 import configureStore from '../shared/store'
 import { logError } from '../shared/services/raven'
-import { PUBLIC_PATH } from './constants'
 import renderStatic from './renderStatic'
 import { App } from './components/app'
 import getNeeds from './getNeeds'
 
-function handleBots(req, res) {
+const handleRender = (req, res) => {
   const store = configureStore({})
   const needs = getNeeds(routes, req.url, store)
 
@@ -22,7 +20,7 @@ function handleBots(req, res) {
       const html = renderToString(
         sheet.collectStyles(<App location={req.url} context={context} store={store} />)
       )
-      const styledComponentsCss = sheet.getStyleTags()
+      const criticalCss = sheet.getStyleTags()
       const helmet = Helmet.renderStatic()
       const title = helmet.title.toString()
       const meta = helmet.meta.toString()
@@ -37,15 +35,15 @@ function handleBots(req, res) {
           res.status(context.status)
         }
         res.setHeader('Cache-Control', 'public, max-age=0')
-        res.send(renderStatic({ html, title, meta, styledComponentsCss, preloadedState }))
+        res.send(renderStatic({ html, title, meta, criticalCss, preloadedState }))
       }
     })
     .catch(error => {
       logError(error)
       res.status(500)
       res.setHeader('Cache-Control', 'public, max-age=0')
-      res.sendFile(path.join(PUBLIC_PATH, 'static.html'))
+      res.send(renderStatic())
     })
 }
 
-export default handleBots
+export default handleRender

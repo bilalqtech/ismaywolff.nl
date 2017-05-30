@@ -8,7 +8,7 @@ const initialState = {
   result: []
 }
 
-export default function reducer(state = initialState, action) {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCH_IMAGES:
       return Object.assign({}, state, { isFetching: true })
@@ -29,3 +29,5 @@ export default function reducer(state = initialState, action) {
       return state
   }
 }
+
+export default reducer

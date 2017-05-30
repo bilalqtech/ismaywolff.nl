@@ -1,11 +1,8 @@
 const path = require('path')
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const InlineChunkManifestHtmlWebpackPlugin = require('inline-chunk-manifest-html-webpack-plugin')
-const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const SentryPlugin = require('webpack-sentry-plugin')
 const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
 const WebpackMd5Hash = require('webpack-md5-hash')
@@ -111,34 +108,6 @@ module.exports = {
     ]),
 
     /**
-     * Generate static html.
-     */
-
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'client', 'index.ejs'),
-      filename: 'static.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true
-      },
-      inlineSource: '.css$'
-    }),
-
-    /**
-     * Inline css
-     */
-
-    new HtmlWebpackInlineSourcePlugin(),
-
-    /**
-     * Preload async chunks automatically
-     */
-
-    new PreloadWebpackPlugin({
-      rel: 'preload'
-    }),
-
-    /**
      * Split chunks
      *
      * splitting passes modules from top to bottom, see also:
@@ -176,7 +145,7 @@ module.exports = {
 
     new webpack.HashedModuleIdsPlugin(),
     new WebpackMd5Hash(),
-    new InlineChunkManifestHtmlWebpackPlugin(),
+    new ChunkManifestPlugin(),
 
     /**
      * Parse the webpack stats object and output a json file with the assets grouped by type

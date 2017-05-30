@@ -30,8 +30,6 @@ const StyledNavLink = styled(ReactRouterNavLink)`
   }
 `
 
-function NavLink(props) {
-  return <StyledNavLink activeClassName={ACTIVE_CLASSNAME} {...props} />
-}
+const NavLink = props => <StyledNavLink activeClassName={ACTIVE_CLASSNAME} {...props} />
 
 export default NavLink

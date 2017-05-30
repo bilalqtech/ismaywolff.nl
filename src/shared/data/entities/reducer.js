@@ -4,7 +4,7 @@ const initialState = {
   works: {}
 }
 
-export default function entities(state = initialState, action) {
+const entities = (state = initialState, action) => {
   if (action.payload && action.payload.entities && action.payload.entities.works) {
     // Merge new works with existing works
     const works = Object.assign({}, state.works, action.payload.entities.works)
@@ -28,3 +28,5 @@ export default function entities(state = initialState, action) {
 
   return state
 }
+
+export default entities

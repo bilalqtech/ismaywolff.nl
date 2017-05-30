@@ -3,7 +3,7 @@
  * contentful image asset.
  */
 
-export function createUrl({ url, width, height, fill }) {
+export const createUrl = ({ url, width, height, fill }) => {
   const fillParam = fill ? 'fit=fill&' : ''
   const widthParam = width ? `w=${width}` : ''
   const heightParam = height ? `&h=${height}` : ''
@@ -20,7 +20,7 @@ export function createUrl({ url, width, height, fill }) {
  * fill horizontally.
  */
 
-export function getRatio({ image, viewport }) {
+export const getRatio = ({ image, viewport }) => {
   // Ratio over 1 means portrait orientation, under 1 is landscape
   const imageRatio = image.height / image.width
   const viewportRatio = viewport.height / viewport.width

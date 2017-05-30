@@ -19,6 +19,6 @@ exports[`<Writing /> renders correctly 1`] = `
       name="description"
     />
   </HelmetWrapper>
-  <Connect(DumbWritingBody) />
+  <Connect(Component) />
 </div>
 `;
