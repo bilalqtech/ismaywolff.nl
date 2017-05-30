@@ -1,13 +1,16 @@
+import { minify } from 'html-minifier'
 import inlineStore from './templates/inlineStore'
 import inlineManifest from './templates/inlineManifest'
 import preloadDynamic from './templates/preloadDynamic'
 import scripts from './templates/scripts'
 import head from './templates/head'
-import styles from './templates/styles'
+import globalCss from './templates/globalCss'
 import catchErrors from './templates/catchErrors'
 
-function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }) {
-  return `
+const renderStatic = (
+  { html = '', title = '', meta = '', criticalCss = '', preloadedState = {} } = {}
+) => {
+  const result = `
     <!doctype html>
     <html>
       <head>
@@ -17,8 +20,8 @@ function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }
         ${catchErrors}
         ${inlineManifest}
         ${preloadDynamic}
-        ${styles}
-        ${styledComponentsCss}
+        ${globalCss}
+        ${criticalCss}
       </head>
       <body>
         <div id="app">${html}</div>
@@ -27,6 +30,12 @@ function renderStatic({ html, title, meta, styledComponentsCss, preloadedState }
       </body>
     </html>
   `
+
+  return minify(result, {
+    removeComments: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true
+  })
 }
 
 export default renderStatic

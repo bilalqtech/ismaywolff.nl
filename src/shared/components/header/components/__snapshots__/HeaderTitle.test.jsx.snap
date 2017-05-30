@@ -2,8 +2,7 @@
 
 exports[`<HeaderTitle /> renders correctly 1`] = `
 .drbUwD {
-  font-family: Bitter,
- serif;
+  font-family: Bitter, serif;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   margin-top: 0;

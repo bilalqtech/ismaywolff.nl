@@ -7,7 +7,7 @@ import { AppError } from '../../../components/errors'
 import { Spacer } from '../../../components/spacer'
 import WritingItem from './WritingItem'
 
-export function DumbWritingBody({ entities, articles }) {
+export const DumbWritingBody = ({ entities, articles }) => {
   // If fetching or hasn't fetched yet
   if (articles.isFetching || !articles.didFetch) {
     return <Spinner />

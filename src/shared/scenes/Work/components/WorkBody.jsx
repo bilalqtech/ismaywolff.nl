@@ -8,7 +8,7 @@ import { Spinner } from '../../../components/spinner'
 import { AppError } from '../../../components/errors'
 import WorkItem from './WorkItem'
 
-export function DumbWorkBody({ entities, works }) {
+export const DumbWorkBody = ({ entities, works }) => {
   // If fetching or hasn't fetched yet
   if (works.isFetching || !works.didFetch) {
     return <Spinner />

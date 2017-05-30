@@ -6,7 +6,7 @@ import { matchPath } from 'react-router-dom'
  * gather any needs the rendered route might have, hooks them up to the store and returns them.
  */
 
-function getNeeds(routes, url, store) {
+const getNeeds = (routes, url, store) => {
   const needs = []
 
   routes.some(route => {

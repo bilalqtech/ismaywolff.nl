@@ -5,7 +5,7 @@
  * https://bugs.chromium.org/p/chromium/issues/detail?id=718760
  */
 
-function onRejected(error) {
+const onRejected = error => {
   // Throw a new error if the caught error doesn't have a valid stacktrace
   if (!error.stack || !error.stack.match(/\d/)) {
     throw TypeError(error.message)
@@ -19,7 +19,7 @@ function onRejected(error) {
  * Return the response if it is ok, otherwise throw an error.
  */
 
-function onFulfilled(response) {
+const onFulfilled = response => {
   if (response.ok) {
     return response
   }
