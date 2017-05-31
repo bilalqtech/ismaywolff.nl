@@ -6,12 +6,18 @@ notifications:
   email: false
 services:
   - docker
+before_install:
+  - npm i -g greenkeeper-lockfile@1
+before_script:
+  - greenkeeper-lockfile-update
 script:
   - npm run test:coverage
   - npm run lint:prettier
   - npm run lint:js
   - npm run lint:css
   - npm run lint:whitespace
+after_script:
+  - greenkeeper-lockfile-upload
 after_success:
   - npm run build:client
   - npm run build:server
@@ -41,3 +47,5 @@ env:
     - secure: "Y4SoQHke8qDBfiq2OkwZj/PqpHAfvhlgnrBmlltataUdbrc7MycaTYsTL1+Ynp1sRvS04ZycbwpaLPLnLv4KPujuYQnnOmU381jV0nWnp9m+9+CX/UQwl9gffg5tCwzEp9rvqouXaJg6abeuHqjzXdbnEut6kIEnuxfrQrxzMwC9diQbdrBDqJIv4chWI/WD/PDCsfJmtbT030BQdulNrkPlvaJfBng6FrRyRE/ignlUssyzVA+pbpRYxemg6CKGDzGAAAb9CwfseiyYVW7HgSvkZP/9h93hxVSKpI1LrFq9HW/HNqPh6my2dQ/Jukljuue4vzkAQfVrNTYsumpHZck1I+fXsdt0/NzZfukno3GLptOISVI70EFbjsNPDbsj0mH+YSgFHi/AXxVGSoovzJF8jYg6GCFHY1LM+/Veh8L39fAhxHGSVosDgCgfUZV1Jbg8F9P9ycID/AgHnNXH+SK7owDMVG8bHvGXzw7se9gPQITIB36MTuWavcYrlBD2zZEjNsHy3lHEwwqPstGtvgbpC1qU2DjdjPqasIQQ0cV7k7jL8ZrDyaTKYlShxlx/4ZEm1gJmpcED8bRUVOTyBb7HU+zTqQPgRd/LfB8d2WCO++cEu0LSksm2oJgXp6aSR4+h1a5bofqs3xwIhAe43JBns5cxcD9rcR1byzUpbt4="
     # SENTRY_API_KEY
     - secure: "KS5diep5JHjpfIkq+G8lOzCzfquUdIw1pdDrcM0gPeEYKyQ86cky3Qd9/f4e7oEmKsyWVv9UXqMzVqLm9TNT60+GpkacIrQOuxk+FeZYxjM3UUah7uxVlasSviuXcEnaCHklRpwy3BXi7V9PhyTWaNYYPH/U+v599k9Wdxc1DLYDWx5aWzjX68ib59yJf3lCtaeUdujtYh6EiaLE8iyfux9ArONKxoQb7QR25LtoN8CVHw2xqJ96oPSkIxoXXk8jsPgC/B5la/Nj596hpSI5zp7JzpDE9pQ3DTrIl7YJDgU/FpR1ZrcC2tdrJfk9WYVi5vGBRsJrOVc7plrmfk6ydQax3AefpbGOzKXBXEzlbhHkyjHlCqLpCBfD7LTAx7NuGaZZXa2yHf3MLEzebrZmHTgBiyp9eq5SCs/kduo0z/a2Lf/i9h6hAogYYQODKW7TWKBscnLjH3c6mTYoxGuLS8jwOmZgxN+IATq/dFPBpShTFt8Q0wne8IKaUIMIMq8djWr5kAYX3sk+Bf8San6xub6aOZq147AUanuU+IxbBV/MwfmJIkGWv8BtEMoooY+KQmg65Zza99I67foTHPPqkTSA+zEhGgC/ynA55jgDgyoCT0lzeSzT/gsXcntDJaBHP09jJk5+YjpB07o7CTlDIWoNQh3QCnaLQIH2RWLE60E="
+    # GH_TOKEN
+    - secure: "VrXWjPietVdbHj5O/UII5NfUoJXhG+luC5t4t4aTZbZEQ3lwXWLZKyz6nqk4F2DSNpqeESlCDHM6IP0F/exAe+sKtgl0jwfIakftLjzW9IXT5r1Wt1OCSG2g/hP8Au7Sr5jWlnp9+q9a4MMlIl46oZowC7l++bsrVO6q2woLbZ5j8lqUohQsAMuUbXSnSWYxbIO7K14qkdifkrRrjIOo+Dxv4YBDheGkQZIkVI87XfKCx7faqcNmVKADyf6ZaHZ67mHefjKkbrYlMCdf5mpuegP9vbu3MZZJQaZTptg2aPDUQ5g8uIDddaKJ5S7E+jnR/08mXYMOfakH7GB7hSZ99Twpl320dh2D66eLG9etMCf72YesHz5O4J4+pcZC9kyh/BO3W1afqb5smMI9K/s0X1K+vr+Xxqjl1LWCbDEwO4XOjjNvsq4ITOy55M1fJPVnH1s2ZHvna/WGVvYx30hPSfxCr2k1Nw3Z6C+/G4Wfl8/6WZvIejG2admEo19qX6+0LCAs9k8I/08xFmlaCf9Y+tNUGr4TEpML9f/kr6PVs+lvw7H5mJVf3Gg4odGf2M/tJ6A7S8iYIkFefsJ36SxCBX761jWsu9g9wqiiwbxXJ5kxhkaA31DV1ILFHJznMQOhROr/UsVlnMHrLEFZ57L4rXD/yVLrL+Rt/m81n9Eqrk0="
