@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM mhart/alpine-node:8
 
 # create server folder
 WORKDIR /server
