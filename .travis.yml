@@ -1,6 +1,5 @@
 sudo: required
 language: node_js
-cache: yarn
 node_js:
   - node
 notifications:
@@ -8,14 +7,14 @@ notifications:
 services:
   - docker
 script:
-  - yarn run test:coverage
-  - yarn run lint:prettier
-  - yarn run lint:js
-  - yarn run lint:css
-  - yarn run lint:whitespace
+  - npm run test:coverage
+  - npm run lint:prettier
+  - npm run lint:js
+  - npm run lint:css
+  - npm run lint:whitespace
 after_success:
-  - yarn run build:client
-  - yarn run build:server
+  - npm run build:client
+  - npm run build:server
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - export REPO=ismay/ismaywolff.nl
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
