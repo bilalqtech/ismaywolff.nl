@@ -9,6 +9,10 @@ module.exports = {
     "semi": 0,
     "no-mixed-operators": 0,
 
+    // Enforce the consistent use of functions
+    "func-style": ["error", "expression"],
+    "prefer-arrow-callback": "error",
+
     // Import settings
     "import/no-extraneous-dependencies": 0,
     "import/order": ["error"],

@@ -117,13 +117,12 @@ as my cdn and [Contentful](https://www.contentful.com/) to host my content.
 
 ## requirements
 
-* [node](https://github.com/nodejs/node)
-* [yarn](https://github.com/yarnpkg/yarn)
+* [node 8](https://github.com/nodejs/node)
 * a valid .env file in the root of your project (see below)
 
 ## install
 
-* clone this repository and run `yarn`
+* clone this repository and run `npm install`
 * create `./.env` with your preferred settings:
 
 ```bash
