@@ -1,29 +1,35 @@
 const initialState = {
   articles: {},
   images: {},
+  pages: {},
   works: {}
 }
 
+// Checks whether the action payload has entities of a specific type
+const hasEntities = (action, entityKey) =>
+  action.payload && action.payload.entities && action.payload.entities[entityKey]
+
+// Returns a clone of the state with merged entities of a specific type
+const mergeEntities = (action, entityKey, state) => {
+  const entities = Object.assign({}, state[entityKey], action.payload.entities[entityKey])
+  return Object.assign({}, state, { [entityKey]: entities })
+}
+
 const entities = (state = initialState, action) => {
-  if (action.payload && action.payload.entities && action.payload.entities.works) {
-    // Merge new works with existing works
-    const works = Object.assign({}, state.works, action.payload.entities.works)
-
-    return Object.assign({}, state, { works })
+  if (hasEntities(action, 'articles')) {
+    return mergeEntities(action, 'articles', state)
   }
 
-  if (action.payload && action.payload.entities && action.payload.entities.articles) {
-    // Merge new articles with existing articles
-    const articles = Object.assign({}, state.articles, action.payload.entities.articles)
-
-    return Object.assign({}, state, { articles })
+  if (hasEntities(action, 'images')) {
+    return mergeEntities(action, 'images', state)
   }
 
-  if (action.payload && action.payload.entities && action.payload.entities.images) {
-    // Merge new images with existing images
-    const images = Object.assign({}, state.images, action.payload.entities.images)
+  if (hasEntities(action, 'pages')) {
+    return mergeEntities(action, 'pages', state)
+  }
 
-    return Object.assign({}, state, { images })
+  if (hasEntities(action, 'works')) {
+    return mergeEntities(action, 'works', state)
   }
 
   return state

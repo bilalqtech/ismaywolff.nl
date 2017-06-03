@@ -20,7 +20,7 @@ exports[`<WorkItem /> renders correctly 1`] = `
     </styled.h2>
   </Link>
   <styled.p>
-    description
+    summary
      …
   </styled.p>
 </div>

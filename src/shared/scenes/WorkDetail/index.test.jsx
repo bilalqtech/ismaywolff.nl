@@ -11,7 +11,7 @@ describe('<WorkDetail />', () => {
         slug: 'slug',
         type: 'type',
         published: '2011-04-01',
-        description: 'description',
+        summary: 'summary',
         images: ['one'],
         thumbnail: 'thumbnail'
       }

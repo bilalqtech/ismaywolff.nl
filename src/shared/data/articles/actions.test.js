@@ -65,7 +65,7 @@ describe('fetchArticles', () => {
   })
 
   it('should handle succesful fetches', () => {
-    nock(/contentful\.com/).get(/writing/).reply(200, mockResponse)
+    nock(/contentful\.com/).get(/articles/).reply(200, mockResponse)
 
     const store = mockStore({})
     const expectedActions = [
@@ -80,7 +80,7 @@ describe('fetchArticles', () => {
 
   it('should handle unsuccesful fetches', () => {
     const error = new Error('Internal Server Error')
-    nock(/contentful\.com/).get(/writing/).reply(500, error)
+    nock(/contentful\.com/).get(/articles/).reply(500, error)
 
     const store = mockStore({})
     const expectedActions = [
@@ -100,7 +100,7 @@ describe('fetchArticlesIfNeeded', () => {
   })
 
   it('should fetch articles if needed', () => {
-    nock(/contentful\.com/).get(/writing/).reply(200, mockResponse)
+    nock(/contentful\.com/).get(/articles/).reply(200, mockResponse)
 
     const store = mockStore({ articles: { isFetching: false, result: [] } })
     const expectedActions = [

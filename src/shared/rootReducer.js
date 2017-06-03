@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux'
+import articles from './data/articles'
 import entities from './data/entities'
 import images from './components/images'
+import pages from './data/pages'
 import works from './data/works'
-import articles from './data/articles'
 
 export default combineReducers({
+  articles,
   entities,
   images,
-  works,
-  articles
+  pages,
+  works
 })
