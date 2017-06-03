@@ -8,7 +8,7 @@ describe('<WorkItem />', () => {
       slug: 'slug',
       thumbnail: 'thumbnail',
       title: 'title',
-      description: 'description'
+      summary: 'summary'
     }
     const wrapper = shallow(<WorkItem work={work} />)
     expect(wrapper).toMatchSnapshot()

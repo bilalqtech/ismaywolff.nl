@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Markdown /> renders correctly 1`] = `
+.lpdjHa a {
+  color: currentColor;
+}
+
+<div
+  className="sc-bdVaJa lpdjHa"
+/>
+`;

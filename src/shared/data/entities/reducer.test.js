@@ -4,6 +4,7 @@ describe('reducer', () => {
   const initialState = {
     articles: {},
     images: {},
+    pages: {},
     works: {}
   }
 
@@ -26,6 +27,7 @@ describe('reducer', () => {
     const expected = {
       articles: {},
       images: {},
+      pages: {},
       works: { item: 'item' }
     }
 
@@ -44,6 +46,7 @@ describe('reducer', () => {
     const expected = {
       works: {},
       images: {},
+      pages: {},
       articles: { item: 'item' }
     }
 
@@ -62,6 +65,26 @@ describe('reducer', () => {
     const expected = {
       articles: {},
       images: { item: 'item' },
+      pages: {},
+      works: {}
+    }
+
+    expect(actual).toEqual(expected)
+  })
+
+  it('should handle pages entities', () => {
+    const actual = reducer(undefined, {
+      type: 'ACTION',
+      payload: {
+        entities: {
+          pages: { item: 'item' }
+        }
+      }
+    })
+    const expected = {
+      articles: {},
+      images: {},
+      pages: { item: 'item' },
       works: {}
     }
 

@@ -5,6 +5,8 @@ import { gutter } from '../../../styles'
 import { DetailTitle } from '../../../components/title'
 import { Cell, Grid } from '../../../components/grid'
 import { Zoomable } from '../../../components/images'
+import { AsyncReactMarkdown } from '../../../components/async'
+import { Markdown } from '../../../components/markdown'
 
 const WorkDetailBody = ({ work }) => (
   <div>
@@ -14,8 +16,8 @@ const WorkDetailBody = ({ work }) => (
       sub={`${work.type} - ${dateformat(work.published, 'mmmm yyyy')}`}
     />
 
-    {/* Body */}
-    <p>{work.description}</p>
+    {/* Summary */}
+    <p>{work.summary}</p>
 
     {/* Gallery */}
     <Grid gutter={gutter}>
@@ -25,6 +27,12 @@ const WorkDetailBody = ({ work }) => (
         </Cell>
       ))}
     </Grid>
+
+    {/* Optional further text */}
+    {!!work.text &&
+      <Markdown>
+        <AsyncReactMarkdown source={work.text} />
+      </Markdown>}
   </div>
 )
 
@@ -34,9 +42,10 @@ WorkDetailBody.propTypes = {
     slug: string.isRequired,
     type: string.isRequired,
     published: string.isRequired,
-    description: string.isRequired,
+    summary: string.isRequired,
     images: arrayOf(string).isRequired,
-    thumbnail: string.isRequired
+    thumbnail: string.isRequired,
+    text: string
   }).isRequired
 }
 

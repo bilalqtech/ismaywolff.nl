@@ -14,7 +14,7 @@ const WorkItem = ({ work }) => (
     <Link to={`/work/${work.slug}`} clean>
       <OverviewTitle><Truncate>{work.title}</Truncate></OverviewTitle>
     </Link>
-    <OverviewParagraph>{work.description.substring(0, 100)} …</OverviewParagraph>
+    <OverviewParagraph>{work.summary.substring(0, 100)} …</OverviewParagraph>
   </div>
 )
 
@@ -23,7 +23,7 @@ WorkItem.propTypes = {
     slug: string.isRequired,
     thumbnail: string.isRequired,
     title: string.isRequired,
-    description: string.isRequired
+    summary: string.isRequired
   }).isRequired
 }
 

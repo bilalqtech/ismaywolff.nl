@@ -7,7 +7,7 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
     sub="type - April 2011"
   />
   <p>
-    description
+    summary
   </p>
   <styled.div
     gutter="0.5rem"
@@ -24,6 +24,39 @@ exports[`<WorkDetailBody /> renders correctly 1`] = `
         id="one"
       />
     </styled.div>
+  </styled.div>
+</div>
+`;
+
+exports[`<WorkDetailBody /> renders text correctly 1`] = `
+<div>
+  <DetailTitle
+    main="title"
+    sub="type - April 2011"
+  />
+  <p>
+    summary
+  </p>
+  <styled.div
+    gutter="0.5rem"
+  >
+    <styled.div
+      gutter="0.5rem"
+      lgBreak="40em"
+      lgSize={0.3333333333333333}
+      mdBreak="25em"
+      mdSize={0.5}
+      smSize={1}
+    >
+      <Connect(Component)
+        id="one"
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <Loadable
+      source="text"
+    />
   </styled.div>
 </div>
 `;
