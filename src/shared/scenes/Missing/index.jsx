@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { MissingPageError } from '../../components/errors'
 import { Status } from '../../components/status'
 
-const Missing = () => (
+const Missing = () =>
   <Status code={404}>
     <div>
       <Helmet>
@@ -12,6 +12,5 @@ const Missing = () => (
       <MissingPageError />
     </div>
   </Status>
-)
 
 export default Missing

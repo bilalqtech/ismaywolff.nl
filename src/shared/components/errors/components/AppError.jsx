@@ -9,7 +9,7 @@ import ErrorTitle from './ErrorTitle'
  * Shown for api errors and async component errors.
  */
 
-const AppError = ({ errorMessage }) => (
+const AppError = ({ errorMessage }) =>
   <ErrorContainer background={colors.lightRed} color={colors.darkRed}>
     <ErrorTitle>Oops, something went wrong!</ErrorTitle>
     <p>
@@ -26,7 +26,6 @@ const AppError = ({ errorMessage }) => (
     </p>
     <p>The error was: {'"'}{errorMessage}{'"'}.</p>
   </ErrorContainer>
-)
 
 AppError.propTypes = {
   errorMessage: string.isRequired

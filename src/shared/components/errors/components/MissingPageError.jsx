@@ -8,7 +8,7 @@ import ErrorTitle from './ErrorTitle'
  * Shown for missing pages.
  */
 
-const MissingPageError = () => (
+const MissingPageError = () =>
   <ErrorContainer background={colors.lightBlue} color={colors.darkBlue}>
     <ErrorTitle>Oops, that page can{"'"}t be found!</ErrorTitle>
     <p>
@@ -27,6 +27,5 @@ const MissingPageError = () => (
       the original manual!
     </p>
   </ErrorContainer>
-)
 
 export default MissingPageError
