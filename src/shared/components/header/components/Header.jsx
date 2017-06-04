@@ -4,13 +4,12 @@ import { Navigation } from '../../navigation'
 import HeaderTitle from './HeaderTitle'
 import HeaderContainer from './HeaderContainer'
 
-const Header = () => (
+const Header = () =>
   <HeaderContainer>
     <HeaderTitle>
       <Link to="/" clean>Ismay Wolff</Link>
     </HeaderTitle>
     <Navigation />
   </HeaderContainer>
-)
 
 export default Header

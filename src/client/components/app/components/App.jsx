@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { ScrollToTop } from '../../scroll'
 import { Root } from '../../../../shared/components/root'
 
-const App = ({ history, store }) => (
+const App = ({ history, store }) =>
   <Provider store={store}>
     <Router history={history}>
       <div>
@@ -14,7 +14,6 @@ const App = ({ history, store }) => (
       </div>
     </Router>
   </Provider>
-)
 
 App.propTypes = {
   store: shape({

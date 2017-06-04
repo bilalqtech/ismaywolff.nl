@@ -3,11 +3,10 @@ import { Routes } from '../../routes'
 import { Header } from '../../header'
 import { Container } from '../../container'
 
-const Root = () => (
+const Root = () =>
   <Container>
     <Header />
     <Routes />
   </Container>
-)
 
 export default Root

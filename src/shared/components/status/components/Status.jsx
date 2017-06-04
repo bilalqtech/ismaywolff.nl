@@ -2,7 +2,7 @@ import React from 'react'
 import { number, node } from 'prop-types'
 import { Route } from 'react-router-dom'
 
-const Status = ({ code, children }) => (
+const Status = ({ code, children }) =>
   <Route
     render={({ staticContext }) => {
       if (staticContext) {
@@ -12,7 +12,6 @@ const Status = ({ code, children }) => (
       return children
     }}
   />
-)
 
 Status.propTypes = {
   code: number.isRequired,

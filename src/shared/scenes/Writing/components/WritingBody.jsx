@@ -20,11 +20,11 @@ export const DumbWritingBody = ({ entities, articles }) => {
 
   return (
     <div>
-      {articles.result.map(id => (
+      {articles.result.map(id =>
         <Spacer bottom="2rem" key={id}>
           <WritingItem article={entities[id]} />
         </Spacer>
-      ))}
+      )}
     </div>
   )
 }

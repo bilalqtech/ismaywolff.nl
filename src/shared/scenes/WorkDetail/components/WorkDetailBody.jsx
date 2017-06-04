@@ -8,7 +8,7 @@ import { Zoomable } from '../../../components/images'
 import { AsyncReactMarkdown } from '../../../components/async'
 import { Markdown } from '../../../components/markdown'
 
-const WorkDetailBody = ({ work }) => (
+const WorkDetailBody = ({ work }) =>
   <div>
     {/* Header */}
     <DetailTitle
@@ -21,11 +21,11 @@ const WorkDetailBody = ({ work }) => (
 
     {/* Gallery */}
     <Grid gutter={gutter}>
-      {work.images.map(id => (
+      {work.images.map(id =>
         <Cell gutter={gutter} smSize={1 / 1} mdSize={1 / 2} lgSize={1 / 3} key={id}>
           <Zoomable id={id} />
         </Cell>
-      ))}
+      )}
     </Grid>
 
     {/* Optional further text */}
@@ -34,7 +34,6 @@ const WorkDetailBody = ({ work }) => (
         <AsyncReactMarkdown source={work.text} />
       </Markdown>}
   </div>
-)
 
 WorkDetailBody.propTypes = {
   work: shape({

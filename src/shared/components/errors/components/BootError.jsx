@@ -9,7 +9,7 @@ import ErrorTitle from './ErrorTitle'
  * Shown for errors that occur while booting / polyfilling.
  */
 
-const BootError = ({ errorMessage }) => (
+const BootError = ({ errorMessage }) =>
   <ErrorContainer background={colors.lightRed} color={colors.darkRed}>
     <ErrorTitle>Oops, something went wrong!</ErrorTitle>
     <p>
@@ -30,7 +30,6 @@ const BootError = ({ errorMessage }) => (
     </p>
     <p>The error was: {'"'}{errorMessage}{'"'}.</p>
   </ErrorContainer>
-)
 
 BootError.propTypes = {
   errorMessage: string.isRequired

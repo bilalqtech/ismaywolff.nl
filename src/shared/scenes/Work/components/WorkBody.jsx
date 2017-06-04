@@ -21,11 +21,11 @@ export const DumbWorkBody = ({ entities, works }) => {
 
   return (
     <Grid gutter={gutter}>
-      {works.result.map(id => (
+      {works.result.map(id =>
         <Cell gutter={gutter} smSize={1 / 1} mdSize={1 / 2} lgSize={1 / 3} key={id}>
           <WorkItem work={entities[id]} />
         </Cell>
-      ))}
+      )}
     </Grid>
   )
 }

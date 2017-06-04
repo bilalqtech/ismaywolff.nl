@@ -6,7 +6,7 @@ import { Truncate } from '../../../components/text'
 import { OverviewParagraph } from '../../../components/paragraph'
 import { Link } from '../../../components/link'
 
-const WorkItem = ({ work }) => (
+const WorkItem = ({ work }) =>
   <div>
     <Link to={`/work/${work.slug}`}>
       <Thumbnail id={work.thumbnail} />
@@ -16,7 +16,6 @@ const WorkItem = ({ work }) => (
     </Link>
     <OverviewParagraph>{work.summary.substring(0, 100)} …</OverviewParagraph>
   </div>
-)
 
 WorkItem.propTypes = {
   work: shape({
