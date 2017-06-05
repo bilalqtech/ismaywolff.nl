@@ -6,8 +6,10 @@ exports[`<WritingDetailBody /> renders correctly 1`] = `
     main="title"
     sub="April 2011"
   />
-  <Loadable
-    source="text"
-  />
+  <styled.div>
+    <Loadable
+      source="text"
+    />
+  </styled.div>
 </div>
 `;
