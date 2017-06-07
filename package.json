@@ -116,7 +116,7 @@
     "lint-staged": "^3.4.0",
     "lintspaces-cli": "^0.6.0",
     "nock": "^9.0.13",
-    "prettier": "^1.4.1",
+    "prettier": "^1.4.4",
     "raven": "^2.0.0",
     "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.3",
