@@ -145,9 +145,7 @@ module.exports = {
 
     new webpack.HashedModuleIdsPlugin(),
     new WebpackMd5Hash(),
-    new ChunkManifestPlugin({
-      manifestVariable: '__WEBPACK_MANIFEST__'
-    }),
+    new ChunkManifestPlugin(),
 
     /**
      * Parse the webpack stats object and output a json file with the assets grouped by type

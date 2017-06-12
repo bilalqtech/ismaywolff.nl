@@ -4,7 +4,7 @@ import manifest from '../../../dist/public/manifest.json'
 
 const inlineManifest = `
   <script type="text/javascript">
-    window.__WEBPACK_MANIFEST__=${JSON.stringify(manifest)}
+    window.webpackManifest=${JSON.stringify(manifest)}
   </script>
 `
 
