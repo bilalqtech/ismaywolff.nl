@@ -20,7 +20,7 @@ const ENTRYPOINT = 'main'
  * order for server-side use.
  */
 
-function transformStats(stats) {
+const transformStats = stats => {
   const assetsByEntrypoint = stats.entrypoints[ENTRYPOINT].assets
   const css = assetsByEntrypoint.filter(asset => asset.endsWith('.css'))
   const js = assetsByEntrypoint.filter(asset => asset.endsWith('.js'))
@@ -145,7 +145,9 @@ module.exports = {
 
     new webpack.HashedModuleIdsPlugin(),
     new WebpackMd5Hash(),
-    new ChunkManifestPlugin(),
+    new ChunkManifestPlugin({
+      manifestVariable: '__WEBPACK_MANIFEST__'
+    }),
 
     /**
      * Parse the webpack stats object and output a json file with the assets grouped by type
